@@ -1,0 +1,13 @@
+<div class="question-container" id="question-{{ include.id }}">
+    <h3>Question: {{ include.title | default: "Solution Dropdown" }}</h3>
+    <div class="question-content">
+        {{ include.question_text | markdownify }}
+    </div>
+
+    <button class="btn btn-primary" onclick="toggleSolution('solution-{{ include.id }}')">Show Solution</button>
+
+    <div id="solution-{{ include.id }}" class="solution-content">
+        <h4>Solution:</h4>
+        {{ include.solution_text | markdownify }}
+    </div>
+</div>

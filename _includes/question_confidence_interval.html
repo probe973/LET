@@ -1,0 +1,70 @@
+<div class="question-container" id="question-{{ include.id }}">
+    
+    <!-- Header -->
+    <h3 id="label-{{ include.id }}">
+        Question: {{ include.title | default: "Confidence Interval" }}
+    </h3>
+
+    <div class="question-content">
+        {{ include.question_text | markdownify }}
+    </div>
+
+    <!-- Inputs + buttons -->
+    <div class="numerical-answer-container">
+
+        <!-- CI input group -->
+        <div class="ci-inputs">
+            <input
+                type="number"
+                id="lower-{{ include.id }}"
+                step="any"
+                placeholder="Lower bound"
+                aria-labelledby="label-{{ include.id }}">
+
+            <span class="ci-separator">to</span>
+
+            <input
+                type="number"
+                id="upper-{{ include.id }}"
+                step="any"
+                placeholder="Upper bound"
+                aria-labelledby="label-{{ include.id }}">
+        </div>
+
+        <div>
+            <button
+                class="btn"
+                onclick="checkConfidenceInterval(
+                    '{{ include.id }}',
+                    {{ include.lower_answer }},
+                    {{ include.upper_answer }},
+                    {{ include.tolerance | default: 0 }}
+                )">
+                Check Answer
+            </button>
+
+            {% if include.solution_text %}
+            <button
+                class="btn btn-primary solution-toggle-button"
+                id="btn-sol-{{ include.id }}"
+                aria-expanded="false"
+                aria-controls="solution-{{ include.id }}"
+                onclick="toggleSolution('solution-{{ include.id }}', this)">
+                Show Solution
+            </button>
+            {% endif %}
+        </div>
+
+    </div>
+
+    <!-- Feedback -->
+    <div id="feedback-{{ include.id }}" aria-live="polite"></div>
+
+    {% if include.solution_text %}
+    <div id="solution-{{ include.id }}" class="solution-content" style="display:none;">
+        <h4>Solution:</h4>
+        {{ include.solution_text | markdownify }}
+    </div>
+    {% endif %}
+
+</div>

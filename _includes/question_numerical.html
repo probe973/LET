@@ -1,0 +1,33 @@
+<div class="question-container" id="question-{{ include.id }}">
+    <h3>Question: {{ include.title | default: "Numerical Input" }}</h3>
+    <div class="question-content">
+        {{ include.question_text | markdownify }}
+    </div>
+
+    <!-- This div wraps the input and buttons for correct layout -->
+    <div class="numerical-answer-container">
+        
+        <!-- The input field now allows any decimal value and has no stepper arrows -->
+        <input type="number" id="input-{{ include.id }}" step="any" placeholder="Enter your answer">
+        
+        <!-- This div groups the action buttons together -->
+        <div>
+            <button class="btn" onclick="checkNumericalAnswer('{{ include.id }}', '{{ include.correct_answer }}', '{{ include.tolerance | default: 0 }}')">Check Answer</button>
+            
+            {% if include.solution_text %}
+                <button class="btn btn-primary solution-toggle-button" onclick="toggleSolution('solution-{{ include.id }}', this)">Show Solution</button>
+            {% endif %}
+        </div>
+
+    </div>
+
+    <!-- The feedback and solution content remain outside the main container -->
+    <div id="feedback-{{ include.id }}"></div>
+    
+    {% if include.solution_text %}
+        <div id="solution-{{ include.id }}" class="solution-content">
+            <h4>Solution:</h4>
+            {{ include.solution_text | markdownify }}
+        </div>
+    {% endif %}
+</div>

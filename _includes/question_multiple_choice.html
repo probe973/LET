@@ -1,0 +1,34 @@
+<div class="question-container" id="question-{{ include.id }}">
+    <h3>Question: {{ include.title | default: "Multiple Choice" }}</h3>
+    <div class="question-content">
+        {{ include.question_text | markdownify }}
+    </div>
+
+    <!-- CHANGE #2: The form is now a div with the correct class for styling -->
+    <div id="form-{{ include.id }}" class="mcq-options">
+        {% assign options_array = include.options | split: "||" %}
+        {% for option in options_array %}
+            {% assign option_parts = option | split: "::" %}
+            {% assign option_value = option_parts[0] | strip %}
+            {% assign option_label = option_parts[1] | strip | default: option_value %}
+            <!-- This label no longer needs a special class -->
+            <label>
+                <input type="radio" name="choice-{{ include.id }}" value="{{ option_value }}">
+                {{ option_label }}
+            </label>
+        {% endfor %}
+    </div>
+
+    <button class="btn" onclick="checkMultipleChoice('{{ include.id }}', '{{ include.correct_answer }}')">Check Answer</button>
+
+    <div id="feedback-{{ include.id }}"></div>
+
+    {% if include.solution_text %}
+        <button class="btn btn-primary solution-toggle-button" onclick="toggleSolution('solution-{{ include.id }}', this)">Show Solution Hint</button>
+        <div id="solution-{{ include.id }}" class="solution-content">
+            <h4>Solution:</h4>
+            {{ include.solution_text | markdownify }}
+        </div>
+    {% endif %}
+</div>
+<!-- CHANGE #1: The <script> block that was here is now completely removed. -->

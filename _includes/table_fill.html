@@ -1,0 +1,28 @@
+<div class="question-container" id="question-{{ include.id }}">
+    <h3>Question: {{ include.title | default: "Fill in the Table" }}</h3>
+    <div class="question-content">
+        {{ include.question_text | markdownify }}
+    </div>
+
+    <div id="table-container-{{ include.id }}" class="table-fill-wrapper">
+        {{ include.table_content }}
+    </div>
+
+    <div class="action-buttons">
+        <!-- UPDATED: We now pass include.tolerance -->
+        <button class="btn" onclick="checkTableFill('{{ include.id }}', '{{ include.answers }}', '{{ include.tolerance | default: 0 }}')">Check Answer</button>
+        
+        {% if include.solution_text %}
+            <button class="btn btn-primary solution-toggle-button" onclick="toggleSolution('solution-{{ include.id }}', this)">Show Solution Hint</button>
+        {% endif %}
+    </div>
+
+    <div id="feedback-{{ include.id }}"></div>
+
+    {% if include.solution_text %}
+        <div id="solution-{{ include.id }}" class="solution-content">
+            <h4>Solution:</h4>
+            {{ include.solution_text | markdownify }}
+        </div>
+    {% endif %}
+</div>

@@ -1,0 +1,914 @@
+/* style.css - FINAL CONSOLIDATED VERSION */
+/* FILE 1 IS THE MASTER - ALL ORIGINAL STYLES PRESERVED EXACTLY */
+
+/* --- General Body and Typography Styles --- */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    color: #333;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    color: #2c3e50;
+    margin-top: 1.5em;
+    margin-bottom: 0.8em;
+    line-height: 1.2;
+}
+
+/* --- Header Styles --- */
+header {
+    background-color: #B1B1B2;
+    color: #000000;            /* Black text (AAA Compliant) */
+    padding: 1.5rem 0;
+    text-align: center;
+    border-bottom: 1px solid #b3e5fc; /* Subtle divider */
+    box-shadow: none; /* Removed shadow to blend better with Nav */
+}
+
+header h1 {
+    color: #002a4a; /* Very Dark Blue (Almost Black) - softer than pure black */
+    margin: 0;
+    font-size: 2.5em;
+}
+
+header p {
+    color: #004a75; /* Dark Blue for subtitle - High Contrast */
+    margin: 0.5em 0 0;
+    font-size: 1.1em;
+    font-weight: 500;
+}
+
+/* --- Footer Styles (AAA Compliant) --- */
+footer {
+    text-align: center;
+    padding: 40px 25px;
+    margin-top: 60px;
+    background-color: #B781CA;
+    color: #000000;  
+    font-size: 1em;
+    box-shadow: 0 -4px 10px rgba(0,0,0,0.1);
+}
+
+footer a {
+    color: #b3e5fc; /* Light Blue links - clear distinction from white text */
+    text-decoration: underline;
+    font-weight: bold;
+}
+
+footer a:hover,
+footer a:focus {
+    color: #ffffff; /* Bright White on hover */
+    text-decoration: none;
+    background-color: rgba(255,255,255,0.1); /* Subtle highlight effect */
+}
+
+/* --- Navigation Bar Styles (AAA Compliant) --- */
+nav {
+    background-color: #363738;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    padding: 0;
+    border-bottom: 4px solid #005A9C; /* A solid line to separate header area from content */
+}
+
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+nav ul li a {
+    display: block;
+    color: #ffffff;
+    text-align: center;
+    padding: 14px 24px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    font-size: 1.05em;
+    font-weight: 700; /* Bold makes text easier to read */
+}
+
+nav ul li a:hover,
+nav ul li a:focus {
+    background-color: #00447c; /* Dark Blue Background */
+    color: #ffffff;            /* White Text (Ratio: 12:1 -> AAA Pass) */
+    outline: none;
+}
+
+nav ul li a.active {
+    background-color: #002a4a; /* Even darker blue for the active page */
+    color: #ffffff;
+    cursor: default;
+}
+
+/* --- Main Content and Layout Styles --- */
+main {
+    max-width: 960px;
+    margin: 25px auto;
+    padding: 25px 30px;
+    background-color: #ffffff;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    border-radius: 8px;
+    line-height: 1.7;
+}
+
+/* --- Colored Section Box Styles (AAA Compliant & Corrected) --- */
+.explanation, .instructions, .output {
+    padding: 1.8em;
+    border-radius: 7px;
+    margin-bottom: 20px;
+    line-height: 1.6; /* Ensure consistent line height */
+}
+
+.explanation {
+    background-color: #e3f2fd;
+    color: #2c3e50;
+}
+
+.instructions {
+    background-color: #e3f2fd;
+    color: #2c3e50; 
+}
+
+.output {
+    background-color: #e8f5e9;
+    color: #2c3e50; /* High contrast dark text */
+}
+
+/* Fix for large gap above titles in colored boxes */
+.explanation > *:first-child, 
+.instructions > *:first-child, 
+.output > *:first-child {
+    margin-top: 0;
+}
+
+/* NEW - Robust control of spacing inside the output box */
+.output > * + * {
+    margin-top: 1em; /* This adds a consistent space ONLY BETWEEN elements */
+}
+
+/* NEW - Professional Styling for ALL Tables --- */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 1.5em;
+    font-size: 0.95em;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+}
+
+th, td {
+    border: 1px solid #ddd;
+    padding: 10px 12px;
+    text-align: left;
+}
+
+th {
+    background-color: #f5f5f5;
+    font-weight: bold;
+}
+
+/* --- Code Snippet Styles --- */
+code {
+    background-color: #f0f0f0;
+    padding: 0.2em 0.4em;
+    border-radius: 3px;
+    font-family: 'Courier New', Courier, monospace;
+    color: #c7254e;
+    word-wrap: break-word;
+}
+
+pre {
+    background-color: #f8f8f8;
+    padding: 1.2em;
+    border-radius: 5px;
+    overflow-x: auto;
+    border: 1px solid #e0e0e0;
+}
+
+/* --- General Element Styles (Images, Accessibility) --- */
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 1.5em auto;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+a:focus:not(.btn), button:focus:not(.btn), input:focus, select:focus, textarea:focus {
+    outline: 3px solid #f39c12;
+    outline-offset: 2px;
+}
+
+.MathJax_Display {
+    overflow-x: auto;
+    margin: 1em 0;
+}
+
+.MathJax {
+    overflow-x: auto;
+    overflow-y: hidden;
+    padding: 0.5em 0;
+}
+
+/* --- Topic Card Menu Styles --- */
+.card-menu {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 25px;
+    margin-top: 3em;
+}
+
+.card {
+    background-color: #ffffff;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 25px;
+    text-decoration: none;
+    color: #333;
+    transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    border-color: #3498db;
+}
+
+.card-content {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.card-icon {
+    flex-shrink: 0;
+}
+
+.card-icon svg {
+    width: 48px;
+    height: 48px;
+    stroke: #34495e;
+}
+
+.card-text h3 {
+    margin: 0 0 5px 0;
+    font-size: 1.3em;
+    color: #2c3e50;
+}
+
+.card-text p {
+    margin: 0;
+    font-size: 0.95em;
+    color: #666;
+    line-height: 1.5;
+}
+
+/* --- Interactive Question Styles --- */
+.question-container {
+    background-color: #f5f7f9;
+    border-left: 5px solid #607d8b;
+    padding: 1.8em 2em;
+    margin-top: 2.5em;
+    margin-bottom: 2.5em;
+    border-radius: 0 8px 8px 0;
+}
+
+.question-container h3 {
+    margin-top: 0;
+}
+
+.btn {
+    display: inline-block;
+    background-color: #34495e;
+    color: white;
+    padding: 12px 24px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 1.05em;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    margin-top: 15px;
+    transition: background-color 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
+    text-decoration: none;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.btn:hover {
+    background-color: #4a627a;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 10px rgba(0,0,0,0.15);
+}
+
+.btn-primary {
+    background-color: #34495e;
+}
+
+.btn-primary:hover {
+    background-color: #4a627a;
+}
+
+.mcq-options {
+    margin-top: 1.5em;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.mcq-options label {
+    display: block;
+    background-color: #ffffff;
+    padding: 15px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.mcq-options label:hover {
+    border-color: #3498db;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.08);
+}
+
+.mcq-options input[type="radio"] {
+    margin-right: 12px;
+    transform: scale(1.2);
+}
+
+.numerical-answer-container {
+    margin-top: 1.5em;
+    display: flex;
+    flex-direction: column; /* Stack elements vertically for a cleaner look */
+    gap: 15px; /* Space between the input and the buttons */
+    align-items: flex-start; /* Align to the left */
+}
+
+.numerical-answer-container input[type="number"] {
+    font-size: 1.1em;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    width: 100%;
+    max-width: 250px; /* A good, consistent width */
+    box-sizing: border-box; /* Important for consistent sizing */
+}
+
+.feedback {
+    margin-top: 1em;
+    padding: 10px 15px;
+    border-radius: 5px;
+    font-weight: bold;
+}
+
+.feedback-correct {
+    background-color: #e8f5e9;
+    color: #2e7d32;
+    border: 1px solid #c8e6c9;
+}
+
+.feedback-incorrect {
+    background-color: #fbe9e7;
+    color: #c62828;
+    border: 1px solid #ffccbc;
+}
+
+.solution-toggle-button {
+    margin-top: 1.5em;
+}
+
+.solution-content {
+    background-color: #fff8e1;
+    border: 1px solid #ffecb3;
+    padding: 1.5em;
+    margin-top: 1em;
+    border-radius: 7px;
+    display: none;
+    line-height: 1.6;
+}
+
+.solution-content.visible {
+    display: block;
+}
+
+/* --- Page Navigation (Next/Previous) Styles (FINAL - AAA Compliant Text Links) --- */
+.pagination-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 2.5em;
+    padding-top: 1.5em;
+    border-top: 1px solid #e0e0e0;
+}
+
+.pagination-prev {
+    text-align: left;
+}
+
+.pagination-next {
+    text-align: right;
+}
+
+.pagination-nav a {
+    color: #005A9C; /* NEW AAA-COMPLIANT DARK BLUE */
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 1.1em;
+    transition: color 0.2s ease;
+}
+
+.pagination-nav a:hover {
+    color: #00365f; /* An even darker blue for hover, to maintain contrast */
+    text-decoration: underline;
+}
+
+/* --- Hide the stepper arrows on number input fields --- */
+
+/* For Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* For Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
+}
+
+/* Style for the inputs inside the table */
+.table-fill-wrapper input {
+    border: 1px solid #ccc;
+    padding: 5px;
+    border-radius: 4px;
+    width: 100%; /* Or a fixed width like 80px */
+    box-sizing: border-box;
+}
+
+/* Correct answer style */
+.table-fill-wrapper input.input-correct {
+    border-color: #28a745;
+    background-color: #e6fffa;
+}
+
+/* Incorrect answer style */
+.table-fill-wrapper input.input-incorrect {
+    border-color: #dc3545;
+    background-color: #ffe6e6;
+}
+
+/* --- VENN DIAGRAM STYLES (Strict Alignment) --- */
+
+.venn-wrapper {
+    position: relative;
+    width: 100%;
+    max-width: 600px;
+    height: 320px; /* Reduced height slightly to keep it tight */
+    margin: 40px auto;
+    background-color: #fff;
+    /* Outer "Universe" Box border */
+    border: 3px solid #2c3e50;
+    border-radius: 4px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* THE CIRCLES */
+.venn-circle {
+    position: absolute;
+    width: 50%; /* Strictly 50% width */
+    height: 260px; /* Fixed height relative to container */
+    border-radius: 50%;
+    border: 4px solid; /* Thicker borders for visibility */
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.02); /* Slight tint to show area */
+    pointer-events: none; /* Click through to inputs */
+}
+
+.venn-left {
+    left: 5%; 
+    border-color: #d35400; /* Orange */
+}
+
+.venn-right {
+    right: 5%; 
+    border-color: #2980b9; /* Blue */
+}
+
+/* LABELS */
+.venn-label {
+    position: absolute;
+    top: -40px;
+    width: 100%;
+    text-align: center;
+    font-weight: bold;
+    font-size: 1.2em;
+    color: #2c3e50;
+    text-shadow: 1px 1px 0 #fff; /* Readability over lines */
+}
+
+/* INPUT ZONES - Absolute Positioning on the 25/50/75 grid */
+.venn-zone {
+    position: absolute;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 20;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.zone-a-only { left: 20%; }   /* Center of the left moon */
+.zone-b-only { left: 80%; }   /* Center of the right moon */
+.zone-intersect { left: 50%; } /* Dead center */
+
+.zone-outside { 
+    top: 88%; 
+    left: 90%; 
+    width: auto;
+}
+
+/* INPUT STYLING */
+.venn-zone input {
+    width: 75px;
+    padding: 8px 4px;
+    text-align: center;
+    font-weight: bold;
+    font-size: 1.1em;
+    border: 2px solid #555;
+    border-radius: 4px;
+    background-color: #fff;
+    pointer-events: auto; /* Ensure clickable */
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+/* ACCESSIBILITY & VALIDATION COLORS */
+.venn-zone input.input-correct {
+    border: 3px solid #006400 !important; /* Dark Green */
+    background-color: #e8f5e9 !important;
+}
+
+.venn-zone input.input-incorrect {
+    border: 3px solid #8b0000 !important; /* Dark Red */
+    background-color: #fbe9e7 !important;
+}
+
+/* Static Text Values (when answer is given) */
+.venn-value {
+    font-size: 1.3em;
+    font-weight: bold;
+    color: #333;
+    background-color: rgba(255,255,255,0.95);
+    padding: 4px 8px;
+    border-radius: 4px;
+    border: 1px solid #ddd;
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 500px) {
+    .venn-wrapper { height: 250px; }
+    .venn-circle { height: 180px; width: 55%; } /* Slightly larger circles on mobile */
+    .venn-left { left: 0; }
+    .venn-right { right: 0; }
+    
+    .zone-a-only { left: 18%; }
+    .zone-b-only { left: 82%; }
+    
+    .venn-zone input { 
+        width: 50px; 
+        font-size: 0.9em; 
+        padding: 4px;
+    }
+}
+
+/* --- TREE DIAGRAM STYLES (Standardized Layout) --- */
+
+.tree-wrapper {
+    position: relative;
+    width: 100%;
+    max-width: 700px;
+    height: 400px; 
+    margin: 30px auto;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+.tree-lines {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1; 
+    pointer-events: none;
+}
+
+/* Inputs: Centered on their coordinate */
+.tree-input-zone {
+    position: absolute;
+    transform: translate(-50%, -50%); 
+    z-index: 20;
+    background-color: #fff; /* Masks the line behind it */
+    padding: 3px;
+}
+
+.tree-input-zone input {
+    width: 55px;
+    padding: 4px;
+    text-align: center;
+    font-weight: bold;
+    border: 2px solid #555;
+    border-radius: 4px;
+}
+
+/* Labels: Left-aligned at the node */
+.tree-label {
+    position: absolute;
+    transform: translateY(-50%); /* Vertically center on the node */
+    font-weight: bold;
+    color: #2c3e50;
+    font-size: 1em;
+    background-color: rgba(255, 255, 255, 0.9); /* Hides lines behind text */
+    padding: 2px 6px;
+    white-space: nowrap;
+    z-index: 10; /* Sit above lines */
+}
+
+/* --- COORDINATES --- */
+
+/* LEVEL 1 (Event A) */
+/* SVG Line goes from (0,50) to (40,25) */
+
+/* Top Probability (Midpoint of line) */
+.pos-a-top { left: 20%; top: 37.5%; }
+/* Top Label (End of line) */
+.label-a-top { left: 40%; top: 25%; }
+
+/* Bottom Probability (Midpoint of line) */
+.pos-a-bot { left: 20%; top: 62.5%; }
+/* Bottom Label (End of line) */
+.label-a-bot { left: 40%; top: 75%; }
+
+
+/* LEVEL 2 (Event B) */
+/* SVG Lines start at 40 and end at 80 */
+
+/* Top-Top Branch */
+.pos-b-1 { left: 60%; top: 18.75%; } /* Midpoint */
+.label-b-1 { left: 80%; top: 12.5%; } /* End */
+
+/* Top-Bottom Branch */
+.pos-b-2 { left: 60%; top: 31.25%; } /* Midpoint */
+.label-b-2 { left: 80%; top: 37.5%; } /* End */
+
+/* Bottom-Top Branch */
+.pos-b-3 { left: 60%; top: 68.75%; } /* Midpoint */
+.label-b-3 { left: 80%; top: 62.5%; } /* End */
+
+/* Bottom-Bottom Branch */
+.pos-b-4 { left: 60%; top: 81.25%; } /* Midpoint */
+.label-b-4 { left: 80%; top: 87.5%; } /* End */
+
+
+/* --- VALIDATION & DISPLAY --- */
+.tree-input-zone input.input-correct {
+    border: 3px solid #006400 !important;
+    background-color: #e8f5e9 !important;
+}
+
+.tree-input-zone input.input-incorrect {
+    border: 3px solid #8b0000 !important;
+    background-color: #fbe9e7 !important;
+}
+
+.tree-value {
+    font-weight: bold;
+    font-size: 1.1em;
+    padding: 4px 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+@media (max-width: 600px) {
+    .tree-wrapper { height: 350px; }
+    .tree-label { font-size: 0.85em; }
+    .tree-input-zone input { width: 40px; font-size: 0.9em; }
+    
+    /* Pull Level 2 labels in slightly to avoid cut-off */
+    .label-b-1, .label-b-2, .label-b-3, .label-b-4 { left: 78%; }
+}
+
+/* --- T-Distribution Table Specific Styles --- */
+/* These styles ensure the t-table integrates with your site's design */
+.t-table {
+    margin: 0;
+    box-shadow: none;
+}
+
+.t-table th, 
+.t-table td {
+    text-align: center;
+    vertical-align: middle;
+}
+
+.t-table thead th {
+    background-color: #e3f2fd;
+    color: #2c3e50;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+}
+
+.t-table td:first-child,
+.t-table th:first-child {
+    font-weight: bold;
+    background-color: #f0f8ff;
+    position: sticky;
+    left: 0;
+    z-index: 9;
+    color: #2c3e50;
+}
+
+.t-table thead th:first-child {
+    z-index: 11;
+    background-color: #d4f5ff;
+}
+
+.highlight-row, .highlight-col {
+    background-color: #e3f2fd !important;
+}
+
+.highlight-row.highlight-col {
+    background-color: #bbdefb !important;
+}
+
+.table-responsive {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    margin-top: 25px;
+    margin-bottom: 25px;
+    background-color: #ffffff;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    border-radius: 8px;
+    border: 1px solid #e0e0e0;
+}
+
+.sr-only, .visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    border: 0;
+}
+
+/* --- ADDITIONAL UNIQUE STYLES FROM FILE 2 (Integrated to match theme) --- */
+
+/* Quiz Specific Styles */
+.quiz-container {
+    background: #fff;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+.quiz-status {
+    display: flex;
+    justify-content: space-between;
+    background: #e3f2fd; /* Matched to File 1 Blue */
+    padding: 1rem;
+    border-radius: 4px;
+    margin-bottom: 1.5rem;
+    font-weight: bold;
+    color: #002a4a; /* Matched to File 1 Header Blue */
+}
+
+.question-box {
+    font-size: 1.3rem;
+    margin-bottom: 1.5rem;
+}
+
+.answer-section {
+    margin-bottom: 1.5rem;
+}
+
+#user-answer, .user-test-input, .user-revision-input {
+    padding: 0.8rem;
+    font-size: 1.1rem;
+    border: 2px solid #34495e; /* Matched to File 1 Button Slate */
+    border-radius: 4px;
+    width: 150px;
+    display: block;
+    margin: 0.5rem 0 1rem 0;
+}
+
+.button-group {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.feedback-box, .solution-feedback {
+    margin: 1rem 0;
+    font-weight: bold;
+    font-size: 1.2rem;
+}
+
+.correct { color: #2e7d32; }
+.incorrect { color: #d32f2f; }
+
+/* Test Question Blocks */
+.test-question-item, .revision-question-item {
+    background-color: #ffffff;
+    border: 1px solid #ccc;
+    border-left: 8px solid #34495e; /* Matched to File 1 Blue */
+    padding: 1.5rem;
+    margin-bottom: 2rem;
+    border-radius: 4px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+    margin-inline-start: 0;
+    margin-inline-end: 0;
+}
+
+/* Correct/Incorrect Borders for Inputs */
+.correct-border {
+    border: 3px solid #2e7d32 !important;
+    background-color: #e8f5e9 !important;
+}
+
+.incorrect-border {
+    border: 3px solid #d32f2f !important;
+    background-color: #ffebee !important;
+}
+
+/* Solution Display */
+.solution-text, .revision-solution-text, .solution-box {
+    margin-top: 1.5rem;
+    padding: 1rem;
+    background-color: #fff8e1; /* Matched to File 1 Solution Yellow */
+    border-radius: 4px;
+    color: #333;
+    line-height: 1.6;
+    border-left: 5px solid #fbc02d;
+}
+
+/* Revision Header / Layout */
+.revision-container {
+    max-width: 960px;
+    margin: 30px auto;
+    padding: 2rem;
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.revision-header {
+    text-align: center;
+    margin-bottom: 2rem;
+    padding-bottom: 1.5rem;
+    border-bottom: 1px solid #eee;
+}
+
+.revision-question-text, .question-text {
+    font-size: 1.2rem;
+    line-height: 1.6;
+    margin-bottom: 1rem;
+    color: #333;
+    font-weight: normal; 
+}
+
+/* Test Results Summary */
+.final-results-box {
+    margin-top: 2rem;
+    padding: 2rem;
+    background-color: #34495e; /* Matched to File 1 Slate */
+    color: white;
+    border-radius: 8px;
+    text-align: center;
+}
+
+.test-status-bar {
+    display: flex;
+    justify-content: space-between;
+    background-color: #e3f2fd;
+    color: #002a4a;
+    padding: 1rem;
+    margin-bottom: 2rem;
+    border-radius: 4px;
+    font-weight: bold;
+    border: 1px solid #34495e;
+}
