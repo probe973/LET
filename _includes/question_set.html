@@ -84,6 +84,19 @@
                   <button class="btn btn-primary solution-toggle-button" id="btn-sol-{{ q_id }}" aria-controls="solution-{{ q_id }}" aria-expanded="false" onclick="toggleSolution('solution-{{ q_id }}', this)">Show Solution</button>
                 </div>
 
+<!-- Algebra -->
+                {% elsif q.type == "algebra" %}
+  <div class="algebra-answer-container">
+    <!-- The MathLive box -->
+    <math-field id="input-{{ q_id }}" style="display: block; width: 100%; max-width: 400px; min-height: 45px; padding: 8px; border: 1px solid #ccc; border-radius: 4px; background: white;"></math-field>
+    
+    <div style="margin-top: 15px;">
+      
+      <button class="btn" onclick="checkAlgebraicAnswer('{{ q_id }}', '{{ q.check_val | escape }}', '{{ q.goal }}')">Check Answer</button>
+      <button class="btn btn-primary solution-toggle-button" id="btn-sol-{{ q_id }}" aria-controls="solution-{{ q_id }}" aria-expanded="false" onclick="toggleSolution('solution-{{ q_id }}', this)">Show Solution</button>
+    </div>
+  </div>
+
               {% else %}
                 <div class="numerical-answer-container">
                   {% assign clean_single_ans = q.answer | replace: '£', '' | replace: ',', '' %}

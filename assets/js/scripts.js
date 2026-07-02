@@ -4,6 +4,9 @@
  * ACCESSIBLE SOLUTION TOGGLE
  * Updated to be compatible with all question types.
  */
+
+const ce = new ComputeEngine.ComputeEngine();
+
 function toggleSolution(solutionId, btnElement) {
     var solutionDiv = document.getElementById(solutionId);
     
@@ -334,5 +337,456 @@ function checkConfidenceInterval(id, correctLower, correctUpper, tolerance) {
             <p><strong>Not quite.</strong></p>
             <p>Your interval: (${userLower}, ${userUpper})</p>
         `;
+    }
+};
+
+//const ce = new ComputeEngine.ComputeEngine();
+
+function checkAlgebraicAnswer(id, targetValue, goal) {
+    const feedbackElement = document.getElementById(`feedback-${id}`);
+    const inputElement = document.getElementById(`input-${id}`);
+    const userAnswer = inputElement.getValue('ascii-math');
+    if (!inputElement || !feedbackElement) return;
+
+    // 1. Get student input and clean it (remove $ and "x =")
+    //let studentRaw = inputElement.value.trim();
+    let studentRaw = userAnswer.trim();
+    let studentClean = studentRaw.replace(/\$/g, '');
+    if (studentClean.includes('=')) {
+        studentClean = studentClean.split('=').pop().trim();
+    }
+
+    if (!studentClean) {
+        feedbackElement.textContent = "Please enter an answer.";
+        feedbackElement.className = "feedback-incorrect";
+        return;
+    }
+
+    try {
+        // 1. Standardize both expressions to their simplest mathematical form
+        //const userExpr = ce.parse(studentClean).canonical;
+        //const targetExpr = ce.parse(targetValue).canonical;
+        const userParsed = ce.parse(studentClean);
+        const targetParsed = ce.parse(targetValue);
+
+        const userExpr = userParsed.canonical;
+        const targetExpr = targetParsed.canonical;
+
+
+
+        // 2. THE REARRANGING FIX: Check if the user input is actually valid math
+        // If the student types rubbish, userExpr.isValid will be false.
+        if (!userExpr.isValid || studentClean === "") {
+            feedbackElement.textContent = "Incorrect. Try again!";
+            feedbackElement.className = "feedback-incorrect";
+            return;
+        }
+
+        // 3. THE MAIN CHECK: Are they mathematically equal?
+        //const isMathCorrect = userExpr.isEqual(targetExpr);
+        //const isMathCorrect = ce.parse(studentClean).simplify().isEqual(ce.parse(targetValue).simplify());
+        const isMathCorrect = userParsed.isEqual(targetParsed);
+
+        if (!isMathCorrect) {
+            feedbackElement.textContent = "Incorrect. Try again!";
+            feedbackElement.className = "feedback-incorrect";
+            return;
+        }
+
+        // 4. THE INDICES/SIMPLIFY FIX: Compare structural length
+        const userJSON = JSON.stringify(userExpr.json);
+        const targetJSON = JSON.stringify(targetExpr.json);
+
+        if ((goal === "simplify" || goal === "expand") && userJSON.length > targetJSON.length) {
+            feedbackElement.textContent = "Correct value, but please simplify further.";
+            feedbackElement.className = "feedback-incorrect";
+            return;
+        }
+
+        // 5. THE FACTORISE CHECK
+        if (goal === "factorise" && !studentRaw.includes('(')) {
+            feedbackElement.textContent = "Correct value, but please factorise fully.";
+            feedbackElement.className = "feedback-incorrect";
+            return;
+        }
+
+        feedbackElement.textContent = "Correct!";
+        feedbackElement.className = "feedback-correct";
+
+    } catch (err) {
+        // Backup: Literal match if the math engine hits an error
+        if (studentClean.replace(/\s/g, '') === targetValue.replace(/\s/g, '')) {
+            feedbackElement.textContent = "Correct!";
+            feedbackElement.className = "feedback-correct";
+        } else {
+            feedbackElement.textContent = "Incorrect formatting. Try again.";
+            feedbackElement.className = "feedback-incorrect";
+        }
+    }
+};
+
+
+
+
+
+function checkExpandSimplify(id, targetValue) {
+    const mfield = document.getElementById(`input-${id}`);
+    const feedback = document.getElementById(`feedback-${id}`);
+    if (!mfield || !feedback) return;
+
+    const studentRaw = mfield.value.trim();
+    if (!studentRaw) {
+        feedback.textContent = "Please enter an answer.";
+        feedback.style.color = "red";
+        return;
+    }
+
+    try {
+        // Use the same logic that worked in your YML version
+        const userParsed = ce.parse(studentRaw);
+        const targetParsed = ce.parse(targetValue);
+
+        // 1. Check Mathematical Equality
+        if (!userParsed.isEqual(targetParsed)) {
+            feedback.textContent = "Incorrect. Try again!";
+            feedback.style.color = "red";
+            return;
+        }
+
+        // 2. Check for Brackets (Expansion check)
+        if (studentRaw.includes('(') || studentRaw.includes('\\left')) {
+            feedback.textContent = "Correct value, but please expand the brackets.";
+            feedback.style.color = "orange";
+            return;
+        }
+
+        // 3. Structural/Simplification Check (The JSON Fix)
+        // This compares the raw length of the math structure.
+        // It's the only way to catch x^2 + x + 2x + 2 vs x^2 + 3x + 2.
+        const userJSON = JSON.stringify(userParsed.json).length;
+        const targetJSON = JSON.stringify(targetParsed.json).length;
+
+        if (userJSON > targetJSON) {
+            feedback.textContent = "Correct value, but please simplify further.";
+            feedback.style.color = "orange";
+            return;
+        }
+
+        feedback.textContent = "Correct!";
+        feedback.style.color = "green";
+
+    } catch (err) {
+        console.error("Math Engine Error:", err);
+        // String-based fallback
+        if (studentRaw.replace(/\s/g, '') === targetValue.replace(/\s/g, '')) {
+            feedback.textContent = "Correct!";
+            feedback.style.color = "green";
+        } else {
+            feedback.textContent = "Error processing math. Try typing clearly.";
+            feedback.style.color = "red";
+        }
+    }
+};
+
+
+function checkSolving(id, targetValue) {
+    const mfield = document.getElementById(`input-${id}`);
+    const feedback = document.getElementById(`feedback-${id}`);
+    if (!mfield || !feedback) return;
+
+    const studentRaw = mfield.value.trim();
+    if (!studentRaw) {
+        feedback.textContent = "Please enter an answer.";
+        feedback.style.color = "red";
+        return;
+    }
+
+    try {
+        // 1. Helper to isolate the math value (removes "x =" if present)
+        function getMathValue(latex) {
+            const clean = latex.replace(/\$/g, '').trim();
+            // Split at '=' and take the last part
+            if (clean.includes('=')) {
+                return clean.split('=').pop().trim();
+            }
+            return clean;
+        }
+
+        const userVal = getMathValue(studentRaw);
+        const targetVal = getMathValue(targetValue);
+
+        const userExpr = ce.parse(userVal);
+        const targetExpr = ce.parse(targetVal);
+
+        // 2. Validity Check
+        if (!userExpr.isValid) {
+            feedback.textContent = "Incorrect formatting. Try again!";
+            feedback.style.color = "red";
+            return;
+        }
+
+        // 3. Mathematical Equality
+        if (userExpr.isEqual(targetExpr)) {
+            feedback.textContent = "Correct!";
+            feedback.style.color = "green";
+        } else {
+            feedback.textContent = "Incorrect. Try again!";
+            feedback.style.color = "red";
+        }
+
+    } catch (err) {
+        console.error("Math Engine Error:", err);
+        feedback.textContent = "Error processing math. Try typing clearly.";
+        feedback.style.color = "red";
+    }
+};
+
+
+function checkRearrange(id, targetValue) {
+    const mfield = document.getElementById(`input-${id}`);
+    const feedback = document.getElementById(`feedback-${id}`);
+    
+    if (!mfield || !feedback) return;
+
+    const studentRaw = mfield.value.trim();
+    
+    if (!studentRaw) {
+        feedback.textContent = "Please enter an answer.";
+        feedback.style.color = "red";
+        return;
+    }
+
+    try {
+        // 1. Isolate the math expression (removes "x =" or "L =" etc.)
+        function getExpression(latex) {
+            const clean = latex.replace(/\$/g, '').trim();
+            if (clean.includes('=')) {
+                return clean.split('=').pop().trim();
+            }
+            return clean;
+        }
+
+        const userExprStr = getExpression(studentRaw);
+        const targetExprStr = getExpression(targetValue);
+
+        // 2. Parse and compare mathematical equality
+        const userParsed = ce.parse(userExprStr);
+        const targetParsed = ce.parse(targetExprStr);
+
+        if (userParsed.isEqual(targetParsed)) {
+            feedback.textContent = "Correct!";
+            feedback.style.color = "green"; // Fixed variable name here
+        } else {
+            feedback.textContent = "Incorrect. Try again!";
+            feedback.style.color = "red";
+        }
+
+   } catch (err) {
+        console.error("Math Error:", err);
+        // Fallback: literal string match (ignoring spaces)
+        //if (studentRaw.replace(/\s/g, '') === targetValue.replace(/\s/g, '')) {
+          if (userExprStr.replace(/\s/g, '') === targetExprStr.replace(/\s/g, '')) {
+            feedback.textContent = "Correct!";
+            feedback.style.color = "green";
+        } else {
+            feedback.textContent = "Incorrect. Try again!";
+            feedback.style.color = "red";
+        }
+    }
+
+
+};
+
+function checkIndices(id, targetValue) {
+    const mfield = document.getElementById(`input-${id}`);
+    const feedback = document.getElementById(`feedback-${id}`);
+    if (!mfield || !feedback) return;
+
+    const studentRaw = mfield.value.trim();
+    if (!studentRaw) {
+        feedback.textContent = "Please enter an answer.";
+        feedback.style.color = "red";
+        return;
+    }
+
+    try {
+        const clean = (s) => s.replace(/[\$\s]/g, '').split('=').pop();
+        const userClean = clean(studentRaw);
+        const targetClean = clean(targetValue);
+
+        // 1. Parse both WITHOUT automatic simplification to see their true structure
+        const userExprRaw = ce.parse(userClean, {canonical: false});
+        const targetExprRaw = ce.parse(targetClean, {canonical: false});
+
+        // 2. Check Mathematical Equality (Value check)
+        if (!userExprRaw.isEqual(targetExprRaw)) {
+            feedback.textContent = "Incorrect. Try again!";
+            feedback.style.color = "red";
+            return;
+        }
+
+        // x^10 * x^5 has 5 parts (x, 10, *, x, 5)
+        // x^15 has 2 parts (x, 15)
+        // x^5 * y^10 and y^10 * x^5 both have 5 parts.
+        // y^5 / t^4 and y^5 * t^-4 both have 5 parts.
+        
+        function countParts(expr) {
+            // This counts how many items are in the underlying JSON structure
+            return JSON.stringify(expr.json).split(',').length;
+        }
+
+        const userPartCount = countParts(userExprRaw);
+        const targetPartCount = countParts(targetExprRaw);
+
+        if (userPartCount <= targetPartCount) {
+            feedback.textContent = "Correct!";
+            feedback.style.color = "green";
+        } else {
+            feedback.textContent = "Correct value, but please simplify further.";
+            feedback.style.color = "orange";
+        }
+
+    } catch (err) {
+        console.error("Math Error:", err);
+        if (studentRaw.replace(/[\$\s]/g, '') === targetValue.replace(/[\$\s]/g, '')) {
+            feedback.textContent = "Correct!";
+            feedback.style.color = "green";
+        } else {
+            feedback.textContent = "Error processing math.";
+            feedback.style.color = "red";
+        }
+    }
+};
+
+
+
+
+
+// --- 1. FUNCTION FOR FULLY FACTORISE ---
+function checkFactoriseOnly(id, targetValue) {
+    const mfield = document.getElementById(`input-${id}`);
+    const feedback = document.getElementById(`feedback-${id}`);
+    if (!mfield || !feedback) return;
+
+    const studentRaw = mfield.value ? mfield.value.trim() : "";
+    if (!studentRaw) {
+        feedback.textContent = "Please enter an answer.";
+        feedback.style.color = "red";
+        return;
+    }
+
+    try {
+        const clean = (s) => s.replace(/[\$\s]/g, '').split('=').pop();
+        const studentClean = clean(studentRaw);
+        const targetClean = clean(targetValue);
+
+        // Parse BOTH without simplification to ensure structural matching
+        const userExpr = ce.parse(studentClean, { canonical: false });
+        const targetExpr = ce.parse(targetClean, { canonical: false });
+
+        // 1. Math Value Check
+        if (!userExpr.isEqual(targetExpr)) {
+            feedback.textContent = "Incorrect. Try again!";
+            feedback.style.color = "red";
+            return;
+        }
+
+        // 2. Bracket Check
+        if (!studentRaw.includes('(') && !studentRaw.includes('\\left')) {
+            feedback.textContent = "Correct value, but please factorise the expression.";
+            feedback.style.color = "orange";
+            return;
+        }
+
+        // 3. Weight Check (Variables + Numbers + JSON Size)
+        function getStats(expr) {
+            const jsonStr = JSON.stringify(expr.json);
+            const varMatches = jsonStr.match(/"[a-z]"/g) || [];
+            const numMatches = jsonStr.match(/\d+/g) || [];
+            const numSum = numMatches.reduce((a, b) => a + Math.abs(parseInt(b)), 0);
+            return { vars: varMatches.length, sum: numSum, len: jsonStr.length };
+        }
+
+        const u = getStats(userExpr);
+        const t = getStats(targetExpr);
+
+        if (u.vars > t.vars || u.sum > t.sum || u.len > t.len) {
+            feedback.textContent = "Correct value, but please factorise fully.";
+            feedback.style.color = "orange";
+            return;
+        }
+
+        feedback.textContent = "Correct!";
+        feedback.style.color = "green";
+
+    } catch (err) {
+        if (studentRaw.replace(/[\$\s]/g, '') === targetValue.replace(/[\$\s]/g, '')) {
+            feedback.textContent = "Correct!";
+            feedback.style.color = "green";
+        } else {
+            feedback.textContent = "Incorrect formatting. Try again.";
+            feedback.style.color = "red";
+        }
+    }
+}
+
+// --- 2. FUNCTION FOR SIMPLIFY ---
+function checkSimplifyOnly(id, targetValue) {
+    const mfield = document.getElementById(`input-${id}`);
+    const feedback = document.getElementById(`feedback-${id}`);
+    if (!mfield || !feedback) return;
+
+    const studentRaw = mfield.value ? mfield.value.trim() : "";
+    if (!studentRaw) {
+        feedback.textContent = "Please enter an answer.";
+        feedback.style.color = "red";
+        return;
+    }
+
+    try {
+        const clean = (s) => s.replace(/[\$\s]/g, '').split('=').pop();
+        const studentClean = clean(studentRaw);
+        const targetClean = clean(targetValue);
+
+        // Parse BOTH without simplification
+        const userExpr = ce.parse(studentClean, { canonical: false });
+        const targetExpr = ce.parse(targetClean, { canonical: false });
+
+        if (!userExpr.isEqual(targetExpr)) {
+            feedback.textContent = "Incorrect. Try again!";
+            feedback.style.color = "red";
+            return;
+        }
+
+        // Use the same Weight Check to catch unsimplified fractions/expressions
+        function getStats(expr) {
+            const jsonStr = JSON.stringify(expr.json);
+            const varMatches = jsonStr.match(/"[a-z]"/g) || [];
+            const numMatches = jsonStr.match(/\d+/g) || [];
+            const numSum = numMatches.reduce((a, b) => a + Math.abs(parseInt(b)), 0);
+            return { vars: varMatches.length, sum: numSum, len: jsonStr.length };
+        }
+
+        const u = getStats(userExpr);
+        const t = getStats(targetExpr);
+
+        // If student's math is "heavier" than the target markdown answer, it's not simplified
+        if (u.vars > t.vars || u.sum > t.sum || u.len > t.len) {
+            feedback.textContent = "Correct value, but please simplify further.";
+            feedback.style.color = "orange";
+            return;
+        }
+
+        feedback.textContent = "Correct!";
+        feedback.style.color = "green";
+
+    } catch (err) {
+        if (studentRaw.replace(/[\$\s]/g, '') === targetValue.replace(/[\$\s]/g, '')) {
+            feedback.textContent = "Correct!";
+            feedback.style.color = "green";
+        } else {
+            feedback.textContent = "Incorrect. Try again!";
+            feedback.style.color = "red";
+        }
     }
 }

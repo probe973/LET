@@ -1,0 +1,33 @@
+<section class="question-container" id="question-{{ include.id }}" role="region" aria-labelledby="q-title-{{ include.id }}">
+    <h3 id="q-title-{{ include.id }}">Question {{ include.title }}</h3>
+    <div class="question-content" id="q-text-{{ include.id }}">
+        {{ include.question_text | markdownify }}
+    </div>
+
+    <div class="algebra-answer-container">
+        <!-- MathLive field with accessibility label -->
+        <math-field id="input-{{ include.id }}" 
+                    aria-label="Algebraic answer input"
+                    style="display: block; width: 100%; max-width: 400px; min-height: 45px; border: 1px solid #004a75; padding: 5px; margin-bottom: 15px; background: white;"></math-field>
+        
+        <div class="button-group">
+            <button class="btn" onclick="checkSolving('{{ include.id }}', '{{ include.correct_answer | escape }}')">Check Answer</button>
+            
+            {% if include.solution_text %}
+                <button class="btn btn-primary solution-toggle-button" 
+                        aria-controls="solution-{{ include.id }}" 
+                        aria-expanded="false" 
+                        onclick="toggleSolution('solution-{{ include.id }}', this)">Show Solution</button>
+            {% endif %}
+        </div>
+    </div>
+
+    <div id="feedback-{{ include.id }}" aria-live="polite" style="margin-top: 10px; font-weight: bold;"></div>
+    
+    {% if include.solution_text %}
+        <div id="solution-{{ include.id }}" class="solution-content" role="region" style="display:none; margin-top: 15px; border-left: 4px solid #004a75; padding-left: 15px;">
+            <h4>Solution:</h4>
+            {{ include.solution_text | markdownify }}
+        </div>
+    {% endif %}
+</section>
