@@ -1,0 +1,443 @@
+---
+layout: default
+title: Levels of Data
+---
+
+
+# Types and Levels of Data
+
+## Introduction
+
+Before analysing data, it is important to understand what kind of data has been collected.
+
+Different types of data contain different kinds of information. Some variables simply place observations into categories, while others measure quantities. Understanding these differences helps researchers describe data accurately, select appropriate visualisations, and choose suitable methods of analysis.
+
+This guide explains:
+
+- The main types of data.
+- The difference between discrete and continuous data.
+- The four levels of measurement.
+- How levels of measurement affect visualisation and statistical analysis.
+
+---
+
+## Types of Data
+
+Data are usually grouped into two broad categories:
+
+1. Qualitative data
+2. Quantitative data
+
+A useful question to ask is:
+
+> Does the variable describe a category, or does it measure a quantity?
+
+If it describes a category, it is usually qualitative.
+
+If it measures a quantity, it is usually quantitative.
+
+### Qualitative Data
+
+Qualitative data describes qualities, characteristics, or categories.
+
+The values act as labels rather than measurements.
+
+Examples include:
+
+- Eye colour
+- Device type
+- Department
+- Transport method
+
+For example, a variable recording device type may contain values such as:
+
+- Laptop
+- Tablet
+- Desktop
+
+These values identify different categories, but they do not represent numerical quantities.
+
+#### Key Characteristics
+
+- Describes attributes or categories.
+- Usually recorded using words or labels.
+- Used to classify observations into groups.
+- Arithmetic calculations are generally not meaningful.
+
+### Quantitative Data
+
+Quantitative data represents quantities that can be counted or measured.
+
+The values are numerical and can be compared mathematically.
+
+Examples include:
+
+- Height
+- Distance
+- Time
+- Number of completed tasks
+
+Unlike qualitative data, quantitative data expresses how much or how many of something exists.
+
+Quantitative data can be divided into two further categories: discrete data and continuous data.
+
+#### Discrete Data
+
+Discrete data consists of values that can be counted.
+
+Only specific values are possible, and there are no meaningful values between them.
+
+Examples include:
+
+- Number of students in a class.
+- Number of books borrowed.
+- Number of support requests received.
+- Number of completed activities.
+
+A person may complete 3 activities or 4 activities, but not 3.5 activities.
+
+The values increase in separate steps, which is why the data are described as *discrete*.
+
+
+#### Continuous Data
+
+Continuous data consists of values that are measured rather than counted.
+
+Any value within a range is theoretically possible, depending on the precision of the measuring instrument.
+
+Examples include:
+
+- Height
+- Weight
+- Temperature
+- Distance
+- Time
+
+For example, a person's height could be recorded as:
+
+- 170 cm
+- 170.4 cm
+- 170.43 cm
+
+The measurement can be recorded with increasing precision, so there is no fixed set of possible values.
+
+
+
+### Comparing Discrete and Continuous Data
+
+<table aria-label="Comparison of discrete and continuous data">
+<thead>
+<tr>
+<th scope="col">Feature</th>
+<th scope="col">Discrete Data</th>
+<th scope="col">Continuous Data</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Obtained by</td>
+<td>Counting</td>
+<td>Measuring</td>
+</tr>
+<tr>
+<td>Possible values</td>
+<td>Specific values only</td>
+<td>Any value within a range</td>
+</tr>
+<tr>
+<td>Decimal values</td>
+<td>Usually not meaningful</td>
+<td>Often meaningful</td>
+</tr>
+<tr>
+<td>Example</td>
+<td>Number of learners</td>
+<td>Height</td>
+</tr>
+</tbody>
+</table>
+
+---
+
+## Levels of Measurement
+
+The level of measurement describes how much information a variable provides.
+
+The four levels of measurement are:
+
+1. Nominal
+2. Ordinal
+3. Interval
+4. Ratio
+
+Each level adds an additional layer of information.
+
+> Categories → Order → Equal Intervals → True Zero
+
+### Nominal Data
+
+Nominal data places observations into categories.
+
+The categories are different from one another, but they cannot be placed into a meaningful order.
+
+Examples include:
+
+- Eye colour
+- Device type
+- Blood group
+- Department
+
+If a variable records device type, categories such as Laptop, Tablet and Desktop identify groups, but none is naturally higher or lower than another.
+
+#### Key Idea
+
+Nominal data tells us only that observations belong to different categories.
+
+### Ordinal Data
+
+Ordinal data places observations into categories that can be arranged in a meaningful order.
+
+The order is important, but the size of the difference between categories is unknown.
+
+Examples include:
+
+- Low, Medium, High
+- Beginner, Intermediate, Advanced
+- Poor, Fair, Good, Excellent
+
+For example, a confidence rating of High represents more confidence than Medium.
+
+However, we cannot assume the gap between Low and Medium is the same as the gap between Medium and High.
+
+#### Key Idea
+
+Ordinal data provides rank or order, but not precise measurement.
+
+### Interval Data
+
+Interval data consists of numerical values measured on a scale with equal intervals.
+
+The difference between values is meaningful and consistent throughout the scale.
+
+However, interval scales do not have a true zero.
+
+The most common example is temperature measured in degrees Celsius.
+
+The difference between:
+
+- 10°C and 20°C
+
+is the same as the difference between:
+
+- 20°C and 30°C
+
+However, 0°C does not mean that temperature does not exist. It is simply a point on the scale.
+
+Because there is no true zero, ratio statements are not meaningful.
+
+For example:
+
+> 20°C is not twice as hot as 10°C.
+
+#### Key Idea
+
+Interval data provides order and equal spacing between values, but no true zero.
+
+### Ratio Data
+
+Ratio data contains all the properties of interval data and also includes a true zero point.
+
+Zero represents the complete absence of the quantity being measured.
+
+Examples include:
+
+- Height
+- Weight
+- Distance
+- Time elapsed
+- Number of items
+
+If a distance travelled is 0 kilometres, no distance has been travelled.
+
+If a task takes 0 minutes, no time has elapsed.
+
+Because the scale contains a true zero, ratio comparisons are meaningful.
+
+For example:
+
+> A distance of 10 kilometres is twice a distance of 5 kilometres.
+
+#### Key Idea
+
+Ratio data provides order, equal intervals and a true zero.
+
+---
+
+## Comparing the Levels of Measurement
+
+<table aria-label="Comparison of levels of measurement">
+<thead>
+<tr>
+<th scope="col">Level</th>
+<th scope="col">Categories</th>
+<th scope="col">Ordered</th>
+<th scope="col">Equal Intervals</th>
+<th scope="col">True Zero</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Nominal</td>
+<td>Yes</td>
+<td>No</td>
+<td>No</td>
+<td>No</td>
+</tr>
+<tr>
+<td>Ordinal</td>
+<td>Yes</td>
+<td>Yes</td>
+<td>No</td>
+<td>No</td>
+</tr>
+<tr>
+<td>Interval</td>
+<td>No</td>
+<td>Yes</td>
+<td>Yes</td>
+<td>No</td>
+</tr>
+<tr>
+<td>Ratio</td>
+<td>No</td>
+<td>Yes</td>
+<td>Yes</td>
+<td>Yes</td>
+</tr>
+</tbody>
+</table>
+
+---
+
+## Worked Examples
+
+The following examples show how common variables can be classified.
+
+<table aria-label="Examples of data classification">
+<thead>
+<tr>
+<th scope="col">Variable</th>
+<th scope="col">Type of Data</th>
+<th scope="col">Level of Measurement</th>
+<th scope="col">Reason</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Device Type</td>
+<td>Qualitative</td>
+<td>Nominal</td>
+<td>Categories with no natural order.</td>
+</tr>
+<tr>
+<td>Confidence Rating</td>
+<td>Qualitative</td>
+<td>Ordinal</td>
+<td>Categories can be ranked.</td>
+</tr>
+<tr>
+<td>Temperature (°C)</td>
+<td>Quantitative, Continuous</td>
+<td>Interval</td>
+<td>Equal intervals but no true zero.</td>
+</tr>
+<tr>
+<td>Height (cm)</td>
+<td>Quantitative, Continuous</td>
+<td>Ratio</td>
+<td>Measured quantity with a true zero.</td>
+</tr>
+<tr>
+<td>Number of Tasks Completed</td>
+<td>Quantitative, Discrete</td>
+<td>Ratio</td>
+<td>Counted quantity with a true zero.</td>
+</tr>
+</tbody>
+</table>
+
+---
+
+## Choosing Appropriate Data Visualisations
+
+Selecting an appropriate chart type depends on the level of measurement.
+
+Using a chart that does not match the data can make results difficult to interpret and may misrepresent findings.
+
+<table aria-label="Data visualisation compatibility matrix for levels of measurement">
+<thead>
+<tr>
+<th scope="col">Chart Type</th>
+<th scope="col">Nominal Level</th>
+<th scope="col">Ordinal Level</th>
+<th scope="col">Interval / Ratio Level</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th scope="row">Pie Chart</th>
+<td>Yes</td>
+<td>Yes</td>
+<td>Yes</td>
+</tr>
+<tr>
+<th scope="row">Bar Chart</th>
+<td>Yes</td>
+<td>Yes</td>
+<td>Yes</td>
+</tr>
+<tr>
+<th scope="row">Histogram</th>
+<td>No</td>
+<td>No</td>
+<td>Yes</td>
+</tr>
+<tr>
+<th scope="row">Box Plot</th>
+<td>No</td>
+<td>Yes</td>
+<td>Yes</td>
+</tr>
+<tr>
+<th scope="row">Line Graph</th>
+<td>No</td>
+<td>Yes</td>
+<td>Yes</td>
+</tr>
+<tr>
+<th scope="row">Area Graph</th>
+<td>No</td>
+<td>Yes</td>
+<td>Yes</td>
+</tr>
+</tbody>
+</table>
+
+---
+
+
+## Summary
+
+Understanding data begins with two questions:
+
+1. Is the variable qualitative or quantitative?
+2. If it is quantitative, is it discrete or continuous?
+
+Once the type of data has been identified, the level of measurement can be determined:
+
+- Nominal: categories only.
+- Ordinal: categories with order.
+- Interval: equal intervals without a true zero.
+- Ratio: equal intervals with a true zero.
+
+Correctly identifying both the type of data and its level of measurement provides the foundation for effective data presentation, interpretation and analysis.

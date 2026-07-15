@@ -1,0 +1,134 @@
+---
+layout: default
+title: Variance and Standard Deviation
+---
+
+# Variance and Standard Deviation
+
+Variance and standard deviation are both measures of dispersion in data.  The larger the values are the more spread out the data are.
+
+## Population Variance
+
+**Variance** measures the average squared distance each point is from the mean.  As a formula:
+
+$$\sigma^2 = \frac{\sum{(x-\mu)^2}}{n}$$
+
+Where:
+
+- $\sigma^2$ is the variance
+- $\sum{(x-\mu)^2}$ is the sum of each point's distance from the mean ($\mu$) squared
+- $n$ is the population size
+
+## Sample Variance
+
+The formula for population variance uses the mean, $\mu$. Often you have collected a sample from a population and do not know the mean of the population.  You therefore estimate this population mean with the mean from the sample, which will be called $\bar{x}$ here.  Using an estimated mean tends to underestimate the true variance in the population, so you can adjust the formula:
+
+$$s^2 = \frac{\sum{(x-\bar{x})^2}}{n-1}$$
+
+Where:
+
+- $s^2$ is the variance
+- $\sum{(x-\bar{x})^2}$ is the sum of each point's distance from the sample mean ($\bar{x}$) squared
+- $n$ is the sample size
+
+### Example
+
+Below are a sample of 6 workers on how many kilometres (km) they live from work
+
+$$ x:\ 2,\ 3,\ 4,\ 4,\ 7,\ 10 $$
+
+#### Find the mean
+
+To find the sample mean, add the values together and divide by the number of values:
+
+$$\bar{x} = \frac{2+3+4+4+7+10}{6} = \frac{30}{6} = 5 \text{ km}$$ 
+
+#### Create a table to find distance and squared distance for each point from the mean
+
+<table aria-label="Calculation of the sample variance">
+<thead>
+<tr>
+<th scope="col">$x$</th>
+<th scope="col">$x-\bar{x}$</th>
+<th scope="col">$(x-\bar{x})^2$</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>$2$</td>
+<td>$2-5=-3$</td>
+<td>$(-3)^2=9$</td>
+</tr>
+<tr>
+<td>$3$</td>
+<td>$3-5=-2$</td>
+<td>$(-2)^2=4$</td>
+</tr>
+<tr>
+<td>$4$</td>
+<td>$4-5=-1$</td>
+<td>$(-1)^2=1$</td>
+</tr>
+<tr>
+<td>$4$</td>
+<td>$4-5=-1$</td>
+<td>$(-1)^2=1$</td>
+</tr>
+<tr>
+<td>$7$</td>
+<td>$7-5=2$</td>
+<td>$2^2=4$</td>
+</tr>
+<tr>
+<td>$10$</td>
+<td>$10-5=5$</td>
+<td>$5^2=25$</td>
+</tr>
+</tbody>
+<tfoot>
+<tr>
+<td>$\sum{}$</td>
+<td></td>
+<td>$44$</td>
+</tr>
+</tfoot>
+</table>
+
+#### Use sum of squares in the formula
+
+$$s^2 = \frac{44}{6-1} = \frac{44}{5}=8.8 \text{ km}^2$$
+
+---
+
+## Standard Deviation
+
+The variance uses units that are the square of the original units.  In the example above the units were kilometres, so the units of the variance were kilometres square.  This can be confusing.
+
+The **standard deviation** square roots the value of the variance, and hence the units become the same as the original data.  
+
+For the **population standard deviation**, when the true mean from the population is being used, you square root the population variance formula:
+
+$$\sigma = \sqrt{\frac{\sum{(x-\mu)^2}}{n}}$$
+
+Where:
+
+- $\sigma$ is the standard deviation
+- $\sum{(x-\mu)^2}$ is the sum of each points distance from the mean ($\mu$) squared
+- $n$ is the population size
+
+For the **sample standard deviation**, you square root the sample variance formula, this is more often used:
+
+$$s = \sqrt{\frac{\sum{(x-\bar{x})^2}}{n-1}}$$
+
+Where:
+
+- $s$ is the standard deviation
+- $\sum{(x-\bar{x})^2}$ is the sum of each points distance from the sample mean ($\bar{x}$) squared
+- $n$ is the sample size
+
+### Example
+
+In the example above, to find the **standard deviation**, you would first calculate the variance, which was $8.8$, then:
+
+$$s = \sqrt{8.8} = 2.97 \text{ km, to 3 significant figures}$$
+

@@ -3,7 +3,8 @@
 
 /* --- General Body and Typography Styles --- */
 body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    /*font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;*/
+    font-family: Arial, 'Inter Tight','Segoe UI', Roboto, Helvetica, Arial, sans-serif;
     line-height: 1.6;
     margin: 0;
     padding: 0;
@@ -23,7 +24,7 @@ h1, h2, h3, h4, h5, h6 {
 
 /* --- Header Styles --- */
 header {
-    background-color: #B1B1B2;
+    background-color: #b6da26; /*#B1B1B2; */
     color: #000000;            /* Black text (AAA Compliant) */
     padding: 1.5rem 0;
     text-align: center;
@@ -32,7 +33,7 @@ header {
 }
 
 header h1 {
-    color: #002a4a; /* Very Dark Blue (Almost Black) - softer than pure black */
+    color: #000000; /*#002a4a;  Very Dark Blue (Almost Black) - softer than pure black */
     margin: 0;
     font-size: 2.5em;
 }
@@ -49,8 +50,8 @@ footer {
     text-align: center;
     padding: 40px 25px;
     margin-top: 60px;
-    background-color: #B781CA;
-    color: #000000;  
+    background-color: #000000; /*#B781CA;*/
+    color: #ffffff;  
     font-size: 1em;
     box-shadow: 0 -4px 10px rgba(0,0,0,0.1);
 }

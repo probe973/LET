@@ -16,4 +16,13 @@ title: Home
         </div>
     </a>
 
+    <a href="{{ "/study/guides/" | relative_url }}" class="card">
+        <div class="card-content">
+            <div class="card-text">
+                <h3>Study Guides</h3>
+                <p>Guides to help with mathematical topics</p>
+            </div>
+        </div>
+    </a>
+
 </div>
