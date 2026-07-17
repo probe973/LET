@@ -122,7 +122,7 @@ main {
 }
 
 /* --- Colored Section Box Styles (AAA Compliant & Corrected) --- */
-.explanation, .instructions, .output {
+.explanation, .instructions, .output, .tasks {
     padding: 1.8em;
     border-radius: 7px;
     margin-bottom: 20px;
@@ -142,6 +142,11 @@ main {
 .output {
     background-color: #e8f5e9;
     color: #2c3e50; /* High contrast dark text */
+}
+
+.tasks {
+    background-color: #FFFACA;
+    color: #2c3e50;
 }
 
 /* Fix for large gap above titles in colored boxes */
@@ -913,3 +918,55 @@ input[type=number] {
     font-weight: bold;
     border: 1px solid #34495e;
 }
+
+/* collapsed boxes */
+.collapsible {
+  background-color: #000000;
+  color: white;
+  cursor: pointer;
+  padding: 18px;
+  width: 100%;
+  border: none;
+  text-align: left;
+  outline: none;
+  font-size: 15px;
+}
+
+.active, .collapsible:hover {
+  background-color: #555;
+}
+
+.collapsible:after {
+  content: '\002B';
+  color: white;
+  font-weight: bold;
+  float: right;
+  margin-left: 5px;
+}
+
+.active:after {
+  content: "\2212";
+}
+
+.content {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.2s ease-out;
+  background-color: #fbfbfb;
+}
+
+.content p {
+  padding: 18px;
+  margin: 0;
+}
+
+/* Erases the native orange ring and locks in your custom colored border */
+.collapsible:focus, 
+.collapsible:active,
+.collapsible:focus-visible {
+  outline: 0 !important;
+  outline: none !important;
+  box-shadow: 0 0 0 3px #b6da26 !important;
+}
+
+
