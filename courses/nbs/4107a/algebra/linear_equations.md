@@ -1,0 +1,44 @@
+---
+layout: nbs4107a
+title: Solving Linear Equations
+---
+
+{% include qguides/algebra/linear_equations.html %}
+
+<section class="revision-container" aria-labelledby="revision-heading">
+    <header class="revision-header">
+        <h2 id="revision-heading">Algebra Practice: Solving Equations</h2>
+        <p>Solve the equations below. You can enter just the number or the full equation (e.g., $x = 5$).</p>
+        <p>Give all answers as <strong>exact values</strong>, so using fractions <strong>in their lowest form</strong> where necessary (e.g. use $x = \frac{1}{3}$, not $x = 0.33$).</p>
+    </header>
+
+    <div id="revision-questions-container"></div>
+
+    <footer class="revision-footer">
+        <button type="button" onclick="window.location.reload()" class="btn">Generate New Set of Questions</button>
+    </footer>
+</section>
+
+<!-- Required Libraries -->
+<script src="https://unpkg.com/mathlive"></script>
+<script src="https://unpkg.com/@cortex-js/compute-engine"></script>
+
+<!-- Load the Solving generators and the Core Logic -->
+<script src="{{ '/assets/js/nbs4107a/algebra-solving-equations.js' | relative_url }}"></script>
+<script src="{{ '/assets/js/algebra-revision-core.js' | relative_url }}"></script>
+
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        if (window.initAlgebraRevisionTest && window.solvingGenerators) {
+            window.initAlgebraRevisionTest([
+                { generator: window.solvingGenerators.linear_one_step, count: 1 },
+                { generator: window.solvingGenerators.linear_two_step, count: 3 },
+                { generator: window.solvingGenerators.linear_frac_left_fracans, count: 2 },
+                { generator: window.solvingGenerators.linear_unknown_both_sides, count: 3 },
+                { generator: window.solvingGenerators.linear_brackets, count: 2 },
+                { generator: window.solvingGenerators.linear_brackets_both_sides, count: 1 }
+            ]);
+        }
+    });
+</script>
+

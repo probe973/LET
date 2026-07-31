@@ -1,95 +1,95 @@
 participant_id,study_hours_per_week,note_taking_frequency,preferred_study_method,used_study_support_services,final_exam_score,quiz_score_pre,quiz_score_post,assignment_score,class_participation_score,mood_day1,mood_day2,mood_day3,anxiety_score_pre,anxiety_score_post,stress_level,sleep_quality,attended_peer_study_group,submitted_all_assignments,satisfaction_q1,satisfaction_q2,satisfaction_q3,satisfaction_q4,satisfaction_q5,study_session_group,study_session_score
-P001,17.8,1,Summarizing,Yes,81,68,76,81,5,3,4,5,51,43,4,2,No,Yes,3,2,1,2,1,High,69
-P002,4.5,5,Practice Tests,No,72,59,66,62,6,4,5,4,47,43,2,3,Yes,No,5,5,5,5,5,Low,62
-P003,20.1,1,Flashcards,Yes,78,69,73,76,6,5,6,5,52,42,5,2,No,Yes,5,5,5,5,5,High,74
-P004,14.6,3,Flashcards,No,70,70,74,82,8,5,5,6,59,47,1,4,No,Yes,2,1,1,1,2,High,80
-P005,10.4,2,Flashcards,Yes,77,56,60,81,9,3,3,4,65,61,2,2,Yes,Yes,2,1,2,3,4,Low,59
+P001,17.8,1,Summarizing,Yes,81,68,76,81,5,3,4,5,51,43,4,2,No,Yes,3,2,1,2,5,High,69
+P002,4.5,5,Practice Tests,No,72,59,66,62,6,4,5,4,47,43,2,3,Yes,No,5,5,5,5,1,Low,62
+P003,20.1,1,Flashcards,Yes,78,69,73,76,6,5,6,5,52,42,5,2,No,Yes,5,5,5,5,1,High,74
+P004,14.6,3,Flashcards,No,70,70,74,82,8,5,5,6,59,47,1,4,No,Yes,2,1,1,1,4,High,80
+P005,10.4,2,Flashcards,Yes,77,56,60,81,9,3,3,4,65,61,2,2,Yes,Yes,2,1,2,3,2,Low,59
 P006,27.5,4,Flashcards,Yes,81,52,62,79,2,5,6,5,65,62,5,1,Yes,Yes,5,4,3,3,3,Low,63
-P007,12.6,3,Summarizing,No,82,67,71,75,9,2,1,1,54,48,2,3,No,Yes,1,1,1,2,1,High,72
-P008,11,1,Flashcards,No,62,61,67,75,10,3,3,3,48,45,4,2,Yes,Yes,5,5,5,5,5,Medium,65
-P009,16.7,4,Practice Tests,No,80,67,65,63,9,2,3,4,51,48,4,4,No,No,5,5,5,4,5,High,80
-P010,25.6,1,Practice Tests,Yes,81,55,62,69,10,1,2,2,55,52,4,4,No,No,2,3,4,4,5,High,59
-P011,18.6,1,Flashcards,Yes,78,53,64,77,10,2,2,1,55,45,1,2,No,Yes,2,2,3,2,1,High,76
-P012,11.3,2,Flashcards,Yes,75,67,69,70,7,1,1,2,63,56,4,4,No,No,5,5,5,5,4,High,72
-P013,11.5,4,Practice Tests,No,78,62,77,80,1,1,1,0,71,68,5,5,No,Yes,5,4,4,3,2,Low,68
-P014,11.7,4,Practice Tests,Yes,79,48,54,78,7,2,1,0,48,50,2,5,No,Yes,5,5,5,5,4,High,71
-P015,16.9,2,Summarizing,No,64,76,73,85,10,3,2,2,72,71,3,5,Yes,Yes,2,2,1,1,1,Medium,74
-P016,22.3,3,Practice Tests,Yes,80,55,58,82,5,5,6,7,62,55,5,1,Yes,Yes,5,5,4,5,4,Low,59
+P007,12.6,3,Summarizing,No,82,67,71,75,9,2,1,1,54,48,2,3,No,Yes,1,1,1,2,5,High,72
+P008,11,1,Flashcards,No,62,61,67,75,10,3,3,3,48,45,4,2,Yes,Yes,5,5,5,5,1,Medium,65
+P009,16.7,4,Practice Tests,No,80,67,65,63,9,2,3,4,51,48,4,4,No,No,5,5,5,4,1,High,80
+P010,25.6,1,Practice Tests,Yes,81,55,62,69,10,1,2,2,55,52,4,4,No,No,2,3,4,4,1,High,59
+P011,18.6,1,Flashcards,Yes,78,53,64,77,10,2,2,1,55,45,1,2,No,Yes,2,2,3,2,5,High,76
+P012,11.3,2,Flashcards,Yes,75,67,69,70,7,1,1,2,63,56,4,4,No,No,5,5,5,5,2,High,72
+P013,11.5,4,Practice Tests,No,78,62,77,80,1,1,1,0,71,68,5,5,No,Yes,5,4,4,3,4,Low,68
+P014,11.7,4,Practice Tests,Yes,79,48,54,78,7,2,1,0,48,50,2,5,No,Yes,5,5,5,5,2,High,71
+P015,16.9,2,Summarizing,No,64,76,73,85,10,3,2,2,72,71,3,5,Yes,Yes,2,2,1,1,5,Medium,74
+P016,22.3,3,Practice Tests,Yes,80,55,58,82,5,5,6,7,62,55,5,1,Yes,Yes,5,5,4,5,2,Low,59
 P017,25.6,1,Summarizing,No,78,86,95,77,6,5,5,6,49,50,5,2,No,Yes,5,4,4,3,3,Medium,64
 P018,30.6,5,Summarizing,Yes,84,60,71,80,10,1,0,0,65,59,4,1,No,Yes,4,3,3,4,3,Medium,71
-P019,18.2,1,Summarizing,No,69,68,75,82,7,1,1,0,67,65,1,4,No,Yes,1,2,2,1,2,Medium,60
+P019,18.2,1,Summarizing,No,69,68,75,82,7,1,1,0,67,65,1,4,No,Yes,1,2,2,1,4,Medium,60
 P020,18.4,1,Summarizing,Yes,71,78,88,71,5,3,4,3,45,40,2,1,Yes,Yes,3,3,3,3,3,Medium,63
-P021,19,3,Summarizing,Yes,78,77,78,73,7,4,3,2,67,62,1,4,No,Yes,1,2,2,2,1,Low,59
-P022,31.2,1,Flashcards,No,89,81,84,74,9,2,1,0,61,55,2,4,Yes,Yes,4,4,3,3,4,Low,68
+P021,19,3,Summarizing,Yes,78,77,78,73,7,4,3,2,67,62,1,4,No,Yes,1,2,2,2,5,Low,59
+P022,31.2,1,Flashcards,No,89,81,84,74,9,2,1,0,61,55,2,4,Yes,Yes,4,4,3,3,2,Low,68
 P023,9.9,2,Practice Tests,Yes,70,53,53,72,3,1,0,1,74,70,2,3,No,Yes,3,4,4,3,3,Medium,71
-P024,22.9,2,Summarizing,Yes,75,56,59,82,8,5,6,7,46,42,1,5,No,Yes,5,4,4,4,5,Medium,74
-P025,20.7,4,Practice Tests,No,73,67,74,71,2,3,3,3,46,44,5,4,Yes,Yes,4,4,3,2,1,Low,64
-P026,16.9,5,Practice Tests,No,71,72,77,84,7,2,1,1,30,23,2,3,Yes,Yes,5,5,5,5,5,Low,58
-P027,16.3,1,Summarizing,Yes,76,65,73,72,2,3,4,5,56,48,1,5,No,Yes,2,1,1,1,1,Low,63
-P028,15.8,1,Flashcards,Yes,87,52,54,78,4,2,2,3,54,52,2,4,No,Yes,4,3,2,3,2,High,72
+P024,22.9,2,Summarizing,Yes,75,56,59,82,8,5,6,7,46,42,1,5,No,Yes,5,4,4,4,1,Medium,74
+P025,20.7,4,Practice Tests,No,73,67,74,71,2,3,3,3,46,44,5,4,Yes,Yes,4,4,3,2,5,Low,64
+P026,16.9,5,Practice Tests,No,71,72,77,84,7,2,1,1,30,23,2,3,Yes,Yes,5,5,5,5,1,Low,58
+P027,16.3,1,Summarizing,Yes,76,65,73,72,2,3,4,5,56,48,1,5,No,Yes,2,1,1,1,5,Low,63
+P028,15.8,1,Flashcards,Yes,87,52,54,78,4,2,2,3,54,52,2,4,No,Yes,4,3,2,3,4,High,72
 P029,22.1,3,Summarizing,Yes,74,69,71,76,7,2,3,2,44,40,3,4,No,Yes,2,3,4,3,3,High,62
-P030,21.8,2,Flashcards,No,72,63,69,68,3,1,1,0,49,44,5,1,Yes,No,4,4,5,5,5,High,71
-P031,29,5,Practice Tests,Yes,76,63,67,75,2,3,4,4,37,31,4,1,Yes,Yes,4,4,5,5,5,Medium,71
-P032,19.3,4,Flashcards,Yes,74,47,56,77,10,3,3,4,62,56,2,5,Yes,Yes,2,1,2,3,2,High,74
-P033,24.2,2,Flashcards,Yes,70,71,74,75,7,5,4,4,45,41,3,4,Yes,Yes,3,3,3,3,4,Medium,69
-P034,32.2,4,Flashcards,Yes,80,66,70,66,1,5,5,6,81,75,4,2,Yes,No,1,1,2,2,2,Medium,68
-P035,23.5,3,Practice Tests,No,81,79,86,87,8,1,2,1,48,41,4,1,Yes,Yes,5,5,4,5,4,High,79
-P036,22.7,3,Practice Tests,Yes,83,64,68,76,3,1,2,2,42,37,2,5,No,Yes,4,3,3,2,1,Medium,63
-P037,7.7,1,Flashcards,No,74,70,71,69,2,4,4,4,46,39,1,4,No,No,5,5,5,5,5,High,69
-P038,11.8,5,Flashcards,Yes,78,72,73,86,3,5,4,5,36,28,2,4,Yes,Yes,2,2,1,1,1,High,68
+P030,21.8,2,Flashcards,No,72,63,69,68,3,1,1,0,49,44,5,1,Yes,No,4,4,5,5,1,High,71
+P031,29,5,Practice Tests,Yes,76,63,67,75,2,3,4,4,37,31,4,1,Yes,Yes,4,4,5,5,1,Medium,71
+P032,19.3,4,Flashcards,Yes,74,47,56,77,10,3,3,4,62,56,2,5,Yes,Yes,2,1,2,3,4,High,74
+P033,24.2,2,Flashcards,Yes,70,71,74,75,7,5,4,4,45,41,3,4,Yes,Yes,3,3,3,3,2,Medium,69
+P034,32.2,4,Flashcards,Yes,80,66,70,66,1,5,5,6,81,75,4,2,Yes,No,1,1,2,2,4,Medium,68
+P035,23.5,3,Practice Tests,No,81,79,86,87,8,1,2,1,48,41,4,1,Yes,Yes,5,5,4,5,2,High,79
+P036,22.7,3,Practice Tests,Yes,83,64,68,76,3,1,2,2,42,37,2,5,No,Yes,4,3,3,2,5,Medium,63
+P037,7.7,1,Flashcards,No,74,70,71,69,2,4,4,4,46,39,1,4,No,No,5,5,5,5,1,High,69
+P038,11.8,5,Flashcards,Yes,78,72,73,86,3,5,4,5,36,28,2,4,Yes,Yes,2,2,1,1,5,High,68
 P039,6.1,4,Summarizing,Yes,78,51,58,79,5,2,1,0,55,55,3,2,No,Yes,5,4,4,3,3,Low,58
-P040,40,2,Flashcards,Yes,84,86,87,67,8,3,3,3,46,38,4,5,No,No,2,1,1,1,1,High,69
-P041,13.6,3,Summarizing,Yes,76,62,71,68,10,1,1,0,61,55,2,4,Yes,No,5,5,5,5,5,Low,58
-P042,9.4,1,Flashcards,No,66,69,72,73,7,3,4,4,47,46,1,1,No,Yes,1,1,1,1,1,High,77
-P043,14.8,1,Summarizing,No,64,70,77,77,7,3,2,1,64,56,2,2,Yes,Yes,1,1,1,1,1,High,74
-P044,23,4,Practice Tests,No,73,58,62,79,7,4,4,5,58,54,5,5,Yes,Yes,1,2,2,2,1,Low,61
-P045,19.8,3,Flashcards,No,78,80,82,82,8,5,4,4,50,46,1,2,No,Yes,1,2,1,1,1,Low,50
-P046,13.1,5,Flashcards,Yes,81,67,73,79,1,1,1,1,66,62,3,1,Yes,Yes,1,1,1,1,1,High,69
-P047,11,3,Flashcards,No,71,63,71,84,4,3,3,2,60,54,4,5,Yes,Yes,1,1,1,2,2,Medium,66
-P048,19.5,4,Flashcards,Yes,80,66,70,76,6,1,0,-1,79,77,2,2,Yes,Yes,2,3,2,2,1,Low,51
-P049,16.7,4,Summarizing,No,71,71,76,70,9,2,2,2,46,38,1,3,Yes,No,4,4,4,5,5,Medium,68
+P040,40,2,Flashcards,Yes,84,86,87,67,8,3,3,3,46,38,4,5,No,No,2,1,1,1,5,High,69
+P041,13.6,3,Summarizing,Yes,76,62,71,68,10,1,1,0,61,55,2,4,Yes,No,5,5,5,5,1,Low,58
+P042,9.4,1,Flashcards,No,66,69,72,73,7,3,4,4,47,46,1,1,No,Yes,1,1,1,1,5,High,77
+P043,14.8,1,Summarizing,No,64,70,77,77,7,3,2,1,64,56,2,2,Yes,Yes,1,1,1,1,5,High,74
+P044,23,4,Practice Tests,No,73,58,62,79,7,4,4,5,58,54,5,5,Yes,Yes,1,2,2,2,5,Low,61
+P045,19.8,3,Flashcards,No,78,80,82,82,8,5,4,4,50,46,1,2,No,Yes,1,2,1,1,5,Low,50
+P046,13.1,5,Flashcards,Yes,81,67,73,79,1,1,1,1,66,62,3,1,Yes,Yes,1,1,1,1,5,High,69
+P047,11,3,Flashcards,No,71,63,71,84,4,3,3,2,60,54,4,5,Yes,Yes,1,1,1,2,4,Medium,66
+P048,19.5,4,Flashcards,Yes,80,66,70,76,6,1,0,-1,79,77,2,2,Yes,Yes,2,3,2,2,5,Low,51
+P049,16.7,4,Summarizing,No,71,71,76,70,9,2,2,2,46,38,1,3,Yes,No,4,4,4,5,1,Medium,68
 P050,12.2,3,Flashcards,Yes,84,65,73,75,2,4,4,5,51,46,5,1,Yes,Yes,5,4,4,3,3,Medium,75
-P051,31,4,Practice Tests,Yes,84,72,80,75,1,2,3,2,66,62,1,1,Yes,Yes,1,1,1,1,1,Medium,72
-P052,30,3,Practice Tests,Yes,74,52,56,57,10,1,1,0,35,27,5,1,Yes,No,2,2,1,1,2,Low,57
-P053,11.9,2,Flashcards,Yes,68,59,63,71,2,1,1,0,63,59,3,3,Yes,Yes,2,1,1,1,1,Medium,61
-P054,30.5,3,Practice Tests,Yes,76,48,53,77,7,5,5,5,54,47,4,3,No,Yes,2,2,1,1,2,Low,55
-P055,18.2,3,Flashcards,Yes,73,81,85,72,3,3,4,4,41,33,3,4,No,Yes,4,4,5,5,5,Medium,72
-P056,31.8,4,Flashcards,No,78,81,87,70,10,3,2,2,36,35,2,2,No,Yes,5,5,5,5,5,High,75
-P057,27.1,4,Practice Tests,Yes,75,70,71,81,2,2,3,3,43,35,1,4,Yes,Yes,4,5,4,5,5,High,72
-P058,22.5,1,Flashcards,Yes,69,57,63,69,7,4,5,6,27,27,5,2,Yes,No,3,4,4,3,4,Low,62
+P051,31,4,Practice Tests,Yes,84,72,80,75,1,2,3,2,66,62,1,1,Yes,Yes,1,1,1,1,5,Medium,72
+P052,30,3,Practice Tests,Yes,74,52,56,57,10,1,1,0,35,27,5,1,Yes,No,2,2,1,1,4,Low,57
+P053,11.9,2,Flashcards,Yes,68,59,63,71,2,1,1,0,63,59,3,3,Yes,Yes,2,1,1,1,5,Medium,61
+P054,30.5,3,Practice Tests,Yes,76,48,53,77,7,5,5,5,54,47,4,3,No,Yes,2,2,1,1,4,Low,55
+P055,18.2,3,Flashcards,Yes,73,81,85,72,3,3,4,4,41,33,3,4,No,Yes,4,4,5,5,1,Medium,72
+P056,31.8,4,Flashcards,No,78,81,87,70,10,3,2,2,36,35,2,2,No,Yes,5,5,5,5,1,High,75
+P057,27.1,4,Practice Tests,Yes,75,70,71,81,2,2,3,3,43,35,1,4,Yes,Yes,4,5,4,5,1,High,72
+P058,22.5,1,Flashcards,Yes,69,57,63,69,7,4,5,6,27,27,5,2,Yes,No,3,4,4,3,2,Low,62
 P059,17.5,1,Practice Tests,No,68,84,87,80,2,3,2,3,45,37,5,3,No,Yes,2,3,4,3,3,High,77
 P060,19.4,2,Summarizing,No,66,60,68,66,3,5,6,6,56,45,1,3,No,No,3,3,2,2,3,High,68
-P061,22.6,1,Flashcards,Yes,86,63,66,94,7,2,1,2,45,38,1,4,No,Yes,1,1,1,1,2,Medium,68
-P062,34.5,3,Summarizing,Yes,79,66,69,73,4,2,3,2,64,65,2,5,Yes,Yes,1,2,3,3,4,Low,55
-P063,20.1,4,Practice Tests,No,76,69,75,73,1,5,4,3,67,58,3,4,No,Yes,4,3,3,3,2,Medium,67
-P064,13.4,1,Summarizing,Yes,79,70,75,83,5,4,4,3,63,51,5,2,No,Yes,5,5,5,5,5,Medium,73
-P065,24.6,1,Summarizing,No,79,70,82,72,9,5,6,6,52,48,2,4,Yes,Yes,3,2,2,3,2,Medium,75
-P066,33.8,2,Practice Tests,No,77,64,64,85,8,4,5,4,27,22,3,1,No,Yes,5,4,4,5,5,Medium,75
-P067,14.2,2,Summarizing,Yes,77,70,76,78,9,5,6,7,43,42,2,2,Yes,Yes,4,4,5,5,5,Medium,66
-P068,12.8,3,Summarizing,Yes,70,63,72,74,10,5,6,6,49,43,5,2,Yes,Yes,1,1,2,2,2,Medium,68
-P069,15.6,4,Practice Tests,No,68,70,73,73,9,1,1,2,41,32,1,5,Yes,Yes,5,4,5,5,5,Medium,72
-P070,12.6,2,Summarizing,No,71,69,71,83,7,2,3,2,49,42,1,3,No,Yes,5,4,3,4,5,Low,53
-P071,17.6,1,Practice Tests,No,60,71,73,77,4,5,5,4,66,52,3,2,No,Yes,1,2,3,3,2,High,70
-P072,26.4,4,Summarizing,No,77,70,70,78,5,5,5,4,34,28,4,3,Yes,Yes,3,4,4,3,4,Medium,75
-P073,13.5,4,Practice Tests,No,63,61,71,79,1,3,3,3,68,68,3,4,No,Yes,1,1,2,1,1,Medium,68
-P074,31,1,Practice Tests,No,75,69,73,76,1,2,2,3,59,53,4,1,No,Yes,5,5,5,5,5,Medium,69
+P061,22.6,1,Flashcards,Yes,86,63,66,94,7,2,1,2,45,38,1,4,No,Yes,1,1,1,1,4,Medium,68
+P062,34.5,3,Summarizing,Yes,79,66,69,73,4,2,3,2,64,65,2,5,Yes,Yes,1,2,3,3,2,Low,55
+P063,20.1,4,Practice Tests,No,76,69,75,73,1,5,4,3,67,58,3,4,No,Yes,4,3,3,3,4,Medium,67
+P064,13.4,1,Summarizing,Yes,79,70,75,83,5,4,4,3,63,51,5,2,No,Yes,5,5,5,5,1,Medium,73
+P065,24.6,1,Summarizing,No,79,70,82,72,9,5,6,6,52,48,2,4,Yes,Yes,3,2,2,3,4,Medium,75
+P066,33.8,2,Practice Tests,No,77,64,64,85,8,4,5,4,27,22,3,1,No,Yes,5,4,4,5,1,Medium,75
+P067,14.2,2,Summarizing,Yes,77,70,76,78,9,5,6,7,43,42,2,2,Yes,Yes,4,4,5,5,1,Medium,66
+P068,12.8,3,Summarizing,Yes,70,63,72,74,10,5,6,6,49,43,5,2,Yes,Yes,1,1,2,2,4,Medium,68
+P069,15.6,4,Practice Tests,No,68,70,73,73,9,1,1,2,41,32,1,5,Yes,Yes,5,4,5,5,1,Medium,72
+P070,12.6,2,Summarizing,No,71,69,71,83,7,2,3,2,49,42,1,3,No,Yes,5,4,3,4,1,Low,53
+P071,17.6,1,Practice Tests,No,60,71,73,77,4,5,5,4,66,52,3,2,No,Yes,1,2,3,3,4,High,70
+P072,26.4,4,Summarizing,No,77,70,70,78,5,5,5,4,34,28,4,3,Yes,Yes,3,4,4,3,2,Medium,75
+P073,13.5,4,Practice Tests,No,63,61,71,79,1,3,3,3,68,68,3,4,No,Yes,1,1,2,1,5,Medium,68
+P074,31,1,Practice Tests,No,75,69,73,76,1,2,2,3,59,53,4,1,No,Yes,5,5,5,5,1,Medium,69
 P075,15.1,2,Summarizing,No,70,70,74,79,3,3,2,2,53,55,2,5,No,Yes,3,4,3,2,3,Medium,64
-P076,22,1,Summarizing,No,74,55,53,74,8,2,1,1,43,39,2,3,No,Yes,3,4,4,3,2,Medium,64
-P077,12.9,4,Summarizing,No,69,63,64,75,2,3,4,3,41,31,5,2,Yes,Yes,1,2,2,3,2,Medium,74
-P078,22,5,Flashcards,No,74,70,79,67,4,5,4,4,34,28,4,3,No,No,5,4,4,4,4,High,70
+P076,22,1,Summarizing,No,74,55,53,74,8,2,1,1,43,39,2,3,No,Yes,3,4,4,3,4,Medium,64
+P077,12.9,4,Summarizing,No,69,63,64,75,2,3,4,3,41,31,5,2,Yes,Yes,1,2,2,3,4,Medium,74
+P078,22,5,Flashcards,No,74,70,79,67,4,5,4,4,34,28,4,3,No,No,5,4,4,4,2,High,70
 P079,17.5,5,Flashcards,No,69,79,85,77,2,5,4,4,67,62,5,2,Yes,Yes,4,4,3,3,3,High,65
-P080,13.9,3,Flashcards,No,69,72,80,63,5,1,2,1,65,55,1,3,Yes,No,5,5,5,5,5,Medium,77
-P081,24.6,1,Practice Tests,Yes,75,79,87,77,9,3,4,4,36,32,4,2,No,Yes,2,1,2,1,2,High,73
-P082,20.1,1,Summarizing,No,82,62,64,73,1,4,5,4,44,36,3,4,Yes,Yes,4,3,2,1,1,Low,67
-P083,11.2,3,Practice Tests,No,75,67,79,78,5,1,0,-1,54,49,1,2,No,Yes,3,2,2,2,1,Medium,70
-P084,24.5,3,Flashcards,No,73,71,82,68,9,3,2,1,47,41,1,2,No,No,4,5,5,5,5,Low,59
-P085,0,3,Summarizing,No,67,46,50,60,1,3,4,3,31,29,3,1,Yes,No,3,4,3,4,5,Low,60
-P086,16.7,4,Practice Tests,No,70,77,71,73,9,1,1,1,43,40,1,2,Yes,Yes,3,3,4,5,4,Medium,75
-P087,25.5,1,Summarizing,Yes,72,50,54,68,8,5,6,5,70,69,4,1,Yes,No,4,5,4,4,4,High,73
-P088,21.7,4,Practice Tests,Yes,75,73,79,63,4,3,3,2,44,39,5,5,Yes,No,3,4,4,5,5,Low,53
-P089,13,3,Summarizing,Yes,74,70,74,80,10,5,5,5,48,42,1,1,No,Yes,3,2,3,4,4,Medium,72
-P090,32.1,1,Flashcards,Yes,86,46,51,86,5,1,2,2,39,37,4,4,No,Yes,2,2,1,1,2,Low,57
-P091,21,4,Flashcards,Yes,73,47,49,69,5,5,6,7,56,45,2,1,No,No,5,5,5,5,5,Low,61
-P092,12.9,4,Summarizing,No,68,76,84,74,6,2,3,3,51,45,4,5,Yes,Yes,5,5,5,5,5,Low,54
-P093,17.4,3,Practice Tests,Yes,72,75,80,73,7,4,3,3,43,37,5,4,Yes,Yes,2,1,2,3,4,Low,62
+P080,13.9,3,Flashcards,No,69,72,80,63,5,1,2,1,65,55,1,3,Yes,No,5,5,5,5,1,Medium,77
+P081,24.6,1,Practice Tests,Yes,75,79,87,77,9,3,4,4,36,32,4,2,No,Yes,2,1,2,1,4,High,73
+P082,20.1,1,Summarizing,No,82,62,64,73,1,4,5,4,44,36,3,4,Yes,Yes,4,3,2,1,5,Low,67
+P083,11.2,3,Practice Tests,No,75,67,79,78,5,1,0,-1,54,49,1,2,No,Yes,3,2,2,2,5,Medium,70
+P084,24.5,3,Flashcards,No,73,71,82,68,9,3,2,1,47,41,1,2,No,No,4,5,5,5,1,Low,59
+P085,0,3,Summarizing,No,67,46,50,60,1,3,4,3,31,29,3,1,Yes,No,3,4,3,4,1,Low,60
+P086,16.7,4,Practice Tests,No,70,77,71,73,9,1,1,1,43,40,1,2,Yes,Yes,3,3,4,5,2,Medium,75
+P087,25.5,1,Summarizing,Yes,72,50,54,68,8,5,6,5,70,69,4,1,Yes,No,4,5,4,4,2,High,73
+P088,21.7,4,Practice Tests,Yes,75,73,79,63,4,3,3,2,44,39,5,5,Yes,No,3,4,4,5,1,Low,53
+P089,13,3,Summarizing,Yes,74,70,74,80,10,5,5,5,48,42,1,1,No,Yes,3,2,3,4,2,Medium,72
+P090,32.1,1,Flashcards,Yes,86,46,51,86,5,1,2,2,39,37,4,4,No,Yes,2,2,1,1,4,Low,57
+P091,21,4,Flashcards,Yes,73,47,49,69,5,5,6,7,56,45,2,1,No,No,5,5,5,5,1,Low,61
+P092,12.9,4,Summarizing,No,68,76,84,74,6,2,3,3,51,45,4,5,Yes,Yes,5,5,5,5,1,Low,54
+P093,17.4,3,Practice Tests,Yes,72,75,80,73,7,4,3,3,43,37,5,4,Yes,Yes,2,1,2,3,2,Low,62
 P094,17.4,1,Flashcards,No,68,58,66,70,8,3,3,4,37,30,4,3,Yes,Yes,4,3,4,3,3,High,72

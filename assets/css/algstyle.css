@@ -1,0 +1,195 @@
+/* Styling for the MathLive input box */
+.algebra-input-field {
+    display: block; 
+    width: 100%; 
+    max-width: 400px; 
+    min-height: 45px; 
+    border: 1px solid #004a75; 
+    padding: 5px; 
+    margin-bottom: 15px; 
+    background: white;
+}
+
+/* Styling for the solution block */
+.solution-box-style {
+    margin-top: 15px; 
+    border-left: 4px solid #004a75; 
+    padding-left: 15px;
+}
+
+/* The highlight box inside the solution for the final answer */
+.answer-highlight-box {
+    margin-top: 10px; 
+    padding: 8px; 
+    background: #f9f9f9; 
+    border-left: 4px solid #004a75;
+}
+
+/* Space between the feedback text and other elements */
+.feedback-region {
+    margin-top: 10px; 
+    font-weight: bold;
+}
+
+/* Reset fieldset defaults to match your question-container style */
+.revision-question-item {
+    border: none !important;
+    padding: 0 !important;
+    margin: 0 0 30px 0 !important;
+    display: block;
+}
+
+/* Ensure the legend doesn't take up space but remains readable to screen readers */
+.visually-hidden {
+    position: absolute !important;
+    width: 1px !important;
+    height: 1px !important;
+    padding: 0 !important;
+    margin: -1px !important;
+    overflow: hidden !important;
+    clip: rect(0, 0, 0, 0) !important;
+    white-space: nowrap !important;
+    border: 0 !important;
+}
+
+/* Maintain the blue border on the math-field inside the revision set */
+.algebra-input-field {
+    border: 1px solid #004a75;
+    background-color: white;
+    padding: 5px;
+    min-height: 45px;
+    display: block;
+    width: 100%;
+    max-width: 400px;
+    margin-bottom: 10px;
+}
+
+/* 1. Force the accessible container to look like your standard div */
+fieldset.revision-question-item {
+    display: block;
+    border: none !important;
+    margin: 0 0 30px 0 !important;
+    padding: 0 !important;
+    width: 100%;
+}
+
+/* 2. Style the header to match your static Questions */
+.revision-question-item h3 {
+    margin-top: 0;
+    margin-bottom: 10px;
+    font-size: 1.25rem; /* Adjust to match your theme's h3 */
+}
+
+/* 3. The MathLive box style */
+.algebra-input-field {
+    display: block;
+    width: 100%;
+    max-width: 400px;
+    min-height: 45px;
+    border: 1px solid #004a75;
+    padding: 5px;
+    margin-bottom: 10px;
+    background: white;
+    font-size: 1.2rem;
+}
+
+/* 4. Ensure the legend is completely invisible visually but present for screen readers */
+.visually-hidden {
+    position: absolute !important;
+    width: 1px !important;
+    height: 1px !important;
+    padding: 0 !important;
+    margin: -1px !important;
+    overflow: hidden !important;
+    clip: rect(0, 0, 0, 0) !important;
+    white-space: nowrap !important;
+    border: 0 !important;
+}
+
+/* Removes all browser-default borders and padding from the accessible container */
+fieldset.question-container {
+    all: unset; 
+    display: block;
+    margin-bottom: 30px;
+}
+
+/* Ensures the legend exists for screen readers but doesn't move items on the screen */
+.visually-hidden {
+    position: absolute !important;
+    width: 1px !important;
+    height: 1px !important;
+    padding: 0 !important;
+    margin: -1px !important;
+    overflow: hidden !important;
+    clip: rect(0, 0, 0, 0) !important;
+    white-space: nowrap !important;
+    border: 0 !important;
+}
+
+/* Styles the Question Label to match your site's H3 look */
+.question-container h3 {
+    margin-top: 0;
+    margin-bottom: 10px;
+}
+
+/* Remove the green box around the instructions */
+.revision-container, 
+.revision-header {
+    border: none !important;
+    background: none !important;
+    box-shadow: none !important;
+}
+
+/* Remove the black box around the generate button footer */
+.revision-footer {
+    border: none !important;
+    background: none !important;
+    outline: none !important;
+}
+
+/* Ensure the button itself doesn't have a black outline unless clicked */
+.revision-footer .btn {
+    outline: none !important;
+}
+
+/* 1. Remove the global green background from the instructions area */
+header.revision-header {
+    background-color: transparent !important;
+    border-bottom: none !important;
+    padding: 0 !important;
+    text-align: left !important;
+}
+
+/* 2. Remove the global black background from the generate button area */
+footer.revision-footer {
+    background-color: transparent !important;
+    color: inherit !important;
+    padding: 0 !important;
+    margin-top: 20px !important;
+    box-shadow: none !important;
+}
+
+/* 3. Re-sync the fieldset to match your div.question-container exactly */
+fieldset.question-container {
+    all: unset;
+    display: block;
+    background-color: #f5f7f9; /* Matches your style.css .question-container */
+    border-left: 5px solid #607d8b; /* Matches your style.css blue-grey border */
+    padding: 1.8em 2em;
+    margin-top: 2.5em;
+    margin-bottom: 2.5em;
+    border-radius: 0 8px 8px 0;
+}
+
+/* 4. Fix the legend so it doesn't create a gap */
+.visually-hidden {
+    position: absolute !important;
+    width: 1px !important;
+    height: 1px !important;
+    padding: 0 !important;
+    margin: -1px !important;
+    overflow: hidden !important;
+    clip: rect(0, 0, 0, 0) !important;
+    white-space: nowrap !important;
+    border: 0 !important;
+}

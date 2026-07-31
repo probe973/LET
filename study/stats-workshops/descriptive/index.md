@@ -12,7 +12,7 @@ This guide will use the main data file and explore the following topics using st
 - Analysing Categorical Data
 - Analysing Numerical Data by Different Groups
 
-This guide will walk you through the process of obtaining summary statistics and creating relevant graphs for different types of variables using jamovi. Understanding descriptive statistics is a foundational skill in data analysis, providing essential insights into the characteristics of your dataset.
+This guide will walk you through the process of obtaining summary statistics and creating relevant graphs for different types of variables using selected statistical software. Understanding descriptive statistics is a foundational skill in data analysis, providing essential insights into the characteristics of your dataset.
 
 Descriptive statistics help us understand the basic features of the data in a study. They provide simple summaries about the sample and the measures, forming the basis of virtually every quantitative analysis.
 
@@ -100,6 +100,22 @@ describe(omni_data$final_exam_score) # Get descriptive statistics for 'final_exa
 
 
 </div>
+
+<button class="collapsible">SPSS Guide</button>
+<div class="content" markdown="1">
+
+1.  In the SPSS menu, click on `Analyze`, then go to `Descriptive Statistics`, and select `Frequencies...`.
+2.  A new dialog box will appear. On the left, you'll see a list of all variables in your dataset. Find `final_exam_score` and move it to the `Variable(s)` box on the right using the arrow button.
+3.  Ensure the checkbox for `Display frequency tables` is unchecked (as we are focusing on descriptive statistics for interval/ratio data here).
+4.  Click the `Statistics...` button.
+5.  In the "Frequencies: Statistics" dialog box, select the following checkboxes:
+    *   Under "Central Tendency": `Mean`, `Median`, `Mode`
+    *   Under "Dispersion": `Std. deviation`, `Variance`, `Minimum`, `Maximum`
+    *   Under "Distribution": `Skewness`, `Kurtosis`
+6.  Click `Continue` to close the Statistics dialog box, then click `OK` in the main Frequencies dialog box. SPSS will generate the descriptive statistics table in the Output Viewer.
+
+</div>
+
 
 ### 1.2 Interpreting Summary Statistics for Interval/Ratio Variables
 
@@ -226,6 +242,24 @@ Graphs provide powerful visual insights into the distribution of your data, comp
 
 </div>
 
+<button class="collapsible">SPSS Guide</button>
+<div class="content" markdown="1">
+
+1.  **For Histograms:**
+    *   In the `Frequencies` dialog box (where you obtained descriptive statistics in 1.1), click the `Charts...` button.
+    *   In the "Frequencies: Charts" dialog box, select `Histograms`.
+    *   Optionally, check `Show normal curve on histogram` for comparison.
+    *   Click `Continue`, then `OK` in the main Frequencies dialog box.
+2.  **For Box Plots:**
+    *   In the SPSS menu, click on `Graphs`, then go to `Legacy Dialogs`, and select `Boxplot...`.
+    *   In the "Boxplot" dialog box, choose `Simple` and ensure `Summaries of separate variables` is selected. Click `Define`.
+    *   Move `final_exam_score` to the `Boxes Represent:` box.
+    *   Click `OK`. SPSS will generate the box plot in the Output Viewer.
+
+</div>
+
+
+
 ### 1.4 Interpreting Graphs for Interval/Ratio Variables
 
 <div class="explanation" markdown="1">
@@ -320,6 +354,32 @@ Categorical variables represent types of data which can be divided into groups o
 
 </div>
 
+<button class="collapsible">R Studio Guide</button>
+<div class="content" markdown="1">
+
+1.  To get a frequency table for a categorical variable like `preferred_study_method`, use the `table()` function. This will give you the counts for each category.
+
+    <pre><code>table(omni_data$preferred_study_method)</code></pre>
+
+2.  To get percentages (proportions), you can use the `prop.table()` function on the result of `table()`. Multiplying by 100 gives percentages.
+
+    <pre><code>prop.table(table(omni_data$preferred_study_method)) * 100</code></pre>
+
+These commands will output the counts and percentages for each category of the \`preferred\_study\_method\` variable, respectively. These are the standard ways to display frequency distributions for categorical data in R.
+
+</div>
+
+<button class="collapsible">SPSS Guide</button>
+<div class="content" markdown="1">
+
+1.  In the SPSS menu, click on `Analyze`, then go to `Descriptive Statistics`, and select `Frequencies...`.
+2.  In the "Frequencies" dialog box, click the `Reset` button to clear any previous selections.
+3.  A new dialog box will appear. On the left, find your categorical variable (e.g., `preferred_study_method`) and move it to the `Variable(s)` box on the right using the arrow button.
+4.  Ensure the checkbox for `Display frequency tables` is checked.
+5.  Click `OK`. SPSS will generate the frequency table in the Output Viewer.
+
+</div>
+
 ### 2.2 Interpreting Frequency Tables for Categorical Variables
 
 <div class="output" markdown="1">
@@ -337,17 +397,17 @@ A frequency table lists each category of your variable and shows how many times 
             <tbody>
                 <tr>
                     <td>Flashcards</td>
-                    <td>36</td>
-                    <td>36.0%</td>
+                    <td>34</td>
+                    <td>36.2%</td>
                 </tr>
                 <tr>
                     <td>Practice Tests</td>
-                    <td>31</td>
-                    <td>31.0%</td>
+                    <td>29</td>
+                    <td>30.9%</td>
                 </tr>
                 <tr>
                     <td>Summarizing</td>
-                    <td>33</td>
+                    <td>31</td>
                     <td>33.0%</td>
                 </tr>
             </tbody>
@@ -374,6 +434,44 @@ Graphs provide powerful visual insights into the distribution of your data, comp
 2.  Select `Bar plot`.
 3.  Jamovi will instantly update the output panel with this plot.
     
+</div>
+
+<button class="collapsible">R Studio Guide</button>
+<div class="content" markdown="1">
+
+
+To create a bar chart for a categorical variable like <code>preferred_study_method</code>, first create a frequency table using <code>table()</code>, and then pass this table to the <code>barplot()</code> function.
+<p>Use the <code>barplot()</code> function. This function creates a bar plot of the specified data (typically a frequency table).
+
+   <pre><code>method_counts <- table(omni_data$preferred_study_method) # Create a frequency table
+
+barplot(method_counts,
+       main = "Bar Chart of Preferred Study Methods", # Title of the bar chart
+       xlab = "Study Method",                       # Label for the x-axis
+       ylab = "Frequency",                          # Label for the y-axis
+       col = c("coral", "lightgreen", "skyblue"),   # Colours for the bars
+       border = "black")                            # Border colour of the bars</code></pre>
+
+<ul>
+   <li><code>method_counts <- table(omni_data$preferred_study_method)</code>: This line first creates a frequency table of the `preferred_study_method` variable and stores it in an object called `method_counts`. This table is then passed to the `barplot()` function.</li>
+   <li><code>main = "Bar Chart of Preferred Study Methods"</code>: This argument sets the main title of the plot.</li>
+   <li><code>xlab = "Study Method"</code>: This argument sets the label for the x-axis.</li>
+   <li><code>ylab = "Frequency"</code>: This argument sets the label for the y-axis.</li>
+   <li><code>col = c("coral", "lightgreen", "skyblue")</code>: This argument sets the fill colours for the bars. You can provide a vector of colours to assign a different colour to each bar.</li>
+   <li><code>border = "black"</code>: This argument sets the colour of the borders around the bars.</li>
+ </ul>
+  </p>
+
+</div>
+
+<button class="collapsible">SPSS Guide</button>
+<div class="content" markdown="1">
+
+1.  In the `Frequencies` dialog box (where you obtained frequency tables in 2.1), click the `Charts...` button.
+2.  In the "Frequencies: Charts" dialog box, select `Bar charts`.
+3.  Ensure `Frequencies` is selected under `Chart Values`.
+4.  Click `Continue`, then `OK` in the main Frequencies dialog box. SPSS will generate the bar chart in the Output Viewer.
+
 </div>
 
 ### 2.4 Interpreting Graphs for Categorical Variables
@@ -422,6 +520,142 @@ In data analysis, it is often insightful to understand if a numerical variable's
 4.  Ensure that all relevant statistics (Mean, Median, Std Dev, Min, Max, Skewness, Kurtosis) are selected under the `Statistics` panel, and both `Histogram` and `Box plot` are selected under the `Plots` panel.
     
     You will now observe jamovi generating separate results tables and plots for the 'No' and 'Yes' categories of `used_study_support_services` in your output panel.
+
+</div>
+
+<button class="collapsible">R Studio Guide</button>
+<div class="content" markdown="1">
+
+To obtain descriptive statistics for a numerical variable, grouped by a categorical variable, you have two main approaches: using the `describeBy()` function from the `psych` package (simpler for direct summaries) or using the `dplyr` package with its powerful piping capabilities (more flexible for custom summaries and data manipulation).
+
+#### Method 1: Using \`psych::describeBy()\`
+
+The `describeBy()` function from the `psych` package is specifically designed for this type of grouped analysis and provides a comprehensive set of statistics for each group in a single step.
+
+Use the `describeBy()` function with the following arguments:
+
+<pre><code>
+describeBy(x = omni_data$final_exam_score,
+  group = omni_data$used_study_support_services,
+  mat = TRUE,
+  digits = 2)
+</code></pre>
+
+*   `x`: This is the numerical variable you want to describe (e.g., `omni_data$final_exam_score`).
+*   `group`: This is the categorical variable by which you want to split or group your data (e.g., `omni_data$used_study_support_services`).
+*   `mat = TRUE`: This argument ensures the output is presented in a matrix (table) format, which is typically easier to read and interpret.
+*   `digits = 2`: This argument rounds the numerical output to 2 decimal places for cleaner presentation.
+    
+
+This command will produce a table showing the descriptive statistics (mean, median, SD, skew, kurtosis, etc.) for `final_exam_score` separately for each level of `used_study_support_services` ('No' and 'Yes').
+
+#### Method 2: Using \`dplyr\` (Flexible for Custom Summaries)
+
+The `dplyr` package (part of the `tidyverse`) is a powerful tool for data manipulation in R. It uses a concept called "piping" (`%>%`), which allows you to chain commands together in a very readable and logical flow. It's like saying "take this data, THEN do this, THEN do that." If you don't have `dplyr` installed, you'll need to install it first.
+
+    install.packages("dplyr") # Install dplyr package (only run once if not already installed)
+    
+    library(dplyr) # Load dplyr package (run this line every time you start a new R session)
+    
+    omni_data %>%
+      group_by(used_study_support_services) %>%
+      summarise(
+        N = n(),
+        Mean = mean(final_exam_score, na.rm = TRUE),
+        Median = median(final_exam_score, na.rm = TRUE),
+        SD = sd(final_exam_score, na.rm = TRUE),
+        Min = min(final_exam_score, na.rm = TRUE),
+        Max = max(final_exam_score, na.rm = TRUE),
+        Skewness = psych::skew(final_exam_score, na.rm = TRUE),
+        Kurtosis = psych::kurtosi(final_exam_score, na.rm = TRUE)
+      )
+    
+
+Let's break down what each part of this `dplyr` command does:
+
+*   `omni_data %>%`: This starts the "pipe." It takes your `omni_data` data frame and passes it as the first argument to the next function (`group_by()`). The `%>%` operator can be read as "then."
+*   `group_by(used_study_support_services)`: This function groups the data by the `used_study_support_services` variable. Any subsequent operations (like `summarise()`) will then be applied separately to each unique category within this grouping variable (e.g., 'Yes' and 'No').
+*   `summarise(...)`: This function creates new summary variables (columns) for each group. Inside `summarise()`, you define the new column names and the calculations for them:
+    *   `N = n()`: Calculates the number of observations (count) for each group. `n()` is a `dplyr` specific function to get the count.
+    *   `Mean = mean(final_exam_score, na.rm = TRUE)`: Calculates the mean of `final_exam_score` for each group, ignoring missing values.
+    *   `Median = median(final_exam_score, na.rm = TRUE)`: Calculates the median of `final_exam_score` for each group, ignoring missing values.
+    *   `SD = sd(final_exam_score, na.rm = TRUE)`: Calculates the standard deviation of `final_exam_score` for each group, ignoring missing values.
+    *   `Min = min(final_exam_score, na.rm = TRUE)`: Finds the minimum value of `final_exam_score` for each group.
+    *   `Max = max(final_exam_score, na.rm = TRUE)`: Finds the maximum value of `final_exam_score` for each group.
+    *   `Skewness = psych::skew(final_exam_score, na.rm = TRUE)`: Calculates the skewness of `final_exam_score` for each group. Note the `psych::` prefix, which ensures R uses the `skew` function from the `psych` package.
+    *   `Kurtosis = psych::kurtosi(final_exam_score, na.rm = TRUE)`: Calculates the kurtosis of `final_exam_score` for each group. Again, `psych::` specifies the package.
+
+When you run this entire block of code, the result will be a table showing the requested summary statistics for `final_exam_score`, broken down by `used_study_support_services`.
+
+#### Creating Grouped Graphs
+
+For creating grouped histograms and box plots, `ggplot2` is highly recommended for its flexibility and aesthetic quality. If you don't have `ggplot2` installed, you'll need to install it first.
+
+**Install and load the `ggplot2` package:**
+    
+        install.packages("ggplot2") # Install ggplot2 package (only run once if not already installed)
+        
+        library(ggplot2) # Load ggplot2 package (run this line every time you start a new R session)
+    
+**For Grouped Histograms:**
+    
+Use `ggplot2` to create separate histograms for each group.
+
+<pre><code>
+    ggplot(omni_data, aes(x = final_exam_score)) +
+       geom_histogram(binwidth = 5, fill = "steelblue", colour = "black") +
+       facet_wrap(~ used_study_support_services, scales = "free_y") +
+       labs(title = "Histograms of Final Exam Scores by Study Support Service Usage",
+       x = "Final Exam Score", y = "Frequency") +
+       theme_minimal()
+</code></pre>
+    
+*   `ggplot(omni_data, aes(x = final_exam_score))`: This initializes the plot, specifying the data frame (`omni_data`) and mapping `final_exam_score` to the x-axis aesthetic.
+*   `geom_histogram(binwidth = 5, fill = "steelblue", colour = "black")`: This layer adds the histogram bars.
+*   `binwidth = 5`: Sets the width of each bar (bin) to 5 units.
+*   `fill = "steelblue"`: Sets the fill colour of the bars.
+*   `colour = "black"`: Sets the outline colour of the bars.
+*   `facet_wrap(~ used_study_support_services, scales = "free_y")`: This is key for grouping. It creates separate plots (facets) for each unique value in `used_study_support_services`.
+*   `~ used_study_support_services`: Specifies the variable to split the plots by.
+*   `scales = "free_y"`: Allows the y-axis (frequency) scale to vary for each plot, which is useful if group sizes differ significantly.
+*   `labs(...)`: Adds titles and axis labels.
+*   `theme_minimal()`: Applies a minimalist theme for a clean look.
+    
+    
+**For Grouped Box Plots:**
+    
+Use `ggplot2` for more flexible and aesthetically pleasing grouped box plots.
+
+<pre><code>
+ggplot(omni_data, aes(x = used_study_support_services, y = final_exam_score, fill = used_study_support_services)) +
+      geom_boxplot() +
+      labs(title = "Box Plots of Final Exam Scores by Study Support Service Usage",
+       x = "Used Study Support Services", y = "Final Exam Score") +
+      theme_minimal() +
+      heme(legend.position = "none")
+</code></pre>
+    
+*   `ggplot(omni_data, aes(x = used_study_support_services, y = final_exam_score, fill = used_study_support_services))`: Initializes the plot. Here, `used_study_support_services` is mapped to the x-axis (for grouping), `final_exam_score` to the y-axis, and `fill` aesthetic is also mapped to the grouping variable to colour the boxes.
+*   `geom_boxplot()`: Adds the box plot layer.
+*   `labs(...)`: Adds titles and axis labels.
+*   `theme_minimal()`: Applies a minimalist theme.
+*   `theme(legend.position = "none")`: Removes the legend, as the fill colour is already indicated by the x-axis labels.
+    
+</div>
+
+<button class="collapsible">SPSS Guide</button>
+<div class="content" markdown="1">
+
+1.  In the SPSS menu, click on `Analyze`, then go to `Descriptive Statistics`, and select `Explore...`.
+2.  A new dialog box will appear. Move `final_exam_score` to the `Dependent List:` box.
+3.  Find the categorical variable `used_study_support_services` and move it to the `Factor List:` box. This action tells SPSS to calculate descriptive statistics for final exam scores separately for each group (i.e., 'Yes' and 'No' groups) within \`used\_study\_support\_services\`.
+4.  Click the `Statistics...` button. Ensure `Descriptives` is checked. Click `Continue`.
+5.  Click the `Plots...` button.
+    *   Under "Boxplots", select `Factor levels together`.
+    *   Under "Descriptive", ensure `Histogram` is checked.
+    *   Click `Continue`.
+6.  In the main "Explore" dialog box, ensure `Both` is selected under `Display`.
+7.  Click `OK`. SPSS will generate separate descriptive statistics tables and plots for the 'No' and 'Yes' categories of `used_study_support_services` in your Output Viewer.
 
 </div>
 

@@ -8,7 +8,7 @@
         <!-- MathLive field -->
         <math-field id="input-{{ include.id }}" 
                     aria-label="Algebraic answer input"
-                    style="display: block; width: 100%; max-width: 400px; min-height: 45px; border: 1px solid #004a75; padding: 5px; margin-bottom: 15px; background: white;">
+                    class="algebra-input-field">
         </math-field>
         
         <div class="button-group">
@@ -27,9 +27,12 @@
     <div id="feedback-{{ include.id }}" aria-live="polite" style="margin-top: 10px; font-weight: bold;"></div>
     
     {% if include.solution_text %}
-        <div id="solution-{{ include.id }}" class="solution-content" role="region" style="display:none; margin-top: 15px; border-left: 4px solid #004a75; padding-left: 15px;">
+        <div id="solution-{{ include.id }}" class="solution-content solution-box-style" role="region" style="display:none;">
             <h4>Solution:</h4>
             {{ include.solution_text | markdownify }}
+            <div class="answer-highlight-box">
+                <strong>Correct Answer:</strong> ${{ include.correct_answer | replace: "\\", "\"}}$
+            </div>
         </div>
     {% endif %}
 </section>
