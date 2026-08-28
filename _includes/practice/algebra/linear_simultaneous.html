@@ -1,0 +1,30 @@
+<section class="revision-container" aria-labelledby="revision-heading">
+    <header class="revision-header">
+        <h2 id="revision-heading">Simultaneous Equations</h2>
+        <p>Solve for both variables. Enter the values in the correct boxes below.</p>
+    </header>
+
+    <div id="revision-questions-container"></div>
+
+    <footer class="revision-footer">
+        <button type="button" onclick="window.location.reload()" class="btn">Generate New Questions</button>
+    </footer>
+</section>
+
+<script src="https://unpkg.com/mathlive"></script>
+<script src="https://unpkg.com/@cortex-js/compute-engine"></script>
+<script src="{{ '/assets/js/simultaneous-core.js' | relative_url }}"></script>
+<script src="{{ '/assets/js/nbs4107a/simultaneous-linear.js' | relative_url }}"></script>
+
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        if (window.initSimultaneousTest) {
+            window.initSimultaneousTest([
+                { generator: window.simGens.linear_type1, count: 1 },
+                { generator: window.simGens.linear_type2, count: 1 },
+                { generator: window.simGens.linear_type4, count: 2 },
+                { generator: window.simGens.linear_type3, count: 4 }
+            ]);
+        }
+    });
+</script>

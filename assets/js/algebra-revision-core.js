@@ -28,62 +28,76 @@ document.addEventListener('DOMContentLoaded', () => {
         return { vars: varMatches.length, sum: numSum, len: jsonStr.length };
     }
 
-    // 1. Updated HTML structure to use your new CSS classes
-function renderAlgebraQuestionHTML(q, i) {
-    const fieldset = document.createElement('fieldset');
-    fieldset.className = 'question-container'; 
-    fieldset.id = `question-rev-${i}`;
+    // 1. HTML structure matching your workshop style
+    function renderAlgebraQuestionHTML(q, i) {
+        const fieldset = document.createElement('fieldset');
+        fieldset.className = 'question-container'; 
+        fieldset.id = `question-rev-${i}`;
 
-    fieldset.innerHTML = `
-        <legend class="visually-hidden">Question ${i + 1}</legend>
-        
-        <h3 id="question-${i}-label">Question ${i + 1}</h3>
-        
-        <div class="question-content">
-            ${cleanText(q.question)}
-        </div>
-
-        <div class="algebra-answer-container">
-            <math-field id="rev-ans-${i}" 
-                        class="algebra-input-field" 
-                        aria-labelledby="question-${i}-label">
-            </math-field>
+        fieldset.innerHTML = `
+            <legend class="visually-hidden">Question ${q.label || i + 1}</legend>
             
-            <div class="button-group">
-                <button type="button" class="btn btn-check-answer" 
-                        data-question-index="${i}" 
-                        aria-controls="rev-feedback-${i} rev-sol-${i}">
-                    Check Answer
-                </button>
+            <h3 id="question-${i}-label">Question ${q.label || i + 1}</h3>
+            
+            <div class="question-content">
+                ${cleanText(q.question)}
             </div>
-        </div>
 
-        <div id="rev-feedback-${i}" aria-live="polite" class="feedback-region"></div>
-        
-        <div id="rev-sol-${i}" class="solution-content solution-box-style" 
-             style="display:none;" 
-             role="region" 
-             aria-label="Solution for Question ${i + 1}">
-            <hr>
-            <h4>Solution:</h4>
-            ${cleanText(q.solution)}
-            <div class="answer-highlight-box">
-                <strong>Correct Answer:</strong> ${q.answer || q.check_val}
+            <div class="algebra-answer-container">
+                <math-field id="rev-ans-${i}" 
+                            class="algebra-input-field" 
+                            aria-labelledby="question-${i}-label">
+                </math-field>
+                
+                <div class="button-group">
+                    <button type="button" class="btn btn-check-answer" 
+                            data-question-index="${i}" 
+                            aria-controls="rev-feedback-${i} rev-sol-${i}">
+                        Check Answer
+                    </button>
+                    <button type="button" class="btn btn-primary btn-reveal-solution" 
+                            data-question-index="${i}">
+                        Show Solution
+                    </button>
+                </div>
             </div>
-        </div>
-    `;
-    container.appendChild(fieldset);
-}
 
-    // 2. Updated click listener with consistent feedback logic
+            <div id="rev-feedback-${i}" aria-live="polite" class="feedback-region"></div>
+            
+            <div id="rev-sol-${i}" class="solution-content solution-box-style" 
+                 style="display:none;" 
+                 role="region" 
+                 aria-label="Solution for Question ${q.label || i + 1}">
+                <hr>
+                <h4>Solution:</h4>
+                ${cleanText(q.solution)}
+                <div class="answer-highlight-box">
+                    <strong>Correct Answer:</strong> ${q.answer || q.check_val}
+                </div>
+            </div>
+        `;
+        container.appendChild(fieldset);
+    }
+
+    // 2. Click listener with Retry logic
     container.addEventListener('click', (event) => {
+        const idx = parseInt(event.target.dataset.questionIndex);
+        if (isNaN(idx)) return;
+
+        const q = window.revisionQuestionsData[idx];
+        const mfield = document.getElementById(`rev-ans-${idx}`);
+        const solDiv = document.getElementById(`rev-sol-${idx}`);
+        const feedbackDiv = document.getElementById(`rev-feedback-${idx}`);
+
+        // Handle "Show Solution"
+        if (event.target.classList.contains('btn-reveal-solution')) {
+            solDiv.style.display = 'block';
+            if (window.MathJax) MathJax.typesetPromise([solDiv]);
+            return;
+        }
+
+        // Handle "Check Answer"
         if (event.target.classList.contains('btn-check-answer')) {
-            const idx = parseInt(event.target.dataset.questionIndex);
-            const q = window.revisionQuestionsData[idx];
-            const mfield = document.getElementById(`rev-ans-${idx}`);
-            const solDiv = document.getElementById(`rev-sol-${idx}`);
-            const feedbackDiv = document.getElementById(`rev-feedback-${idx}`);
-            
             const studentRaw = mfield.value.trim();
             const studentClean = studentRaw.replace(/[\$\s]/g, '').split('=').pop();
             const targetClean = q.check_val.replace(/[\$\s]/g, '').split('=').pop();
@@ -91,16 +105,16 @@ function renderAlgebraQuestionHTML(q, i) {
             const userExpr = ce.parse(studentClean, { canonical: false });
             const targetExpr = ce.parse(targetClean, { canonical: false });
 
-            solDiv.style.display = 'block';
-            event.target.disabled = true;
-            mfield.disabled = true;
-
             let msg = "";
             let color = "red";
+            let shouldLock = false;
 
-            if (!ce.parse(studentClean).isEqual(ce.parse(targetClean))) {
-                msg = "Incorrect. Please review solution";
+            // Mathematical Equality Check
+            //if (!ce.parse(studentClean).isEqual(ce.parse(targetClean))) {
+            if (!ce.parse(studentClean).evaluate().isEqual(ce.parse(targetClean).evaluate())) {
+                msg = "Incorrect. Please try again";
                 color = "red";
+                shouldLock = false; // Lock on wrong answer
             } else {
                 const u = getStats(userExpr);
                 const t = getStats(targetExpr);
@@ -108,22 +122,41 @@ function renderAlgebraQuestionHTML(q, i) {
                 let errorMsg = "";
                 
                 if (goal === "solve") {
-            // Check if the student's answer is a fraction
-            // CortexJS stores fractions in JSON as ["Divide", numerator, denominator]
-            const json = userExpr.json;
-            if (Array.isArray(json) && (json[0] === "Divide" || json[0] === "Rational")) {
-                const num = parseInt(json[1]);
-                const den = parseInt(json[2]);
+                    //const json = userExpr.json;
+                    //if (Array.isArray(json) && (json[0] === "Divide" || json[0] === "Rational")) {
+                        //if (getGCD(parseInt(json[1]), parseInt(json[2])) != 1) {
+                            //errorMsg = "Correct value, but please simplify the fraction fully.";
+                        //}
+                    //}
+                    let json = userExpr.json;
 
-                // If GCD is greater than 1, the fraction is not simplified
-                if (getGCD(num, den) > 1) {
-                    errorMsg = "Correct value, but please simplify the fraction fully.";
-                }
-            }
-            // If it's not a fraction (e.g., a decimal or integer), errorMsg stays empty
-        }
+// If the whole fraction is negated, unwrap it.
+if (Array.isArray(json) && json[0] === "Negate") {
+    json = json[1];
+}
 
-                else if (goal === "factorise") {
+if (Array.isArray(json) && (json[0] === "Divide" || json[0] === "Rational")) {
+
+    let num = json[1];
+    let den = json[2];
+
+    // If the numerator is negated, convert it to a number.
+    if (Array.isArray(num) && num[0] === "Negate") {
+        num = -num[1];
+    }
+
+    // If the denominator is negated, move the minus to the numerator.
+    if (Array.isArray(den) && den[0] === "Negate") {
+        den = den[1];
+        num = -num;
+    }
+
+    if (getGCD(num, den) !== 1) {
+        errorMsg = "Correct value, but please simplify the fraction fully.";
+    }
+}
+
+                } else if (goal === "factorise") {
                     if (!studentRaw.includes('(') && !studentRaw.includes('\\left')) {
                         errorMsg = "Correct value, but please factorise the expression.";
                     } else if (u.vars > t.vars || u.sum > t.sum || u.len > t.len) {
@@ -140,14 +173,25 @@ function renderAlgebraQuestionHTML(q, i) {
                 if (errorMsg) {
                     msg = errorMsg;
                     color = "orange";
+                    shouldLock = false; // Allow retry
                 } else {
                     msg = "Correct!";
                     color = "green";
+                    shouldLock = true; // Lock on perfect
                 }
             }
 
             feedbackDiv.textContent = msg;
             feedbackDiv.style.color = color;
+
+            if (shouldLock) {
+                solDiv.style.display = 'block';
+                event.target.disabled = true;
+                mfield.disabled = true;
+                // Find and disable the sibling reveal button
+                const revealBtn = event.target.parentElement.querySelector('.btn-reveal-solution');
+                if (revealBtn) revealBtn.disabled = true;
+            }
 
             if (window.MathJax) MathJax.typesetPromise([solDiv]);
         }

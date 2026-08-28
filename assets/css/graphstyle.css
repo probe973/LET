@@ -1,0 +1,28 @@
+.graph-svg-element {
+    background: white;
+    border: 1px solid #ddd;
+}
+.graph-grid-line {
+    stroke: #ccc;
+    stroke-width: 1;
+}
+.graph-axis-line {
+    stroke: black;
+    stroke-width: 2;
+}
+.graph-plot-line {
+    stroke: #004a75;
+    stroke-width: 3;
+}
+.graph-intercept-dot {
+    fill: red;
+}
+.graph-label-text {
+    font-size: 10px;
+    font-family: Arial;
+}
+.graph-identifier-text {
+    font-weight: bold;
+    font-family: Arial;
+    font-size: 16px;
+}

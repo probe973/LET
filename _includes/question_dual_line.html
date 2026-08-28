@@ -1,0 +1,55 @@
+<section class="question-container" id="question-{{ include.id }}" role="region" aria-labelledby="q-title-{{ include.id }}">
+    <h3 id="q-title-{{ include.id }}">Question {{ include.title }}</h3>
+    
+    <div class="question-content" id="q-text-{{ include.id }}">
+        {{ include.question_text | markdownify }}
+    </div>
+
+    <div class="algebra-answer-container">
+        <div class="button-group">
+            <button type="button" 
+                    class="btn btn-primary solution-toggle-button" 
+                    aria-controls="solution-{{ include.id }}" 
+                    aria-expanded="false" 
+                    onclick="toggleSolution('solution-{{ include.id }}', this)">Show Solution</button>
+        </div>
+    </div>
+
+    <div id="solution-{{ include.id }}" class="solution-content solution-box-style" role="region" aria-label="Solution for Question {{ include.title }}" style="display:none;">
+        <h4>Solution:</h4>
+        {{ include.solution_text | markdownify }}
+
+        <div id="svg-dual-{{ include.id }}" class="graph-svg-container" style="display: flex; justify-content: center; margin-top: 15px;"></div>
+    </div>
+</section>
+
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const targetContainer = document.getElementById('svg-dual-{{ include.id }}');
+        if (targetContainer) {
+            targetContainer.innerHTML = createDualLineSVG(
+                { 
+                    xInt: parseFloat('{{ include.l1_x }}'), 
+                    yInt: parseFloat('{{ include.l1_y }}'), 
+                    xLabel: '{{ include.l1_xl | default: include.l1_x }}', 
+                    yLabel: '{{ include.l1_yl | default: include.l1_y }}',
+                    name: '{{ include.l1_name | default: "Line 1" }}'
+                },
+                { 
+                    xInt: parseFloat('{{ include.l2_x }}'), 
+                    yInt: parseFloat('{{ include.l2_y }}'), 
+                    xLabel: '{{ include.l2_xl | default: include.l2_x }}', 
+                    yLabel: '{{ include.l2_yl | default: include.l2_y }}',
+                    name: '{{ include.l2_name | default: "Line 2" }}'
+                },
+                '{{ include.show_intersection | default: "no" }}',
+                '{{ include.ix | default: "" }}',
+                '{{ include.iy | default: "" }}',
+                '{{ include.ixl | default: "" }}',
+                '{{ include.iyl | default: "" }}',
+                '{{ include.x_title | default: "x" }}',
+                '{{ include.y_title | default: "y" }}'
+            );
+        }
+    });
+</script>

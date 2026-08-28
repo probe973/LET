@@ -1,0 +1,62 @@
+<section class="question-container" id="question-{{ include.id }}" role="region" aria-labelledby="q-title-{{ include.id }}">
+    <h3 id="q-title-{{ include.id }}">Question {{ include.title }}</h3>
+    <div class="question-content" id="q-text-{{ include.id }}">
+    {{ include.question_text | markdownify }}
+    </div>
+
+    <div class="graph-options-grid" style="display: flex; gap: 15px; flex-wrap: wrap; justify-content: center; margin: 20px 0;">
+        {% if include.ax %}<div id="svg-{{ include.id }}-A" class="graph-svg-container"></div>{% endif %}
+        {% if include.bx %}<div id="svg-{{ include.id }}-B" class="graph-svg-container"></div>{% endif %}
+        {% if include.cx %}<div id="svg-{{ include.id }}-C" class="graph-svg-container"></div>{% endif %}
+        {% if include.dx %}<div id="svg-{{ include.id }}-D" class="graph-svg-container"></div>{% endif %}
+    </div>
+
+    <div class="algebra-answer-container">
+        <select id="input-{{ include.id }}" 
+        class="algebra-input-field" 
+        aria-label="Select the correct graph for Question {{ include.title }}" 
+        aria-describedby="q-text-{{ include.id }}" 
+        style="max-width: 250px;">
+            <option value="">Select...</option>
+            {% if include.ax %}<option value="A">Graph A</option>{% endif %}
+            {% if include.bx %}<option value="B">Graph B</option>{% endif %}
+            {% if include.cx %}<option value="C">Graph C</option>{% endif %}
+            {% if include.dx %}<option value="D">Graph D</option>{% endif %}
+        </select>
+        
+        <div class="button-group">
+            <button type="button" class="btn" onclick="checkGraphChoice('{{ include.id }}', '{{ include.correct_answer }}')">Check Answer</button>
+            {% if include.solution_text %}
+                <button class="btn btn-primary solution-toggle-button" 
+                    aria-controls="solution-{{ include.id }}" 
+                    aria-expanded="false" 
+                    onclick="toggleSolution('solution-{{ include.id }}', this)">Show Solution</button>
+            {% endif %}
+        </div>
+    </div>
+
+    <div id="feedback-{{ include.id }}" aria-live="polite" class="feedback-region"></div>
+    
+    {% if include.solution_text %}
+        <div id="solution-{{ include.id }}" class="solution-content solution-box-style" role="region" style="display:none;">
+            <h4>Solution:</h4>
+            {{ include.solution_text | markdownify }}
+            <div class="answer-highlight-box">
+                <strong>Correct Answer:</strong> Graph {{ include.correct_answer }}
+            </div>
+        </div>
+    {% endif %}
+</section>
+
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const render = (label, x, y, xLab, yLab) => {
+            const el = document.getElementById(`svg-{{ include.id }}-${label}`);
+            if (el) el.innerHTML = createLineSVG(parseFloat(x), parseFloat(y), label, xLab, yLab);
+        };
+        {% if include.ax %}render('A', '{{ include.ax }}', '{{ include.ay }}', '{{ include.axl }}', '{{ include.ayl }}');{% endif %}
+        {% if include.bx %}render('B', '{{ include.bx }}', '{{ include.by }}', '{{ include.bxl }}', '{{ include.byl }}');{% endif %}
+        {% if include.cx %}render('C', '{{ include.cx }}', '{{ include.cy }}', '{{ include.cxl }}', '{{ include.cyl }}');{% endif %}
+        {% if include.dx %}render('D', '{{ include.dx }}', '{{ include.dy }}', '{{ include.dxl }}', '{{ include.dyl }}');{% endif %}
+    });
+</script>

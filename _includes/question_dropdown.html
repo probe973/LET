@@ -9,5 +9,12 @@
     <div id="solution-{{ include.id }}" class="solution-content">
         <h4>Solution:</h4>
         {{ include.solution_text | markdownify }}
+
+        {% if include.solution_image %}
+            <div class="solution-image-container">
+                <img src="{{ include.solution_image | relative_url }}" alt="{{ include.image_alt | default: 'Solution Image' }}" class="img-fluid">
+            </div>
+        {% endif %}
+
     </div>
 </div>

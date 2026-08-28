@@ -445,9 +445,13 @@ function checkExpandSimplify(id, targetValue) {
         // Use the same logic that worked in your YML version
         const userParsed = ce.parse(studentRaw);
         const targetParsed = ce.parse(targetValue);
+        
+        const userSimplified = userParsed.simplify();
+        const targetSimplified = targetParsed.simplify();
 
         // 1. Check Mathematical Equality
-        if (!userParsed.isEqual(targetParsed)) {
+        //if (!userParsed.isEqual(targetParsed)) {
+        if (!userSimplified.isEqual(targetSimplified)) {
             feedback.textContent = "Incorrect. Try again!";
             feedback.style.color = "red";
             return;
@@ -489,6 +493,17 @@ function checkExpandSimplify(id, targetValue) {
 };
 
 
+// Helper function for simplification check
+function getGCD(a, b) {
+    a = Math.abs(a);
+    b = Math.abs(b);
+    while (b) {
+        a %= b;
+        [a, b] = [b, a];
+    }
+    return a;
+}
+
 function checkSolving(id, targetValue) {
     const mfield = document.getElementById(`input-${id}`);
     const feedback = document.getElementById(`feedback-${id}`);
@@ -502,10 +517,8 @@ function checkSolving(id, targetValue) {
     }
 
     try {
-        // 1. Helper to isolate the math value (removes "x =" if present)
         function getMathValue(latex) {
             const clean = latex.replace(/\$/g, '').trim();
-            // Split at '=' and take the last part
             if (clean.includes('=')) {
                 return clean.split('=').pop().trim();
             }
@@ -518,20 +531,39 @@ function checkSolving(id, targetValue) {
         const userExpr = ce.parse(userVal);
         const targetExpr = ce.parse(targetVal);
 
-        // 2. Validity Check
         if (!userExpr.isValid) {
             feedback.textContent = "Incorrect formatting. Try again!";
             feedback.style.color = "red";
             return;
         }
 
-        // 3. Mathematical Equality
+        // 1. Check mathematical equality
         if (userExpr.isEqual(targetExpr)) {
-            feedback.textContent = "Correct!";
-            feedback.style.color = "green";
+            
+            // 2. Simplification Check: Only triggers if the student used a fraction
+            let needsSimplify = false;
+            if (studentRaw.includes('/') || studentRaw.includes('frac')) {
+                const digits = studentRaw.match(/\d+/g); // Find the literal digits typed
+                if (digits && digits.length >= 2) {
+                    const n = parseInt(digits[digits.length - 2]);
+                    const d = parseInt(digits[digits.length - 1]);
+                    if (getGCD(n, d) > 1) needsSimplify = true;
+                }
+            }
+
+            if (needsSimplify) {
+                feedback.textContent = "Correct value, but please simplify the fraction fully.";
+                //feedback.style.color = "orange";
+                feedback.className = "feedback-region feedback-warning";
+            } else {
+                feedback.textContent = "Correct!";
+                //feedback.style.color = "green";
+                feedback.className = "feedback-region feedback-correct";
+            }
         } else {
             feedback.textContent = "Incorrect. Try again!";
-            feedback.style.color = "red";
+            //feedback.style.color = "red";
+            feedback.className = "feedback-region feedback-incorrect";
         }
 
     } catch (err) {
@@ -539,8 +571,7 @@ function checkSolving(id, targetValue) {
         feedback.textContent = "Error processing math. Try typing clearly.";
         feedback.style.color = "red";
     }
-};
-
+}
 
 function checkRearrange(id, targetValue) {
     const mfield = document.getElementById(`input-${id}`);
@@ -552,50 +583,139 @@ function checkRearrange(id, targetValue) {
     
     if (!studentRaw) {
         feedback.textContent = "Please enter an answer.";
-        feedback.style.color = "red";
+        feedback.className = "feedback-region feedback-incorrect";
         return;
     }
 
+    // 1. Isolate the math expression (removes "x =" or "L =" etc.)
+    function getExpression(latex) {
+        const clean = latex.replace(/\$/g, '').trim();
+        if (clean.includes('=')) {
+            return clean.split('=').pop().trim();
+        }
+        return clean;
+    }
+
+    const userExprStr = getExpression(studentRaw);
+    const targetExprStr = getExpression(targetValue);
+
+    let isCorrect = false;
+
     try {
-        // 1. Isolate the math expression (removes "x =" or "L =" etc.)
-        function getExpression(latex) {
-            const clean = latex.replace(/\$/g, '').trim();
-            if (clean.includes('=')) {
-                return clean.split('=').pop().trim();
+        const userExpr = ce.parse(userExprStr);
+        const targetExpr = ce.parse(targetExprStr);
+
+        // Method A: Direct structural equality check
+        if (userExpr.isEqual(targetExpr)) {
+            isCorrect = true;
+        } else {
+            // Method B: Numerical spot-checking (handles factorisations/expansions safely)
+            // Extract all free variables present in the target expression
+            const variables = targetExpr.freeVariables;
+            
+            if (variables.length > 0) {
+                let matches = true;
+                // Test across 3 different sets of random pseudo-values
+                for (let i = 0; i < 3; i++) {
+                    const subs = {};
+                    variables.forEach(v => {
+                        // Generate a random test value between 2 and 6 (avoiding 0 to prevent division by zero errors)
+                        subs[v] = Math.floor(Math.random() * 5) + 2;
+                    });
+
+                    // Evaluate both expressions numerically with these substitutions
+                    const evaluatedUser = userExpr.subs(subs).N().valueOf();
+                    const evaluatedTarget = targetExpr.subs(subs).N().valueOf();
+
+                    // Check if numbers match closely (allowing a tiny tolerance for floating-point precision)
+                    if (typeof evaluatedUser !== 'number' || typeof evaluatedTarget !== 'number' || 
+                        Math.abs(evaluatedUser - evaluatedTarget) > 1e-7) {
+                        matches = false;
+                        break;
+                    }
+                }
+                if (matches) {
+                    isCorrect = true;
+                }
             }
-            return clean;
         }
+    } catch (err) {
+        console.warn("Compute Engine evaluation note:", err);
+    }
 
-        const userExprStr = getExpression(studentRaw);
-        const targetExprStr = getExpression(targetValue);
-
-        // 2. Parse and compare mathematical equality
-        const userParsed = ce.parse(userExprStr);
-        const targetParsed = ce.parse(targetExprStr);
-
-        if (userParsed.isEqual(targetParsed)) {
-            feedback.textContent = "Correct!";
-            feedback.style.color = "green"; // Fixed variable name here
-        } else {
-            feedback.textContent = "Incorrect. Try again!";
-            feedback.style.color = "red";
-        }
-
-   } catch (err) {
-        console.error("Math Error:", err);
-        // Fallback: literal string match (ignoring spaces)
-        //if (studentRaw.replace(/\s/g, '') === targetValue.replace(/\s/g, '')) {
-          if (userExprStr.replace(/\s/g, '') === targetExprStr.replace(/\s/g, '')) {
-            feedback.textContent = "Correct!";
-            feedback.style.color = "green";
-        } else {
-            feedback.textContent = "Incorrect. Try again!";
-            feedback.style.color = "red";
+    // Fallback: literal string match (ignoring spaces)
+    if (!isCorrect) {
+        const cleanUser = userExprStr.replace(/\s/g, '');
+        const cleanTarget = targetExprStr.replace(/\s/g, '');
+        if (cleanUser === cleanTarget) {
+            isCorrect = true;
         }
     }
 
-
+    // Set feedback
+    if (isCorrect) {
+        feedback.textContent = "Correct!";
+        feedback.className = "feedback-region feedback-correct";
+    } else {
+        feedback.textContent = "Incorrect. Try again!";
+        feedback.className = "feedback-region feedback-incorrect";
+    }
 };
+
+function checkAlternativeRearrange(id, targetValue) {
+    const mfield = document.getElementById(`input-${id}`);
+    const feedback = document.getElementById(`feedback-${id}`);
+    
+    if (!mfield || !feedback) return;
+
+    const studentRaw = mfield.value.trim();
+    
+    if (!studentRaw) {
+        feedback.textContent = "Please enter an answer.";
+        feedback.className = "feedback-region feedback-incorrect";
+        return;
+    }
+
+    function getExpression(latex) {
+        const clean = latex.replace(/\$/g, '').trim();
+        if (clean.includes('=')) {
+            return clean.split('=').pop().trim();
+        }
+        return clean;
+    }
+
+    const userExprStr = getExpression(studentRaw);
+    const targetExprStr = getExpression(targetValue);
+
+    let isCorrect = false;
+
+    try {
+        // Parse both strings directly through the compute engine
+        const userExpr = ce.parse(userExprStr);
+        const targetExpr = ce.parse(targetExprStr);
+
+        // Use CortexJS's native mathematical equality check
+        if (userExpr.isEqual(targetExpr)) {
+            isCorrect = true;
+        } else {
+            // Fallback: evaluate the difference or check canonical string equivalence
+            const diff = ce.box(["Subtract", userExpr, targetExpr]).simplify();
+            if (diff.numericValue === 0 || diff.toString() === "0") {
+                isCorrect = true;
+            }
+        }
+    } catch (err) {
+        console.error("Compute Engine Error:", err);
+    }
+
+    if (isCorrect) {
+        feedback.textContent = "Correct!";
+        feedback.className = "feedback-region feedback-correct";
+    } else {
+        feedback.textContent = "Incorrect. Try again!";
+        feedback.className = "feedback-region feedback-incorrect";
+    }
+}
 
 function checkIndices(id, targetValue) {
     const mfield = document.getElementById(`input-${id}`);
@@ -617,9 +737,17 @@ function checkIndices(id, targetValue) {
         // 1. Parse both WITHOUT automatic simplification to see their true structure
         const userExprRaw = ce.parse(userClean, {canonical: false});
         const targetExprRaw = ce.parse(targetClean, {canonical: false});
+        
+        const userExpr = ce.parse(userClean).simplify();
+        const targetExpr = ce.parse(targetClean).simplify();
+        
+        console.log(userExpr.isEqual(targetExpr));
+        console.log(userExpr.json);
+        console.log(targetExpr.json);
 
         // 2. Check Mathematical Equality (Value check)
-        if (!userExprRaw.isEqual(targetExprRaw)) {
+        //if (!userExprRaw.isEqual(targetExprRaw)) {
+        if (!userExpr.isEqual(targetExpr)) {
             feedback.textContent = "Incorrect. Try again!";
             feedback.style.color = "red";
             return;
@@ -791,6 +919,448 @@ function checkSimplifyOnly(id, targetValue) {
     }
 }
 
+// --- Graph choice ---
+function createLineSVG(xInt, yInt, label, xLabel, yLabel) {
+    const size = 180;
+    const center = size / 2;
+    
+    // THE FIX: Calculate scale based on the largest intercept to keep points visible
+    const maxVal = Math.max(Math.abs(xInt), Math.abs(yInt), 5); 
+    const scale = (size / 2.5) / maxVal; 
+
+    const svgX1 = center + (-10 * scale);
+    const svgY1 = center - (yInt * (1 - (-10) / xInt) * scale);
+    const svgX2 = center + (10 * scale);
+    const svgY2 = center - (yInt * (1 - 10 / xInt) * scale);
+
+    const intX = center + (xInt * scale);
+    const intY = center - (yInt * scale);
+
+    const displayX = xLabel || xInt;
+    const displayY = yLabel || yInt;
+
+    return `<svg width="${size}" height="${size}" viewBox="0 0 ${size} ${size}" role="img" aria-label="Graph ${label}: line crossing y at (0, ${displayY}) and x at (${displayX}, 0)" style="background: white; border: 1px solid #ddd; display: block;">
+        <line x1="0" y1="${center}" x2="${size}" y2="${center}" stroke="#ccc" stroke-width="1" />
+        <line x1="${center}" y1="0" x2="${center}" y2="${size}" stroke="#ccc" stroke-width="1" />
+        <line x1="0" y1="${center}" x2="${size}" y2="${center}" stroke="black" stroke-width="2" />
+        <line x1="${center}" y1="0" x2="${center}" y2="${size}" stroke="black" stroke-width="2" />
+        <line x1="${svgX1}" y1="${svgY1}" x2="${svgX2}" y2="${svgY2}" stroke="#004a75" stroke-width="3" />
+        <circle cx="${intX}" cy="${center}" r="4" fill="red" />
+        <circle cx="${center}" cy="${intY}" r="4" fill="red" />
+        <text x="${intX}" y="${center + 15}" font-size="10" text-anchor="middle" font-family="Arial">(${displayX}, 0)</text>
+        <text x="${center + 5}" y="${intY + 5}" font-size="10" font-family="Arial">(0, ${displayY})</text>
+        <text x="10" y="20" font-weight="bold" font-family="Arial" font-size="16">${label}</text>
+    </svg>`;
+}
+
+function checkGraphChoice(id, correctAnswer) {
+    const input = document.getElementById(`input-${id}`);
+    const feedback = document.getElementById(`feedback-${id}`);
+    const solDiv = document.getElementById(`solution-${id}`);
+
+    if (!input || !feedback) return;
+
+    if (input.value === correctAnswer) {
+        feedback.textContent = "Correct!";
+        feedback.className = "feedback-region feedback-correct";
+        //feedback.style.color = "green";
+        // Reveal solution on success
+        if (solDiv) solDiv.style.display = "block";
+        input.disabled = true;
+    } else if (input.value === "") {
+        feedback.textContent = "Please select a graph.";
+        feedback.className = "feedback-region feedback-incorrect";
+        //feedback.style.color = "red";
+    } else {
+        // Allows another attempt
+        feedback.textContent = "Incorrect. Try again!";
+        feedback.className = "feedback-region feedback-incorrect";
+        //feedback.style.color = "red";
+    }
+}
+
+// --- Multi ---
+
+function getGCD(a, b) {
+    a = Math.abs(a); b = Math.abs(b);
+    while (b) { a %= b; [a, b] = [b, a]; }
+    return a;
+}
+
+function checkLineAnalysis(id, targetsStr, typesStr, labelsStr) {
+    const feed = document.getElementById(`feedback-${id}`);
+    const solDiv = document.getElementById(`solution-${id}`);
+    const extraDiv = document.getElementById(`extra-${id}`);
+    const isExtraVisible = extraDiv && (extraDiv.style.display !== "none" && extraDiv.style.display !== "");
+
+    const targets = targetsStr.split('||');
+    const types = typesStr.split('||');
+    const labels = labelsStr.split('||');
+    const keys = ['a', 'b', 'c', 'd', 'e', 'f'];
+
+    let errors = [];
+
+    // Helper to clean raw math strings (removes $, equation LHS like 'y=')
+    function getCleanMath(raw) {
+        if (!raw) return "";
+        let clean = raw.trim().replace(/\$/g, '');
+        if (clean.includes('=')) {
+            clean = clean.split('=').pop().trim();
+        }
+        return clean;
+    }
+
+    keys.forEach((key, i) => {
+        const inputEl = document.getElementById(`ans-${id}-${key}`);
+        if (!inputEl) return;
+        
+        // Skip hidden sub-questions if part b is hidden
+        if (['c', 'd', 'e', 'f'].includes(key) && !isExtraVisible) return;
+
+        // Extract value safely from <math-field> or <select>
+        let studentRaw = "";
+        if (typeof inputEl.getValue === 'function') {
+            studentRaw = inputEl.getValue('latex') || inputEl.value || "";
+        } else {
+            studentRaw = inputEl.value || "";
+        }
+        studentRaw = studentRaw.trim();
+
+        const targetRaw = targets[i] ? targets[i].trim() : "";
+        const type = types[i];
+        const label = labels[i];
+
+        if (studentRaw === "") {
+            errors.push(`<strong>${label}</strong> is empty.`);
+            return;
+        }
+
+        if (type === 'math') {
+            const sClean = getCleanMath(studentRaw);
+            const tClean = getCleanMath(targetRaw);
+
+            try {
+                const uValue = ce.parse(sClean);
+                const tValue = ce.parse(tClean);
+
+                if (!uValue.isValid) {
+                    errors.push(`<strong>${label}</strong> has invalid formatting.`);
+                    return;
+                }
+
+                // 1. Core Mathematical Equality
+                if (!uValue.isEqual(tValue)) {
+                    errors.push(`<strong>${label}</strong> is incorrect.`);
+                } else {
+                    let needsSimp = false;
+
+                    // 2. Numerical Fraction GCD Check (handles -8/6, 8/6, \frac{-8}{6})
+                    const fracMatch = studentRaw.match(/(-?\d+)\s*[\/]\s*(-?\d+)/) || 
+                                      studentRaw.match(/\\frac\{\s*(-?\d+)\s*\}\{\s*(-?\d+)\s*\}/);
+
+                    if (fracMatch) {
+                        const num = Math.abs(parseInt(fracMatch[1], 10));
+                        const den = Math.abs(parseInt(fracMatch[2], 10));
+                        if (den !== 0 && getGCD(num, den) > 1) {
+                            needsSimp = true;
+                        }
+                    }
+
+                    // 3. Structural Algebra Check (catches x + 2x + 4 while ignoring sqrt/frac structures)
+                    if (!needsSimp) {
+                        const uRaw = ce.parse(sClean, { canonical: false });
+                        const tCanonical = tValue.canonical;
+
+                        const uJson = JSON.stringify(uRaw.json);
+                        const tJson = JSON.stringify(tCanonical.json);
+
+                        const uVars = (uJson.match(/"[a-zA-Z]"/g) || []).length;
+                        const tVars = (tJson.match(/"[a-zA-Z]"/g) || []).length;
+
+                        if (uVars > tVars) {
+                            needsSimp = true;
+                        }
+                    }
+
+                    if (needsSimp) {
+                        errors.push(`<strong>${label}</strong> is correct, but needs simplifying.`);
+                    }
+                }
+            } catch (err) {
+                console.error(`Math evaluation error on part ${label}:`, err);
+                if (sClean.replace(/\s/g, '') !== tClean.replace(/\s/g, '')) {
+                    errors.push(`<strong>${label}</strong> is incorrect.`);
+                }
+            }
+        } else {
+            // Choice/select checks
+            if (studentRaw !== targetRaw) {
+                errors.push(`<strong>${label}</strong> is incorrect.`);
+            }
+        }
+    });
+
+    if (errors.length === 0) {
+        feed.textContent = "Correct!";
+        feed.style.color = "green";
+        if (solDiv) solDiv.style.display = "block";
+        
+        // Lock inputs on completion for accessibility
+        keys.forEach(k => {
+            const el = document.getElementById(`ans-${id}-${k}`);
+            if (el) el.disabled = true;
+        });
+    } else {
+        feed.innerHTML = errors.join("<br>");
+        const isFatal = errors.some(e => e.includes("incorrect") || e.includes("empty") || e.includes("formatting"));
+        feed.style.color = isFatal ? "red" : "orange";
+    }
+
+    if (window.MathJax) {
+        MathJax.typesetPromise([feed]);
+    }
+}
 
 
 
+/**
+ * Checks fixed-answer simultaneous equations
+ */
+function checkSimultaneous(id, targetVal1, targetVal2) {
+    const m1 = document.getElementById(`input-${id}-1`);
+    const m2 = document.getElementById(`input-${id}-2`);
+    const feedback = document.getElementById(`feedback-${id}`);
+    const solDiv = document.getElementById(`solution-${id}`);
+
+    if (!m1 || !m2 || !feedback) return;
+
+    const raw1 = m1.value.trim();
+    const raw2 = m2.value.trim();
+
+    if (!raw1 || !raw2) {
+        feedback.textContent = "Please provide answers for both variables.";
+        feedback.className = "feedback-region feedback-incorrect";
+        feedback.style.color = "red";
+        return;
+    }
+
+    // Isolate mathematical values if the user types equations like "x = 5"
+    function cleanMathInput(str) {
+        let clean = str.replace(/\$/g, '').trim();
+        if (clean.includes('=')) {
+            clean = clean.split('=').pop().trim();
+        }
+        return clean;
+    }
+
+    const cleanUser1 = cleanMathInput(raw1);
+    const cleanUser2 = cleanMathInput(raw2);
+    const cleanTarget1 = cleanMathInput(targetVal1);
+    const cleanTarget2 = cleanMathInput(targetVal2);
+
+    try {
+        const uExpr1 = ce.parse(cleanUser1);
+        const uExpr2 = ce.parse(cleanUser2);
+        const tExpr1 = ce.parse(cleanTarget1);
+        const tExpr2 = ce.parse(cleanTarget2);
+
+        if (!uExpr1.isValid || !uExpr2.isValid) {
+            feedback.textContent = "Incorrect formatting. Try typing clearly!";
+            feedback.className = "feedback-region feedback-incorrect";
+            feedback.style.color = "red";
+            return;
+        }
+
+        const is1Correct = uExpr1.isEqual(tExpr1);
+        const is2Correct = uExpr2.isEqual(tExpr2);
+
+        if (!is1Correct || !is2Correct) {
+            feedback.textContent = "Incorrect. Try again!";
+            feedback.className = "feedback-region feedback-incorrect";
+            feedback.style.color = "red";
+            return;
+        }
+
+        // Check if fractions need simplification
+        let needsSimplify = false;
+        [raw1, raw2].forEach(v => {
+            if (v.includes('/') || v.includes('frac')) {
+                const digits = v.match(/\d+/g);
+                if (digits && digits.length >= 2) {
+                    const n = parseInt(digits[digits.length - 2], 10);
+                    const d = parseInt(digits[digits.length - 1], 10);
+                    if (d !== 0 && getGCD(n, d) > 1) needsSimplify = true;
+                }
+            }
+        });
+
+        if (needsSimplify) {
+            feedback.textContent = "Correct values, but please simplify your fractions fully.";
+            feedback.className = "feedback-region feedback-warning";
+            feedback.style.color = "orange";
+        } else {
+            feedback.textContent = "Correct!";
+            feedback.className = "feedback-region feedback-correct";
+            feedback.style.color = "green";
+            
+            // Disable inputs on complete success
+            m1.disabled = true;
+            m2.disabled = true;
+            
+            // Optionally display solution upon correct answer
+            if (solDiv) solDiv.style.display = "block";
+        }
+
+    } catch (err) {
+        console.error("Simultaneous check error:", err);
+        feedback.textContent = "Error evaluating expression. Please re-check your formatting.";
+        feedback.className = "feedback-region feedback-incorrect";
+        feedback.style.color = "red";
+    }
+
+    if (window.MathJax) {
+        MathJax.typesetPromise([feedback]);
+    }
+}
+
+
+/**
+ * Renders a dual-line linear graph SVG with customizable axis titles,
+ * optional axis intercept markers, and optional manually supplied intersection points.
+ */
+function createDualLineSVG(l1, l2, showIntersection, ixVal, iyVal, ixLabel, iyLabel, xTitle, yTitle) {
+    const size = 260;
+    const center = size / 2;
+
+    const axisXTitle = xTitle || "x";
+    const axisYTitle = yTitle || "y";
+
+    // Determine viewport scale to keep intercepts visible
+    const points = [
+        Math.abs(l1.xInt), Math.abs(l1.yInt), 
+        Math.abs(l2.xInt), Math.abs(l2.yInt), 5
+    ];
+
+    if (showIntersection === "yes" && ixVal !== "" && iyVal !== "") {
+        points.push(Math.abs(parseFloat(ixVal)), Math.abs(parseFloat(iyVal)));
+    }
+
+    const maxVal = Math.max(...points);
+    const scale = (size / 2.6) / maxVal;
+
+    // Helper to calculate SVG line end coordinates
+    function computePoints(xInt, yInt) {
+        const svgX1 = center + (-15 * scale);
+        const svgY1 = center - (yInt * (1 - (-15) / xInt) * scale);
+        const svgX2 = center + (15 * scale);
+        const svgY2 = center - (yInt * (1 - 15 / xInt) * scale);
+        const cx = center + (xInt * scale);
+        const cy = center - (yInt * scale);
+        return { svgX1, svgY1, svgX2, svgY2, cx, cy };
+    }
+
+    const line1Data = computePoints(l1.xInt, l1.yInt);
+    const line2Data = computePoints(l2.xInt, l2.yInt);
+
+    // Optional intersection rendering
+    let intersectionMarkup = "";
+    let ariaIntersectionText = "";
+
+    if (showIntersection === "yes" && ixVal !== "" && iyVal !== "") {
+        const rawIx = parseFloat(ixVal);
+        const rawIy = parseFloat(iyVal);
+        const svgIx = center + (rawIx * scale);
+        const svgIy = center - (rawIy * scale);
+
+        const labelX = ixLabel || ixVal;
+        const labelY = iyLabel || iyVal;
+
+        ariaIntersectionText = ` Intersecting at (${labelX}, ${labelY}).`;
+
+        intersectionMarkup = `
+            <circle cx="${svgIx}" cy="${svgIy}" r="5" fill="#d9534f" stroke="white" stroke-width="1.5" />
+            <text x="${svgIx + 8}" y="${svgIy - 8}" font-size="11" font-weight="bold" fill="#d9534f" font-family="sans-serif">
+                (${labelX}, ${labelY})
+            </text>
+        `;
+    }
+
+    const ariaDescription = `Graph depicting two lines on axes ${axisXTitle} and ${axisYTitle}. ${l1.name} crosses ${axisYTitle} at (0, ${l1.yLabel}) and ${axisXTitle} at (${l1.xLabel}, 0). ${l2.name} crosses ${axisYTitle} at (0, ${l2.yLabel}) and ${axisXTitle} at (${l2.xLabel}, 0).${ariaIntersectionText}`;
+
+    return `
+    <svg width="${size}" height="${size}" viewBox="0 0 ${size} ${size}" role="img" aria-label="${ariaDescription}" style="background: white; border: 1px solid #ccc; border-radius: 4px; display: block;">
+        <!-- Axes -->
+        <line x1="0" y1="${center}" x2="${size}" y2="${center}" stroke="#888" stroke-width="1.5" />
+        <line x1="${center}" y1="0" x2="${center}" y2="${size}" stroke="#888" stroke-width="1.5" />
+
+        <!-- Axis Labels -->
+        <text x="${size - 14}" y="${center - 6}" font-size="11" font-weight="bold" font-style="italic" font-family="sans-serif">${axisXTitle}</text>
+        <text x="${center + 6}" y="14" font-size="11" font-weight="bold" font-style="italic" font-family="sans-serif">${axisYTitle}</text>
+
+        <!-- Line 1 (Solid Blue) -->
+        <line x1="${line1Data.svgX1}" y1="${line1Data.svgY1}" x2="${line1Data.svgX2}" y2="${line1Data.svgY2}" stroke="#004a75" stroke-width="2.5" />
+        <circle cx="${line1Data.cx}" cy="${center}" r="3.5" fill="#004a75" />
+        <circle cx="${center}" cy="${line1Data.cy}" r="3.5" fill="#004a75" />
+        <text x="${line1Data.cx}" y="${center + 14}" font-size="10" text-anchor="middle" font-family="sans-serif">(${l1.xLabel}, 0)</text>
+        <text x="${center + 5}" y="${line1Data.cy + 4}" font-size="10" font-family="sans-serif">(0, ${l1.yLabel})</text>
+
+        <!-- Line 2 (Dashed Green) -->
+        <line x1="${line2Data.svgX1}" y1="${line2Data.svgY1}" x2="${line2Data.svgX2}" y2="${line2Data.svgY2}" stroke="#2e7d32" stroke-width="2.5" stroke-dasharray="4,2" />
+        <circle cx="${line2Data.cx}" cy="${center}" r="3.5" fill="#2e7d32" />
+        <circle cx="${center}" cy="${line2Data.cy}" r="3.5" fill="#2e7d32" />
+        <text x="${line2Data.cx}" y="${center - 6}" font-size="10" text-anchor="middle" font-family="sans-serif">(${l2.xLabel}, 0)</text>
+        <text x="${center - 5}" y="${line2Data.cy + 4}" font-size="10" text-anchor="end" font-family="sans-serif">(0, ${l2.yLabel})</text>
+
+        <!-- Optional Intersection Point -->
+        ${intersectionMarkup}
+    </svg>
+    `;
+}
+
+//Prob
+// Checks a full equation, ignoring case and spaces, but keeping the equals sign
+function checkEquationCaseInsensitive(id, targetValue) {
+    const mfield = document.getElementById(`input-${id}`);
+    const feedback = document.getElementById(`feedback-${id}`);
+    if (!mfield || !feedback) return;
+
+    const studentRaw = mfield.value ? mfield.value.trim() : "";
+    if (!studentRaw) {
+        feedback.textContent = "Please enter an answer.";
+        feedback.className = "feedback-region feedback-incorrect";
+        return;
+    }
+
+    try {
+        // Clean spaces and dollar signs, and make everything lowercase.
+        // NOTICE: We are keeping the equals sign this time!
+        const studentClean = studentRaw.replace(/[\$\s]/g, '').toLowerCase();
+        const targetClean = targetValue.replace(/[\$\s]/g, '').toLowerCase();
+
+        // Parse both using the math engine
+        const userExpr = ce.parse(studentClean, { canonical: false });
+        const targetExpr = ce.parse(targetClean, { canonical: false });
+
+        // Check if the equations match
+        if (userExpr.isEqual(targetExpr)) {
+            feedback.textContent = "Correct!";
+            feedback.className = "feedback-region feedback-correct";
+        } else {
+            feedback.textContent = "Incorrect. Try again!";
+            feedback.className = "feedback-region feedback-incorrect";
+        }
+
+    } catch (err) {
+        // Fallback plain text comparison (ignoring spaces and case)
+        const fallbackStudent = studentRaw.replace(/[\$\s]/g, '').toLowerCase();
+        const fallbackTarget = targetValue.replace(/[\$\s]/g, '').toLowerCase();
+
+        if (fallbackStudent === fallbackTarget) {
+            feedback.textContent = "Correct!";
+            feedback.className = "feedback-region feedback-correct";
+        } else {
+            feedback.textContent = "Incorrect formatting. Try again.";
+            feedback.className = "feedback-region feedback-incorrect";
+        }
+    }
+}

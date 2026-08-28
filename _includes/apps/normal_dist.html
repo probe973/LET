@@ -1,0 +1,194 @@
+<div class="workshop-app-container" style="max-width: 600px; margin: 0 auto; font-family: Arial, sans-serif; border: 1px solid #ccc; padding: 20px; border-radius: 8px;">
+    
+    <!-- Tab Navigation -->
+    <div role="tablist" aria-label="Normal Distribution Calculator Tabs" style="display: flex; gap: 10px; margin-bottom: 20px;">
+        <button role="tab" id="tab-prob" aria-selected="true" aria-controls="panel-prob" onclick="switchTab('prob')" class="btn-tab active" style="padding: 10px 15px; cursor: pointer; font-weight: bold; background: #004a75; color: white; border: none; border-radius: 4px;">
+            Probability from Score
+        </button>
+        <button role="tab" id="tab-score" aria-selected="false" aria-controls="panel-score" onclick="switchTab('score')" class="btn-tab" style="padding: 10px 15px; cursor: pointer; background: #eee; color: #333; border: none; border-radius: 4px;">
+            Raw Score from Probability
+        </button>
+    </div>
+
+    <!-- Tab 1: Probability from Score Panel -->
+    <div id="panel-prob" role="tabpanel" aria-labelledby="tab-prob" class="tab-panel">
+        <h3>Calculate Probabilities from a Score</h3>
+        
+        <div style="margin-bottom: 12px;">
+            <label for="mean-1" style="display: block; font-weight: bold; margin-bottom: 4px;">Mean ($\mu$):</label>
+            <input type="number" id="mean-1" value="0" style="width: 100%; padding: 8px; box-sizing: border-box;" aria-label="Mean value">
+        </div>
+
+        <div style="margin-bottom: 12px;">
+            <label for="sd-1" style="display: block; font-weight: bold; margin-bottom: 4px;">Standard Deviation ($\sigma$):</label>
+            <input type="number" id="sd-1" value="1" min="0.0001" step="any" style="width: 100%; padding: 8px; box-sizing: border-box;" aria-label="Standard deviation value">
+        </div>
+
+        <div style="margin-bottom: 15px;">
+            <label for="score-x" style="display: block; font-weight: bold; margin-bottom: 4px;">Raw Score ($x$):</label>
+            <input type="number" id="score-x" step="any" style="width: 100%; padding: 8px; box-sizing: border-box;" aria-label="Raw score x">
+        </div>
+
+        <button type="button" class="btn" onclick="calculateProbability()" style="background: #004a75; color: white; padding: 10px 20px; border: none; border-radius: 4px; cursor: pointer; font-size: 1rem;">Calculate</button>
+
+        <!-- Screen-reader accessible feedback region -->
+        <div id="feedback-prob" aria-live="polite" style="margin-top: 15px; font-weight: bold; padding: 10px; background: #f9f9f9; border-left: 4px solid #004a75;">
+            Results will appear here.
+        </div>
+    </div>
+
+    <!-- Tab 2: Raw Score from Probability Panel -->
+    <div id="panel-score" role="tabpanel" aria-labelledby="tab-score" class="tab-panel" style="display: none;">
+        <h3>Calculate Raw Score from Probability (Less Than)</h3>
+        
+        <div style="margin-bottom: 12px;">
+            <label for="mean-2" style="display: block; font-weight: bold; margin-bottom: 4px;">Mean ($\mu$):</label>
+            <input type="number" id="mean-2" value="0" style="width: 100%; padding: 8px; box-sizing: border-box;" aria-label="Mean value for raw score calculation">
+        </div>
+
+        <div style="margin-bottom: 12px;">
+            <label for="sd-2" style="display: block; font-weight: bold; margin-bottom: 4px;">Standard Deviation ($\sigma$):</label>
+            <input type="number" id="sd-2" value="1" min="0.0001" step="any" style="width: 100%; padding: 8px; box-sizing: border-box;" aria-label="Standard deviation value for raw score calculation">
+        </div>
+
+        <div style="margin-bottom: 15px;">
+            <label for="prob-input" style="display: block; font-weight: bold; margin-bottom: 4px;">Probability (Less Than, e.g., 0.95):</label>
+            <input type="number" id="prob-input" min="0" max="1" step="any" style="width: 100%; padding: 8px; box-sizing: border-box;" aria-label="Probability value between 0 and 1">
+        </div>
+
+        <button type="button" class="btn" onclick="calculateRawScore()" style="background: #004a75; color: white; padding: 10px 20px; border: none; border-radius: 4px; cursor: pointer; font-size: 1rem;">Calculate</button>
+
+        <!-- Screen-reader accessible feedback region -->
+        <div id="feedback-score" aria-live="polite" style="margin-top: 15px; font-weight: bold; padding: 10px; background: #f9f9f9; border-left: 4px solid #004a75;">
+            Results will appear here.
+        </div>
+    </div>
+
+</div>
+
+<script>
+    // --- Tab Switching Logic ---
+    function switchTab(targetTab) {
+        const tabProb = document.getElementById('tab-prob');
+        const tabScore = document.getElementById('tab-score');
+        const panelProb = document.getElementById('panel-prob');
+        const panelScore = document.getElementById('panel-score');
+
+        if (targetTab === 'prob') {
+            tabProb.setAttribute('aria-selected', 'true');
+            tabProb.style.background = '#004a75';
+            tabProb.style.color = 'white';
+            
+            tabScore.setAttribute('aria-selected', 'false');
+            tabScore.style.background = '#eee';
+            tabScore.style.color = '#333';
+            
+            panelProb.style.display = 'block';
+            panelScore.style.display = 'none';
+        } else {
+            tabScore.setAttribute('aria-selected', 'true');
+            tabScore.style.background = '#004a75';
+            tabScore.style.color = 'white';
+            
+            tabProb.setAttribute('aria-selected', 'false');
+            tabProb.style.background = '#eee';
+            tabProb.style.color = '#333';
+            
+            panelScore.style.display = 'block';
+            panelProb.style.display = 'none';
+        }
+    }
+
+    // --- Statistical Math Helpers ---
+
+    // Approximation of the Error Function (erf) needed for Normal Distribution
+    function erf(x) {
+        const sign = (x >= 0) ? 1 : -1;
+        x = Math.abs(x);
+        const a1 =  0.254829592;
+        const a2 = -0.284496736;
+        const a3 =  1.421413741;
+        const a4 = -1.453152027;
+        const a5 =  1.061405429;
+        const p  =  0.3275911;
+        
+        const t = 1.0 / (1.0 + p * x);
+        const y = 1.0 - (((((a5 * t + a4) * t) + a3) * t + a2) * t + a1) * t * Math.exp(-x * x);
+        return sign * y;
+    }
+
+    // Cumulative Distribution Function (CDF) for Normal Distribution
+    function normalCDF(x, mean, sd) {
+        return 0.5 * (1 + erf((x - mean) / (sd * Math.sqrt(2))));
+    }
+
+    // Inverse Normal CDF (Probit approximation) to find raw score from probability
+    function inverseNormalCDF(p, mean, sd) {
+        if (p <= 0 || p >= 1) return NaN;
+        // Approximation using Abramowitz and Stegun formula
+        const coeff = [2.515517, 0.802853, 0.010328];
+        const denom = [1.0, 1.432788, 0.189269, 0.001308];
+        
+        let t = Math.sqrt(-2.0 * Math.log(p < 0.5 ? p : 1.0 - p));
+        let z = t - ((coeff[2] * t + coeff[1]) * t + coeff[0]) / 
+                    (((denom[3] * t + denom[2]) * t + denom[1]) * t + denom[0]);
+        if (p < 0.5) z = -z;
+        
+        return mean + z * sd;
+    }
+
+    // --- Calculation Triggers ---
+
+    function calculateProbability() {
+        const mean = parseFloat(document.getElementById('mean-1').value);
+        const sd = parseFloat(document.getElementById('sd-1').value);
+        const x = parseFloat(document.getElementById('score-x').value);
+        const feedback = document.getElementById('feedback-prob');
+
+        if (isNaN(mean) || isNaN(sd) || isNaN(x)) {
+            feedback.textContent = "Please ensure all fields contain valid numbers.";
+            return;
+        }
+
+        if (sd <= 0) {
+            feedback.textContent = "Standard deviation must be greater than zero.";
+            return;
+        }
+
+        const lessThan = normalCDF(x, mean, sd);
+        const moreThan = 1 - lessThan;
+
+        feedback.innerHTML = `
+            Probability (Less Than ${x}): <strong>${lessThan.toFixed(4)}</strong><br>
+            Probability (More Than ${x}): <strong>${moreThan.toFixed(4)}</strong>
+        `;
+    }
+
+    function calculateRawScore() {
+        const mean = parseFloat(document.getElementById('mean-2').value);
+        const sd = parseFloat(document.getElementById('sd-2').value);
+        const p = parseFloat(document.getElementById('prob-input').value);
+        const feedback = document.getElementById('feedback-score');
+
+        if (isNaN(mean) || isNaN(sd) || isNaN(p)) {
+            feedback.textContent = "Please ensure all fields contain valid numbers.";
+            return;
+        }
+
+        if (sd <= 0) {
+            feedback.textContent = "Standard deviation must be greater than zero.";
+            return;
+        }
+
+        if (p <= 0 || p >= 1) {
+            feedback.textContent = "Probability must be strictly between 0 and 1 (exclusive).";
+            return;
+        }
+
+        const rawScore = inverseNormalCDF(p, mean, sd);
+
+        feedback.innerHTML = `
+            Raw Score (x): <strong>${rawScore.toFixed(4)}</strong>
+        `;
+    }
+</script>

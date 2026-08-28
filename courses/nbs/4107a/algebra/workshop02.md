@@ -250,7 +250,7 @@ This page contains practice questions covering a range of algebra skills.
     id="ind_04"
     title="29"
     question_text="Use the laws of indices to simplify $y^4tyt^{-5}$"
-    correct_answer="y^5 / t^4"
+    correct_answer="y^5t^{-4}"
     solution_text="Group the terms with the same base and add their powers. <br> For y: $y^{4+1} = y^5$. <br>For t: $t^{1+(-5)} = t^{-4}$. <br> Result: $y^5t^{-4}$ or $\\frac{y^5}{t^4}$"
 %}
 
@@ -464,3 +464,5 @@ This page contains practice questions covering a range of algebra skills.
 
 <script src="https://unpkg.com/mathlive"></script>
 <script src="https://unpkg.com/@cortex-js/compute-engine"></script>
+
+

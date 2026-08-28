@@ -1,0 +1,414 @@
+# Measures of Central Tendency
+
+<div class="explanation" markdown="1">
+
+## Introduction
+
+When analysing data, it is often useful to identify a value that represents the centre of a dataset. Measures of central tendency provide a way of describing a typical or central value, allowing large datasets to be summarised using a single figure.
+
+The three most common measures of central tendency are:
+
+- Mean
+- Median
+- Mode
+
+Each measure describes the centre of a dataset in a different way. Choosing the most appropriate measure depends on the type of data and the distribution of the values.
+
+---
+
+## What Is Central Tendency?
+
+Central tendency refers to the tendency of data values to cluster around a central or typical value.
+
+Consider the following dataset representing the number of books borrowed by five learners:
+
+$$
+2,\ 3,\ 4,\ 4,\ 7
+$$
+
+Rather than describing every value individually, a measure of central tendency can be used to provide a summary of the dataset.
+
+A measure of central tendency should help answer the question:
+
+> What value best represents the centre of this dataset?
+
+---
+
+## The Mean
+
+### What Is the Mean?
+
+The mean is commonly referred to as the **average**.
+
+It is calculated by adding all values together and dividing by the number of values.
+
+### Formula
+
+$$
+\text{Mean} = \frac{\sum x}{n}
+$$
+
+Where:
+
+- $\sum x$ is the sum of all values.
+- $n$ is the number of values.
+
+### Example Calculation
+
+Dataset:
+
+$$
+4,\ 6,\ 8,\ 10,\ 12
+$$
+
+Step 1: Add the values.
+
+$$
+4 + 6 + 8 + 10 + 12 = 40
+$$
+
+Step 2: Count the number of values.
+
+$$
+n = 5
+$$
+
+Step 3: Divide the total by the number of values.
+
+$$
+\text{Mean} = \frac{40}{5} = 8
+$$
+
+### Interpretation
+
+The average value in the dataset is 8.
+
+### Strengths of the Mean
+
+- Uses every value in the dataset.
+- Reflects changes in all observations.
+- Provides a useful summary when data are evenly distributed and free from extreme values.
+- Forms the basis of many statistical techniques.
+
+### Limitations of the Mean
+
+The mean is affected by extreme values (outliers).
+
+Consider the following dataset:
+
+$$
+8,\ 9,\ 9,\ 10,\ 54
+$$
+
+The mean is:
+
+$$
+\frac{8+9+9+10+54}{5}
+=
+\frac{90}{5}
+=
+18
+$$
+
+Although the mean is 18, most values are close to 9 or 10. The unusually large value of 54 pulls the mean upwards and makes it less representative of the typical value.
+
+### When Should the Mean Be Used?
+
+The mean is most appropriate when:
+
+- Data are quantitative.
+- Data are interval or ratio level.
+- Extreme values are absent or limited.
+- The distribution is reasonably symmetrical.
+
+Examples include:
+
+- Assessment scores.
+- Heights.
+- Weights.
+- Completion times.
+
+---
+
+## The Median
+
+### What Is the Median?
+
+The median is the middle value when data are arranged in order.
+
+Unlike the mean, the median is not heavily influenced by extreme values.
+
+### Finding the Median
+
+Step 1: Arrange the data in order.
+
+Step 2: Locate the middle value.
+
+### Example Calculation
+
+Dataset:
+
+$$
+3,\ 5,\ 6,\ 8,\ 10
+$$
+
+The values are already in order.
+
+The middle value is:
+
+$$
+6
+$$
+
+Therefore:
+
+$$
+\text{Median} = 6
+$$
+
+### Example with an Even Number of Values
+
+Dataset:
+
+$$
+2,\ 4,\ 6,\ 8
+$$
+
+There are two middle values:
+
+$$
+4 \text{ and } 6
+$$
+
+The median is the mean of these two values:
+
+$$
+\text{Median}
+=
+\frac{4+6}{2}
+=
+5
+$$
+
+### Why the Median Is Useful
+
+Consider the dataset:
+
+$$
+8,\ 9,\ 9,\ 10,\ 54
+$$
+
+The median is:
+
+$$
+9
+$$
+
+This is much closer to where most of the data are located than the mean of 18.
+
+### Strengths of the Median
+
+- It is resistant to extreme values (outliers).
+- It often provides a more representative measure of centre when data are skewed.
+- It can be used with ordinal as well as quantitative data.
+
+### Limitations of the Median
+
+- The median is based on the middle position of the data rather than every individual value.
+- Datasets with very different distributions can sometimes have the same median.
+- Changes to values away from the centre of the dataset may have little or no effect on the median.
+
+### When Should the Median Be Used?
+
+The median is most appropriate when:
+
+- The dataset contains outliers.
+- The data are skewed.
+- The variable is ordinal.
+
+Examples include:
+
+- Income data.
+- Property prices.
+- Satisfaction ratings.
+- Confidence scales.
+
+---
+
+## The Mode
+
+### What Is the Mode?
+
+The mode is the value that occurs most frequently in a dataset.
+
+Unlike the mean and median, the mode can be used with both numerical and categorical data.
+
+### Example Calculation
+
+Dataset:
+
+$$
+2,\ 3,\ 3,\ 4,\ 5
+$$
+
+The value occurring most often is:
+
+$$
+3
+$$
+
+Therefore:
+
+$$
+\text{Mode} = 3
+$$
+
+### Example with Qualitative Data
+
+A survey records the preferred device type of learners.
+
+Responses:
+
+- Laptop
+- Tablet
+- Laptop
+- Desktop
+- Laptop
+
+The most common response is:
+
+$$
+\text{Laptop}
+$$
+
+Therefore, the mode is Laptop.
+
+### More Than One Mode
+
+Some datasets contain multiple modes.
+
+Dataset:
+
+$$
+2,\ 2,\ 4,\ 4,\ 6,\ 7
+$$
+
+The values 2 and 4 both occur twice.
+
+The dataset is **bimodal** because it has two modes.
+
+### Strengths of the Mode
+
+- Easy to identify.
+- Can be used with qualitative data.
+- Represents the most common observation.
+
+### Limitations of the Mode
+
+- Some datasets have no mode.
+- Some datasets have multiple modes.
+- Does not consider all values.
+
+### When Should the Mode Be Used?
+
+The mode is most appropriate when:
+
+- Identifying the most common category.
+- Analysing nominal data.
+- Determining the most frequent outcome.
+
+Examples include:
+
+- Most common transport method.
+- Most common eye colour.
+- Most commonly used device type.
+
+---
+
+## Comparing the Mean, Median and Mode
+
+<table aria-label="Comparison of measures of central tendency">
+<thead>
+<tr>
+<th scope="col">Measure</th>
+<th scope="col">Description</th>
+<th scope="col">Best Used For</th>
+<th scope="col">Affected by Outliers?</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Mean</td>
+<td>The arithmetic average.</td>
+<td>Interval and ratio data with few extreme values.</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td>Median</td>
+<td>The middle value in an ordered dataset.</td>
+<td>Skewed data or datasets containing outliers.</td>
+<td>No, or only slightly</td>
+</tr>
+<tr>
+<td>Mode</td>
+<td>The most frequently occurring value.</td>
+<td>Nominal, ordinal, quantitative or qualitative data.</td>
+<td>No</td>
+</tr>
+</tbody>
+</table>
+
+---
+
+## Choosing the Appropriate Measure
+
+<table aria-label="Choosing an appropriate measure of central tendency">
+<thead>
+<tr>
+<th scope="col">Situation</th>
+<th scope="col">Recommended Measure</th>
+<th scope="col">Reason</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Assessment scores with no extreme values</td>
+<td>Mean</td>
+<td>Uses all data values and provides a precise average.</td>
+</tr>
+<tr>
+<td>Income data with very high earners present</td>
+<td>Median</td>
+<td>Not distorted by extreme values.</td>
+</tr>
+<tr>
+<td>Satisfaction ratings (Low, Medium, High)</td>
+<td>Median</td>
+<td>Suitable for ordered categories.</td>
+</tr>
+<tr>
+<td>Most commonly used device type</td>
+<td>Mode</td>
+<td>Identifies the most frequent category.</td>
+</tr>
+<tr>
+<td>Most common assessment score</td>
+<td>Mode</td>
+<td>Identifies the most frequently occurring value.</td>
+</tr>
+</tbody>
+</table>
+
+---
+
+## Summary
+
+Measures of central tendency provide a way of describing the centre or typical value of a dataset.
+
+- The **mean** uses every value and is often referred to as the average.
+- The **median** identifies the middle value and is resistant to extreme values.
+- The **mode** identifies the most frequently occurring value and can be used with categorical data.
+
+Choosing the most appropriate measure depends on both the type of data and the distribution of the values. A good analyst understands the strengths and limitations of each measure and selects the one that provides the most meaningful summary of the dataset.
+
+</div>

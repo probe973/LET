@@ -3,11 +3,12 @@ layout: nbs4107a
 title: Factorising
 ---
 
+{% include qguides/algebra/factorising.html %}
+
 <section class="revision-container" aria-labelledby="revision-heading">
     <header class="revision-header">
-        <h2 id="revision-heading">Algebra Practice: Simplifying Expressions</h2>
+        <h2 id="revision-heading">Algebra Practice: Factorising Expressions</h2>
         <p><strong>Instructions:</strong> Practice random questions below. Click "Check Answer" to see if you are correct. If you need help, the solution will be revealed after your attempt.</p>
-        <p>Write all of the expanded answers in their simplest form (e.g. $10x + 3x$ write as $13x$; $4x \times 5x$ write as $20x^2$)</p>
     </header>
 
     <!-- The JS will inject questions here -->

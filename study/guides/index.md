@@ -16,6 +16,15 @@ title: Study Guides
         </div>
     </a>
 
+    <a href="{{ "/study/stats-workshops" | relative_url }}" class="card">
+        <div class="card-content">
+            <div class="card-text">
+                <h3>Statistics Software</h3>
+                <p>Activities to learn statistical software</p>
+            </div>
+        </div>
+    </a>
+
 
 
 </div>

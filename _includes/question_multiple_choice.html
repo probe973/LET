@@ -24,7 +24,7 @@
     <div id="feedback-{{ include.id }}"></div>
 
     {% if include.solution_text %}
-        <button class="btn btn-primary solution-toggle-button" onclick="toggleSolution('solution-{{ include.id }}', this)">Show Solution Hint</button>
+        <button class="btn btn-primary solution-toggle-button" onclick="toggleSolution('solution-{{ include.id }}', this)">Show Solution</button>
         <div id="solution-{{ include.id }}" class="solution-content">
             <h4>Solution:</h4>
             {{ include.solution_text | markdownify }}

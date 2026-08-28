@@ -1,0 +1,96 @@
+<section class="question-container" id="question-{{ include.id }}" role="region" aria-label="Question {{ include.title }}">
+    <h3 id="q-title-{{ include.id }}">Question {{ include.title }}</h3>
+    <div class="question-content">{{ include.question_text | markdownify }}</div>
+
+    <div class="algebra-answer-container" style="display: flex; flex-direction: column; gap: 15px;">
+        <!-- Part A -->
+        {% if include.prompt_a %}
+        <div>
+            <label for="ans-{{ include.id }}-a" style="display:block; font-weight:bold;">a) {{ include.prompt_a }}:</label>
+            <math-field id="ans-{{ include.id }}-a" class="algebra-input-field" aria-label="Part a: {{ include.prompt_a }}"></math-field>
+        </div>
+        {% endif %}
+
+        <!-- Part B (The Trigger) -->
+        <div>
+            <label for="ans-{{ include.id }}-b" style="display:block; font-weight:bold;">b) {{ include.prompt_b }}:</label>
+            <select id="ans-{{ include.id }}-b" class="algebra-input-field" style="max-width: 200px;" 
+                    aria-label="Part b: {{ include.prompt_b }}"
+                    onchange="toggleAnalysisDetails('{{ include.id }}', '{{ include.trigger_b }}')">
+                <option value="">Select...</option>
+                <option value="Yes">Yes</option>
+                <option value="No">No</option>
+            </select>
+        </div>
+
+        <!-- Conditional Parts C-F -->
+        <div id="extra-{{ include.id }}" style="display: none; flex-direction: column; gap: 15px; border-left: 2px dashed #ccc; padding-left: 15px;">
+            {% assign parts = "c,d,e,f" | split: "," %}
+            {% for p in parts %}
+                {% capture pr %}prompt_{{p}}{% endcapture %}{% capture ty %}type_{{p}}{% endcapture %}{% capture ch %}choices_{{p}}{% endcapture %}
+                {% if include[pr] %}
+                <div>
+                    <label for="ans-{{ include.id }}-{{p}}" style="display:block; font-weight:bold;">{{p}}) {{ include[pr] }}:</label>
+                    {% if include[ty] == 'math' %}
+                        <math-field id="ans-{{ include.id }}-{{p}}" class="algebra-input-field" aria-label="Part {{p}}: {{ include[pr] }}"></math-field>
+                    {% else %}
+                        <select id="ans-{{ include.id }}-{{p}}" class="algebra-input-field" style="max-width: 200px;" aria-label="Part {{p}}: {{ include[pr] }}">
+                            <option value="">Select...</option>
+                            {% assign c_list = include[ch] | split: ',' %}{% for c in c_list %}<option value="{{c}}">{{c}}</option>{% endfor %}
+                        </select>
+                    {% endif %}
+                </div>
+                {% endif %}
+            {% endfor %}
+
+            <!-- Graph SVG Slots -->
+            <div style="display: flex; gap: 10px; flex-wrap: wrap; justify-content: center;" id="graphs-{{ include.id }}">
+                <div id="svg-{{ include.id }}-A" class="graph-svg-container"></div>
+                <div id="svg-{{ include.id }}-B" class="graph-svg-container"></div>
+                <div id="svg-{{ include.id }}-C" class="graph-svg-container"></div>
+                <div id="svg-{{ include.id }}-D" class="graph-svg-container"></div>
+            </div>
+        </div>
+
+        <div class="button-group">
+            <button class="btn" 
+                    aria-controls="feedback-{{ include.id }} solution-{{ include.id }}"
+                    onclick="checkLineAnalysis('{{ include.id }}', 
+                '{{include.ans_a | default: "NA"}}||{{include.ans_b | default: "NA"}}||{{include.ans_c | default: "NA"}}||{{include.ans_d | default: "NA"}}||{{include.ans_e | default: "NA"}}||{{include.ans_f | default: "NA"}}',
+                '{{include.type_a | default: "math"}}||{{include.type_b | default: "choice"}}||{{include.type_c | default: "math"}}||{{include.type_d | default: "math"}}||{{include.type_e | default: "math"}}||{{include.type_f | default: "choice"}}',
+                'Part a||Part b||Gradient||y-intercept||x-intercept||Sketch')">Check Answer</button>
+            <button class="btn btn-primary solution-toggle-button" 
+                            aria-controls="solution-{{ include.id }}" 
+                            aria-expanded="false" 
+                            onclick="toggleSolution('solution-{{ include.id }}', this)">Show Solution</button>
+        </div>
+    </div>
+
+    <div id="feedback-{{ include.id }}" aria-live="polite" class="feedback-region" style="margin-top: 10px; font-weight: bold;"></div>
+    
+    <div id="solution-{{ include.id }}" class="solution-content solution-box-style" role="region" aria-label="Solution for Question {{ include.title }}" style="display:none;">
+        <h4>Solution:</h4>
+        {{ include.solution_text | markdownify }}
+        <!--  <div class="answer-highlight-box">
+            <strong>Correct Answer:</strong> {{ include.ans_a }}, {{ include.ans_b }}, m={{ include.ans_c }}, c={{ include.ans_d }}, x-int={{ include.ans_e }}, Graph {{ include.ans_f }}
+        </div> -->
+    </div>
+</section>
+
+<script>
+    function toggleAnalysisDetails(id, trigger) {
+        const val = document.getElementById(`ans-${id}-b`).value;
+        const extra = document.getElementById(`extra-${id}`);
+        if (extra) extra.style.display = (val === trigger) ? "flex" : "none";
+    }
+    document.addEventListener('DOMContentLoaded', () => {
+        const render = (label, x, y, xl, yl) => {
+            const el = document.getElementById(`svg-{{ include.id }}-${label}`);
+            if (el && x !== "") el.innerHTML = createLineSVG(parseFloat(x), parseFloat(y), label, xl, yl);
+        };
+        if('{{ include.ax }}') render('A', '{{include.ax}}','{{include.ay}}','{{include.axl}}','{{include.ayl}}');
+        if('{{ include.bx }}') render('B', '{{include.bx}}','{{include.by}}','{{include.bxl}}','{{include.byl}}');
+        if('{{ include.cx }}') render('C', '{{include.cx}}','{{include.cy}}','{{include.cxl}}','{{include.cyl}}');
+        if('{{ include.dx }}') render('D', '{{include.dx}}','{{include.dy}}','{{include.dxl}}','{{include.dyl}}');
+    });
+</script>

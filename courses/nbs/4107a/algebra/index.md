@@ -98,4 +98,13 @@ Select a topic to view workshops or practice questions
         </div>
     </a>
 
+    <a href="{{ "/courses/nbs/4107a/algebra/lines" | relative_url }}" class="card">
+        <div class="card-content">
+            <div class="card-text">
+                <h3>Equation of a Straight Line</h3>
+          <p>Questions relating to the equation of a straight-line, gradients, and axes intercepts</p>
+            </div>
+        </div>
+    </a>
+
 </div>
