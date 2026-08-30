@@ -1,0 +1,700 @@
+- id: 1001
+  question: ' \( ((92 \times 7 ) + 14 ) \div 7 \)'
+  answer: 94
+  solution: |-
+    **Inside Brackets** \( 92 \times 7 = 644 \) <br />
+    **Outside Brackets** \( 644 + 14 = 658 \) <br />
+    **Division** \( 658 \div 7 = 94 \)
+- id: 1002
+  question: ' \( ((72 \times 9 ) + 27 ) \div 9 \)'
+  answer: 75
+  solution: |-
+    **Inside Brackets** \( 72 \times 9 = 648 \) <br />
+    **Outside Brackets** \( 648 + 27 = 675 \) <br />
+    **Division** \( 675 \div 9 = 75 \)
+- id: 1003
+  question: ' \( ((80 \times 9 ) - 5 ) \div 5 \)'
+  answer: 143
+  solution: |-
+    **Inside Brackets** \( 80 \times 9 = 720 \) <br />
+    **Outside Brackets** \( 720 - 5 = 715 \) <br />
+    **Division** \( 715 \div 5 = 143 \)
+- id: 1004
+  question: ' \( ((78 \times 8 ) + 40 ) \div 8 \)'
+  answer: 83
+  solution: |-
+    **Inside Brackets** \( 78 \times 8 = 624 \) <br />
+    **Outside Brackets** \( 624 + 40 = 664 \) <br />
+    **Division** \( 664 \div 8 = 83 \)
+- id: 1005
+  question: ' \( ((91 \times 9 ) + 27 ) \div 9 \)'
+  answer: 94
+  solution: |-
+    **Inside Brackets** \( 91 \times 9 = 819 \) <br />
+    **Outside Brackets** \( 819 + 27 = 846 \) <br />
+    **Division** \( 846 \div 9 = 94 \)
+- id: 1006
+  question: ' \( ((72 \times 6 ) - 40 ) \div 8 \)'
+  answer: 49
+  solution: |-
+    **Inside Brackets** \( 72 \times 6 = 432 \) <br />
+    **Outside Brackets** \( 432 - 40 = 392 \) <br />
+    **Division** \( 392 \div 8 = 49 \)
+- id: 1007
+  question: ' \( ((78 \times 9 ) + 9 ) \div 3 \)'
+  answer: 237
+  solution: |-
+    **Inside Brackets** \( 78 \times 9 = 702 \) <br />
+    **Outside Brackets** \( 702 + 9 = 711 \) <br />
+    **Division** \( 711 \div 3 = 237 \)
+- id: 1008
+  question: ' \( ((52 \times 15 ) + 6 ) \div 3 \)'
+  answer: 262
+  solution: |-
+    **Inside Brackets** \( 52 \times 15 = 780 \) <br />
+    **Outside Brackets** \( 780 + 6 = 786 \) <br />
+    **Division** \( 786 \div 3 = 262 \)
+- id: 1009
+  question: ' \( ((34 \times 5 ) - 5 ) \div 5 \)'
+  answer: 33
+  solution: |-
+    **Inside Brackets** \( 34 \times 5 = 170 \) <br />
+    **Outside Brackets** \( 170 - 5 = 165 \) <br />
+    **Division** \( 165 \div 5 = 33 \)
+- id: 1010
+  question: ' \( ((85 \times 7 ) + 21 ) \div 7 \)'
+  answer: 88
+  solution: |-
+    **Inside Brackets** \( 85 \times 7 = 595 \) <br />
+    **Outside Brackets** \( 595 + 21 = 616 \) <br />
+    **Division** \( 616 \div 7 = 88 \)
+- id: 1011
+  question: ' \( ((39 \times 7 ) - 21 ) \div 7 \)'
+  answer: 36
+  solution: |-
+    **Inside Brackets** \( 39 \times 7 = 273 \) <br />
+    **Outside Brackets** \( 273 - 21 = 252 \) <br />
+    **Division** \( 252 \div 7 = 36 \)
+- id: 1012
+  question: ' \( ((48 \times 3 ) - 8 ) \div 8 \)'
+  answer: 17
+  solution: |-
+    **Inside Brackets** \( 48 \times 3 = 144 \) <br />
+    **Outside Brackets** \( 144 - 8 = 136 \) <br />
+    **Division** \( 136 \div 8 = 17 \)
+- id: 1013
+  question: ' \( ((35 \times 6 ) + 7 ) \div 7 \)'
+  answer: 31
+  solution: |-
+    **Inside Brackets** \( 35 \times 6 = 210 \) <br />
+    **Outside Brackets** \( 210 + 7 = 217 \) <br />
+    **Division** \( 217 \div 7 = 31 \)
+- id: 1014
+  question: ' \( ((45 \times 9 ) + 36 ) \div 9 \)'
+  answer: 49
+  solution: |-
+    **Inside Brackets** \( 45 \times 9 = 405 \) <br />
+    **Outside Brackets** \( 405 + 36 = 441 \) <br />
+    **Division** \( 441 \div 9 = 49 \)
+- id: 1015
+  question: ' \( ((44 \times 9 ) + 4 ) \div 4 \)'
+  answer: 100
+  solution: |-
+    **Inside Brackets** \( 44 \times 9 = 396 \) <br />
+    **Outside Brackets** \( 396 + 4 = 400 \) <br />
+    **Division** \( 400 \div 4 = 100 \)
+- id: 1016
+  question: ' \( ((65 \times 8 ) - 40 ) \div 8 \)'
+  answer: 60
+  solution: |-
+    **Inside Brackets** \( 65 \times 8 = 520 \) <br />
+    **Outside Brackets** \( 520 - 40 = 480 \) <br />
+    **Division** \( 480 \div 8 = 60 \)
+- id: 1017
+  question: ' \( ((46 \times 4 ) + 20 ) \div 4 \)'
+  answer: 51
+  solution: |-
+    **Inside Brackets** \( 46 \times 4 = 184 \) <br />
+    **Outside Brackets** \( 184 + 20 = 204 \) <br />
+    **Division** \( 204 \div 4 = 51 \)
+- id: 1018
+  question: ' \( ((90 \times 9 ) + 45 ) \div 9 \)'
+  answer: 95
+  solution: |-
+    **Inside Brackets** \( 90 \times 9 = 810 \) <br />
+    **Outside Brackets** \( 810 + 45 = 855 \) <br />
+    **Division** \( 855 \div 9 = 95 \)
+- id: 1019
+  question: ' \( ((45 \times 6 ) + 6 ) \div 6 \)'
+  answer: 46
+  solution: |-
+    **Inside Brackets** \( 45 \times 6 = 270 \) <br />
+    **Outside Brackets** \( 270 + 6 = 276 \) <br />
+    **Division** \( 276 \div 6 = 46 \)
+- id: 1020
+  question: ' \( ((30 \times 6 ) + 25 ) \div 5 \)'
+  answer: 41
+  solution: |-
+    **Inside Brackets** \( 30 \times 6 = 180 \) <br />
+    **Outside Brackets** \( 180 + 25 = 205 \) <br />
+    **Division** \( 205 \div 5 = 41 \)
+- id: 1021
+  question: ' \( ((49 \times 5 ) - 28 ) \div 7 \)'
+  answer: 31
+  solution: |-
+    **Inside Brackets** \( 49 \times 5 = 245 \) <br />
+    **Outside Brackets** \( 245 - 28 = 217 \) <br />
+    **Division** \( 217 \div 7 = 31 \)
+- id: 1022
+  question: ' \( ((65 \times 9 ) - 36 ) \div 9 \)'
+  answer: 61
+  solution: |-
+    **Inside Brackets** \( 65 \times 9 = 585 \) <br />
+    **Outside Brackets** \( 585 - 36 = 549 \) <br />
+    **Division** \( 549 \div 9 = 61 \)
+- id: 1023
+  question: ' \( ((56 \times 7 ) - 40 ) \div 8 \)'
+  answer: 44
+  solution: |-
+    **Inside Brackets** \( 56 \times 7 = 392 \) <br />
+    **Outside Brackets** \( 392 - 40 = 352 \) <br />
+    **Division** \( 352 \div 8 = 44 \)
+- id: 1024
+  question: ' \( ((58 \times 10 ) - 15 ) \div 5 \)'
+  answer: 113
+  solution: |-
+    **Inside Brackets** \( 58 \times 10 = 580 \) <br />
+    **Outside Brackets** \( 580 - 15 = 565 \) <br />
+    **Division** \( 565 \div 5 = 113 \)
+- id: 1025
+  question: ' \( ((28 \times 8 ) + 12 ) \div 4 \)'
+  answer: 59
+  solution: |-
+    **Inside Brackets** \( 28 \times 8 = 224 \) <br />
+    **Outside Brackets** \( 224 + 12 = 236 \) <br />
+    **Division** \( 236 \div 4 = 59 \)
+- id: 1026
+  question: ' \( ((80 \times 3 ) - 8 ) \div 8 \)'
+  answer: 29
+  solution: |-
+    **Inside Brackets** \( 80 \times 3 = 240 \) <br />
+    **Outside Brackets** \( 240 - 8 = 232 \) <br />
+    **Division** \( 232 \div 8 = 29 \)
+- id: 1027
+  question: ' \( ((30 \times 6 ) - 10 ) \div 5 \)'
+  answer: 34
+  solution: |-
+    **Inside Brackets** \( 30 \times 6 = 180 \) <br />
+    **Outside Brackets** \( 180 - 10 = 170 \) <br />
+    **Division** \( 170 \div 5 = 34 \)
+- id: 1028
+  question: ' \( ((20 \times 9 ) + 12 ) \div 4 \)'
+  answer: 48
+  solution: |-
+    **Inside Brackets** \( 20 \times 9 = 180 \) <br />
+    **Outside Brackets** \( 180 + 12 = 192 \) <br />
+    **Division** \( 192 \div 4 = 48 \)
+- id: 1029
+  question: ' \( ((41 \times 7 ) + 14 ) \div 7 \)'
+  answer: 43
+  solution: |-
+    **Inside Brackets** \( 41 \times 7 = 287 \) <br />
+    **Outside Brackets** \( 287 + 14 = 301 \) <br />
+    **Division** \( 301 \div 7 = 43 \)
+- id: 1030
+  question: ' \( ((60 \times 6 ) + 24 ) \div 6 \)'
+  answer: 64
+  solution: |-
+    **Inside Brackets** \( 60 \times 6 = 360 \) <br />
+    **Outside Brackets** \( 360 + 24 = 384 \) <br />
+    **Division** \( 384 \div 6 = 64 \)
+- id: 1031
+  question: ' \( ((54 \times 8 ) - 36 ) \div 9 \)'
+  answer: 44
+  solution: |-
+    **Inside Brackets** \( 54 \times 8 = 432 \) <br />
+    **Outside Brackets** \( 432 - 36 = 396 \) <br />
+    **Division** \( 396 \div 9 = 44 \)
+- id: 1032
+  question: ' \( ((39 \times 7 ) + 14 ) \div 7 \)'
+  answer: 41
+  solution: |-
+    **Inside Brackets** \( 39 \times 7 = 273 \) <br />
+    **Outside Brackets** \( 273 + 14 = 287 \) <br />
+    **Division** \( 287 \div 7 = 41 \)
+- id: 1033
+  question: ' \( ((49 \times 10 ) + 5 ) \div 5 \)'
+  answer: 99
+  solution: |-
+    **Inside Brackets** \( 49 \times 10 = 490 \) <br />
+    **Outside Brackets** \( 490 + 5 = 495 \) <br />
+    **Division** \( 495 \div 5 = 99 \)
+- id: 1034
+  question: ' \( ((68 \times 12 ) - 18 ) \div 6 \)'
+  answer: 133
+  solution: |-
+    **Inside Brackets** \( 68 \times 12 = 816 \) <br />
+    **Outside Brackets** \( 816 - 18 = 798 \) <br />
+    **Division** \( 798 \div 6 = 133 \)
+- id: 1035
+  question: ' \( ((52 \times 9 ) - 36 ) \div 9 \)'
+  answer: 48
+  solution: |-
+    **Inside Brackets** \( 52 \times 9 = 468 \) <br />
+    **Outside Brackets** \( 468 - 36 = 432 \) <br />
+    **Division** \( 432 \div 9 = 48 \)
+- id: 1036
+  question: ' \( ((24 \times 7 ) + 3 ) \div 3 \)'
+  answer: 57
+  solution: |-
+    **Inside Brackets** \( 24 \times 7 = 168 \) <br />
+    **Outside Brackets** \( 168 + 3 = 171 \) <br />
+    **Division** \( 171 \div 3 = 57 \)
+- id: 1037
+  question: ' \( ((49 \times 8 ) + 24 ) \div 8 \)'
+  answer: 52
+  solution: |-
+    **Inside Brackets** \( 49 \times 8 = 392 \) <br />
+    **Outside Brackets** \( 392 + 24 = 416 \) <br />
+    **Division** \( 416 \div 8 = 52 \)
+- id: 1038
+  question: ' \( ((24 \times 6 ) - 9 ) \div 3 \)'
+  answer: 45
+  solution: |-
+    **Inside Brackets** \( 24 \times 6 = 144 \) <br />
+    **Outside Brackets** \( 144 - 9 = 135 \) <br />
+    **Division** \( 135 \div 3 = 45 \)
+- id: 1039
+  question: ' \( ((72 \times 6 ) + 3 ) \div 3 \)'
+  answer: 145
+  solution: |-
+    **Inside Brackets** \( 72 \times 6 = 432 \) <br />
+    **Outside Brackets** \( 432 + 3 = 435 \) <br />
+    **Division** \( 435 \div 3 = 145 \)
+- id: 1040
+  question: ' \( ((90 \times 3 ) + 10 ) \div 5 \)'
+  answer: 56
+  solution: |-
+    **Inside Brackets** \( 90 \times 3 = 270 \) <br />
+    **Outside Brackets** \( 270 + 10 = 280 \) <br />
+    **Division** \( 280 \div 5 = 56 \)
+- id: 1041
+  question: ' \( ((72 \times 6 ) + 24 ) \div 8 \)'
+  answer: 57
+  solution: |-
+    **Inside Brackets** \( 72 \times 6 = 432 \) <br />
+    **Outside Brackets** \( 432 + 24 = 456 \) <br />
+    **Division** \( 456 \div 8 = 57 \)
+- id: 1042
+  question: ' \( ((90 \times 3 ) - 5 ) \div 5 \)'
+  answer: 53
+  solution: |-
+    **Inside Brackets** \( 90 \times 3 = 270 \) <br />
+    **Outside Brackets** \( 270 - 5 = 265 \) <br />
+    **Division** \( 265 \div 5 = 53 \)
+- id: 1043
+  question: ' \( ((80 \times 8 ) - 20 ) \div 4 \)'
+  answer: 155
+  solution: |-
+    **Inside Brackets** \( 80 \times 8 = 640 \) <br />
+    **Outside Brackets** \( 640 - 20 = 620 \) <br />
+    **Division** \( 620 \div 4 = 155 \)
+- id: 1044
+  question: ' \( ((51 \times 7 ) - 7 ) \div 7 \)'
+  answer: 50
+  solution: |-
+    **Inside Brackets** \( 51 \times 7 = 357 \) <br />
+    **Outside Brackets** \( 357 - 7 = 350 \) <br />
+    **Division** \( 350 \div 7 = 50 \)
+- id: 1045
+  question: ' \( ((84 \times 3 ) - 6 ) \div 6 \)'
+  answer: 41
+  solution: |-
+    **Inside Brackets** \( 84 \times 3 = 252 \) <br />
+    **Outside Brackets** \( 252 - 6 = 246 \) <br />
+    **Division** \( 246 \div 6 = 41 \)
+- id: 1046
+  question: ' \( ((68 \times 5 ) + 5 ) \div 5 \)'
+  answer: 69
+  solution: |-
+    **Inside Brackets** \( 68 \times 5 = 340 \) <br />
+    **Outside Brackets** \( 340 + 5 = 345 \) <br />
+    **Division** \( 345 \div 5 = 69 \)
+- id: 1047
+  question: ' \( ((44 \times 5 ) + 20 ) \div 4 \)'
+  answer: 60
+  solution: |-
+    **Inside Brackets** \( 44 \times 5 = 220 \) <br />
+    **Outside Brackets** \( 220 + 20 = 240 \) <br />
+    **Division** \( 240 \div 4 = 60 \)
+- id: 1048
+  question: ' \( ((86 \times 12 ) - 30 ) \div 6 \)'
+  answer: 167
+  solution: |-
+    **Inside Brackets** \( 86 \times 12 = 1032 \) <br />
+    **Outside Brackets** \( 1032 - 30 = 1002 \) <br />
+    **Division** \( 1002 \div 6 = 167 \)
+- id: 1049
+  question: ' \( ((75 \times 7 ) + 10 ) \div 5 \)'
+  answer: 107
+  solution: |-
+    **Inside Brackets** \( 75 \times 7 = 525 \) <br />
+    **Outside Brackets** \( 525 + 10 = 535 \) <br />
+    **Division** \( 535 \div 5 = 107 \)
+- id: 1050
+  question: ' \( ((48 \times 8 ) - 16 ) \div 8 \)'
+  answer: 46
+  solution: |-
+    **Inside Brackets** \( 48 \times 8 = 384 \) <br />
+    **Outside Brackets** \( 384 - 16 = 368 \) <br />
+    **Division** \( 368 \div 8 = 46 \)
+- id: 1051
+  question: ' \( ((72 \times 8 ) - 6 ) \div 6 \)'
+  answer: 95
+  solution: |-
+    **Inside Brackets** \( 72 \times 8 = 576 \) <br />
+    **Outside Brackets** \( 576 - 6 = 570 \) <br />
+    **Division** \( 570 \div 6 = 95 \)
+- id: 1052
+  question: ' \( ((63 \times 7 ) - 9 ) \div 9 \)'
+  answer: 48
+  solution: |-
+    **Inside Brackets** \( 63 \times 7 = 441 \) <br />
+    **Outside Brackets** \( 441 - 9 = 432 \) <br />
+    **Division** \( 432 \div 9 = 48 \)
+- id: 1053
+  question: ' \( ((29 \times 12 ) + 12 ) \div 6 \)'
+  answer: 60
+  solution: |-
+    **Inside Brackets** \( 29 \times 12 = 348 \) <br />
+    **Outside Brackets** \( 348 + 12 = 360 \) <br />
+    **Division** \( 360 \div 6 = 60 \)
+- id: 1054
+  question: ' \( ((56 \times 6 ) + 14 ) \div 7 \)'
+  answer: 50
+  solution: |-
+    **Inside Brackets** \( 56 \times 6 = 336 \) <br />
+    **Outside Brackets** \( 336 + 14 = 350 \) <br />
+    **Division** \( 350 \div 7 = 50 \)
+- id: 1055
+  question: ' \( ((84 \times 7 ) - 8 ) \div 4 \)'
+  answer: 145
+  solution: |-
+    **Inside Brackets** \( 84 \times 7 = 588 \) <br />
+    **Outside Brackets** \( 588 - 8 = 580 \) <br />
+    **Division** \( 580 \div 4 = 145 \)
+- id: 1056
+  question: ' \( ((60 \times 4 ) - 6 ) \div 3 \)'
+  answer: 78
+  solution: |-
+    **Inside Brackets** \( 60 \times 4 = 240 \) <br />
+    **Outside Brackets** \( 240 - 6 = 234 \) <br />
+    **Division** \( 234 \div 3 = 78 \)
+- id: 1057
+  question: ' \( ((63 \times 5 ) + 28 ) \div 7 \)'
+  answer: 49
+  solution: |-
+    **Inside Brackets** \( 63 \times 5 = 315 \) <br />
+    **Outside Brackets** \( 315 + 28 = 343 \) <br />
+    **Division** \( 343 \div 7 = 49 \)
+- id: 1058
+  question: ' \( ((57 \times 5 ) - 10 ) \div 5 \)'
+  answer: 55
+  solution: |-
+    **Inside Brackets** \( 57 \times 5 = 285 \) <br />
+    **Outside Brackets** \( 285 - 10 = 275 \) <br />
+    **Division** \( 275 \div 5 = 55 \)
+- id: 1059
+  question: ' \( ((64 \times 8 ) + 12 ) \div 4 \)'
+  answer: 131
+  solution: |-
+    **Inside Brackets** \( 64 \times 8 = 512 \) <br />
+    **Outside Brackets** \( 512 + 12 = 524 \) <br />
+    **Division** \( 524 \div 4 = 131 \)
+- id: 1060
+  question: ' \( ((74 \times 7 ) + 35 ) \div 7 \)'
+  answer: 79
+  solution: |-
+    **Inside Brackets** \( 74 \times 7 = 518 \) <br />
+    **Outside Brackets** \( 518 + 35 = 553 \) <br />
+    **Division** \( 553 \div 7 = 79 \)
+- id: 1061
+  question: ' \( ((36 \times 7 ) + 12 ) \div 6 \)'
+  answer: 44
+  solution: |-
+    **Inside Brackets** \( 36 \times 7 = 252 \) <br />
+    **Outside Brackets** \( 252 + 12 = 264 \) <br />
+    **Division** \( 264 \div 6 = 44 \)
+- id: 1062
+  question: ' \( ((84 \times 6 ) - 6 ) \div 6 \)'
+  answer: 83
+  solution: |-
+    **Inside Brackets** \( 84 \times 6 = 504 \) <br />
+    **Outside Brackets** \( 504 - 6 = 498 \) <br />
+    **Division** \( 498 \div 6 = 83 \)
+- id: 1063
+  question: ' \( ((26 \times 8 ) - 8 ) \div 4 \)'
+  answer: 50
+  solution: |-
+    **Inside Brackets** \( 26 \times 8 = 208 \) <br />
+    **Outside Brackets** \( 208 - 8 = 200 \) <br />
+    **Division** \( 200 \div 4 = 50 \)
+- id: 1064
+  question: ' \( ((40 \times 8 ) - 8 ) \div 4 \)'
+  answer: 78
+  solution: |-
+    **Inside Brackets** \( 40 \times 8 = 320 \) <br />
+    **Outside Brackets** \( 320 - 8 = 312 \) <br />
+    **Division** \( 312 \div 4 = 78 \)
+- id: 1065
+  question: ' \( ((77 \times 6 ) + 14 ) \div 7 \)'
+  answer: 68
+  solution: |-
+    **Inside Brackets** \( 77 \times 6 = 462 \) <br />
+    **Outside Brackets** \( 462 + 14 = 476 \) <br />
+    **Division** \( 476 \div 7 = 68 \)
+- id: 1066
+  question: ' \( ((63 \times 3 ) - 14 ) \div 7 \)'
+  answer: 25
+  solution: |-
+    **Inside Brackets** \( 63 \times 3 = 189 \) <br />
+    **Outside Brackets** \( 189 - 14 = 175 \) <br />
+    **Division** \( 175 \div 7 = 25 \)
+- id: 1067
+  question: ' \( ((52 \times 9 ) + 36 ) \div 9 \)'
+  answer: 56
+  solution: |-
+    **Inside Brackets** \( 52 \times 9 = 468 \) <br />
+    **Outside Brackets** \( 468 + 36 = 504 \) <br />
+    **Division** \( 504 \div 9 = 56 \)
+- id: 1068
+  question: ' \( ((65 \times 9 ) + 15 ) \div 5 \)'
+  answer: 120
+  solution: |-
+    **Inside Brackets** \( 65 \times 9 = 585 \) <br />
+    **Outside Brackets** \( 585 + 15 = 600 \) <br />
+    **Division** \( 600 \div 5 = 120 \)
+- id: 1069
+  question: ' \( ((95 \times 15 ) - 9 ) \div 3 \)'
+  answer: 472
+  solution: |-
+    **Inside Brackets** \( 95 \times 15 = 1425 \) <br />
+    **Outside Brackets** \( 1425 - 9 = 1416 \) <br />
+    **Division** \( 1416 \div 3 = 472 \)
+- id: 1070
+  question: ' \( ((72 \times 4 ) + 40 ) \div 8 \)'
+  answer: 41
+  solution: |-
+    **Inside Brackets** \( 72 \times 4 = 288 \) <br />
+    **Outside Brackets** \( 288 + 40 = 328 \) <br />
+    **Division** \( 328 \div 8 = 41 \)
+- id: 1071
+  question: ' \( ((60 \times 6 ) + 30 ) \div 6 \)'
+  answer: 65
+  solution: |-
+    **Inside Brackets** \( 60 \times 6 = 360 \) <br />
+    **Outside Brackets** \( 360 + 30 = 390 \) <br />
+    **Division** \( 390 \div 6 = 65 \)
+- id: 1072
+  question: ' \( ((64 \times 4 ) + 16 ) \div 8 \)'
+  answer: 34
+  solution: |-
+    **Inside Brackets** \( 64 \times 4 = 256 \) <br />
+    **Outside Brackets** \( 256 + 16 = 272 \) <br />
+    **Division** \( 272 \div 8 = 34 \)
+- id: 1073
+  question: ' \( ((72 \times 4 ) - 9 ) \div 9 \)'
+  answer: 31
+  solution: |-
+    **Inside Brackets** \( 72 \times 4 = 288 \) <br />
+    **Outside Brackets** \( 288 - 9 = 279 \) <br />
+    **Division** \( 279 \div 9 = 31 \)
+- id: 1074
+  question: ' \( ((54 \times 8 ) - 16 ) \div 4 \)'
+  answer: 104
+  solution: |-
+    **Inside Brackets** \( 54 \times 8 = 432 \) <br />
+    **Outside Brackets** \( 432 - 16 = 416 \) <br />
+    **Division** \( 416 \div 4 = 104 \)
+- id: 1075
+  question: ' \( ((88 \times 9 ) - 45 ) \div 9 \)'
+  answer: 83
+  solution: |-
+    **Inside Brackets** \( 88 \times 9 = 792 \) <br />
+    **Outside Brackets** \( 792 - 45 = 747 \) <br />
+    **Division** \( 747 \div 9 = 83 \)
+- id: 1076
+  question: ' \( ((50 \times 3 ) + 3 ) \div 3 \)'
+  answer: 51
+  solution: |-
+    **Inside Brackets** \( 50 \times 3 = 150 \) <br />
+    **Outside Brackets** \( 150 + 3 = 153 \) <br />
+    **Division** \( 153 \div 3 = 51 \)
+- id: 1077
+  question: ' \( ((72 \times 6 ) + 18 ) \div 9 \)'
+  answer: 50
+  solution: |-
+    **Inside Brackets** \( 72 \times 6 = 432 \) <br />
+    **Outside Brackets** \( 432 + 18 = 450 \) <br />
+    **Division** \( 450 \div 9 = 50 \)
+- id: 1078
+  question: ' \( ((67 \times 7 ) - 21 ) \div 7 \)'
+  answer: 64
+  solution: |-
+    **Inside Brackets** \( 67 \times 7 = 469 \) <br />
+    **Outside Brackets** \( 469 - 21 = 448 \) <br />
+    **Division** \( 448 \div 7 = 64 \)
+- id: 1079
+  question: ' \( ((54 \times 8 ) - 6 ) \div 6 \)'
+  answer: 71
+  solution: |-
+    **Inside Brackets** \( 54 \times 8 = 432 \) <br />
+    **Outside Brackets** \( 432 - 6 = 426 \) <br />
+    **Division** \( 426 \div 6 = 71 \)
+- id: 1080
+  question: ' \( ((77 \times 9 ) + 9 ) \div 9 \)'
+  answer: 78
+  solution: |-
+    **Inside Brackets** \( 77 \times 9 = 693 \) <br />
+    **Outside Brackets** \( 693 + 9 = 702 \) <br />
+    **Division** \( 702 \div 9 = 78 \)
+- id: 1081
+  question: ' \( ((70 \times 12 ) + 6 ) \div 3 \)'
+  answer: 282
+  solution: |-
+    **Inside Brackets** \( 70 \times 12 = 840 \) <br />
+    **Outside Brackets** \( 840 + 6 = 846 \) <br />
+    **Division** \( 846 \div 3 = 282 \)
+- id: 1082
+  question: ' \( ((90 \times 6 ) + 36 ) \div 9 \)'
+  answer: 64
+  solution: |-
+    **Inside Brackets** \( 90 \times 6 = 540 \) <br />
+    **Outside Brackets** \( 540 + 36 = 576 \) <br />
+    **Division** \( 576 \div 9 = 64 \)
+- id: 1083
+  question: ' \( ((86 \times 9 ) - 27 ) \div 9 \)'
+  answer: 83
+  solution: |-
+    **Inside Brackets** \( 86 \times 9 = 774 \) <br />
+    **Outside Brackets** \( 774 - 27 = 747 \) <br />
+    **Division** \( 747 \div 9 = 83 \)
+- id: 1084
+  question: ' \( ((85 \times 6 ) + 6 ) \div 3 \)'
+  answer: 172
+  solution: |-
+    **Inside Brackets** \( 85 \times 6 = 510 \) <br />
+    **Outside Brackets** \( 510 + 6 = 516 \) <br />
+    **Division** \( 516 \div 3 = 172 \)
+- id: 1085
+  question: ' \( ((73 \times 9 ) - 9 ) \div 3 \)'
+  answer: 216
+  solution: |-
+    **Inside Brackets** \( 73 \times 9 = 657 \) <br />
+    **Outside Brackets** \( 657 - 9 = 648 \) <br />
+    **Division** \( 648 \div 3 = 216 \)
+- id: 1086
+  question: ' \( ((58 \times 15 ) - 3 ) \div 3 \)'
+  answer: 289
+  solution: |-
+    **Inside Brackets** \( 58 \times 15 = 870 \) <br />
+    **Outside Brackets** \( 870 - 3 = 867 \) <br />
+    **Division** \( 867 \div 3 = 289 \)
+- id: 1087
+  question: ' \( ((40 \times 4 ) - 25 ) \div 5 \)'
+  answer: 27
+  solution: |-
+    **Inside Brackets** \( 40 \times 4 = 160 \) <br />
+    **Outside Brackets** \( 160 - 25 = 135 \) <br />
+    **Division** \( 135 \div 5 = 27 \)
+- id: 1088
+  question: ' \( ((65 \times 12 ) + 30 ) \div 6 \)'
+  answer: 135
+  solution: |-
+    **Inside Brackets** \( 65 \times 12 = 780 \) <br />
+    **Outside Brackets** \( 780 + 30 = 810 \) <br />
+    **Division** \( 810 \div 6 = 135 \)
+- id: 1089
+  question: ' \( ((81 \times 5 ) + 18 ) \div 9 \)'
+  answer: 47
+  solution: |-
+    **Inside Brackets** \( 81 \times 5 = 405 \) <br />
+    **Outside Brackets** \( 405 + 18 = 423 \) <br />
+    **Division** \( 423 \div 9 = 47 \)
+- id: 1090
+  question: ' \( ((68 \times 8 ) - 24 ) \div 8 \)'
+  answer: 65
+  solution: |-
+    **Inside Brackets** \( 68 \times 8 = 544 \) <br />
+    **Outside Brackets** \( 544 - 24 = 520 \) <br />
+    **Division** \( 520 \div 8 = 65 \)
+- id: 1091
+  question: ' \( ((43 \times 8 ) + 16 ) \div 8 \)'
+  answer: 45
+  solution: |-
+    **Inside Brackets** \( 43 \times 8 = 344 \) <br />
+    **Outside Brackets** \( 344 + 16 = 360 \) <br />
+    **Division** \( 360 \div 8 = 45 \)
+- id: 1092
+  question: ' \( ((56 \times 4 ) - 16 ) \div 8 \)'
+  answer: 26
+  solution: |-
+    **Inside Brackets** \( 56 \times 4 = 224 \) <br />
+    **Outside Brackets** \( 224 - 16 = 208 \) <br />
+    **Division** \( 208 \div 8 = 26 \)
+- id: 1093
+  question: ' \( ((37 \times 15 ) - 15 ) \div 3 \)'
+  answer: 180
+  solution: |-
+    **Inside Brackets** \( 37 \times 15 = 555 \) <br />
+    **Outside Brackets** \( 555 - 15 = 540 \) <br />
+    **Division** \( 540 \div 3 = 180 \)
+- id: 1094
+  question: ' \( ((87 \times 7 ) + 35 ) \div 7 \)'
+  answer: 92
+  solution: |-
+    **Inside Brackets** \( 87 \times 7 = 609 \) <br />
+    **Outside Brackets** \( 609 + 35 = 644 \) <br />
+    **Division** \( 644 \div 7 = 92 \)
+- id: 1095
+  question: ' \( ((63 \times 8 ) - 45 ) \div 9 \)'
+  answer: 51
+  solution: |-
+    **Inside Brackets** \( 63 \times 8 = 504 \) <br />
+    **Outside Brackets** \( 504 - 45 = 459 \) <br />
+    **Division** \( 459 \div 9 = 51 \)
+- id: 1096
+  question: ' \( ((90 \times 4 ) + 6 ) \div 6 \)'
+  answer: 61
+  solution: |-
+    **Inside Brackets** \( 90 \times 4 = 360 \) <br />
+    **Outside Brackets** \( 360 + 6 = 366 \) <br />
+    **Division** \( 366 \div 6 = 61 \)
+- id: 1097
+  question: ' \( ((40 \times 6 ) + 16 ) \div 8 \)'
+  answer: 32
+  solution: |-
+    **Inside Brackets** \( 40 \times 6 = 240 \) <br />
+    **Outside Brackets** \( 240 + 16 = 256 \) <br />
+    **Division** \( 256 \div 8 = 32 \)
+- id: 1098
+  question: ' \( ((68 \times 9 ) + 18 ) \div 9 \)'
+  answer: 70
+  solution: |-
+    **Inside Brackets** \( 68 \times 9 = 612 \) <br />
+    **Outside Brackets** \( 612 + 18 = 630 \) <br />
+    **Division** \( 630 \div 9 = 70 \)
+- id: 1099
+  question: ' \( ((55 \times 8 ) - 16 ) \div 4 \)'
+  answer: 106
+  solution: |-
+    **Inside Brackets** \( 55 \times 8 = 440 \) <br />
+    **Outside Brackets** \( 440 - 16 = 424 \) <br />
+    **Division** \( 424 \div 4 = 106 \)
+- id: 1100
+  question: ' \( ((67 \times 8 ) + 8 ) \div 4 \)'
+  answer: 136
+  solution: |-
+    **Inside Brackets** \( 67 \times 8 = 536 \) <br />
+    **Outside Brackets** \( 536 + 8 = 544 \) <br />
+    **Division** \( 544 \div 4 = 136 \)

@@ -19,7 +19,7 @@ title: NBS
     <a href="{{ "/courses/nbs/4104b" | relative_url }}" class="card">
         <div class="card-content">
             <div class="card-text">
-                <h3>NBS-4104B</h3>
+                <h3><s>NBS-4104B</s></h3>
                 <p></p>
             </div>
         </div>

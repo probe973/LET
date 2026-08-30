@@ -1,0 +1,1241 @@
+- id: 81
+  question: "A patient is prescribed 10 mg of morphine every 6 hours for 5 days following a fall. You hold a 0.4% w/v morphine mixture in your hospital dispensary stock. How many millilitres should you supply in total? Give your answer as a whole number."
+  answer: 50
+  solution: |
+    **Step 1: Dose (Need)** <br />
+    Doses per day: 24 / 6 = 4 doses <br />
+    Total doses: 4 doses x 5 days = 20 doses <br />
+    Total mg needed: 20 doses x 10 mg = 200 mg <br />
+    <br />
+    **Step 2: Using \( \frac{\text{Need}}{\text{Have}} \times \text{Supplied In} \)** <br />
+    0.4% w/v means 0.4 g in 100 ml = 400 mg in 100 ml <br />
+    \( \frac{200 \text{ mg}}{400 \text{ mg}} \times 100 \text{ ml} = 50 \text{ ml} \) <br />
+    <br />
+    **Answer:** 50
+
+- id: 82
+  question: "A patient is prescribed 15 mg of morphine every 4 hours for 2 days. The available stock is a 0.5% w/v mixture. How many millilitres should you supply in total? Give your answer as a whole number."
+  answer: 36
+  solution: |
+    **Step 1: Dose (Need)** <br />
+    Doses per day: 24 / 4 = 6 doses <br />
+    Total doses: 6 doses x 2 days = 12 doses <br />
+    Total mg needed: 12 doses x 15 mg = 180 mg <br />
+    <br />
+    **Step 2: Using \( \frac{\text{Need}}{\text{Have}} \times \text{Supplied In} \)** <br />
+    0.5% w/v means 0.5 g in 100 ml = 500 mg in 100 ml <br />
+    \( \frac{180 \text{ mg}}{500 \text{ mg}} \times 100 \text{ ml} = 36 \text{ ml} \) <br />
+    <br />
+    **Answer:** 36
+
+- id: 83
+  question: "A patient is prescribed 20 mg of codeine phosphate every 8 hours for 7 days. You hold a 0.2% w/v mixture in your stock. How many millilitres should you supply in total? Give your answer as a whole number."
+  answer: 210
+  solution: |
+    **Step 1: Dose (Need)** <br />
+    Doses per day: 24 / 8 = 3 doses <br />
+    Total doses: 3 doses x 7 days = 21 doses <br />
+    Total mg needed: 21 doses x 20 mg = 420 mg <br />
+    <br />
+    **Step 2: Using \( \frac{\text{Need}}{\text{Have}} \times \text{Supplied In} \)** <br />
+    0.2% w/v means 0.2 g in 100 ml = 200 mg in 100 ml <br />
+    \( \frac{420 \text{ mg}}{200 \text{ mg}} \times 100 \text{ ml} = 210 \text{ ml} \) <br />
+    <br />
+    **Answer:** 210
+
+- id: 84
+  question: "A patient is prescribed 5 mg of oxycodone every 4 hours for 4 days. The pharmacy holds a 0.1% w/v mixture in stock. How many millilitres should you supply in total? Give your answer as a whole number."
+  answer: 120
+  solution: |
+    **Step 1: Dose (Need)** <br />
+    Doses per day: 6 doses <br />
+    Total doses: 6 doses x 4 days = 24 doses <br />
+    Total mg needed: 24 doses x 5 mg = 120 mg <br />
+    <br />
+    **Step 2: Using \( \frac{\text{Need}}{\text{Have}} \times \text{Supplied In} \)** <br />
+    0.1% w/v means 0.1 g in 100 ml = 100 mg in 100 ml <br />
+    \( \frac{120 \text{ mg}}{100 \text{ mg}} \times 100 \text{ ml} = 120 \text{ ml} \) <br />
+    <br />
+    **Answer:** 120
+
+- id: 85
+  question: "A patient is prescribed 25 mg of morphine every 6 hours for 3 days. You have a 0.25% w/v mixture available. How many millilitres should you supply in total? Give your answer as a whole number."
+  answer: 120
+  solution: |
+    **Step 1: Dose (Need)** <br />
+    Doses per day: 4 doses <br />
+    Total doses: 4 doses x 3 days = 12 doses <br />
+    Total mg needed: 12 doses x 25 mg = 300 mg <br />
+    <br />
+    **Step 2: Using \( \frac{\text{Need}}{\text{Have}} \times \text{Supplied In} \)** <br />
+    0.25% w/v means 250 mg in 100 ml <br />
+    \( \frac{300 \text{ mg}}{250 \text{ mg}} \times 100 \text{ ml} = 120 \text{ ml} \) <br />
+    <br />
+    **Answer:** 120
+
+- id: 86
+  question: "A patient is prescribed 30 mg of morphine every 12 hours for 10 days. The hospital stock is a 1% w/v mixture. How many millilitres should you supply in total? Give your answer as a whole number."
+  answer: 60
+  solution: |
+    **Step 1: Dose (Need)** <br />
+    Doses per day: 2 doses <br />
+    Total doses: 2 doses x 10 days = 20 doses <br />
+    Total mg needed: 20 doses x 30 mg = 600 mg <br />
+    <br />
+    **Step 2: Using \( \frac{\text{Need}}{\text{Have}} \times \text{Supplied In} \)** <br />
+    1% w/v means 1,000 mg in 100 ml <br />
+    \( \frac{600 \text{ mg}}{1,000 \text{ mg}} \times 100 \text{ ml} = 60 \text{ ml} \) <br />
+    <br />
+    **Answer:** 60
+
+- id: 87
+  question: "A patient is prescribed 12 mg of morphine every 4 hours for 5 days. You hold a 0.6% w/v morphine mixture in stock. How many millilitres should you supply in total? Give your answer as a whole number."
+  answer: 60
+  solution: |
+    **Step 1: Dose (Need)** <br />
+    Doses per day: 6 doses <br />
+    Total doses: 6 doses x 5 days = 30 doses <br />
+    Total mg needed: 30 doses x 12 mg = 360 mg <br />
+    <br />
+    **Step 2: Using \( \frac{\text{Need}}{\text{Have}} \times \text{Supplied In} \)** <br />
+    0.6% w/v means 600 mg in 100 ml <br />
+    \( \frac{360 \text{ mg}}{600 \text{ mg}} \times 100 \text{ ml} = 60 \text{ ml} \) <br />
+    <br />
+    **Answer:** 60
+
+- id: 88
+  question: "A patient is prescribed 7.5 mg of oxycodone every 6 hours for 6 days. The dispensary stock is a 0.15% w/v mixture. How many millilitres should you supply in total? Give your answer as a whole number."
+  answer: 120
+  solution: |
+    **Step 1: Dose (Need)** <br />
+    Doses per day: 4 doses <br />
+    Total doses: 4 doses x 6 days = 24 doses <br />
+    Total mg needed: 24 doses x 7.5 mg = 180 mg <br />
+    <br />
+    **Step 2: Using \( \frac{\text{Need}}{\text{Have}} \times \text{Supplied In} \)** <br />
+    0.15% w/v means 150 mg in 100 ml <br />
+    \( \frac{180 \text{ mg}}{150 \text{ mg}} \times 100 \text{ ml} = 120 \text{ ml} \) <br />
+    <br />
+    **Answer:** 120
+
+- id: 89
+  question: "A patient is prescribed 40 mg of codeine phosphate every 8 hours for 3 days. The stock is a 0.8% w/v mixture. How many millilitres should you supply in total? Give your answer as a whole number."
+  answer: 45
+  solution: |
+    **Step 1: Dose (Need)** <br />
+    Doses per day: 3 doses <br />
+    Total doses: 3 doses x 3 days = 9 doses <br />
+    Total mg needed: 9 doses x 40 mg = 360 mg <br />
+    <br />
+    **Step 2: Using \( \frac{\text{Need}}{\text{Have}} \times \text{Supplied In} \)** <br />
+    0.8% w/v means 800 mg in 100 ml <br />
+    \( \frac{360 \text{ mg}}{800 \text{ mg}} \times 100 \text{ ml} = 45 \text{ ml} \) <br />
+    <br />
+    **Answer:** 45
+
+- id: 90
+  question: "A patient is prescribed 10 mg of methadone every 12 hours for 7 days. You hold a 0.1% w/v mixture in stock. How many millilitres should you supply in total? Give your answer as a whole number."
+  answer: 140
+  solution: |
+    **Step 1: Dose (Need)** <br />
+    Doses per day: 2 doses <br />
+    Total doses: 2 doses x 7 days = 14 doses <br />
+    Total mg needed: 14 doses x 10 mg = 140 mg <br />
+    <br />
+    **Step 2: Using \( \frac{\text{Need}}{\text{Have}} \times \text{Supplied In} \)** <br />
+    0.1% w/v means 100 mg in 100 ml <br />
+    \( \frac{140 \text{ mg}}{100 \text{ mg}} \times 100 \text{ ml} = 140 \text{ ml} \) <br />
+    <br />
+    **Answer:** 140
+
+- id: 91
+  question: "A patient is prescribed 2.5 mg of morphine every 4 hours for 4 days. Your stock is a 0.05% w/v morphine mixture. How many millilitres should you supply in total? Give your answer as a whole number."
+  answer: 120
+  solution: |
+    **Step 1: Dose (Need)** <br />
+    Doses per day: 6 doses <br />
+    Total doses: 6 doses x 4 days = 24 doses <br />
+    Total mg needed: 24 doses x 2.5 mg = 60 mg <br />
+    <br />
+    **Step 2: Using \( \frac{\text{Need}}{\text{Have}} \times \text{Supplied In} \)** <br />
+    0.05% w/v means 50 mg in 100 ml <br />
+    \( \frac{60 \text{ mg}}{50 \text{ mg}} \times 100 \text{ ml} = 120 \text{ ml} \) <br />
+    <br />
+    **Answer:** 120
+
+- id: 92
+  question: "A patient is prescribed 50 mg of morphine every 6 hours for 2 days. The hospital stock is a 2% w/v mixture. How many millilitres should you supply in total? Give your answer as a whole number."
+  answer: 20
+  solution: |
+    **Step 1: Dose (Need)** <br />
+    Doses per day: 4 doses <br />
+    Total doses: 4 doses x 2 days = 8 doses <br />
+    Total mg needed: 8 doses x 50 mg = 400 mg <br />
+    <br />
+    **Step 2: Using \( \frac{\text{Need}}{\text{Have}} \times \text{Supplied In} \)** <br />
+    2% w/v means 2,000 mg in 100 ml <br />
+    \( \frac{400 \text{ mg}}{2,000 \text{ mg}} \times 100 \text{ ml} = 20 \text{ ml} \) <br />
+    <br />
+    **Answer:** 20
+
+- id: 93
+  question: "A patient is prescribed 4 mg of oxycodone every 4 hours for 5 days. You have a 0.1% w/v mixture available. How many millilitres should you supply in total? Give your answer as a whole number."
+  answer: 120
+  solution: |
+    **Step 1: Dose (Need)** <br />
+    Doses per day: 6 doses <br />
+    Total doses: 6 doses x 5 days = 30 doses <br />
+    Total mg needed: 30 doses x 4 mg = 120 mg <br />
+    <br />
+    **Step 2: Using \( \frac{\text{Need}}{\text{Have}} \times \text{Supplied In} \)** <br />
+    0.1% w/v means 100 mg in 100 ml <br />
+    \( \frac{120 \text{ mg}}{100 \text{ mg}} \times 100 \text{ ml} = 120 \text{ ml} \) <br />
+    <br />
+    **Answer:** 120
+
+- id: 94
+  question: "A patient is prescribed 12.5 mg of morphine every 8 hours for 4 days. Your stock is a 0.25% w/v mixture. How many millilitres should you supply in total? Give your answer as a whole number."
+  answer: 60
+  solution: |
+    **Step 1: Dose (Need)** <br />
+    Doses per day: 3 doses <br />
+    Total doses: 3 doses x 4 days = 12 doses <br />
+    Total mg needed: 12 doses x 12.5 mg = 150 mg <br />
+    <br />
+    **Step 2: Using \( \frac{\text{Need}}{\text{Have}} \times \text{Supplied In} \)** <br />
+    0.25% w/v means 250 mg in 100 ml <br />
+    \( \frac{150 \text{ mg}}{250 \text{ mg}} \times 100 \text{ ml} = 60 \text{ ml} \) <br />
+    <br />
+    **Answer:** 60
+
+- id: 95
+  question: "A patient is prescribed 8 mg of codeine every 6 hours for 10 days. The stock concentration is 0.2% w/v. How many millilitres should you supply in total? Give your answer as a whole number."
+  answer: 160
+  solution: |
+    **Step 1: Dose (Need)** <br />
+    Doses per day: 4 doses <br />
+    Total doses: 4 doses x 10 days = 40 doses <br />
+    Total mg needed: 40 doses x 8 mg = 320 mg <br />
+    <br />
+    **Step 2: Using \( \frac{\text{Need}}{\text{Have}} \times \text{Supplied In} \)** <br />
+    0.2% w/v means 200 mg in 100 ml <br />
+    \( \frac{320 \text{ mg}}{200 \text{ mg}} \times 100 \text{ ml} = 160 \text{ ml} \) <br />
+    <br />
+    **Answer:** 160
+
+- id: 96
+  question: "A patient is prescribed 30 mg of morphine every 8 hours for 7 days. You hold a 0.4% w/v mixture in stock. How many millilitres should you supply in total? Give your answer as a whole number."
+  answer: 158
+  solution: |
+    **Step 1: Dose (Need)** <br />
+    Doses per day: 3 doses <br />
+    Total doses: 3 doses x 7 days = 21 doses <br />
+    Total mg needed: 21 doses x 30 mg = 630 mg <br />
+    <br />
+    **Step 2: Using \( \frac{\text{Need}}{\text{Have}} \times \text{Supplied In} \)** <br />
+    0.4% w/v means 400 mg in 100 ml <br />
+    \( \frac{630 \text{ mg}}{400 \text{ mg}} \times 100 \text{ ml} = 157.5 \text{ ml} \) <br />
+    <br />
+    **Answer:** 158
+  # Answer adjusted to whole number as requested in the question prompt.
+
+- id: 97
+  question: "A patient is prescribed 500 mg of paracetamol every 6 hours for 5 days. Stock is 5% w/v. How many millilitres should you supply in total? Give your answer as a whole number."
+  answer: 200
+  solution: |
+    **Step 1: Dose (Need)** <br />
+    Doses per day: 4 doses <br />
+    Total doses: 4 x 5 = 20 doses <br />
+    Total mg needed: 20 x 500 mg = 10,000 mg <br />
+    <br />
+    **Step 2: Using \( \frac{\text{Need}}{\text{Have}} \times \text{Supplied In} \)** <br />
+    5% w/v means 5,000 mg in 100 ml <br />
+    \( \frac{10,000 \text{ mg}}{5,000 \text{ mg}} \times 100 \text{ ml} = 200 \text{ ml} \) <br />
+    <br />
+    **Answer:** 200
+
+- id: 98
+  question: "A patient is prescribed 15 mg of codeine every 4 hours for 3 days. Your stock is a 0.3% w/v mixture. How many millilitres should you supply in total? Give your answer as a whole number."
+  answer: 90
+  solution: |
+    **Step 1: Dose (Need)** <br />
+    Doses per day: 6 doses <br />
+    Total doses: 6 doses x 3 days = 18 doses <br />
+    Total mg needed: 18 doses x 15 mg = 270 mg <br />
+    <br />
+    **Step 2: Using \( \frac{\text{Need}}{\text{Have}} \times \text{Supplied In} \)** <br />
+    0.3% w/v means 300 mg in 100 ml <br />
+    \( \frac{270 \text{ mg}}{300 \text{ mg}} \times 100 \text{ ml} = 90 \text{ ml} \) <br />
+    <br />
+    **Answer:** 90
+
+- id: 99
+  question: "A patient is prescribed 10 mg of morphine every 4 hours for 1 day. The dispensary stock is 0.2% w/v. How many millilitres should you supply in total? Give your answer as a whole number."
+  answer: 30
+  solution: |
+    **Step 1: Dose (Need)** <br />
+    Doses per day: 6 doses <br />
+    Total doses: 6 doses x 1 day = 6 doses <br />
+    Total mg needed: 6 doses x 10 mg = 60 mg <br />
+    <br />
+    **Step 2: Using \( \frac{\text{Need}}{\text{Have}} \times \text{Supplied In} \)** <br />
+    0.2% w/v means 200 mg in 100 ml <br />
+    \( \frac{60 \text{ mg}}{200 \text{ mg}} \times 100 \text{ ml} = 30 \text{ ml} \) <br />
+    <br />
+    **Answer:** 30
+
+- id: 100
+  question: "A patient is prescribed 2.5 mg of oxycodone every 8 hours for 10 days. Stock is 0.05% w/v. How many millilitres should you supply in total? Give your answer as a whole number."
+  answer: 150
+  solution: |
+    **Step 1: Dose (Need)** <br />
+    Doses per day: 3 doses <br />
+    Total doses: 3 x 10 = 30 doses <br />
+    Total mg needed: 30 x 2.5 mg = 75 mg <br />
+    <br />
+    **Step 2: Using \( \frac{\text{Need}}{\text{Have}} \times \text{Supplied In} \)** <br />
+    0.05% w/v means 50 mg in 100 ml <br />
+    \( \frac{75 \text{ mg}}{50 \text{ mg}} \times 100 \text{ ml} = 150 \text{ ml} \) <br />
+    <br />
+    **Answer:** 150
+
+- id: 101
+  question: "A patient is prescribed 20 mg of morphine every 6 hours for 5 days. Stock is 0.4% w/v. How many millilitres should you supply in total? Give your answer as a whole number."
+  answer: 100
+  solution: |
+    **Step 1: Dose (Need)** <br />
+    4 x 5 = 20 doses <br />
+    20 x 20 mg = 400 mg <br />
+    <br />
+    **Step 2: Using \( \frac{\text{Need}}{\text{Have}} \times \text{Supplied In} \)** <br />
+    0.4% w/v = 400 mg in 100 ml <br />
+    \( \frac{400 \text{ mg}}{400 \text{ mg}} \times 100 \text{ ml} = 100 \text{ ml} \) <br />
+    <br />
+    **Answer:** 100
+
+- id: 102
+  question: "A patient is prescribed 5 mg of morphine every 12 hours for 14 days. Stock is 0.1% w/v. How many millilitres should you supply in total? Give your answer as a whole number."
+  answer: 140
+  solution: |
+    **Step 1: Dose (Need)** <br />
+    2 x 14 = 28 doses <br />
+    28 x 5 mg = 140 mg <br />
+    <br />
+    **Step 2: Using \( \frac{\text{Need}}{\text{Have}} \times \text{Supplied In} \)** <br />
+    0.1% w/v = 100 mg in 100 ml <br />
+    \( \frac{140 \text{ mg}}{100 \text{ mg}} \times 100 \text{ ml} = 140 \text{ ml} \) <br />
+    <br />
+    **Answer:** 140
+
+- id: 103
+  question: "A patient is prescribed 15 mg of codeine phosphate every 8 hours for 6 days. Stock is 0.3% w/v. How many millilitres should you supply in total? Give your answer as a whole number."
+  answer: 90
+  solution: |
+    **Step 1: Dose (Need)** <br />
+    3 x 6 = 18 doses <br />
+    18 x 15 mg = 270 mg <br />
+    <br />
+    **Step 2: Using \( \frac{\text{Need}}{\text{Have}} \times \text{Supplied In} \)** <br />
+    0.3% w/v = 300 mg in 100 ml <br />
+    \( \frac{270 \text{ mg}}{300 \text{ mg}} \times 100 \text{ ml} = 90 \text{ ml} \) <br />
+    <br />
+    **Answer:** 90
+
+- id: 104
+  question: "A patient is prescribed 10 mg of oxycodone every 6 hours for 3 days. Stock is 0.2% w/v. How many millilitres should you supply in total? Give your answer as a whole number."
+  answer: 60
+  solution: |
+    **Step 1: Dose (Need)** <br />
+    4 x 3 = 12 doses <br />
+    12 x 10 mg = 120 mg <br />
+    <br />
+    **Step 2: Using \( \frac{\text{Need}}{\text{Have}} \times \text{Supplied In} \)** <br />
+    0.2% w/v = 200 mg in 100 ml <br />
+    \( \frac{120 \text{ mg}}{200 \text{ mg}} \times 100 \text{ ml} = 60 \text{ ml} \) <br />
+    <br />
+    **Answer:** 60
+
+- id: 105
+  question: "A patient is prescribed 25 mg of chloral hydrate every 6 hours for 5 days. Stock is 1% w/v. How many millilitres should you supply in total? Give your answer as a whole number."
+  answer: 50
+  solution: |
+    **Step 1: Dose (Need)** <br />
+    4 x 5 = 20 doses <br />
+    20 x 25 mg = 500 mg <br />
+    <br />
+    **Step 2: Using \( \frac{\text{Need}}{\text{Have}} \times \text{Supplied In} \)** <br />
+    1% w/v = 1,000 mg in 100 ml <br />
+    \( \frac{500 \text{ mg}}{1,000 \text{ mg}} \times 100 \text{ ml} = 50 \text{ ml} \) <br />
+    <br />
+    **Answer:** 50
+
+- id: 106
+  question: "A patient is prescribed 12 mg of morphine every 4 hours for 2 days. Stock is 0.3% w/v. How many millilitres should you supply in total? Give your answer as a whole number."
+  answer: 48
+  solution: |
+    **Step 1: Dose (Need)** <br />
+    6 x 2 = 12 doses <br />
+    12 x 12 mg = 144 mg <br />
+    <br />
+    **Step 2: Using \( \frac{\text{Need}}{\text{Have}} \times \text{Supplied In} \)** <br />
+    0.3% w/v = 300 mg in 100 ml <br />
+    \( \frac{144 \text{ mg}}{300 \text{ mg}} \times 100 \text{ ml} = 48 \text{ ml} \) <br />
+    <br />
+    **Answer:** 48
+
+- id: 107
+  question: "A patient is prescribed 500 mg of paracetamol every 4 hours for 1 day. Stock is 2.5% w/v. How many millilitres should you supply in total? Give your answer as a whole number."
+  answer: 120
+  solution: |
+    **Step 1: Dose (Need)** <br />
+    6 x 1 = 6 doses <br />
+    6 x 500 mg = 3,000 mg <br />
+    <br />
+    **Step 2: Using \( \frac{\text{Need}}{\text{Have}} \times \text{Supplied In} \)** <br />
+    2.5% w/v = 2,500 mg in 100 ml <br />
+    \( \frac{3,000 \text{ mg}}{2,500 \text{ mg}} \times 100 \text{ ml} = 120 \text{ ml} \) <br />
+    <br />
+    **Answer:** 120
+
+- id: 108
+  question: "A patient is prescribed 40 mg of codeine phosphate every 8 hours for 7 days. Stock is 0.4% w/v. How many millilitres should you supply in total? Give your answer as a whole number."
+  answer: 210
+  solution: |
+    **Step 1: Dose (Need)** <br />
+    3 x 7 = 21 doses <br />
+    21 x 40 mg = 840 mg <br />
+    <br />
+    **Step 2: Using \( \frac{\text{Need}}{\text{Have}} \times \text{Supplied In} \)** <br />
+    0.4% w/v = 400 mg in 100 ml <br />
+    \( \frac{840 \text{ mg}}{400 \text{ mg}} \times 100 \text{ ml} = 210 \text{ ml} \) <br />
+    <br />
+    **Answer:** 210
+
+- id: 109
+  question: "A patient is prescribed 7.5 mg of morphine every 6 hours for 3 days. Stock is 0.15% w/v. How many millilitres should you supply in total? Give your answer as a whole number."
+  answer: 60
+  solution: |
+    **Step 1: Dose (Need)** <br />
+    4 x 3 = 12 doses <br />
+    12 x 7.5 mg = 90 mg <br />
+    <br />
+    **Step 2: Using \( \frac{\text{Need}}{\text{Have}} \times \text{Supplied In} \)** <br />
+    0.15% w/v = 150 mg in 100 ml <br />
+    \( \frac{90 \text{ mg}}{150 \text{ mg}} \times 100 \text{ ml} = 60 \text{ ml} \) <br />
+    <br />
+    **Answer:** 60
+
+- id: 110
+  question: "A patient is prescribed 10 mg of methadone every 12 hours for 5 days. Stock is 0.25% w/v. How many millilitres should you supply in total? Give your answer as a whole number."
+  answer: 40
+  solution: |
+    **Step 1: Dose (Need)** <br />
+    2 x 5 = 10 doses <br />
+    10 x 10 mg = 100 mg <br />
+    <br />
+    **Step 2: Using \( \frac{\text{Need}}{\text{Have}} \times \text{Supplied In} \)** <br />
+    0.25% w/v = 250 mg in 100 ml <br />
+    \( \frac{100 \text{ mg}}{250 \text{ mg}} \times 100 \text{ ml} = 40 \text{ ml} \) <br />
+    <br />
+    **Answer:** 40
+
+- id: 4001
+  question: A patient is prescribed 13 mg of morphine every 3 hours for 5 days following
+    an unfortunate accident. You hold a 1.0 % w/v mixture in your hospital dispensary
+    stock. How many millilitres should you supply in total? Give your answer as a
+    whole number.
+  answer: 52
+  solution: |-
+    Doses per day: 8 <br />
+    Total doses: \( 8 \times 5 \text{ days} = 40 \) <br />
+    Total mg needed: \( 40 \times 13 = 520 \text{ mg} \) <br />
+    <br />
+    Using \( \frac{\text{Need}}{\text{Have}} \times \text{Supplied In} \) <br />
+    1.0 %w/v means 1000 mg per 100 ml <br />
+    \( \frac{520 \text{ mg} }{1000 \text{ mg} } \times 100 \text{ ml} = 52.0 \text{ ml} \) <br />
+    <br />
+    **Answer** 52
+- id: 4002
+  question: A patient is prescribed 11 mg of morphine every 8 hours for 5 days following
+    an unfortunate accident. You hold a 0.7 % w/v mixture in your hospital dispensary
+    stock. How many millilitres should you supply in total? Give your answer as a
+    whole number.
+  answer: 24
+  solution: |-
+    Doses per day: 3 <br />
+    Total doses: \( 3 \times 5 \text{ days} = 15 \) <br />
+    Total mg needed: \( 15 \times 11 = 165 \text{ mg} \) <br />
+    <br />
+    Using \( \frac{\text{Need}}{\text{Have}} \times \text{Supplied In} \) <br />
+    0.7 %w/v means 700 mg per 100 ml <br />
+    \( \frac{165 \text{ mg} }{700 \text{ mg} } \times 100 \text{ ml} = 23.57 \text{ ml} \) <br />
+    <br />
+    **Answer** 24
+- id: 4003
+  question: A patient is prescribed 8 mg of morphine every 4 hours for 13 days following
+    an unfortunate accident. You hold a 0.5 % w/v mixture in your hospital dispensary
+    stock. How many millilitres should you supply in total? Give your answer as a
+    whole number.
+  answer: 125
+  solution: |-
+    Doses per day: 6 <br />
+    Total doses: \( 6 \times 13 \text{ days} = 78 \) <br />
+    Total mg needed: \( 78 \times 8 = 624 \text{ mg} \) <br />
+    <br />
+    Using \( \frac{\text{Need}}{\text{Have}} \times \text{Supplied In} \) <br />
+    0.5 %w/v means 500 mg per 100 ml <br />
+    \( \frac{624 \text{ mg} }{500 \text{ mg} } \times 100 \text{ ml} = 124.8 \text{ ml} \) <br />
+    <br />
+    **Answer** 125
+- id: 4004
+  question: A patient is prescribed 14 mg of morphine every 6 hours for 11 days following
+    an unfortunate accident. You hold a 0.4 % w/v mixture in your hospital dispensary
+    stock. How many millilitres should you supply in total? Give your answer as a
+    whole number.
+  answer: 154
+  solution: |-
+    Doses per day: 4 <br />
+    Total doses: \( 4 \times 11 \text{ days} = 44 \) <br />
+    Total mg needed: \( 44 \times 14 = 616 \text{ mg} \) <br />
+    <br />
+    Using \( \frac{\text{Need}}{\text{Have}} \times \text{Supplied In} \) <br />
+    0.4 %w/v means 400 mg per 100 ml <br />
+    \( \frac{616 \text{ mg} }{400 \text{ mg} } \times 100 \text{ ml} = 154.0 \text{ ml} \) <br />
+    <br />
+    **Answer** 154
+- id: 4005
+  question: A patient is prescribed 10 mg of morphine every 12 hours for 4 days following
+    an unfortunate accident. You hold a 1.0 % w/v mixture in your hospital dispensary
+    stock. How many millilitres should you supply in total? Give your answer as a
+    whole number.
+  answer: 8
+  solution: |-
+    Doses per day: 2 <br />
+    Total doses: \( 2 \times 4 \text{ days} = 8 \) <br />
+    Total mg needed: \( 8 \times 10 = 80 \text{ mg} \) <br />
+    <br />
+    Using \( \frac{\text{Need}}{\text{Have}} \times \text{Supplied In} \) <br />
+    1.0 %w/v means 1000 mg per 100 ml <br />
+    \( \frac{80 \text{ mg} }{1000 \text{ mg} } \times 100 \text{ ml} = 8.0 \text{ ml} \) <br />
+    <br />
+    **Answer** 8
+- id: 4006
+  question: A patient is prescribed 15 mg of morphine every 3 hours for 7 days following
+    an unfortunate accident. You hold a 0.4 % w/v mixture in your hospital dispensary
+    stock. How many millilitres should you supply in total? Give your answer as a
+    whole number.
+  answer: 210
+  solution: |-
+    Doses per day: 8 <br />
+    Total doses: \( 8 \times 7 \text{ days} = 56 \) <br />
+    Total mg needed: \( 56 \times 15 = 840 \text{ mg} \) <br />
+    <br />
+    Using \( \frac{\text{Need}}{\text{Have}} \times \text{Supplied In} \) <br />
+    0.4 %w/v means 400 mg per 100 ml <br />
+    \( \frac{840 \text{ mg} }{400 \text{ mg} } \times 100 \text{ ml} = 210.0 \text{ ml} \) <br />
+    <br />
+    **Answer** 210
+- id: 4007
+  question: A patient is prescribed 15 mg of morphine every 12 hours for 6 days following
+    an unfortunate accident. You hold a 1.0 % w/v mixture in your hospital dispensary
+    stock. How many millilitres should you supply in total? Give your answer as a
+    whole number.
+  answer: 18
+  solution: |-
+    Doses per day: 2 <br />
+    Total doses: \( 2 \times 6 \text{ days} = 12 \) <br />
+    Total mg needed: \( 12 \times 15 = 180 \text{ mg} \) <br />
+    <br />
+    Using \( \frac{\text{Need}}{\text{Have}} \times \text{Supplied In} \) <br />
+    1.0 %w/v means 1000 mg per 100 ml <br />
+    \( \frac{180 \text{ mg} }{1000 \text{ mg} } \times 100 \text{ ml} = 18.0 \text{ ml} \) <br />
+    <br />
+    **Answer** 18
+- id: 4008
+  question: A patient is prescribed 13 mg of morphine every 6 hours for 7 days following
+    an unfortunate accident. You hold a 0.4 % w/v mixture in your hospital dispensary
+    stock. How many millilitres should you supply in total? Give your answer as a
+    whole number.
+  answer: 91
+  solution: |-
+    Doses per day: 4 <br />
+    Total doses: \( 4 \times 7 \text{ days} = 28 \) <br />
+    Total mg needed: \( 28 \times 13 = 364 \text{ mg} \) <br />
+    <br />
+    Using \( \frac{\text{Need}}{\text{Have}} \times \text{Supplied In} \) <br />
+    0.4 %w/v means 400 mg per 100 ml <br />
+    \( \frac{364 \text{ mg} }{400 \text{ mg} } \times 100 \text{ ml} = 91.0 \text{ ml} \) <br />
+    <br />
+    **Answer** 91
+- id: 4009
+  question: A patient is prescribed 15 mg of morphine every 4 hours for 5 days following
+    an unfortunate accident. You hold a 0.6 % w/v mixture in your hospital dispensary
+    stock. How many millilitres should you supply in total? Give your answer as a
+    whole number.
+  answer: 75
+  solution: |-
+    Doses per day: 6 <br />
+    Total doses: \( 6 \times 5 \text{ days} = 30 \) <br />
+    Total mg needed: \( 30 \times 15 = 450 \text{ mg} \) <br />
+    <br />
+    Using \( \frac{\text{Need}}{\text{Have}} \times \text{Supplied In} \) <br />
+    0.6 %w/v means 600 mg per 100 ml <br />
+    \( \frac{450 \text{ mg} }{600 \text{ mg} } \times 100 \text{ ml} = 75.0 \text{ ml} \) <br />
+    <br />
+    **Answer** 75
+- id: 4010
+  question: A patient is prescribed 11 mg of morphine every 12 hours for 7 days following
+    an unfortunate accident. You hold a 0.8 % w/v mixture in your hospital dispensary
+    stock. How many millilitres should you supply in total? Give your answer as a
+    whole number.
+  answer: 19
+  solution: |-
+    Doses per day: 2 <br />
+    Total doses: \( 2 \times 7 \text{ days} = 14 \) <br />
+    Total mg needed: \( 14 \times 11 = 154 \text{ mg} \) <br />
+    <br />
+    Using \( \frac{\text{Need}}{\text{Have}} \times \text{Supplied In} \) <br />
+    0.8 %w/v means 800 mg per 100 ml <br />
+    \( \frac{154 \text{ mg} }{800 \text{ mg} } \times 100 \text{ ml} = 19.25 \text{ ml} \) <br />
+    <br />
+    **Answer** 19
+- id: 4011
+  question: A patient is prescribed 9 mg of morphine every 3 hours for 6 days following
+    an unfortunate accident. You hold a 0.4 % w/v mixture in your hospital dispensary
+    stock. How many millilitres should you supply in total? Give your answer as a
+    whole number.
+  answer: 108
+  solution: |-
+    Doses per day: 8 <br />
+    Total doses: \( 8 \times 6 \text{ days} = 48 \) <br />
+    Total mg needed: \( 48 \times 9 = 432 \text{ mg} \) <br />
+    <br />
+    Using \( \frac{\text{Need}}{\text{Have}} \times \text{Supplied In} \) <br />
+    0.4 %w/v means 400 mg per 100 ml <br />
+    \( \frac{432 \text{ mg} }{400 \text{ mg} } \times 100 \text{ ml} = 108.0 \text{ ml} \) <br />
+    <br />
+    **Answer** 108
+- id: 4012
+  question: A patient is prescribed 14 mg of morphine every 12 hours for 10 days following
+    an unfortunate accident. You hold a 0.9 % w/v mixture in your hospital dispensary
+    stock. How many millilitres should you supply in total? Give your answer as a
+    whole number.
+  answer: 31
+  solution: |-
+    Doses per day: 2 <br />
+    Total doses: \( 2 \times 10 \text{ days} = 20 \) <br />
+    Total mg needed: \( 20 \times 14 = 280 \text{ mg} \) <br />
+    <br />
+    Using \( \frac{\text{Need}}{\text{Have}} \times \text{Supplied In} \) <br />
+    0.9 %w/v means 900 mg per 100 ml <br />
+    \( \frac{280 \text{ mg} }{900 \text{ mg} } \times 100 \text{ ml} = 31.11 \text{ ml} \) <br />
+    <br />
+    **Answer** 31
+- id: 4013
+  question: A patient is prescribed 14 mg of morphine every 8 hours for 7 days following
+    an unfortunate accident. You hold a 1.0 % w/v mixture in your hospital dispensary
+    stock. How many millilitres should you supply in total? Give your answer as a
+    whole number.
+  answer: 29
+  solution: |-
+    Doses per day: 3 <br />
+    Total doses: \( 3 \times 7 \text{ days} = 21 \) <br />
+    Total mg needed: \( 21 \times 14 = 294 \text{ mg} \) <br />
+    <br />
+    Using \( \frac{\text{Need}}{\text{Have}} \times \text{Supplied In} \) <br />
+    1.0 %w/v means 1000 mg per 100 ml <br />
+    \( \frac{294 \text{ mg} }{1000 \text{ mg} } \times 100 \text{ ml} = 29.4 \text{ ml} \) <br />
+    <br />
+    **Answer** 29
+- id: 4014
+  question: A patient is prescribed 5 mg of morphine every 6 hours for 5 days following
+    an unfortunate accident. You hold a 1.0 % w/v mixture in your hospital dispensary
+    stock. How many millilitres should you supply in total? Give your answer as a
+    whole number.
+  answer: 10
+  solution: |-
+    Doses per day: 4 <br />
+    Total doses: \( 4 \times 5 \text{ days} = 20 \) <br />
+    Total mg needed: \( 20 \times 5 = 100 \text{ mg} \) <br />
+    <br />
+    Using \( \frac{\text{Need}}{\text{Have}} \times \text{Supplied In} \) <br />
+    1.0 %w/v means 1000 mg per 100 ml <br />
+    \( \frac{100 \text{ mg} }{1000 \text{ mg} } \times 100 \text{ ml} = 10.0 \text{ ml} \) <br />
+    <br />
+    **Answer** 10
+- id: 4015
+  question: A patient is prescribed 9 mg of morphine every 8 hours for 12 days following
+    an unfortunate accident. You hold a 0.5 % w/v mixture in your hospital dispensary
+    stock. How many millilitres should you supply in total? Give your answer as a
+    whole number.
+  answer: 65
+  solution: |-
+    Doses per day: 3 <br />
+    Total doses: \( 3 \times 12 \text{ days} = 36 \) <br />
+    Total mg needed: \( 36 \times 9 = 324 \text{ mg} \) <br />
+    <br />
+    Using \( \frac{\text{Need}}{\text{Have}} \times \text{Supplied In} \) <br />
+    0.5 %w/v means 500 mg per 100 ml <br />
+    \( \frac{324 \text{ mg} }{500 \text{ mg} } \times 100 \text{ ml} = 64.8 \text{ ml} \) <br />
+    <br />
+    **Answer** 65
+- id: 4016
+  question: A patient is prescribed 13 mg of morphine every 3 hours for 7 days following
+    an unfortunate accident. You hold a 1.0 % w/v mixture in your hospital dispensary
+    stock. How many millilitres should you supply in total? Give your answer as a
+    whole number.
+  answer: 73
+  solution: |-
+    Doses per day: 8 <br />
+    Total doses: \( 8 \times 7 \text{ days} = 56 \) <br />
+    Total mg needed: \( 56 \times 13 = 728 \text{ mg} \) <br />
+    <br />
+    Using \( \frac{\text{Need}}{\text{Have}} \times \text{Supplied In} \) <br />
+    1.0 %w/v means 1000 mg per 100 ml <br />
+    \( \frac{728 \text{ mg} }{1000 \text{ mg} } \times 100 \text{ ml} = 72.8 \text{ ml} \) <br />
+    <br />
+    **Answer** 73
+- id: 4017
+  question: A patient is prescribed 12 mg of morphine every 4 hours for 8 days following
+    an unfortunate accident. You hold a 0.8 % w/v mixture in your hospital dispensary
+    stock. How many millilitres should you supply in total? Give your answer as a
+    whole number.
+  answer: 72
+  solution: |-
+    Doses per day: 6 <br />
+    Total doses: \( 6 \times 8 \text{ days} = 48 \) <br />
+    Total mg needed: \( 48 \times 12 = 576 \text{ mg} \) <br />
+    <br />
+    Using \( \frac{\text{Need}}{\text{Have}} \times \text{Supplied In} \) <br />
+    0.8 %w/v means 800 mg per 100 ml <br />
+    \( \frac{576 \text{ mg} }{800 \text{ mg} } \times 100 \text{ ml} = 72.0 \text{ ml} \) <br />
+    <br />
+    **Answer** 72
+- id: 4018
+  question: A patient is prescribed 12 mg of morphine every 3 hours for 14 days following
+    an unfortunate accident. You hold a 0.9 % w/v mixture in your hospital dispensary
+    stock. How many millilitres should you supply in total? Give your answer as a
+    whole number.
+  answer: 149
+  solution: |-
+    Doses per day: 8 <br />
+    Total doses: \( 8 \times 14 \text{ days} = 112 \) <br />
+    Total mg needed: \( 112 \times 12 = 1344 \text{ mg} \) <br />
+    <br />
+    Using \( \frac{\text{Need}}{\text{Have}} \times \text{Supplied In} \) <br />
+    0.9 %w/v means 900 mg per 100 ml <br />
+    \( \frac{1344 \text{ mg} }{900 \text{ mg} } \times 100 \text{ ml} = 149.33 \text{ ml} \) <br />
+    <br />
+    **Answer** 149
+- id: 4019
+  question: A patient is prescribed 14 mg of morphine every 4 hours for 4 days following
+    an unfortunate accident. You hold a 0.6 % w/v mixture in your hospital dispensary
+    stock. How many millilitres should you supply in total? Give your answer as a
+    whole number.
+  answer: 56
+  solution: |-
+    Doses per day: 6 <br />
+    Total doses: \( 6 \times 4 \text{ days} = 24 \) <br />
+    Total mg needed: \( 24 \times 14 = 336 \text{ mg} \) <br />
+    <br />
+    Using \( \frac{\text{Need}}{\text{Have}} \times \text{Supplied In} \) <br />
+    0.6 %w/v means 600 mg per 100 ml <br />
+    \( \frac{336 \text{ mg} }{600 \text{ mg} } \times 100 \text{ ml} = 56.0 \text{ ml} \) <br />
+    <br />
+    **Answer** 56
+- id: 4020
+  question: A patient is prescribed 11 mg of morphine every 4 hours for 9 days following
+    an unfortunate accident. You hold a 0.9 % w/v mixture in your hospital dispensary
+    stock. How many millilitres should you supply in total? Give your answer as a
+    whole number.
+  answer: 66
+  solution: |-
+    Doses per day: 6 <br />
+    Total doses: \( 6 \times 9 \text{ days} = 54 \) <br />
+    Total mg needed: \( 54 \times 11 = 594 \text{ mg} \) <br />
+    <br />
+    Using \( \frac{\text{Need}}{\text{Have}} \times \text{Supplied In} \) <br />
+    0.9 %w/v means 900 mg per 100 ml <br />
+    \( \frac{594 \text{ mg} }{900 \text{ mg} } \times 100 \text{ ml} = 66.0 \text{ ml} \) <br />
+    <br />
+    **Answer** 66
+- id: 4021
+  question: A patient is prescribed 13 mg of morphine every 8 hours for 11 days following
+    an unfortunate accident. You hold a 0.9 % w/v mixture in your hospital dispensary
+    stock. How many millilitres should you supply in total? Give your answer as a
+    whole number.
+  answer: 48
+  solution: |-
+    Doses per day: 3 <br />
+    Total doses: \( 3 \times 11 \text{ days} = 33 \) <br />
+    Total mg needed: \( 33 \times 13 = 429 \text{ mg} \) <br />
+    <br />
+    Using \( \frac{\text{Need}}{\text{Have}} \times \text{Supplied In} \) <br />
+    0.9 %w/v means 900 mg per 100 ml <br />
+    \( \frac{429 \text{ mg} }{900 \text{ mg} } \times 100 \text{ ml} = 47.67 \text{ ml} \) <br />
+    <br />
+    **Answer** 48
+- id: 4022
+  question: A patient is prescribed 12 mg of morphine every 12 hours for 6 days following
+    an unfortunate accident. You hold a 0.9 % w/v mixture in your hospital dispensary
+    stock. How many millilitres should you supply in total? Give your answer as a
+    whole number.
+  answer: 16
+  solution: |-
+    Doses per day: 2 <br />
+    Total doses: \( 2 \times 6 \text{ days} = 12 \) <br />
+    Total mg needed: \( 12 \times 12 = 144 \text{ mg} \) <br />
+    <br />
+    Using \( \frac{\text{Need}}{\text{Have}} \times \text{Supplied In} \) <br />
+    0.9 %w/v means 900 mg per 100 ml <br />
+    \( \frac{144 \text{ mg} }{900 \text{ mg} } \times 100 \text{ ml} = 16.0 \text{ ml} \) <br />
+    <br />
+    **Answer** 16
+- id: 4023
+  question: A patient is prescribed 10 mg of morphine every 6 hours for 5 days following
+    an unfortunate accident. You hold a 0.7 % w/v mixture in your hospital dispensary
+    stock. How many millilitres should you supply in total? Give your answer as a
+    whole number.
+  answer: 29
+  solution: |-
+    Doses per day: 4 <br />
+    Total doses: \( 4 \times 5 \text{ days} = 20 \) <br />
+    Total mg needed: \( 20 \times 10 = 200 \text{ mg} \) <br />
+    <br />
+    Using \( \frac{\text{Need}}{\text{Have}} \times \text{Supplied In} \) <br />
+    0.7 %w/v means 700 mg per 100 ml <br />
+    \( \frac{200 \text{ mg} }{700 \text{ mg} } \times 100 \text{ ml} = 28.57 \text{ ml} \) <br />
+    <br />
+    **Answer** 29
+- id: 4024
+  question: A patient is prescribed 7 mg of morphine every 8 hours for 8 days following
+    an unfortunate accident. You hold a 0.5 % w/v mixture in your hospital dispensary
+    stock. How many millilitres should you supply in total? Give your answer as a
+    whole number.
+  answer: 34
+  solution: |-
+    Doses per day: 3 <br />
+    Total doses: \( 3 \times 8 \text{ days} = 24 \) <br />
+    Total mg needed: \( 24 \times 7 = 168 \text{ mg} \) <br />
+    <br />
+    Using \( \frac{\text{Need}}{\text{Have}} \times \text{Supplied In} \) <br />
+    0.5 %w/v means 500 mg per 100 ml <br />
+    \( \frac{168 \text{ mg} }{500 \text{ mg} } \times 100 \text{ ml} = 33.6 \text{ ml} \) <br />
+    <br />
+    **Answer** 34
+- id: 4025
+  question: A patient is prescribed 14 mg of morphine every 8 hours for 6 days following
+    an unfortunate accident. You hold a 0.8 % w/v mixture in your hospital dispensary
+    stock. How many millilitres should you supply in total? Give your answer as a
+    whole number.
+  answer: 32
+  solution: |-
+    Doses per day: 3 <br />
+    Total doses: \( 3 \times 6 \text{ days} = 18 \) <br />
+    Total mg needed: \( 18 \times 14 = 252 \text{ mg} \) <br />
+    <br />
+    Using \( \frac{\text{Need}}{\text{Have}} \times \text{Supplied In} \) <br />
+    0.8 %w/v means 800 mg per 100 ml <br />
+    \( \frac{252 \text{ mg} }{800 \text{ mg} } \times 100 \text{ ml} = 31.5 \text{ ml} \) <br />
+    <br />
+    **Answer** 32
+- id: 4026
+  question: A patient is prescribed 13 mg of morphine every 4 hours for 7 days following
+    an unfortunate accident. You hold a 0.9 % w/v mixture in your hospital dispensary
+    stock. How many millilitres should you supply in total? Give your answer as a
+    whole number.
+  answer: 61
+  solution: |-
+    Doses per day: 6 <br />
+    Total doses: \( 6 \times 7 \text{ days} = 42 \) <br />
+    Total mg needed: \( 42 \times 13 = 546 \text{ mg} \) <br />
+    <br />
+    Using \( \frac{\text{Need}}{\text{Have}} \times \text{Supplied In} \) <br />
+    0.9 %w/v means 900 mg per 100 ml <br />
+    \( \frac{546 \text{ mg} }{900 \text{ mg} } \times 100 \text{ ml} = 60.67 \text{ ml} \) <br />
+    <br />
+    **Answer** 61
+- id: 4027
+  question: A patient is prescribed 8 mg of morphine every 6 hours for 12 days following
+    an unfortunate accident. You hold a 0.8 % w/v mixture in your hospital dispensary
+    stock. How many millilitres should you supply in total? Give your answer as a
+    whole number.
+  answer: 48
+  solution: |-
+    Doses per day: 4 <br />
+    Total doses: \( 4 \times 12 \text{ days} = 48 \) <br />
+    Total mg needed: \( 48 \times 8 = 384 \text{ mg} \) <br />
+    <br />
+    Using \( \frac{\text{Need}}{\text{Have}} \times \text{Supplied In} \) <br />
+    0.8 %w/v means 800 mg per 100 ml <br />
+    \( \frac{384 \text{ mg} }{800 \text{ mg} } \times 100 \text{ ml} = 48.0 \text{ ml} \) <br />
+    <br />
+    **Answer** 48
+- id: 4028
+  question: A patient is prescribed 6 mg of morphine every 3 hours for 10 days following
+    an unfortunate accident. You hold a 0.7 % w/v mixture in your hospital dispensary
+    stock. How many millilitres should you supply in total? Give your answer as a
+    whole number.
+  answer: 69
+  solution: |-
+    Doses per day: 8 <br />
+    Total doses: \( 8 \times 10 \text{ days} = 80 \) <br />
+    Total mg needed: \( 80 \times 6 = 480 \text{ mg} \) <br />
+    <br />
+    Using \( \frac{\text{Need}}{\text{Have}} \times \text{Supplied In} \) <br />
+    0.7 %w/v means 700 mg per 100 ml <br />
+    \( \frac{480 \text{ mg} }{700 \text{ mg} } \times 100 \text{ ml} = 68.57 \text{ ml} \) <br />
+    <br />
+    **Answer** 69
+- id: 4029
+  question: A patient is prescribed 12 mg of morphine every 8 hours for 10 days following
+    an unfortunate accident. You hold a 0.6 % w/v mixture in your hospital dispensary
+    stock. How many millilitres should you supply in total? Give your answer as a
+    whole number.
+  answer: 60
+  solution: |-
+    Doses per day: 3 <br />
+    Total doses: \( 3 \times 10 \text{ days} = 30 \) <br />
+    Total mg needed: \( 30 \times 12 = 360 \text{ mg} \) <br />
+    <br />
+    Using \( \frac{\text{Need}}{\text{Have}} \times \text{Supplied In} \) <br />
+    0.6 %w/v means 600 mg per 100 ml <br />
+    \( \frac{360 \text{ mg} }{600 \text{ mg} } \times 100 \text{ ml} = 60.0 \text{ ml} \) <br />
+    <br />
+    **Answer** 60
+- id: 4030
+  question: A patient is prescribed 10 mg of morphine every 4 hours for 12 days following
+    an unfortunate accident. You hold a 0.6 % w/v mixture in your hospital dispensary
+    stock. How many millilitres should you supply in total? Give your answer as a
+    whole number.
+  answer: 120
+  solution: |-
+    Doses per day: 6 <br />
+    Total doses: \( 6 \times 12 \text{ days} = 72 \) <br />
+    Total mg needed: \( 72 \times 10 = 720 \text{ mg} \) <br />
+    <br />
+    Using \( \frac{\text{Need}}{\text{Have}} \times \text{Supplied In} \) <br />
+    0.6 %w/v means 600 mg per 100 ml <br />
+    \( \frac{720 \text{ mg} }{600 \text{ mg} } \times 100 \text{ ml} = 120.0 \text{ ml} \) <br />
+    <br />
+    **Answer** 120
+- id: 4031
+  question: A patient is prescribed 11 mg of morphine every 12 hours for 13 days following
+    an unfortunate accident. You hold a 0.4 % w/v mixture in your hospital dispensary
+    stock. How many millilitres should you supply in total? Give your answer as a
+    whole number.
+  answer: 72
+  solution: |-
+    Doses per day: 2 <br />
+    Total doses: \( 2 \times 13 \text{ days} = 26 \) <br />
+    Total mg needed: \( 26 \times 11 = 286 \text{ mg} \) <br />
+    <br />
+    Using \( \frac{\text{Need}}{\text{Have}} \times \text{Supplied In} \) <br />
+    0.4 %w/v means 400 mg per 100 ml <br />
+    \( \frac{286 \text{ mg} }{400 \text{ mg} } \times 100 \text{ ml} = 71.5 \text{ ml} \) <br />
+    <br />
+    **Answer** 72
+- id: 4032
+  question: A patient is prescribed 10 mg of morphine every 4 hours for 9 days following
+    an unfortunate accident. You hold a 1.0 % w/v mixture in your hospital dispensary
+    stock. How many millilitres should you supply in total? Give your answer as a
+    whole number.
+  answer: 54
+  solution: |-
+    Doses per day: 6 <br />
+    Total doses: \( 6 \times 9 \text{ days} = 54 \) <br />
+    Total mg needed: \( 54 \times 10 = 540 \text{ mg} \) <br />
+    <br />
+    Using \( \frac{\text{Need}}{\text{Have}} \times \text{Supplied In} \) <br />
+    1.0 %w/v means 1000 mg per 100 ml <br />
+    \( \frac{540 \text{ mg} }{1000 \text{ mg} } \times 100 \text{ ml} = 54.0 \text{ ml} \) <br />
+    <br />
+    **Answer** 54
+- id: 4033
+  question: A patient is prescribed 15 mg of morphine every 12 hours for 5 days following
+    an unfortunate accident. You hold a 0.7 % w/v mixture in your hospital dispensary
+    stock. How many millilitres should you supply in total? Give your answer as a
+    whole number.
+  answer: 21
+  solution: |-
+    Doses per day: 2 <br />
+    Total doses: \( 2 \times 5 \text{ days} = 10 \) <br />
+    Total mg needed: \( 10 \times 15 = 150 \text{ mg} \) <br />
+    <br />
+    Using \( \frac{\text{Need}}{\text{Have}} \times \text{Supplied In} \) <br />
+    0.7 %w/v means 700 mg per 100 ml <br />
+    \( \frac{150 \text{ mg} }{700 \text{ mg} } \times 100 \text{ ml} = 21.43 \text{ ml} \) <br />
+    <br />
+    **Answer** 21
+- id: 4034
+  question: A patient is prescribed 10 mg of morphine every 12 hours for 13 days following
+    an unfortunate accident. You hold a 0.5 % w/v mixture in your hospital dispensary
+    stock. How many millilitres should you supply in total? Give your answer as a
+    whole number.
+  answer: 52
+  solution: |-
+    Doses per day: 2 <br />
+    Total doses: \( 2 \times 13 \text{ days} = 26 \) <br />
+    Total mg needed: \( 26 \times 10 = 260 \text{ mg} \) <br />
+    <br />
+    Using \( \frac{\text{Need}}{\text{Have}} \times \text{Supplied In} \) <br />
+    0.5 %w/v means 500 mg per 100 ml <br />
+    \( \frac{260 \text{ mg} }{500 \text{ mg} } \times 100 \text{ ml} = 52.0 \text{ ml} \) <br />
+    <br />
+    **Answer** 52
+- id: 4035
+  question: A patient is prescribed 8 mg of morphine every 12 hours for 14 days following
+    an unfortunate accident. You hold a 0.6 % w/v mixture in your hospital dispensary
+    stock. How many millilitres should you supply in total? Give your answer as a
+    whole number.
+  answer: 37
+  solution: |-
+    Doses per day: 2 <br />
+    Total doses: \( 2 \times 14 \text{ days} = 28 \) <br />
+    Total mg needed: \( 28 \times 8 = 224 \text{ mg} \) <br />
+    <br />
+    Using \( \frac{\text{Need}}{\text{Have}} \times \text{Supplied In} \) <br />
+    0.6 %w/v means 600 mg per 100 ml <br />
+    \( \frac{224 \text{ mg} }{600 \text{ mg} } \times 100 \text{ ml} = 37.33 \text{ ml} \) <br />
+    <br />
+    **Answer** 37
+- id: 4036
+  question: A patient is prescribed 15 mg of morphine every 8 hours for 12 days following
+    an unfortunate accident. You hold a 0.8 % w/v mixture in your hospital dispensary
+    stock. How many millilitres should you supply in total? Give your answer as a
+    whole number.
+  answer: 68
+  solution: |-
+    Doses per day: 3 <br />
+    Total doses: \( 3 \times 12 \text{ days} = 36 \) <br />
+    Total mg needed: \( 36 \times 15 = 540 \text{ mg} \) <br />
+    <br />
+    Using \( \frac{\text{Need}}{\text{Have}} \times \text{Supplied In} \) <br />
+    0.8 %w/v means 800 mg per 100 ml <br />
+    \( \frac{540 \text{ mg} }{800 \text{ mg} } \times 100 \text{ ml} = 67.5 \text{ ml} \) <br />
+    <br />
+    **Answer** 68
+- id: 4037
+  question: A patient is prescribed 6 mg of morphine every 3 hours for 6 days following
+    an unfortunate accident. You hold a 0.5 % w/v mixture in your hospital dispensary
+    stock. How many millilitres should you supply in total? Give your answer as a
+    whole number.
+  answer: 58
+  solution: |-
+    Doses per day: 8 <br />
+    Total doses: \( 8 \times 6 \text{ days} = 48 \) <br />
+    Total mg needed: \( 48 \times 6 = 288 \text{ mg} \) <br />
+    <br />
+    Using \( \frac{\text{Need}}{\text{Have}} \times \text{Supplied In} \) <br />
+    0.5 %w/v means 500 mg per 100 ml <br />
+    \( \frac{288 \text{ mg} }{500 \text{ mg} } \times 100 \text{ ml} = 57.6 \text{ ml} \) <br />
+    <br />
+    **Answer** 58
+- id: 4038
+  question: A patient is prescribed 15 mg of morphine every 8 hours for 4 days following
+    an unfortunate accident. You hold a 0.9 % w/v mixture in your hospital dispensary
+    stock. How many millilitres should you supply in total? Give your answer as a
+    whole number.
+  answer: 20
+  solution: |-
+    Doses per day: 3 <br />
+    Total doses: \( 3 \times 4 \text{ days} = 12 \) <br />
+    Total mg needed: \( 12 \times 15 = 180 \text{ mg} \) <br />
+    <br />
+    Using \( \frac{\text{Need}}{\text{Have}} \times \text{Supplied In} \) <br />
+    0.9 %w/v means 900 mg per 100 ml <br />
+    \( \frac{180 \text{ mg} }{900 \text{ mg} } \times 100 \text{ ml} = 20.0 \text{ ml} \) <br />
+    <br />
+    **Answer** 20
+- id: 4039
+  question: A patient is prescribed 15 mg of morphine every 8 hours for 14 days following
+    an unfortunate accident. You hold a 0.5 % w/v mixture in your hospital dispensary
+    stock. How many millilitres should you supply in total? Give your answer as a
+    whole number.
+  answer: 126
+  solution: |-
+    Doses per day: 3 <br />
+    Total doses: \( 3 \times 14 \text{ days} = 42 \) <br />
+    Total mg needed: \( 42 \times 15 = 630 \text{ mg} \) <br />
+    <br />
+    Using \( \frac{\text{Need}}{\text{Have}} \times \text{Supplied In} \) <br />
+    0.5 %w/v means 500 mg per 100 ml <br />
+    \( \frac{630 \text{ mg} }{500 \text{ mg} } \times 100 \text{ ml} = 126.0 \text{ ml} \) <br />
+    <br />
+    **Answer** 126
+- id: 4040
+  question: A patient is prescribed 13 mg of morphine every 3 hours for 7 days following
+    an unfortunate accident. You hold a 0.4 % w/v mixture in your hospital dispensary
+    stock. How many millilitres should you supply in total? Give your answer as a
+    whole number.
+  answer: 182
+  solution: |-
+    Doses per day: 8 <br />
+    Total doses: \( 8 \times 7 \text{ days} = 56 \) <br />
+    Total mg needed: \( 56 \times 13 = 728 \text{ mg} \) <br />
+    <br />
+    Using \( \frac{\text{Need}}{\text{Have}} \times \text{Supplied In} \) <br />
+    0.4 %w/v means 400 mg per 100 ml <br />
+    \( \frac{728 \text{ mg} }{400 \text{ mg} } \times 100 \text{ ml} = 182.0 \text{ ml} \) <br />
+    <br />
+    **Answer** 182
+- id: 4041
+  question: A patient is prescribed 13 mg of morphine every 12 hours for 7 days following
+    an unfortunate accident. You hold a 0.4 % w/v mixture in your hospital dispensary
+    stock. How many millilitres should you supply in total? Give your answer as a
+    whole number.
+  answer: 46
+  solution: |-
+    Doses per day: 2 <br />
+    Total doses: \( 2 \times 7 \text{ days} = 14 \) <br />
+    Total mg needed: \( 14 \times 13 = 182 \text{ mg} \) <br />
+    <br />
+    Using \( \frac{\text{Need}}{\text{Have}} \times \text{Supplied In} \) <br />
+    0.4 %w/v means 400 mg per 100 ml <br />
+    \( \frac{182 \text{ mg} }{400 \text{ mg} } \times 100 \text{ ml} = 45.5 \text{ ml} \) <br />
+    <br />
+    **Answer** 46
+- id: 4042
+  question: A patient is prescribed 12 mg of morphine every 6 hours for 10 days following
+    an unfortunate accident. You hold a 1.0 % w/v mixture in your hospital dispensary
+    stock. How many millilitres should you supply in total? Give your answer as a
+    whole number.
+  answer: 48
+  solution: |-
+    Doses per day: 4 <br />
+    Total doses: \( 4 \times 10 \text{ days} = 40 \) <br />
+    Total mg needed: \( 40 \times 12 = 480 \text{ mg} \) <br />
+    <br />
+    Using \( \frac{\text{Need}}{\text{Have}} \times \text{Supplied In} \) <br />
+    1.0 %w/v means 1000 mg per 100 ml <br />
+    \( \frac{480 \text{ mg} }{1000 \text{ mg} } \times 100 \text{ ml} = 48.0 \text{ ml} \) <br />
+    <br />
+    **Answer** 48
+- id: 4043
+  question: A patient is prescribed 15 mg of morphine every 8 hours for 5 days following
+    an unfortunate accident. You hold a 1.0 % w/v mixture in your hospital dispensary
+    stock. How many millilitres should you supply in total? Give your answer as a
+    whole number.
+  answer: 23
+  solution: |-
+    Doses per day: 3 <br />
+    Total doses: \( 3 \times 5 \text{ days} = 15 \) <br />
+    Total mg needed: \( 15 \times 15 = 225 \text{ mg} \) <br />
+    <br />
+    Using \( \frac{\text{Need}}{\text{Have}} \times \text{Supplied In} \) <br />
+    1.0 %w/v means 1000 mg per 100 ml <br />
+    \( \frac{225 \text{ mg} }{1000 \text{ mg} } \times 100 \text{ ml} = 22.5 \text{ ml} \) <br />
+    <br />
+    **Answer** 23
+- id: 4044
+  question: A patient is prescribed 10 mg of morphine every 12 hours for 13 days following
+    an unfortunate accident. You hold a 0.6 % w/v mixture in your hospital dispensary
+    stock. How many millilitres should you supply in total? Give your answer as a
+    whole number.
+  answer: 43
+  solution: |-
+    Doses per day: 2 <br />
+    Total doses: \( 2 \times 13 \text{ days} = 26 \) <br />
+    Total mg needed: \( 26 \times 10 = 260 \text{ mg} \) <br />
+    <br />
+    Using \( \frac{\text{Need}}{\text{Have}} \times \text{Supplied In} \) <br />
+    0.6 %w/v means 600 mg per 100 ml <br />
+    \( \frac{260 \text{ mg} }{600 \text{ mg} } \times 100 \text{ ml} = 43.33 \text{ ml} \) <br />
+    <br />
+    **Answer** 43
+- id: 4045
+  question: A patient is prescribed 11 mg of morphine every 6 hours for 11 days following
+    an unfortunate accident. You hold a 0.4 % w/v mixture in your hospital dispensary
+    stock. How many millilitres should you supply in total? Give your answer as a
+    whole number.
+  answer: 121
+  solution: |-
+    Doses per day: 4 <br />
+    Total doses: \( 4 \times 11 \text{ days} = 44 \) <br />
+    Total mg needed: \( 44 \times 11 = 484 \text{ mg} \) <br />
+    <br />
+    Using \( \frac{\text{Need}}{\text{Have}} \times \text{Supplied In} \) <br />
+    0.4 %w/v means 400 mg per 100 ml <br />
+    \( \frac{484 \text{ mg} }{400 \text{ mg} } \times 100 \text{ ml} = 121.0 \text{ ml} \) <br />
+    <br />
+    **Answer** 121
+- id: 4046
+  question: A patient is prescribed 6 mg of morphine every 3 hours for 5 days following
+    an unfortunate accident. You hold a 1.0 % w/v mixture in your hospital dispensary
+    stock. How many millilitres should you supply in total? Give your answer as a
+    whole number.
+  answer: 24
+  solution: |-
+    Doses per day: 8 <br />
+    Total doses: \( 8 \times 5 \text{ days} = 40 \) <br />
+    Total mg needed: \( 40 \times 6 = 240 \text{ mg} \) <br />
+    <br />
+    Using \( \frac{\text{Need}}{\text{Have}} \times \text{Supplied In} \) <br />
+    1.0 %w/v means 1000 mg per 100 ml <br />
+    \( \frac{240 \text{ mg} }{1000 \text{ mg} } \times 100 \text{ ml} = 24.0 \text{ ml} \) <br />
+    <br />
+    **Answer** 24
+- id: 4047
+  question: A patient is prescribed 12 mg of morphine every 4 hours for 9 days following
+    an unfortunate accident. You hold a 0.5 % w/v mixture in your hospital dispensary
+    stock. How many millilitres should you supply in total? Give your answer as a
+    whole number.
+  answer: 130
+  solution: |-
+    Doses per day: 6 <br />
+    Total doses: \( 6 \times 9 \text{ days} = 54 \) <br />
+    Total mg needed: \( 54 \times 12 = 648 \text{ mg} \) <br />
+    <br />
+    Using \( \frac{\text{Need}}{\text{Have}} \times \text{Supplied In} \) <br />
+    0.5 %w/v means 500 mg per 100 ml <br />
+    \( \frac{648 \text{ mg} }{500 \text{ mg} } \times 100 \text{ ml} = 129.6 \text{ ml} \) <br />
+    <br />
+    **Answer** 130
+- id: 4048
+  question: A patient is prescribed 5 mg of morphine every 3 hours for 9 days following
+    an unfortunate accident. You hold a 0.6 % w/v mixture in your hospital dispensary
+    stock. How many millilitres should you supply in total? Give your answer as a
+    whole number.
+  answer: 60
+  solution: |-
+    Doses per day: 8 <br />
+    Total doses: \( 8 \times 9 \text{ days} = 72 \) <br />
+    Total mg needed: \( 72 \times 5 = 360 \text{ mg} \) <br />
+    <br />
+    Using \( \frac{\text{Need}}{\text{Have}} \times \text{Supplied In} \) <br />
+    0.6 %w/v means 600 mg per 100 ml <br />
+    \( \frac{360 \text{ mg} }{600 \text{ mg} } \times 100 \text{ ml} = 60.0 \text{ ml} \) <br />
+    <br />
+    **Answer** 60
+- id: 4049
+  question: A patient is prescribed 12 mg of morphine every 8 hours for 8 days following
+    an unfortunate accident. You hold a 0.5 % w/v mixture in your hospital dispensary
+    stock. How many millilitres should you supply in total? Give your answer as a
+    whole number.
+  answer: 58
+  solution: |-
+    Doses per day: 3 <br />
+    Total doses: \( 3 \times 8 \text{ days} = 24 \) <br />
+    Total mg needed: \( 24 \times 12 = 288 \text{ mg} \) <br />
+    <br />
+    Using \( \frac{\text{Need}}{\text{Have}} \times \text{Supplied In} \) <br />
+    0.5 %w/v means 500 mg per 100 ml <br />
+    \( \frac{288 \text{ mg} }{500 \text{ mg} } \times 100 \text{ ml} = 57.6 \text{ ml} \) <br />
+    <br />
+    **Answer** 58
+- id: 4050
+  question: A patient is prescribed 12 mg of morphine every 8 hours for 6 days following
+    an unfortunate accident. You hold a 0.8 % w/v mixture in your hospital dispensary
+    stock. How many millilitres should you supply in total? Give your answer as a
+    whole number.
+  answer: 27
+  solution: |-
+    Doses per day: 3 <br />
+    Total doses: \( 3 \times 6 \text{ days} = 18 \) <br />
+    Total mg needed: \( 18 \times 12 = 216 \text{ mg} \) <br />
+    <br />
+    Using \( \frac{\text{Need}}{\text{Have}} \times \text{Supplied In} \) <br />
+    0.8 %w/v means 800 mg per 100 ml <br />
+    \( \frac{216 \text{ mg} }{800 \text{ mg} } \times 100 \text{ ml} = 27.0 \text{ ml} \) <br />
+    <br />
+    **Answer** 27

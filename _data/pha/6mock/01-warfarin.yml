@@ -1,0 +1,523 @@
+- id: 1
+  question: "A 52-year-old patient has a prescription for warfarin tablets with the directions 'Take 4 mg and 5 mg on alternating days', but the quantity is missing. You have 1 mg and 3 mg warfarin tablets available to make up the required dose. Assuming that the patient's INR remains stable and within the acceptable range for their condition, what is the exact number of warfarin 1 mg tablets that would be required for a 28-day supply alongside the sufficient supply of 3 mg tablets? Give your answer as a whole number."
+  answer: 42
+  solution: |
+    **Step 1: Determine 1 mg tablets needed per dose** <br />
+    To minimize the total tablet count, the 3 mg strength is used as the base. <br />
+    - On 4 mg days: One 3 mg tablet + One 1 mg tablet are required. <br />
+    - On 5 mg days: One 3 mg tablet + Two 1 mg tablets are required. <br />
+    <br />
+    **Step 2: Calculate for the 28-day period (14 days of each dose)** <br />
+    - 1 mg tablets for 4 mg days: 1 tablet x 14 days = 14 tablets. <br />
+    - 1 mg tablets for 5 mg days: 2 tablets x 14 days = 28 tablets. <br />
+    <br />
+    **Step 3: Calculate total 1 mg tablets** <br />
+    14 tablets + 28 tablets = 42 tablets. <br />
+    <br />
+    **Answer:** 42
+
+- id: 2
+  question: "A 64-year-old patient has a prescription for warfarin tablets with the directions 'Take 6 mg and 7 mg on alternating days', but the quantity is missing. You have 1 mg and 5 mg warfarin tablets available to make up the required dose. Assuming that the patient's INR remains stable, what is the exact number of warfarin 1 mg tablets that would be required for a 28-day supply alongside the sufficient supply of 5 mg tablets? Give your answer as a whole number."
+  answer: 42
+  solution: |
+    **Step 1: Determine 1 mg tablets needed per dose** <br />
+    To minimize the total tablet count, the 5 mg strength is used as the base. <br />
+    - On 6 mg days: One 5 mg tablet + One 1 mg tablet are required. <br />
+    - On 7 mg days: One 5 mg tablet + Two 1 mg tablets are required. <br />
+    <br />
+    **Step 2: Calculate for the 28-day period (14 days of each dose)** <br />
+    - 1 mg tablets for 6 mg days: 1 tablet x 14 days = 14 tablets. <br />
+    - 1 mg tablets for 7 mg days: 2 tablets x 14 days = 28 tablets. <br />
+    <br />
+    **Step 3: Calculate total 1 mg tablets** <br />
+    14 tablets + 28 tablets = 42 tablets. <br />
+    <br />
+    **Answer:** 42
+
+- id: 3
+  question: "A 70-year-old patient has a prescription for prednisolone tablets with the directions 'Take 7 mg and 8 mg on alternating days', but the quantity is missing. You have 1 mg and 5 mg prednisolone tablets available to make up the required dose. Assuming that the patient's clinical condition remains stable, what is the exact number of 1 mg tablets that would be required for a 14-day supply alongside the sufficient supply of 5 mg tablets? Give your answer as a whole number."
+  answer: 35
+  solution: |
+    **Step 1: Determine 1 mg tablets needed per dose** <br />
+    To minimize the total tablet count, the 5 mg strength is used as the base. <br />
+    - On 7 mg days: One 5 mg tablet + Two 1 mg tablets are required. <br />
+    - On 8 mg days: One 5 mg tablet + Three 1 mg tablets are required. <br />
+    <br />
+    **Step 2: Calculate for the 14-day period (7 days of each dose)** <br />
+    - 1 mg tablets for 7 mg days: 2 tablets x 7 days = 14 tablets. <br />
+    - 1 mg tablets for 8 mg days: 3 tablets x 7 days = 21 tablets. <br />
+    <br />
+    **Step 3: Calculate total 1 mg tablets** <br />
+    14 tablets + 21 tablets = 35 tablets. <br />
+    <br />
+    **Answer:** 35
+
+- id: 4
+  question: "A 48-year-old patient has a prescription for warfarin tablets with the directions 'Take 2 mg and 4 mg on alternating days', but the quantity is missing. You have 1 mg and 3 mg warfarin tablets available to make up the required dose. Assuming that the patient's INR remains stable, what is the exact number of warfarin 1 mg tablets that would be required for a 28-day supply alongside the sufficient supply of 3 mg tablets? Give your answer as a whole number."
+  answer: 42
+  solution: |
+    **Step 1: Determine 1 mg tablets needed per dose** <br />
+    To minimize the total tablet count, the 3 mg strength is used as the base. <br />
+    - On 2 mg days: Two 1 mg tablets are required (3 mg tablet is too high). <br />
+    - On 4 mg days: One 3 mg tablet + One 1 mg tablet are required. <br />
+    <br />
+    **Step 2: Calculate for the 28-day period (14 days of each dose)** <br />
+    - 1 mg tablets for 2 mg days: 2 tablets x 14 days = 28 tablets. <br />
+    - 1 mg tablets for 4 mg days: 1 tablet x 14 days = 14 tablets. <br />
+    <br />
+    **Step 3: Calculate total 1 mg tablets** <br />
+    28 tablets + 14 tablets = 42 tablets. <br />
+    <br />
+    **Answer:** 42
+
+- id: 5
+  question: "A 55-year-old patient has a prescription for tamoxifen tablets with the directions 'Take 30 mg and 40 mg on alternating days', but the quantity is missing. You have 10 mg and 20 mg tamoxifen tablets available to make up the required dose. Assuming that the patient's condition remains stable, what is the exact number of tamoxifen 10 mg tablets that would be required for a 30-day supply alongside the sufficient supply of 20 mg tablets? Give your answer as a whole number."
+  answer: 15
+  solution: |
+    **Step 1: Determine 10 mg tablets needed per dose** <br />
+    To minimize the total tablet count, the 20 mg strength is used as the base. <br />
+    - On 30 mg days: One 20 mg tablet + One 10 mg tablet are required. <br />
+    - On 40 mg days: Two 20 mg tablets are required (Zero 10 mg tablets). <br />
+    <br />
+    **Step 2: Calculate for the 30-day period (15 days of each dose)** <br />
+    - 10 mg tablets for 30 mg days: 1 tablet x 15 days = 15 tablets. <br />
+    - 10 mg tablets for 40 mg days: 0 tablets x 15 days = 0 tablets. <br />
+    <br />
+    **Step 3: Calculate total 10 mg tablets** <br />
+    15 tablets + 0 tablets = 15 tablets. <br />
+    <br />
+    **Answer:** 15
+
+- id: 6
+  question: "A 61-year-old patient has a prescription for warfarin tablets with the directions 'Take 11 mg and 12 mg on alternating days', but the quantity is missing. You have 1 mg and 5 mg warfarin tablets available to make up the required dose. Assuming that the patient's INR remains stable, what is the exact number of warfarin 1 mg tablets that would be required for a 28-day supply alongside the sufficient supply of 5 mg tablets? Give your answer as a whole number."
+  answer: 42
+  solution: |
+    **Step 1: Determine 1 mg tablets needed per dose** <br />
+    To minimize the total tablet count, the 5 mg strength is used as the base. <br />
+    - On 11 mg days: Two 5 mg tablets + One 1 mg tablet are required. <br />
+    - On 12 mg days: Two 5 mg tablets + Two 1 mg tablets are required. <br />
+    <br />
+    **Step 2: Calculate for the 28-day period (14 days of each dose)** <br />
+    - 1 mg tablets for 11 mg days: 1 tablet x 14 days = 14 tablets. <br />
+    - 1 mg tablets for 12 mg days: 2 tablets x 14 days = 28 tablets. <br />
+    <br />
+    **Step 3: Calculate total 1 mg tablets** <br />
+    14 tablets + 28 tablets = 42 tablets. <br />
+    <br />
+    **Answer:** 42
+
+- id: 7
+  question: "A 58-year-old patient has a prescription for warfarin tablets with the directions 'Take 1 mg and 2 mg on alternating days', but the quantity is missing. You have 1 mg and 3 mg warfarin tablets available to make up the required dose. Assuming that the patient's INR remains stable, what is the exact number of warfarin 1 mg tablets that would be required for a 28-day supply alongside the sufficient supply of 3 mg tablets? Give your answer as a whole number."
+  answer: 42
+  solution: |
+    **Step 1: Determine 1 mg tablets needed per dose** <br />
+    To minimize the total tablet count, the 3 mg strength is used as the base. <br />
+    - On 1 mg days: One 1 mg tablet is required. <br />
+    - On 2 mg days: Two 1 mg tablets are required. <br />
+    <br />
+    **Step 2: Calculate for the 28-day period (14 days of each dose)** <br />
+    - 1 mg tablets for 1 mg days: 1 tablet x 14 days = 14 tablets. <br />
+    - 1 mg tablets for 2 mg days: 2 tablets x 14 days = 28 tablets. <br />
+    <br />
+    **Step 3: Calculate total 1 mg tablets** <br />
+    14 tablets + 28 tablets = 42 tablets. <br />
+    <br />
+    **Answer:** 42
+
+- id: 8
+  question: "A 45-year-old patient has a prescription for prednisolone tablets with the directions 'Take 21 mg and 22 mg on alternating mornings', but the quantity is missing. You have 1 mg and 5 mg prednisolone tablets available to make up the required dose. Assuming that the patient's condition remains stable, what is the exact number of 1 mg tablets that would be required for a 14-day supply alongside the sufficient supply of 5 mg tablets? Give your answer as a whole number."
+  answer: 21
+  solution: |
+    **Step 1: Determine 1 mg tablets needed per dose** <br />
+    To minimize the total tablet count, the 5 mg strength is used as the base. <br />
+    - On 21 mg days: Four 5 mg tablets + One 1 mg tablet are required. <br />
+    - On 22 mg days: Four 5 mg tablets + Two 1 mg tablets are required. <br />
+    <br />
+    **Step 2: Calculate for the 14-day period (7 days of each dose)** <br />
+    - 1 mg tablets for 21 mg days: 1 tablet x 7 days = 7 tablets. <br />
+    - 1 mg tablets for 22 mg days: 2 tablets x 7 days = 14 tablets. <br />
+    <br />
+    **Step 3: Calculate total 1 mg tablets** <br />
+    7 tablets + 14 tablets = 21 tablets. <br />
+    <br />
+    **Answer:** 21
+
+- id: 9
+  question: "A 66-year-old patient has a prescription for warfarin tablets with the directions 'Take 8 mg and 9 mg on alternating days', but the quantity is missing. You have 1 mg and 3 mg warfarin tablets available to make up the required dose. Assuming that the patient's INR remains stable, what is the exact number of warfarin 1 mg tablets that would be required for a 28-day supply alongside the sufficient supply of 3 mg tablets? Give your answer as a whole number."
+  answer: 28
+  solution: |
+    **Step 1: Determine 1 mg tablets needed per dose** <br />
+    To minimize the total tablet count, the 3 mg strength is used as the base. <br />
+    - On 8 mg days: Two 3 mg tablets + Two 1 mg tablets are required. <br />
+    - On 9 mg days: Three 3 mg tablets are required (Zero 1 mg tablets). <br />
+    <br />
+    **Step 2: Calculate for the 28-day period (14 days of each dose)** <br />
+    - 1 mg tablets for 8 mg days: 2 tablets x 14 days = 28 tablets. <br />
+    - 1 mg tablets for 9 mg days: 0 tablets x 14 days = 0 tablets. <br />
+    <br />
+    **Step 3: Calculate total 1 mg tablets** <br />
+    28 tablets + 0 tablets = 28 tablets. <br />
+    Wait, let me re-check: 8mg = 2x3 + 2x1. 9mg = 3x3 + 0x1. Total = 28. <br />
+    **Answer:** 28
+
+- id: 10
+  question: "A 50-year-old patient has a prescription for warfarin tablets with the directions 'Take 3 mg and 4 mg on alternating days', but the quantity is missing. You have 1 mg and 2 mg warfarin tablets available to make up the required dose. Assuming that the patient's INR remains stable, what is the exact number of warfarin 1 mg tablets that would be required for a 28-day supply alongside the sufficient supply of 2 mg tablets? Give your answer as a whole number."
+  answer: 14
+  solution: |
+    **Step 1: Determine 1 mg tablets needed per dose** <br />
+    To minimize the total tablet count, the 2 mg strength is used as the base. <br />
+    - On 3 mg days: One 2 mg tablet + One 1 mg tablet are required. <br />
+    - On 4 mg days: Two 2 mg tablets are required (Zero 1 mg tablets). <br />
+    <br />
+    **Step 2: Calculate for the 28-day period (14 days of each dose)** <br />
+    - 1 mg tablets for 3 mg days: 1 tablet x 14 days = 14 tablets. <br />
+    - 1 mg tablets for 4 mg days: 0 tablets x 14 days = 0 tablets. <br />
+    <br />
+    **Step 3: Calculate total 1 mg tablets** <br />
+    14 tablets + 0 tablets = 14 tablets. <br />
+    <br />
+    **Answer:** 14
+
+- id: 11
+  question: "A 44-year-old patient has a prescription for tamoxifen tablets with the directions 'Take 10 mg and 30 mg on alternating days', but the quantity is missing. You have 10 mg and 20 mg tamoxifen tablets available to make up the required dose. Assuming that the patient's condition remains stable, what is the exact number of tamoxifen 10 mg tablets that would be required for a 28-day supply alongside the sufficient supply of 20 mg tablets? Give your answer as a whole number."
+  answer: 28
+  solution: |
+    **Step 1: Determine 10 mg tablets needed per dose** <br />
+    - On 10 mg days: One 10 mg tablet is required. <br />
+    - On 30 mg days: One 20 mg tablet + One 10 mg tablet are required. <br />
+    <br />
+    **Step 2: Calculate for the 28-day period (14 days of each dose)** <br />
+    - 10 mg tablets for 10 mg days: 1 tablet x 14 days = 14 tablets. <br />
+    - 10 mg tablets for 30 mg days: 1 tablet x 14 days = 14 tablets. <br />
+    <br />
+    **Step 3: Calculate total 10 mg tablets** <br />
+    14 tablets + 14 tablets = 28 tablets. <br />
+    <br />
+    **Answer:** 28
+
+- id: 12
+  question: "A 56-year-old patient has a prescription for warfarin tablets with the directions 'Take 7 mg and 9 mg on alternating days', but the quantity is missing. You have 1 mg and 5 mg warfarin tablets available to make up the required dose. Assuming that the patient's INR remains stable, what is the exact number of warfarin 1 mg tablets that would be required for a 28-day supply alongside the sufficient supply of 5 mg tablets? Give your answer as a whole number."
+  answer: 84
+  solution: |
+    **Step 1: Determine 1 mg tablets needed per dose** <br />
+    - On 7 mg days: One 5 mg tablet + Two 1 mg tablets are required. <br />
+    - On 9 mg days: One 5 mg tablet + Four 1 mg tablets are required. <br />
+    <br />
+    **Step 2: Calculate for the 28-day period (14 days of each dose)** <br />
+    - 1 mg tablets for 7 mg days: 2 tablets x 14 days = 28 tablets. <br />
+    - 1 mg tablets for 9 mg days: 4 tablets x 14 days = 56 tablets. <br />
+    <br />
+    **Step 3: Calculate total 1 mg tablets** <br />
+    28 tablets + 56 tablets = 84 tablets. <br />
+    <br />
+    **Answer:** 84
+
+- id: 13
+  question: "A 72-year-old patient has a prescription for warfarin tablets with the directions 'Take 3.5 mg and 4 mg on alternating days', but the quantity is missing. You have 0.5 mg and 1 mg warfarin tablets available to make up the required dose. Assuming that the patient's INR remains stable, what is the exact number of warfarin 0.5 mg tablets that would be required for a 28-day supply alongside the sufficient supply of 1 mg tablets? Give your answer as a whole number."
+  answer: 14
+  solution: |
+    **Step 1: Determine 0.5 mg tablets needed per dose** <br />
+    To minimize the total tablet count, the 1 mg strength is used as the base. <br />
+    - On 3.5 mg days: Three 1 mg tablets + One 0.5 mg tablet are required. <br />
+    - On 4 mg days: Four 1 mg tablets are required (Zero 0.5 mg tablets). <br />
+    <br />
+    **Step 2: Calculate for the 28-day period (14 days of each dose)** <br />
+    - 0.5 mg tablets for 3.5 mg days: 1 tablet x 14 days = 14 tablets. <br />
+    - 0.5 mg tablets for 4 mg days: 0 tablets x 14 days = 0 tablets. <br />
+    <br />
+    **Step 3: Calculate total 0.5 mg tablets** <br />
+    14 tablets + 0 tablets = 14 tablets. <br />
+    <br />
+    **Answer:** 14
+
+- id: 14
+  question: "A 38-year-old patient has a prescription for warfarin tablets with the directions 'Take 12 mg and 13 mg on alternating days', but the quantity is missing. You have 1 mg and 5 mg warfarin tablets available to make up the required dose. Assuming that the patient's INR remains stable, what is the exact number of warfarin 1 mg tablets that would be required for a 28-day supply alongside the sufficient supply of 5 mg tablets? Give your answer as a whole number."
+  answer: 70
+  solution: |
+    **Step 1: Determine 1 mg tablets needed per dose** <br />
+    - On 12 mg days: Two 5 mg tablets + Two 1 mg tablets are required. <br />
+    - On 13 mg days: Two 5 mg tablets + Three 1 mg tablets are required. <br />
+    <br />
+    **Step 2: Calculate for the 28-day period (14 days of each dose)** <br />
+    - 1 mg tablets for 12 mg days: 2 tablets x 14 days = 28 tablets. <br />
+    - 1 mg tablets for 13 mg days: 3 tablets x 14 days = 42 tablets. <br />
+    <br />
+    **Step 3: Calculate total 1 mg tablets** <br />
+    28 tablets + 42 tablets = 70 tablets. <br />
+    <br />
+    **Answer:** 70
+
+- id: 15
+  question: "A 54-year-old patient has a prescription for warfarin tablets with the directions 'Take 4 mg and 7 mg on alternating days', but the quantity is missing. You have 1 mg and 3 mg warfarin tablets available to make up the required dose. Assuming that the patient's INR remains stable, what is the exact number of warfarin 1 mg tablets that would be required for a 28-day supply alongside the sufficient supply of 3 mg tablets? Give your answer as a whole number."
+  answer: 28
+  solution: |
+    **Step 1: Determine 1 mg tablets needed per dose** <br />
+    - On 4 mg days: One 3 mg tablet + One 1 mg tablet are required. <br />
+    - On 7 mg days: Two 3 mg tablets + One 1 mg tablet are required. <br />
+    <br />
+    **Step 2: Calculate for the 28-day period (14 days of each dose)** <br />
+    - 1 mg tablets for 4 mg days: 1 tablet x 14 days = 14 tablets. <br />
+    - 1 mg tablets for 7 mg days: 1 tablet x 14 days = 14 tablets. <br />
+    <br />
+    **Step 3: Calculate total 1 mg tablets** <br />
+    14 tablets + 14 tablets = 28 tablets. <br />
+    <br />
+    **Answer:** 28
+
+- id: 16
+  question: "A 49-year-old patient has a prescription for prednisolone tablets with the directions 'Take 35 mg and 40 mg on alternating mornings', but the quantity is missing. You have 5 mg and 25 mg prednisolone tablets available to make up the required dose. Assuming that the patient's condition remains stable, what is the exact number of 5 mg tablets that would be required for a 14-day supply alongside the sufficient supply of 25 mg tablets? Give your answer as a whole number."
+  answer: 35
+  solution: |
+    **Step 1: Determine 5 mg tablets needed per dose** <br />
+    - On 35 mg days: One 25 mg tablet + Two 5 mg tablets are required. <br />
+    - On 40 mg days: One 25 mg tablet + Three 5 mg tablets are required. <br />
+    <br />
+    **Step 2: Calculate for the 14-day period (7 days of each dose)** <br />
+    - 5 mg tablets for 35 mg days: 2 tablets x 7 days = 14 tablets. <br />
+    - 5 mg tablets for 40 mg days: 3 tablets x 7 days = 21 tablets. <br />
+    <br />
+    **Step 3: Calculate total 5 mg tablets** <br />
+    14 tablets + 21 tablets = 35 tablets. <br />
+    <br />
+    **Answer:** 35
+
+- id: 17
+  question: "A 62-year-old patient has a prescription for warfarin tablets with the directions 'Take 2 mg and 5 mg on alternating days', but the quantity is missing. You have 1 mg and 3 mg warfarin tablets available to make up the required dose. Assuming that the patient's INR remains stable, what is the exact number of warfarin 1 mg tablets that would be required for a 28-day supply alongside the sufficient supply of 3 mg tablets? Give your answer as a whole number."
+  answer: 56
+  solution: |
+    **Step 1: Determine 1 mg tablets needed per dose** <br />
+    - On 2 mg days: Two 1 mg tablets are required. <br />
+    - On 5 mg days: One 3 mg tablet + Two 1 mg tablets are required. <br />
+    <br />
+    **Step 2: Calculate for the 28-day period (14 days of each dose)** <br />
+    - 1 mg tablets for 2 mg days: 2 tablets x 14 days = 28 tablets. <br />
+    - 1 mg tablets for 5 mg days: 2 tablets x 14 days = 28 tablets. <br />
+    <br />
+    **Step 3: Calculate total 1 mg tablets** <br />
+    28 tablets + 28 tablets = 56 tablets. <br />
+    <br />
+    **Answer:** 56
+
+- id: 18
+  question: "A 51-year-old patient has a prescription for warfarin tablets with the directions 'Take 10 mg and 11 mg on alternating days', but the quantity is missing. You have 1 mg and 3 mg warfarin tablets available to make up the required dose. Assuming that the patient's INR remains stable, what is the exact number of warfarin 1 mg tablets that would be required for a 28-day supply alongside the sufficient supply of 3 mg tablets? Give your answer as a whole number."
+  answer: 42
+  solution: |
+    **Step 1: Determine 1 mg tablets needed per dose** <br />
+    - On 10 mg days: Three 3 mg tablets + One 1 mg tablet are required. <br />
+    - On 11 mg days: Three 3 mg tablets + Two 1 mg tablets are required. <br />
+    <br />
+    **Step 2: Calculate for the 28-day period (14 days of each dose)** <br />
+    - 1 mg tablets for 10 mg days: 1 tablet x 14 days = 14 tablets. <br />
+    - 1 mg tablets for 11 mg days: 2 tablets x 14 days = 28 tablets. <br />
+    <br />
+    **Step 3: Calculate total 1 mg tablets** <br />
+    14 tablets + 28 tablets = 42 tablets. <br />
+    <br />
+    **Answer:** 42
+
+- id: 19
+  question: "A 59-year-old patient has a prescription for warfarin tablets with the directions 'Take 1 mg and 3 mg on alternating days', but the quantity is missing. You have 1 mg and 3 mg warfarin tablets available. Assuming that the patient's INR remains stable, what is the exact number of warfarin 1 mg tablets that would be required for a 28-day supply alongside the sufficient supply of 3 mg tablets? Give your answer as a whole number."
+  answer: 14
+  solution: |
+    **Step 1: Determine 1 mg tablets needed per dose** <br />
+    - On 1 mg days: One 1 mg tablet is required. <br />
+    - On 3 mg days: One 3 mg tablet is required (Zero 1 mg tablets). <br />
+    <br />
+    **Step 2: Calculate for the 28-day period (14 days of each dose)** <br />
+    - 1 mg tablets for 1 mg days: 1 tablet x 14 days = 14 tablets. <br />
+    - 1 mg tablets for 3 mg days: 0 tablets x 14 days = 0 tablets. <br />
+    <br />
+    **Step 3: Calculate total 1 mg tablets** <br />
+    14 tablets + 0 tablets = 14 tablets. <br />
+    <br />
+    **Answer:** 14
+
+- id: 20
+  question: "A 40-year-old patient has a prescription for tamoxifen tablets with the directions 'Take 20 mg and 30 mg on alternating days', but the quantity is missing. You have 10 mg and 20 mg tamoxifen tablets available. Assuming that the patient's condition remains stable, what is the exact number of tamoxifen 10 mg tablets that would be required for a 30-day supply alongside the sufficient supply of 20 mg tablets? Give your answer as a whole number."
+  answer: 15
+  solution: |
+    **Step 1: Determine 10 mg tablets needed per dose** <br />
+    - On 20 mg days: One 20 mg tablet is required (Zero 10 mg tablets). <br />
+    - On 30 mg days: One 20 mg tablet + One 10 mg tablet are required. <br />
+    <br />
+    **Step 2: Calculate for the 30-day period (15 days of each dose)** <br />
+    - 10 mg tablets for 20 mg days: 0 tablets x 15 days = 0 tablets. <br />
+    - 10 mg tablets for 30 mg days: 1 tablet x 15 days = 15 tablets. <br />
+    <br />
+    **Step 3: Calculate total 10 mg tablets** <br />
+    0 tablets + 15 tablets = 15 tablets. <br />
+    <br />
+    **Answer:** 15
+
+- id: 21
+  question: "A 52-year-old patient has a prescription for warfarin tablets with the directions 'Take 4 mg and 5 mg on alternating days', but the quantity is missing. You have 1 mg and 3 mg warfarin tablets available to make up the required dose. Assuming that the patient's INR remains stable, what is the exact number of warfarin 3 mg tablets that would be required for a 28-day supply alongside the sufficient supply of 1 mg tablets? Give your answer as a whole number."
+  answer: 28
+  solution: |
+    **Step 1: Determine 3 mg tablets needed per dose** <br />
+    To minimize the total tablet count, the 3 mg strength is used as the base. <br />
+    - On 4 mg days: One 3 mg tablet + One 1 mg tablet are required. <br />
+    - On 5 mg days: One 3 mg tablet + Two 1 mg tablets are required. <br />
+    <br />
+    **Step 2: Calculate for the 28-day period (14 days of each dose)** <br />
+    - 3 mg tablets for 4 mg days: 1 tablet x 14 days = 14 tablets. <br />
+    - 3 mg tablets for 5 mg days: 1 tablet x 14 days = 14 tablets. <br />
+    <br />
+    **Step 3: Calculate total 3 mg tablets** <br />
+    14 tablets + 14 tablets = 28 tablets. <br />
+    <br />
+    **Answer:** 28
+
+- id: 22
+  question: "A 65-year-old patient has a prescription for warfarin tablets with the directions 'Take 3 mg and 6 mg on alternating days', but the quantity is missing. You have 1 mg and 3 mg warfarin tablets available to make up the required dose. Assuming that the patient's INR remains stable, what is the exact number of warfarin 3 mg tablets that would be required for a 28-day supply alongside the sufficient supply of 1 mg tablets? Give your answer as a whole number."
+  answer: 42
+  solution: |
+    **Step 1: Determine 3 mg tablets needed per dose** <br />
+    - On 3 mg days: One 3 mg tablet is required. <br />
+    - On 6 mg days: Two 3 mg tablets are required. <br />
+    <br />
+    **Step 2: Calculate for the 28-day period (14 days of each dose)** <br />
+    - 3 mg tablets for 3 mg days: 1 tablet x 14 days = 14 tablets. <br />
+    - 3 mg tablets for 6 mg days: 2 tablets x 14 days = 28 tablets. <br />
+    <br />
+    **Step 3: Calculate total 3 mg tablets** <br />
+    14 tablets + 28 tablets = 42 tablets. <br />
+    <br />
+    **Answer:** 42
+
+- id: 23
+  question: "A 71-year-old patient has a prescription for warfarin tablets with the directions 'Take 5 mg and 7 mg on alternating days', but the quantity is missing. You have 1 mg and 5 mg warfarin tablets available to make up the required dose. Assuming that the patient's INR remains stable, what is the exact number of warfarin 5 mg tablets that would be required for a 28-day supply alongside the sufficient supply of 1 mg tablets? Give your answer as a whole number."
+  answer: 28
+  solution: |
+    **Step 1: Determine 5 mg tablets needed per dose** <br />
+    - On 5 mg days: One 5 mg tablet is required. <br />
+    - On 7 mg days: One 5 mg tablet + Two 1 mg tablets are required. <br />
+    <br />
+    **Step 2: Calculate for the 28-day period (14 days of each dose)** <br />
+    - 5 mg tablets for 5 mg days: 1 tablet x 14 days = 14 tablets. <br />
+    - 5 mg tablets for 7 mg days: 1 tablet x 14 days = 14 tablets. <br />
+    <br />
+    **Step 3: Calculate total 5 mg tablets** <br />
+    14 tablets + 14 tablets = 28 tablets. <br />
+    <br />
+    **Answer:** 28
+
+- id: 24
+  question: "A 50-year-old patient has a prescription for prednisolone tablets with the directions 'Take 12 mg and 15 mg on alternating mornings', but the quantity is missing. You have 1 mg and 5 mg prednisolone tablets available. Assuming that the patient's condition remains stable, what is the exact number of 5 mg tablets that would be required for a 14-day supply alongside the sufficient supply of 1 mg tablets? Give your answer as a whole number."
+  answer: 35
+  solution: |
+    **Step 1: Determine 5 mg tablets needed per dose** <br />
+    To minimize the total tablet count, the 5 mg strength is used as the base. <br />
+    - On 12 mg days: Two 5 mg tablets + Two 1 mg tablets are required. <br />
+    - On 15 mg days: Three 5 mg tablets are required. <br />
+    <br />
+    **Step 2: Calculate for the 14-day period (7 days of each dose)** <br />
+    - 5 mg tablets for 12 mg days: 2 tablets x 7 days = 14 tablets. <br />
+    - 5 mg tablets for 15 mg days: 3 tablets x 7 days = 21 tablets. <br />
+    <br />
+    **Step 3: Calculate total 5 mg tablets** <br />
+    14 tablets + 21 tablets = 35 tablets. <br />
+    <br />
+    **Answer:** 35
+
+- id: 25
+  question: "A 47-year-old patient has a prescription for warfarin tablets with the directions 'Take 4 mg and 7 mg on alternating days', but the quantity is missing. You have 1 mg and 3 mg warfarin tablets available to make up the required dose. Assuming that the patient's INR remains stable, what is the exact number of warfarin 3 mg tablets that would be required for a 28-day supply alongside the sufficient supply of 1 mg tablets? Give your answer as a whole number."
+  answer: 42
+  solution: |
+    **Step 1: Determine 3 mg tablets needed per dose** <br />
+    - On 4 mg days: One 3 mg tablet + One 1 mg tablet are required. <br />
+    - On 7 mg days: Two 3 mg tablets + One 1 mg tablet are required. <br />
+    <br />
+    **Step 2: Calculate for the 28-day period (14 days of each dose)** <br />
+    - 3 mg tablets for 4 mg days: 1 tablet x 14 days = 14 tablets. <br />
+    - 3 mg tablets for 7 mg days: 2 tablets x 14 days = 28 tablets. <br />
+    <br />
+    **Step 3: Calculate total 3 mg tablets** <br />
+    14 tablets + 28 tablets = 42 tablets. <br />
+    <br />
+    **Answer:** 42
+
+- id: 26
+  question: "A 55-year-old patient has a prescription for prednisolone tablets with the directions 'Take 11 mg and 13 mg on alternating days', but the quantity is missing. You have 1 mg and 5 mg prednisolone tablets available. Assuming that the patient's condition remains stable, what is the exact number of 5 mg tablets that would be required for a 14-day supply alongside the sufficient supply of 1 mg tablets? Give your answer as a whole number."
+  answer: 28
+  solution: |
+    **Step 1: Determine 5 mg tablets needed per dose** <br />
+    - On 11 mg days: Two 5 mg tablets + One 1 mg tablet are required. <br />
+    - On 13 mg days: Two 5 mg tablets + Three 1 mg tablets are required. <br />
+    <br />
+    **Step 2: Calculate for the 14-day period (7 days of each dose)** <br />
+    - 5 mg tablets for 11 mg days: 2 tablets x 7 days = 14 tablets. <br />
+    - 5 mg tablets for 13 mg days: 2 tablets x 7 days = 14 tablets. <br />
+    <br />
+    **Step 3: Calculate total 5 mg tablets** <br />
+    14 tablets + 14 tablets = 28 tablets. <br />
+    <br />
+    **Answer:** 28
+
+- id: 27
+  question: "A 66-year-old patient has a prescription for warfarin tablets with the directions 'Take 6 mg and 9 mg on alternating days', but the quantity is missing. You have 1 mg and 3 mg warfarin tablets available to make up the required dose. Assuming that the patient's INR remains stable, what is the exact number of warfarin 3 mg tablets that would be required for a 28-day supply alongside the sufficient supply of 1 mg tablets? Give your answer as a whole number."
+  answer: 70
+  solution: |
+    **Step 1: Determine 3 mg tablets needed per dose** <br />
+    - On 6 mg days: Two 3 mg tablets are required. <br />
+    - On 9 mg days: Three 3 mg tablets are required. <br />
+    <br />
+    **Step 2: Calculate for the 28-day period (14 days of each dose)** <br />
+    - 3 mg tablets for 6 mg days: 2 tablets x 14 days = 28 tablets. <br />
+    - 3 mg tablets for 9 mg days: 3 tablets x 14 days = 42 tablets. <br />
+    <br />
+    **Step 3: Calculate total 3 mg tablets** <br />
+    28 tablets + 42 tablets = 70 tablets. <br />
+    <br />
+    **Answer:** 70
+
+- id: 28
+  question: "A 73-year-old patient has a prescription for warfarin tablets with the directions 'Take 8 mg and 10 mg on alternating days', but the quantity is missing. You have 1 mg and 5 mg warfarin tablets available to make up the required dose. Assuming that the patient's INR remains stable, what is the exact number of warfarin 5 mg tablets that would be required for a 28-day supply alongside the sufficient supply of 1 mg tablets? Give your answer as a whole number."
+  answer: 42
+  solution: |
+    **Step 1: Determine 5 mg tablets needed per dose** <br />
+    - On 8 mg days: One 5 mg tablet + Three 1 mg tablets are required. <br />
+    - On 10 mg days: Two 5 mg tablets are required. <br />
+    <br />
+    **Step 2: Calculate for the 28-day period (14 days of each dose)** <br />
+    - 5 mg tablets for 8 mg days: 1 tablet x 14 days = 14 tablets. <br />
+    - 5 mg tablets for 10 mg days: 2 tablets x 14 days = 28 tablets. <br />
+    <br />
+    **Step 3: Calculate total 5 mg tablets** <br />
+    14 tablets + 28 tablets = 42 tablets. <br />
+    <br />
+    **Answer:** 42
+
+- id: 29
+  question: "A 59-year-old patient has a prescription for tamoxifen tablets with the directions 'Take 10 mg and 20 mg on alternating days', but the quantity is missing. You have 10 mg tamoxifen tablets only. Assuming that the patient's condition remains stable, what is the exact number of tamoxifen 10 mg tablets that would be required for a 30-day supply? Give your answer as a whole number."
+  answer: 45
+  solution: |
+    **Step 1: Determine 10 mg tablets needed per dose** <br />
+    - On 10 mg days: One 10 mg tablet is required. <br />
+    - On 20 mg days: Two 10 mg tablets are required. <br />
+    <br />
+    **Step 2: Calculate for the 30-day period (15 days of each dose)** <br />
+    - 10 mg tablets for 10 mg days: 1 tablet x 15 days = 15 tablets. <br />
+    - 10 mg tablets for 20 mg days: 2 tablets x 15 days = 30 tablets. <br />
+    <br />
+    **Step 3: Calculate total 10 mg tablets** <br />
+    15 tablets + 30 tablets = 45 tablets. <br />
+    <br />
+    **Answer:** 45
+
+- id: 30
+  question: "A 68-year-old patient has a prescription for warfarin tablets with the directions 'Take 13 mg and 14 mg on alternating days', but the quantity is missing. You have 1 mg, 3 mg, and 5 mg warfarin tablets available. Assuming that the patient's INR remains stable, what is the exact number of warfarin 3 mg tablets that would be required for a 28-day supply alongside the sufficient supply of 5 mg and 1 mg tablets? Give your answer as a whole number."
+  answer: 56
+  solution: |
+    **Step 1: Determine 3 mg tablets needed per dose** <br />
+    To minimize the total tablet count, the 5 mg strength is used first, followed by 3 mg. <br />
+    - On 13 mg days: Two 5 mg tablets + One 3 mg tablet are required. <br />
+    - On 14 mg days: One 5 mg tablet + Three 3 mg tablets are required. <br />
+    <br />
+    **Step 2: Calculate for the 28-day period (14 days of each dose)** <br />
+    - 3 mg tablets for 13 mg days: 1 tablet x 14 days = 14 tablets. <br />
+    - 3 mg tablets for 14 mg days: 3 tablets x 14 days = 42 tablets. <br />
+    <br />
+    **Step 3: Calculate total 3 mg tablets** <br />
+    14 tablets + 42 tablets = 56 tablets. <br />
+    <br />
+    **Answer:** 56

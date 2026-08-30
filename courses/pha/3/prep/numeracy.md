@@ -1,0 +1,38 @@
+---
+layout: pha
+title: Numeracy Skills Revision
+---
+
+<section class="revision-container" aria-labelledby="revision-heading">
+    <div class="revision-header">
+        <h2 id="revision-heading">Numeracy Skills Revision</h2>
+        <p>Practice 10 random questions from various topics. Check your answer after each question. Give answers to 2 decimal places if necessary.</p>
+    </div>
+
+    <div id="revision-questions-container">
+        <!-- Questions will be injected here as fieldsets for accessibility -->
+    </div>
+
+    <div class="revision-footer">
+        <button type="button" onclick="window.location.reload()" class="btn">Generate New Set of Questions</button>
+    </div>
+</section>
+
+<!-- 1. Load the specific question generators for this page -->
+<script src="{{ '/assets/js/pha/rqs/3-numeracy.js' | relative_url }}"></script>
+
+<!-- 2. Load the core revision logic -->
+<script src="{{ '/assets/js/pha/revision-core-logic.js' | relative_url }}"></script>
+
+<!-- 3. Initialize the revision test with the appropriate generators -->
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        // Ensure initRevisionTest is available (from revision-core-logic.js)
+        // and numeracyQuestionGenerators is available (from numeracy-questions.js)
+        if (window.initRevisionTest && window.numeracyQuestionGenerators) {
+            window.initRevisionTest(window.numeracyQuestionGenerators);
+        } else {
+            console.error("Required revision scripts not loaded correctly.");
+        }
+    });
+</script>

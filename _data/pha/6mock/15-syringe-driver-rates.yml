@@ -1,0 +1,349 @@
+- id: 381
+  question: "A patient is prescribed midazolam 25 mg to be given in a syringe driver over 24 hours. You supply the 10 mg/2 mL midazolam ampoules which need to be made up to a final volume of 18 mL with water for injection in the syringe driver. What rate should the infusion be set at in mL/hour? Give your answer to two decimal places."
+  answer: 0.75
+  solution: |
+    **Step 1: Identify the final volume and duration** <br />
+    Final total volume = 18 mL <br />
+    Total time = 24 hours <br />
+    <br />
+    **Step 2: Calculate the infusion rate** <br />
+    Rate (mL/hr) = Total Volume / Total Time <br />
+    \( 18 \text{ mL} / 24 \text{ hours} = 0.75 \text{ mL/hr} \) <br />
+    <br />
+    **Answer:** 0.75
+
+- id: 382
+  question: "A patient is prescribed midazolam 15 mg to be given in a syringe driver over 24 hours. You supply the 10 mg/2 mL midazolam ampoules which need to be made up to a final volume of 12 mL with 0.9% sodium chloride. What rate should the infusion be set at in mL/hour? Give your answer to one decimal place."
+  answer: 0.5
+  solution: |
+    **Step 1: Identify the final volume and duration** <br />
+    Final total volume = 12 mL <br />
+    Total time = 24 hours <br />
+    <br />
+    **Step 2: Calculate the infusion rate** <br />
+    Rate (mL/hr) = Total Volume / Total Time <br />
+    \( 12 \text{ mL} / 24 \text{ hours} = 0.5 \text{ mL/hr} \) <br />
+    <br />
+    **Answer:** 0.5
+
+- id: 383
+  question: "A patient is prescribed midazolam 45 mg to be given in a syringe driver over 24 hours. You supply 10 mg/2 mL midazolam ampoules which need to be made up to a final volume of 36 mL with water for injection. What rate should the infusion be set at in mL/hour? Give your answer to one decimal place."
+  answer: 1.5
+  solution: |
+    **Step 1: Identify the final volume and duration** <br />
+    Final total volume = 36 mL <br />
+    Total time = 24 hours <br />
+    <br />
+    **Step 2: Calculate the infusion rate** <br />
+    Rate (mL/hr) = Total Volume / Total Time <br />
+    \( 36 \text{ mL} / 24 \text{ hours} = 1.5 \text{ mL/hr} \) <br />
+    <br />
+    **Answer:** 1.5
+
+- id: 384
+  question: "A patient is prescribed midazolam 30 mg to be given in a syringe driver over 24 hours. You supply 10 mg/5 mL midazolam ampoules which need to be made up to a final volume of 48 mL with 0.9% sodium chloride. What rate should the infusion be set at in mL/hour? Give your answer as a whole number."
+  answer: 2
+  solution: |
+    **Step 1: Identify the final volume and duration** <br />
+    Final total volume = 48 mL <br />
+    Total time = 24 hours <br />
+    <br />
+    **Step 2: Calculate the infusion rate** <br />
+    Rate (mL/hr) = Total Volume / Total Time <br />
+    \( 48 \text{ mL} / 24 \text{ hours} = 2 \text{ mL/hr} \) <br />
+    <br />
+    **Answer:** 2
+
+- id: 385
+  question: "A patient is prescribed midazolam 20 mg to be given in a syringe driver over 24 hours. You supply the 10 mg/2 mL midazolam ampoules which need to be made up to a final volume of 15 mL with water for injection. What rate should the infusion be set at in mL/hour? Give your answer to two decimal places."
+  answer: 0.63
+  solution: |
+    **Step 1: Identify the final volume and duration** <br />
+    Final total volume = 15 mL <br />
+    Total time = 24 hours <br />
+    <br />
+    **Step 2: Calculate the infusion rate** <br />
+    Rate (mL/hr) = Total Volume / Total Time <br />
+    \( 15 \text{ mL} / 24 \text{ hours} = 0.625 \text{ mL/hr} \) <br />
+    <br />
+    **Answer:** 0.63 (Rounded to two decimal places)
+
+- id: 386
+  question: "A patient is prescribed morphine sulfate 40 mg via a syringe driver over 24 hours. The pharmacy supplies morphine sulfate 10 mg/1 mL ampoules. The medication needs to be made up to a final volume of 24 mL with 0.9% sodium chloride in the syringe driver. What rate should the infusion be set at in mL/hour? Give your answer as a whole number."
+  answer: 1
+  solution: |
+    **Step 1: Identify the final volume and duration** <br />
+    Final total volume = 24 mL <br />
+    Total time = 24 hours <br />
+    <br />
+    **Step 2: Calculate the infusion rate** <br />
+    Rate (mL/hr) = Total Volume / Total Time <br />
+    \( 24 \text{ mL} / 24 \text{ hours} = 1 \text{ mL/hr} \) <br />
+    <br />
+    **Answer:** 1
+
+- id: 387
+  question: "A patient is prescribed cyclizine 150 mg via a syringe driver over 24 hours. You supply the 50 mg/1 mL cyclizine ampoules which must be made up to a final volume of 18 mL with water for injection. What rate should the infusion be set at in mL/hour? Give your answer to two decimal places."
+  answer: 0.75
+  solution: |
+    **Step 1: Identify the final volume and duration** <br />
+    Final total volume = 18 mL <br />
+    Total time = 24 hours <br />
+    <br />
+    **Step 2: Calculate the infusion rate** <br />
+    Rate (mL/hr) = Total Volume / Total Time <br />
+    \( 18 \text{ mL} / 24 \text{ hours} = 0.75 \text{ mL/hr} \) <br />
+    <br />
+    **Answer:** 0.75
+
+- id: 388
+  question: "A patient is prescribed oxycodone 20 mg via a syringe driver over 24 hours. You supply oxycodone 10 mg/1 mL ampoules which need to be made up to a final volume of 30 mL with 0.9% sodium chloride. What rate should the infusion be set at in mL/hour? Give your answer to two decimal places."
+  answer: 1.25
+  solution: |
+    **Step 1: Identify the final volume and duration** <br />
+    Final total volume = 30 mL <br />
+    Total time = 24 hours <br />
+    <br />
+    **Step 2: Calculate the infusion rate** <br />
+    Rate (mL/hr) = Total Volume / Total Time <br />
+    \( 30 \text{ mL} / 24 \text{ hours} = 1.25 \text{ mL/hr} \) <br />
+    <br />
+    **Answer:** 1.25
+
+- id: 389
+  question: "A patient is prescribed haloperidol 5 mg via a syringe driver over 24 hours. The available ampoules are 5 mg/1 mL. The medication needs to be made up to a final volume of 12 mL with water for injection. What rate should the infusion be set at in mL/hour? Give your answer to one decimal place."
+  answer: 0.5
+  solution: |
+    **Step 1: Identify the final volume and duration** <br />
+    Final total volume = 12 mL <br />
+    Total time = 24 hours <br />
+    <br />
+    **Step 2: Calculate the infusion rate** <br />
+    Rate (mL/hr) = Total Volume / Total Time <br />
+    \( 12 \text{ mL} / 24 \text{ hours} = 0.5 \text{ mL/hr} \) <br />
+    <br />
+    **Answer:** 0.5
+
+- id: 390
+  question: "A patient is prescribed levomepromazine 12.5 mg via a syringe driver over 24 hours. The dispensary supplies 25 mg/1 mL ampoules. The medication is to be made up to a final volume of 15 mL with 0.9% sodium chloride. What rate should the infusion be set at in mL/hour? Give your answer to two decimal places."
+  answer: 0.63
+  solution: |
+    **Step 1: Identify the final volume and duration** <br />
+    Final total volume = 15 mL <br />
+    Total time = 24 hours <br />
+    <br />
+    **Step 2: Calculate the infusion rate** <br />
+    Rate (mL/hr) = Total Volume / Total Time <br />
+    \( 15 \text{ mL} / 24 \text{ hours} = 0.625 \text{ mL/hr} \) <br />
+    <br />
+    **Answer:** 0.63
+
+- id: 391
+  question: "A patient is prescribed metoclopramide 30 mg via a syringe driver over 24 hours. The pharmacy supplies metoclopramide 10 mg/2 mL ampoules. The medication needs to be made up to a final volume of 24 mL with 0.9% sodium chloride. What rate should the infusion be set at in mL/hour? Give your answer as a whole number."
+  answer: 1
+  solution: |
+    **Step 1: Identify the final volume and duration** <br />
+    Final total volume = 24 mL <br />
+    Total time = 24 hours <br />
+    <br />
+    **Step 2: Calculate the infusion rate** <br />
+    Rate (mL/hr) = Total Volume / Total Time <br />
+    \( 24 \text{ mL} / 24 \text{ hours} = 1 \text{ mL/hr} \) <br />
+    <br />
+    **Answer:** 1
+
+- id: 392
+  question: "A patient is prescribed ranitidine 150 mg via a syringe driver over 24 hours. You supply the 50 mg/2 mL ranitidine ampoules which must be made up to a final volume of 48 mL with water for injection. What rate should the infusion be set at in mL/hour? Give your answer as a whole number."
+  answer: 2
+  solution: |
+    **Step 1: Identify the final volume and duration** <br />
+    Final total volume = 48 mL <br />
+    Total time = 24 hours <br />
+    <br />
+    **Step 2: Calculate the infusion rate** <br />
+    Rate (mL/hr) = Total Volume / Total Time <br />
+    \( 48 \text{ mL} / 24 \text{ hours} = 2 \text{ mL/hr} \) <br />
+    <br />
+    **Answer:** 2
+
+- id: 393
+  question: "A patient is prescribed octreotide 500 micrograms via a syringe driver over 24 hours. You supply 100 micrograms/mL ampoules which need to be made up to a final volume of 36 mL with 0.9% sodium chloride. What rate should the infusion be set at in mL/hour? Give your answer to one decimal place."
+  answer: 1.5
+  solution: |
+    **Step 1: Identify the final volume and duration** <br />
+    Final total volume = 36 mL <br />
+    Total time = 24 hours <br />
+    <br />
+    **Step 2: Calculate the infusion rate** <br />
+    Rate (mL/hr) = Total Volume / Total Time <br />
+    \( 36 \text{ mL} / 24 \text{ hours} = 1.5 \text{ mL/hr} \) <br />
+    <br />
+    **Answer:** 1.5
+
+- id: 394
+  question: "A patient is prescribed furosemide 60 mg via a syringe driver over 24 hours. The available ampoules are 10 mg/mL. The medication needs to be made up to a final volume of 18 mL with water for injection. What rate should the infusion be set at in mL/hour? Give your answer to two decimal places."
+  answer: 0.75
+  solution: |
+    **Step 1: Identify the final volume and duration** <br />
+    Final total volume = 18 mL <br />
+    Total time = 24 hours <br />
+    <br />
+    **Step 2: Calculate the infusion rate** <br />
+    Rate (mL/hr) = Total Volume / Total Time <br />
+    \( 18 \text{ mL} / 24 \text{ hours} = 0.75 \text{ mL/hr} \) <br />
+    <br />
+    **Answer:** 0.75
+
+- id: 395
+  question: "A patient is prescribed hyoscine butylbromide 60 mg via a syringe driver over 24 hours. The dispensary supplies 20 mg/mL ampoules. The medication is to be made up to a final volume of 30 mL with 0.9% sodium chloride. What rate should the infusion be set at in mL/hour? Give your answer to two decimal places."
+  answer: 1.25
+  solution: |
+    **Step 1: Identify the final volume and duration** <br />
+    Final total volume = 30 mL <br />
+    Total time = 24 hours <br />
+    <br />
+    **Step 2: Calculate the infusion rate** <br />
+    Rate (mL/hr) = Total Volume / Total Time <br />
+    \( 30 \text{ mL} / 24 \text{ hours} = 1.25 \text{ mL/hr} \) <br />
+    <br />
+    **Answer:** 1.25
+
+- id: 396
+  question: "A patient is prescribed morphine sulfate 30 mg via a syringe driver over 24 hours. The pharmacy supplies morphine sulfate 10 mg/mL ampoules. The medication is to be made up to a final volume of 48 mL with 0.9% sodium chloride. What rate should the infusion be set at in mL/hour? Give your answer as a whole number."
+  answer: 2
+  solution: |
+    **Step 1: Identify the final volume and duration** <br />
+    Final total volume = 48 mL <br />
+    Total time = 24 hours <br />
+    <br />
+    **Step 2: Calculate the infusion rate** <br />
+    Rate (mL/hr) = Total Volume / Total Time <br />
+    \( 48 \text{ mL} / 24 \text{ hours} = 2 \text{ mL/hr} \) <br />
+    <br />
+    **Answer:** 2
+
+- id: 397
+  question: "A patient is prescribed dexamethasone 8 mg via a syringe driver over 24 hours. You supply the 4 mg/mL dexamethasone ampoules which must be made up to a final volume of 12 mL with water for injection. What rate should the infusion be set at in mL/hour? Give your answer to one decimal place."
+  answer: 0.5
+  solution: |
+    **Step 1: Identify the final volume and duration** <br />
+    Final total volume = 12 mL <br />
+    Total time = 24 hours <br />
+    <br />
+    **Step 2: Calculate the infusion rate** <br />
+    Rate (mL/hr) = Total Volume / Total Time <br />
+    \( 12 \text{ mL} / 24 \text{ hours} = 0.5 \text{ mL/hr} \) <br />
+    <br />
+    **Answer:** 0.5
+
+- id: 398
+  question: "A patient is prescribed haloperidol 10 mg via a syringe driver over 24 hours. The available ampoules are 5 mg/mL. The medication needs to be made up to a final volume of 15 mL with 0.9% sodium chloride. What rate should the infusion be set at in mL/hour? Give your answer to three decimal places."
+  answer: 0.625
+  solution: |
+    **Step 1: Identify the final volume and duration** <br />
+    Final total volume = 15 mL <br />
+    Total time = 24 hours <br />
+    <br />
+    **Step 2: Calculate the infusion rate** <br />
+    Rate (mL/hr) = Total Volume / Total Time <br />
+    \( 15 \text{ mL} / 24 \text{ hours} = 0.625 \text{ mL/hr} \) <br />
+    <br />
+    **Answer:** 0.625
+
+- id: 399
+  question: "A patient is prescribed levomepromazine 6.25 mg via a syringe driver over 24 hours. The dispensary supplies 25 mg/mL ampoules. The medication is to be made up to a final volume of 24 mL with water for injection. What rate should the infusion be set at in mL/hour? Give your answer as a whole number."
+  answer: 1
+  solution: |
+    **Step 1: Identify the final volume and duration** <br />
+    Final total volume = 24 mL <br />
+    Total time = 24 hours <br />
+    <br />
+    **Step 2: Calculate the infusion rate** <br />
+    Rate (mL/hr) = Total Volume / Total Time <br />
+    \( 24 \text{ mL} / 24 \text{ hours} = 1 \text{ mL/hr} \) <br />
+    <br />
+    **Answer:** 1
+
+- id: 400
+  question: "A patient is prescribed midazolam 40 mg via a syringe driver over 24 hours. You supply 10 mg/2 mL midazolam ampoules which need to be made up to a final volume of 30 mL with 0.9% sodium chloride. What rate should the infusion be set at in mL/hour? Give your answer to two decimal places."
+  answer: 1.25
+  solution: |
+    **Step 1: Identify the final volume and duration** <br />
+    Final total volume = 30 mL <br />
+    Total time = 24 hours <br />
+    <br />
+    **Step 2: Calculate the infusion rate** <br />
+    Rate (mL/hr) = Total Volume / Total Time <br />
+    \( 30 \text{ mL} / 24 \text{ hours} = 1.25 \text{ mL/hr} \) <br />
+    <br />
+    **Answer:** 1.25
+
+- id: 401
+  question: "A patient is prescribed hyoscine hydrobromide 1.2 mg via a syringe driver over 24 hours. The pharmacy supplies 400 micrograms/mL ampoules. The medication is to be made up to a final volume of 24 mL with water for injection. What rate should the infusion be set at in mL/hour? Give your answer as a whole number."
+  answer: 1
+  solution: |
+    **Step 1: Identify the final volume and duration** <br />
+    Final total volume = 24 mL <br />
+    Total time = 24 hours <br />
+    <br />
+    **Step 2: Calculate the infusion rate** <br />
+    Rate (mL/hr) = Total Volume / Total Time <br />
+    \( 24 \text{ mL} / 24 \text{ hours} = 1 \text{ mL/hr} \) <br />
+    <br />
+    **Answer:** 1
+
+- id: 402
+  question: "A patient is prescribed metoclopramide 60 mg via a syringe driver over 24 hours. You supply the 10 mg/2 mL ampoules which must be made up to a final volume of 18 mL with 0.9% sodium chloride. What rate should the infusion be set at in mL/hour? Give your answer to two decimal places."
+  answer: 0.75
+  solution: |
+    **Step 1: Identify the final volume and duration** <br />
+    Final total volume = 18 mL <br />
+    Total time = 24 hours <br />
+    <br />
+    **Step 2: Calculate the infusion rate** <br />
+    Rate (mL/hr) = Total Volume / Total Time <br />
+    \( 18 \text{ mL} / 24 \text{ hours} = 0.75 \text{ mL/hr} \) <br />
+    <br />
+    **Answer:** 0.75
+
+- id: 403
+  question: "A patient is prescribed morphine sulfate 50 mg via a syringe driver over 24 hours. You supply 10 mg/mL ampoules which need to be made up to a final volume of 30 mL with water for injection. What rate should the infusion be set at in mL/hour? Give your answer to two decimal places."
+  answer: 1.25
+  solution: |
+    **Step 1: Identify the final volume and duration** <br />
+    Final total volume = 30 mL <br />
+    Total time = 24 hours <br />
+    <br />
+    **Step 2: Calculate the infusion rate** <br />
+    Rate (mL/hr) = Total Volume / Total Time <br />
+    \( 30 \text{ mL} / 24 \text{ hours} = 1.25 \text{ mL/hr} \) <br />
+    <br />
+    **Answer:** 1.25
+
+- id: 404
+  question: "A patient is prescribed cyclizine 150 mg via a syringe driver over 24 hours. The available ampoules are 50 mg/mL. The medication needs to be made up to a final volume of 48 mL with water for injection. What rate should the infusion be set at in mL/hour? Give your answer as a whole number."
+  answer: 2
+  solution: |
+    **Step 1: Identify the final volume and duration** <br />
+    Final total volume = 48 mL <br />
+    Total time = 24 hours <br />
+    <br />
+    **Step 2: Calculate the infusion rate** <br />
+    Rate (mL/hr) = Total Volume / Total Time <br />
+    \( 48 \text{ mL} / 24 \text{ hours} = 2 \text{ mL/hr} \) <br />
+    <br />
+    **Answer:** 2
+
+- id: 405
+  question: "A patient is prescribed oxycodone 10 mg via a syringe driver over 24 hours. The dispensary supplies 10 mg/mL ampoules. The medication is to be made up to a final volume of 12 mL with 0.9% sodium chloride. What rate should the infusion be set at in mL/hour? Give your answer to one decimal place."
+  answer: 0.5
+  solution: |
+    **Step 1: Identify the final volume and duration** <br />
+    Final total volume = 12 mL <br />
+    Total time = 24 hours <br />
+    <br />
+    **Step 2: Calculate the infusion rate** <br />
+    Rate (mL/hr) = Total Volume / Total Time <br />
+    \( 12 \text{ mL} / 24 \text{ hours} = 0.5 \text{ mL/hr} \) <br />
+    <br />
+    **Answer:** 0.5
