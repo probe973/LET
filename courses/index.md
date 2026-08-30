@@ -43,6 +43,15 @@ title: Workshops
         </div>
     </a>
 
+    <a href="{{ "/courses/pha" | relative_url }}" class="card">
+        <div class="card-content">
+            <div class="card-text">
+                <h3>Pharmacy</h3>
+                <p></p>
+            </div>
+        </div>
+    </a>
+
     <a href="https://probe973.github.io/let-pharmacy/" class="card">
         <div class="card-content">
             <div class="card-text">

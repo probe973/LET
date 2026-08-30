@@ -43,3 +43,44 @@ Select a topic to view workshops or practice questions
             </div>
         </div>
     </a>
+
+</div>
+
+## Normal Distribution Practice
+
+<div class="card-menu">
+
+    <a href="{{ "/courses/nbs/4107a/probability/standardise" | relative_url }}" class="card">
+        <div class="card-content">
+            <div class="card-text">
+                <h3>Standardising</h3>
+          <p>Converting between raw scores and standardised ($z$) scores</p>
+            </div>
+        </div>
+    </a>
+
+    <a href="{{ "/courses/nbs/4107a/probability/normal_probability" | relative_url }}" class="card">
+        <div class="card-content">
+            <div class="card-text">
+                <h3>Calculating Probabilities</h3>
+          <p>Calculating probabilities from a given normal distribution</p>
+            </div>
+        </div>
+    </a>
+
+</div>
+
+## Binomial Distribution Practice
+
+<div class="card-menu">
+
+    <a href="{{ "/courses/nbs/4107a/probability/binomial" | relative_url }}" class="card">
+        <div class="card-content">
+            <div class="card-text">
+                <h3>Calculating Probabilities</h3>
+          <p>Calculating probabilities from a given binomial distribution</p>
+            </div>
+        </div>
+    </a>
+
+</div>

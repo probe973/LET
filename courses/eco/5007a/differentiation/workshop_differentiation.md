@@ -72,6 +72,7 @@ $$y=3x^{-2}$$
 Using the power rule for differentiation:
 
 $$\frac{\mathrm{d}y}{\mathrm{d}x} = (-2) \times 3 x^{-2-1} = -6x^{-3} = -\frac{6}{x^{3}}$$"
+    var_label="\frac{\mathrm{d}y}{\mathrm{d}x}="
 %}
 
 {% include question_rearrange.html

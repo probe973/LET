@@ -5,7 +5,7 @@ title: Binomial Distributions
 
 <section class="revision-container" aria-labelledby="revision-heading">
     <header class="revision-header">
-        <h2 id="revision-heading">Statistics Practice: Probabilities from Contingency Tables</h2>
+        <h2 id="revision-heading">Statistics Practice: Probabilities from Binomial Distributions</h2>
         <p><strong>Instructions:</strong> Practice random questions below. Click "Check Answer" to see if you are correct. If you need help, the solution will be revealed after your attempt. Enter fractions in their simplest form.</p>
     </header>
 
