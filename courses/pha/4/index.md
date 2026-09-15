@@ -5,6 +5,52 @@ title: Year 1 Home
 
 # Pharmacy Calculations for First Year
 
+### LET Workshops
+
+The Learning Enhancement Team (LET) run workshops for the pharmacy 4010Y course, which can be found here
+
+<div class="card-menu">
+
+    <a href="{{ "/courses/pha/4/workshops/arithmetic.html" | relative_url }}" class="card">
+        <div class="card-content">
+            <div class="card-text">
+                <h3>Arithmetic</h3>
+                <p>Arithmetic, fractions, standard form, and conversion of units</p>
+            </div>
+        </div>
+    </a>
+
+    <a href="{{ "/courses/pha/4/workshops/metric.html" | relative_url }}" class="card">
+        <div class="card-content">
+            <div class="card-text">
+                <h3>Metric Conversions and Equations</h3>
+                <p>Conversion of metric units and transposing equations</p>
+            </div>
+        </div>
+    </a>
+
+    <a href="{{ "/courses/pha/4/workshops/concentrations.html" | relative_url }}" class="card">
+        <div class="card-content">
+            <div class="card-text">
+                <h3>Concentrations</h3>
+                <p>Converting between concentrations, ordering concentrations by strength, calculating dosages</p>
+            </div>
+        </div>
+    </a>
+
+    <a href="{{ "/courses/pha/4/workshops/imperial.html" | relative_url }}" class="card">
+        <div class="card-content">
+            <div class="card-text">
+                <h3>Imperial Measurement and Body Measures</h3>
+                <p>Converting between metric and imperial units, body mass index, body surface area, ideal body weight</p>
+            </div>
+        </div>
+    </a>
+
+</div>
+
+---
+
 ### Topic Practice Questions and Notes
 
 <div class="card-menu">

@@ -1364,3 +1364,89 @@ function checkEquationCaseInsensitive(id, targetValue) {
         }
     }
 }
+
+/**
+ * Checks if a student's answer is correct AND written in proper standard form.
+ * Example: For 42000, correct standard form is 4.2 \times 10^4.
+ * If they type 42000 or 42 \times 10^3, it asks them to adjust the format.
+ */
+
+function checkStandardForm(id, targetValue) {
+    const mfield = document.getElementById(`input-${id}`);
+    const feedback = document.getElementById(`feedback-${id}`);
+    const solDiv = document.getElementById(`solution-${id}`);
+
+    if (!mfield || !feedback) return;
+
+    const studentRaw = mfield.value.trim();
+    
+    if (!studentRaw) {
+        feedback.textContent = "Please enter an answer.";
+        feedback.className = "feedback-region feedback-incorrect";
+        return;
+    }
+
+    try {
+        // Clean up symbols for the math engine
+        const clean = (s) => s.replace(/\$/g, '').trim();
+        const userClean = clean(studentRaw);
+        const targetClean = clean(targetValue);
+
+        const userExpr = ce.parse(userClean);
+        const targetExpr = ce.parse(targetClean);
+
+        // 1. Check if the mathematical value is correct
+        if (!userExpr.isValid || !userExpr.isEqual(targetExpr)) {
+            feedback.textContent = "Incorrect. Try again!";
+            feedback.className = "feedback-region feedback-incorrect";
+            return;
+        }
+
+        // 2. Check if it is in standard form (must contain a power of 10)
+        // Flexible check using regex to allow optional spaces around the power caret (e.g., 10 ^ 4)
+        const isUsingPowersOfTen = /10\s*\^/.test(studentRaw) || studentRaw.includes('10^{');
+
+        if (!isUsingPowersOfTen) {
+            feedback.textContent = "Correct value, but please write your answer in standard form.";
+            feedback.className = "feedback-region feedback-warning";
+            return;
+        }
+
+        // 3. Extract the coefficient (the number before \times or \cdot 10) to ensure 1 <= A < 10
+        let coefficientVal = null;
+        
+        // Support both \times and \cdot (common in British notation)
+        let parts = [];
+        if (studentRaw.includes('\\times')) {
+            parts = studentRaw.split('\\times');
+        } else if (studentRaw.includes('\\cdot')) {
+            parts = studentRaw.split('\\cdot');
+        }
+
+        if (parts.length > 0) {
+            const coeffExpr = ce.parse(parts[0].replace(/\$/g, '').trim());
+            if (coeffExpr.isValid) {
+                coefficientVal = coeffExpr.N().valueOf(); // Numerical value
+            }
+        }
+
+        // Check if coefficient is within the valid range [1, 10)
+        if (coefficientVal !== null && (Math.abs(coefficientVal) < 1 || Math.abs(coefficientVal) >= 10)) {
+            feedback.textContent = "Correct value, but ensure the number is between 1 and 10.";
+            feedback.className = "feedback-region feedback-warning";
+            return;
+        }
+
+        // If everything is correct and properly formatted
+        feedback.textContent = "Correct!";
+        feedback.className = "feedback-region feedback-correct";
+        
+        if (solDiv) solDiv.style.display = "block";
+        mfield.disabled = true;
+
+    } catch (err) {
+        console.error("Standard Form Check Error:", err);
+        feedback.textContent = "Error processing math. Try typing clearly.";
+        feedback.className = "feedback-region feedback-incorrect";
+    }
+}
