@@ -3,7 +3,13 @@ layout: nbs4107a
 title: Factorising
 ---
 
+# Factorising
+
+<div class="explanation" markdown="1">
+
 {% include qguides/algebra/factorising.html %}
+
+</div>
 
 <section class="revision-container" aria-labelledby="revision-heading">
     <header class="revision-header">

@@ -3,7 +3,13 @@ layout: nbs4107a
 title: Collecting Like Terms
 ---
 
+# Simplifying by Collecting Like Terms
+
+<div class="explanation" markdown="1">
+
 {% include qguides/algebra/collecting_like_terms.html %}
+
+</div>
 
 <section class="revision-container" aria-labelledby="revision-heading">
     <header class="revision-header">

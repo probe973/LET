@@ -3,7 +3,13 @@ layout: nbs4107a
 title: Solving Linear Equations
 ---
 
+# Solving Linear Equations
+
+<div class="explanation" markdown="1">
+
 {% include qguides/algebra/linear_equations.html %}
+
+</div>
 
 <section class="revision-container" aria-labelledby="revision-heading">
     <header class="revision-header">

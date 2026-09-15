@@ -5,6 +5,8 @@ title: Statistics
 
 # The Learning Enhancement Team Mathematics and Statistics
 
+## Statistics Study Guides
+
 <div class="card-menu">
     
     <a href="{{ "/study/guides/statistics/types-levels-of-data.html" | relative_url }}" class="card">
