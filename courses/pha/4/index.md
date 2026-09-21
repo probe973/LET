@@ -20,7 +20,7 @@ The Learning Enhancement Team (LET) run workshops for the pharmacy 4010Y course,
         </div>
     </a>
 
-    <a href="{{ "/courses/pha/4/workshops/metric.html" | relative_url }}" class="card">
+    <a href="{{ "/courses/pha/4/workshops/conversion_transpose.html" | relative_url }}" class="card">
         <div class="card-content">
             <div class="card-text">
                 <h3>Metric Conversions and Equations</h3>
@@ -48,6 +48,8 @@ The Learning Enhancement Team (LET) run workshops for the pharmacy 4010Y course,
     </a>
 
 </div>
+
+Note, you can access the file repository of document and pdf for the workshops at this <a href="docs">link</a>. This can be useful for printing or editing to your own preferences.
 
 ---
 

@@ -21,3 +21,18 @@ Select a topic to view workshops or practice questions
     </a>
 
 </div>
+
+## Differentiation Skills Practice
+
+<div class="card-menu">
+    
+    <a href="{{ "/courses/eco/5007a/differentiation/power_rule" | relative_url }}" class="card">
+        <div class="card-content">
+            <div class="card-text">
+                <h3>Differentiation Power Rule</h3>
+          <p>Differentiating terms of the form $y=ax^n$</p>
+            </div>
+        </div>
+    </a>
+
+</div>
