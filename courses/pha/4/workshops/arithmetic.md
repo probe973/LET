@@ -151,7 +151,7 @@ Simplify the following fractions into their lowest terms. Where necessary, write
 %}
 
 {% include question_simplify_factor.html
-    id="pha4w01q11f"
+    id="pha4w01q11g"
     title="11g"
     question_text="Write in its lowest form: $\frac{64}{48}$"
     correct_answer="4/3"
@@ -386,7 +386,7 @@ $$24000 \text{ ml} = 24000 \div 1000 \text{ l} = 24 \text{ l}$$"
     id="pha4w01q14h"
     title="14h"
     question_text="650000 mcg into g"
-    correct_answer="0.42"
+    correct_answer="0.65"
     tolerance="0.005"
     solution_text="Using $1 \text{ g} = 10^6 \text{ mcg}$ gives 
 
