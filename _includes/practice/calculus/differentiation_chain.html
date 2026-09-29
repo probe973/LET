@@ -21,13 +21,14 @@
 <!-- 1. Load Generators -->
 <script src="{{ '/assets/js/calculus/differentiation.js' | relative_url }}"></script>
 <!-- 2. Load Core Logic -->
-<script src="{{ '/assets/js/algebra-revision-core-calc.js' | relative_url }}"></script>
+<script src="{{ '/assets/js/algebra-revision-core-calc2.js' | relative_url }}"></script>
 
 <script>
     document.addEventListener('DOMContentLoaded', () => {
         if (window.initAlgebraRevisionTest && window.diffGenerators) {
             window.initAlgebraRevisionTest([
-                { generator: window.diffGenerators.chain_brackets, count: 2 }
+                { generator: window.diffGenerators.chain_brackets, count: 2 },
+                { generator: window.diffGenerators.chain_exponential, count: 2 },
 
             ]);
         } else {

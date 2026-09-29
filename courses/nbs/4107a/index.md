@@ -56,7 +56,7 @@ This is the resource repository for NBS-4107A mathematics skills from the Learni
 ### PDF's for printing
 <div class="card-menu">
 
-    <a href="{{ "/pdf/nbs/4107a/" | relative_url }}" class="card">
+    <a href="{{ "/courses/nbs/4107a/docs" | relative_url }}" class="card">
         <div class="card-content">
             <div class="card-text">
                 <h3>PDF questions and solutions</h3>

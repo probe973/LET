@@ -488,3 +488,138 @@ window.diffGenerators.chain_brackets2 = function(q_id) {
         solution: at
     };
 };   
+
+window.diffGenerators.chain_exponential = function(q_id) {
+    let a = [];
+    let n = [];
+    let s = getRandomInt(0, 1);
+    
+    while (true) {
+        a[0] = getRandomInt(1, 10);
+        a[1] = getRandomInt(1, 10);
+        if (findHCF(a[0], a[1]) === 1) break;
+    }
+    
+    n[0] = getRandomInt(2, 4);
+    n[1] = getRandomInt(0, n[0] - 1);
+    
+    let qt, ans, av, at;
+    let st = s === 0 ? "-" : "+";
+    
+    qt = "Find $\\frac{\\mathrm{d}y}{\\mathrm{d}x}$ for ";
+    
+    let atx = [];
+    if (a[0] === 1) {
+        atx[0] = "";
+    } else {
+        atx[0] = a[0];
+    }
+    
+    if (s === 1 && a[1] === 1) {
+        atx[1] = "+";
+    } else if (s === 1) {
+        atx[1] = "+" + a[1];
+    } else if (s === 0 && a[1] === 1) {
+        atx[1] = "-";
+    } else {
+        atx[1] = "-" + a[1];
+    }
+    
+    let nt = [];
+    for (let i = 0; i < 2; i++) {
+        if (n[i] === 1) {
+            nt[i] = "x";
+        } else {
+            nt[i] = "x^{" + n[i] + "}";
+        }
+    }
+    
+    if (a[1] === 1 && n[1] === 0) {
+        atx[1] = st + "1";
+    }
+        
+    if (n[1] === 0) {
+        nt[1] = "";
+    }
+    
+    qt = qt + "$$ y = e^{" + atx[0] + nt[0] + " " + atx[1] + nt[1] + "} $$";
+    
+    // Solution steps building
+    let expStr = atx[0] + nt[0] + " " + atx[1] + nt[1];
+    at = "Let $u = " + expStr + "$ then:<br><br>";
+    at = at + "$$\\frac{\\mathrm{d}u}{\\mathrm{d}x} = ";
+    
+    if (n[1] === 0) {
+        let dCoeff0 = n[0] * a[0];
+        let dPow0 = n[0] - 1;
+        let powStr0 = dPow0 === 1 ? "x" : "x^{" + dPow0 + "}";
+        
+        at = at + dCoeff0 + powStr0 + "$$<br>";
+        at = at + "$$y = e^u \\quad \\Rightarrow \\quad \\frac{\\mathrm{d}y}{\\mathrm{d}u} = e^u$$<br>";
+        
+        av = dCoeff0 + powStr0 + "e^{" + expStr + "}";
+        at = at + "$$\\frac{\\mathrm{d}y}{\\mathrm{d}x} = e^{" + expStr + "} \\cdot " + dCoeff0 + powStr0 + " = " + av + "$$";
+        
+    } else if (n[1] === 1) {
+        let dCoeff0 = n[0] * a[0];
+        let dPow0 = n[0] - 1;
+        let powStr0 = dPow0 === 1 ? "x" : "x^{" + dPow0 + "}";
+        
+        at = at + dCoeff0 + powStr0 + " " + st + " " + a[1] + "$$<br>";
+        at = at + "$$y = e^u \\quad \\Rightarrow \\quad \\frac{\\mathrm{d}y}{\\mathrm{d}u} = e^u$$<br>";
+        
+        av = "(" + dCoeff0 + powStr0 + " " + st + " " + a[1] + ")e^{" + expStr + "}";
+        at = at + "$$\\frac{\\mathrm{d}y}{\\mathrm{d}x} = e^{" + expStr + "} \\cdot (" + dCoeff0 + powStr0 + " " + st + " " + a[1] + ") = " + av + "$$";
+        
+        let g = findHCF(dCoeff0, a[1]);
+        if (g !== 1) {
+            let ta = (dCoeff0 / g === 1) ? "x^{" + dPow0 + "}" : (dCoeff0 / g) + "x^{" + dPow0 + "}";
+            let tb = a[1] / g;
+            let factoredDisplay = g + "(" + ta + " " + st + " " + tb + ")e^{" + expStr + "}";
+            at = at + "$$\\frac{\\mathrm{d}y}{\\mathrm{d}x} = " + factoredDisplay + "$$";
+        }
+        
+    } else {
+        let dCoeff0 = n[0] * a[0];
+        let dPow0 = n[0] - 1;
+        let powStr0 = dPow0 === 1 ? "x" : "x^{" + dPow0 + "}";
+        
+        let dCoeff1 = n[1] * a[1];
+        let dPow1 = n[1] - 1;
+        let powStr1 = dPow1 === 1 ? "x" : "x^{" + dPow1 + "}";
+        
+        at = at + dCoeff0 + powStr0 + " " + st + " " + dCoeff1 + powStr1 + "$$<br>";
+        at = at + "$$y = e^u \\quad \\Rightarrow \\quad \\frac{\\mathrm{d}y}{\\mathrm{d}u} = e^u$$<br>";
+        
+        av = "(" + dCoeff0 + powStr0 + " " + st + " " + dCoeff1 + powStr1 + ")e^{" + expStr + "}";
+        at = at + "$$\\frac{\\mathrm{d}y}{\\mathrm{d}x} = e^{" + expStr + "} \\cdot (" + dCoeff0 + powStr0 + " " + st + " " + dCoeff1 + powStr1 + ") = " + av + "$$";
+        
+        let g = findHCF(dCoeff0, dCoeff1);
+        let minX = Math.min(dPow0, dPow1);
+        
+        if (g !== 1 || minX > 0) {
+            let rem0 = dCoeff0 / g;
+            let remPow0 = dPow0 - minX;
+            let rem1 = dCoeff1 / g;
+            let remPow1 = dPow1 - minX;
+            
+            let ta = rem0 === 1 && remPow0 > 0 ? (remPow0 === 1 ? "x" : "x^{" + remPow0 + "}") : rem0 + (remPow0 === 0 ? "" : (remPow0 === 1 ? "x" : "x^{" + remPow0 + "}"));
+            let tb = rem1 === 1 && remPow1 > 0 ? (remPow1 === 1 ? "x" : "x^{" + remPow1 + "}") : rem1 + (remPow1 === 0 ? "" : (remPow1 === 1 ? "x" : "x^{" + remPow1 + "}"));
+            let xFactor = minX === 0 ? "" : (minX === 1 ? "x" : "x^{" + minX + "}");
+            
+            let factoredDisplay = g + xFactor + "(" + ta + " " + st + " " + tb + ")e^{" + expStr + "}";
+            at = at + "$$\\frac{\\mathrm{d}y}{\\mathrm{d}x} = " + factoredDisplay + "$$";
+        }
+    }
+    
+    ans = "$" + av + "$";
+    
+    return {
+        id: q_id,
+        question: qt,
+        answer: ans,
+        check_val: av,
+        goal: "solve",
+        solution: at
+    };
+};
