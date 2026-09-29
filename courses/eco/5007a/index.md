@@ -49,3 +49,16 @@ This is the resource repository for ECO-5007A mathematics skills from the Learni
     </a>
 
 </div>
+
+### PDF's for printing
+<div class="card-menu">
+
+    <a href="{{ "/courses/eco/5007a/docs" | relative_url }}" class="card">
+        <div class="card-content">
+            <div class="card-text">
+                <h3>PDF questions and solutions</h3>
+                <p>For printing or viewing</p>
+            </div>
+        </div>
+    </a>
+</div>

@@ -20,6 +20,14 @@ Select a topic to view workshops or practice questions
         </div>
     </a>
 
+    <a href="{{ "/courses/eco/5007a/differentiation/workshop_differentiation_chain_rule" | relative_url }}" class="card">
+        <div class="card-content">
+            <div class="card-text">
+                <h3>Workshop 3: Differentiation Chain Rule</h3>
+                <p>A workshop looking at differentiating composite functions</p>
+            </div>
+        </div>
+    </a>
 </div>
 
 ## Differentiation Skills Practice
@@ -35,4 +43,12 @@ Select a topic to view workshops or practice questions
         </div>
     </a>
 
+    <a href="{{ "/courses/eco/5007a/differentiation/chain_rule" | relative_url }}" class="card">
+        <div class="card-content">
+            <div class="card-text">
+                <h3>Differentiation Chain Rule</h3>
+          <p>Differentiating terms that are functions of functions</p>
+            </div>
+        </div>
+    </a>
 </div>
