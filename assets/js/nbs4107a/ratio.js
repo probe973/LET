@@ -142,7 +142,7 @@ function ratio_2_left_right(q_id) {
         
     const qchoiceRatioWords1 = ["The ratio of cats to dogs in an animal shelter is ","The ratio of green counters to black counters in a bag is ", "The ratio of wins to losses for a team is ", "Green and white paint is mixed in the ratio ", "Gifts are split between Alcie and Bernie in the ratio "][qchoice];
     const qchoiceRatioWords2 = `${p}:${q}. <br />`; 
-    const qchoiceRatioWords3 = [`If there are ${qm} dogs, how many cats are there?`,`If there are ${qm} black counters, how many red counters are there?`,`If the team lost ${qm} games, how many did they win?`,`If you have ${qm} of white paint, how many L of green paint is required?`,`If Bernie received ${qm} gifts, how many gifts does Alice receive?`][qchoice];
+    const qchoiceRatioWords3 = [`If there are ${qm} dogs, how many cats are there?`,`If there are ${qm} black counters, how many green counters are there?`,`If the team lost ${qm} games, how many did they win?`,`If you have ${qm} of white paint, how many L of green paint is required?`,`If Bernie received ${qm} gifts, how many gifts does Alice receive?`][qchoice];
     
     let question_text = qchoiceRatioWords1 + qchoiceRatioWords2 + qchoiceRatioWords3;
     
