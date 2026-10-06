@@ -324,7 +324,7 @@ Consider the three graphs below which represent the total cost of a gym based on
 {% include question_rearrange.html
     id="w03slq5iv"
     title="5iv"
-    question_text="Consider the first scenario, £20 per entry. Using $c$ for cost and $n$ for number of entries, write the formula, the equation of the line, for cost in the form $c=$."
+    question_text="Consider the first scenario, £20 per entry. Using $c$ for cost and $n$ for number of entries, write the formula (the equation of the line) for cost in the form $c=$."
     correct_answer="c=20n"
     solution_text="There is a gradient of 20, the £20 per entry, and the intercept is 0. So $c=20n$"
 %}
@@ -340,7 +340,7 @@ Consider the three graphs below which represent the total cost of a gym based on
 {% include question_rearrange.html
     id="w03slq5vi"
     title="5vi"
-    question_text="Consider the second scenario, £20 fixed membership price and thereafter £12 per entry. Using $c$ for cost and $n$ for entries, write the formula, the equation of the line, for cost in the form $c=$."
+    question_text="Consider the second scenario, £20 fixed membership price and thereafter £12 per entry. Using $c$ for cost and $n$ for entries, write the formula (the equation of the line) for cost in the form $c=$."
     correct_answer="c=12n+20"
     solution_text="There is a gradient of 12, the £12 per entry, and the intercept is 20. So $c=12n+20$"
 %}
@@ -348,7 +348,7 @@ Consider the three graphs below which represent the total cost of a gym based on
 {% include question_solve.html
     id="w03slq5vii"
     title="5vii"
-    question_text="In the £20 membership plus £20 per entry structure, how much would it cost to enter 4 times? (Do not enter the £ sign)"
+    question_text="In the £20 membership plus £12 per entry structure, how much would it cost to enter 4 times? (Do not enter the £ sign)"
     correct_answer="68"
     solution_text="$c=12 \times 4 + 20= 68$ "
 %}
