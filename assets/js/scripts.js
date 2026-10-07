@@ -813,10 +813,10 @@ function checkFactoriseOnly(id, targetValue) {
         const targetExpr = ce.parse(targetClean, { canonical: false });
 
         // 1. Math Value Check
-        if (!ce.parse(studentClean).evaluate().isEqual(ce.parse(targetClean).evaluate())) {
-        feedback.textContent = "Incorrect. Try again!";
-        feedback.style.color = "red";
-        return;
+        if (!userExpr.isEqual(targetExpr)) {
+            feedback.textContent = "Incorrect. Try again!";
+            feedback.style.color = "red";
+            return;
         }
 
         // 2. Bracket Check
