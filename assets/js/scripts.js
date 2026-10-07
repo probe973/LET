@@ -813,7 +813,7 @@ function checkFactoriseOnly(id, targetValue) {
         const targetExpr = ce.parse(targetClean, { canonical: false });
 
         // 1. Math Value Check
-        if (!userExpr.evaluate().isEqual(targetExpr.evaluate()) {
+        if (!userExpr.evaluate().isEqual(targetExpr.evaluate())) {
             feedback.textContent = "Incorrect. Try again!";
             feedback.style.color = "red";
             return;
