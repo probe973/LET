@@ -814,9 +814,9 @@ function checkFactoriseOnly(id, targetValue) {
 
         // 1. Math Value Check
         if (!userExpr.evaluate().isEqual(targetExpr.evaluate())) {
-            feedback.textContent = "Incorrect. Try again!";
-            feedback.style.color = "red";
-            return;
+        feedback.textContent = "Incorrect. Try again!";
+        feedback.style.color = "red";
+        return;
         }
 
         // 2. Bracket Check
