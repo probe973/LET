@@ -23,11 +23,30 @@ Select a topic to view workshops or practice questions
     <a href="{{ "/courses/eco/5007a/differentiation/workshop_differentiation_chain_rule" | relative_url }}" class="card">
         <div class="card-content">
             <div class="card-text">
-                <h3>Workshop 3: Differentiation Chain Rule</h3>
+                <h3>Workshop 3: Chain Rule</h3>
                 <p>A workshop looking at differentiating composite functions</p>
             </div>
         </div>
     </a>
+    
+    <a href="{{ "/courses/eco/5007a/differentiation/workshop_differentiation_product_rule" | relative_url }}" class="card">
+        <div class="card-content">
+            <div class="card-text">
+                <h3>Workshop 4: Product and Quotient Rules</h3>
+                <p>A workshop looking at differentiating functions that are multiplied and divided</p>
+            </div>
+        </div>
+    </a>
+
+    <a href="{{ "/courses/eco/5007a/differentiation/workshop_differentiation_optimisation" | relative_url }}" class="card">
+        <div class="card-content">
+            <div class="card-text">
+                <h3>Workshop 5: Optimisation</h3>
+                <p>A workshop looking at finding minimium and maximum values of functions in 1 variable</p>
+            </div>
+        </div>
+    </a>
+
 </div>
 
 ## Differentiation Skills Practice

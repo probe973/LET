@@ -42,7 +42,7 @@ $\Rightarrow \frac{dy}{dx} = 4u^3 \cdot 6x = 24x(3x^2 + 5)^3$
 
 Find the derivative of:
 
-{% include question_rearrange.html
+{% include question_calculus.html
     id="eco5007aw3q1"
     title="1"
     var_label="\frac{\mathrm{d}y}{\mathrm{d}x}="
@@ -57,7 +57,7 @@ $$y = u^5 \quad \Rightarrow \quad \frac{\mathrm{d}y}{\mathrm{d}u} = 5u^4$$
 $$\frac{\mathrm{d}y}{\mathrm{d}x} = 5(4x^2+3)^4 \cdot 8x = 40x(4x^2+3)^4$$"
 %}
 
-{% include question_rearrange.html
+{% include question_calculus.html
     id="eco5007aw3q2"
     title="2"
     var_label="\frac{\mathrm{d}y}{\mathrm{d}x}="
@@ -72,7 +72,7 @@ $$y = u^4 \quad \Rightarrow \quad \frac{\mathrm{d}y}{\mathrm{d}u} = 4u^3$$
 $$\frac{\mathrm{d}y}{\mathrm{d}x} = 4(7x^3+2)^3 \cdot 21x^2 = 84x^2(7x^3+2)^3$$"
 %}
 
-{% include question_rearrange.html
+{% include question_calculus.html
     id="eco5007aw3q3"
     title="3"
     var_label="\frac{\mathrm{d}y}{\mathrm{d}x}="
@@ -87,7 +87,7 @@ $$y = u^3 \quad \Rightarrow \quad \frac{\mathrm{d}y}{\mathrm{d}u} = 3u^2$$
 $$\frac{\mathrm{d}y}{\mathrm{d}x} = 3(5x^2+x)^2 (10x+1)$$"
 %}
 
-{% include question_rearrange.html
+{% include question_calculus.html
     id="eco5007aw3q4"
     title="4"
     var_label="\frac{\mathrm{d}y}{\mathrm{d}x}="
@@ -102,7 +102,7 @@ $$y = u^6 \quad \Rightarrow \quad \frac{\mathrm{d}y}{\mathrm{d}u} = 6u^5$$
 $$\frac{\mathrm{d}y}{\mathrm{d}x} = 6(1-2x)^5 \cdot (-2) = -12(1-2x)^5$$"
 %}
 
-{% include question_rearrange.html
+{% include question_calculus.html
     id="eco5007aw3q5"
     title="5"
     var_label="\frac{\mathrm{d}y}{\mathrm{d}x}="
@@ -117,7 +117,7 @@ $$y = u^7 \quad \Rightarrow \quad \frac{\mathrm{d}y}{\mathrm{d}u} = 7u^6$$
 $$\frac{\mathrm{d}y}{\mathrm{d}x} = 7(2x-3)^6 \cdot 2 = 14(2x-3)^6$$"
 %}
 
-{% include question_rearrange.html
+{% include question_calculus.html
     id="eco5007aw3q6"
     title="6"
     var_label="\frac{\mathrm{d}y}{\mathrm{d}x}="
@@ -132,7 +132,7 @@ $$y = u^8 \quad \Rightarrow \quad \frac{\mathrm{d}y}{\mathrm{d}u} = 8u^7$$
 $$\frac{\mathrm{d}y}{\mathrm{d}x} = 8(x^2+5x-3)^7 (2x+5)$$"
 %}
 
-{% include question_rearrange.html
+{% include question_calculus.html
     id="eco5007aw3q7"
     title="7"
     var_label="\frac{\mathrm{d}y}{\mathrm{d}x}="
@@ -175,7 +175,7 @@ $$\Rightarrow \frac{dy}{dx} = e^{2x^2 + 1} \cdot 4x$$
 
 Find the derivative of:
 
-{% include question_rearrange.html
+{% include question_calculus.html
     id="eco5007aw3q8"
     title="8"
     var_label="\frac{\mathrm{d}y}{\mathrm{d}x}="
@@ -190,7 +190,7 @@ $$y = e^u \quad \Rightarrow \quad \frac{\mathrm{d}y}{\mathrm{d}u} = e^u$$
 $$\frac{\mathrm{d}y}{\mathrm{d}x} = e^{3x^2+4} \cdot 6x = 6xe^{3x^2+4}$$"
 %}
 
-{% include question_rearrange.html
+{% include question_calculus.html
     id="eco5007aw3q9"
     title="9"
     var_label="\frac{\mathrm{d}y}{\mathrm{d}x}="
@@ -205,7 +205,7 @@ $$y = e^u \quad \Rightarrow \quad \frac{\mathrm{d}y}{\mathrm{d}u} = e^u$$
 $$\frac{\mathrm{d}y}{\mathrm{d}x} = e^{x^3+1} \cdot 3x^2 = 3x^2e^{x^3+1}$$"
 %}
 
-{% include question_rearrange.html
+{% include question_calculus.html
     id="eco5007aw3q10"
     title="10"
     var_label="\frac{\mathrm{d}y}{\mathrm{d}x}="
@@ -220,7 +220,7 @@ $$y = e^u \quad \Rightarrow \quad \frac{\mathrm{d}y}{\mathrm{d}u} = e^u$$
 $$\frac{\mathrm{d}y}{\mathrm{d}x} = e^{5x^4+2x} \cdot (20x^3+2) = e^{5x^4+2x} \cdot 2(10x^3+1) = 2(10x^3+1)e^{5x^4+2x}$$"
 %}
 
-{% include question_rearrange.html
+{% include question_calculus.html
     id="eco5007aw3q11"
     title="11"
     var_label="\frac{\mathrm{d}y}{\mathrm{d}x}="
@@ -235,7 +235,7 @@ $$y = e^u \quad \Rightarrow \quad \frac{\mathrm{d}y}{\mathrm{d}u} = e^u$$
 $$\frac{\mathrm{d}y}{\mathrm{d}x} = e^{7x-3} \cdot 7 = 7e^{7x-3}$$"
 %}
 
-{% include question_rearrange.html
+{% include question_calculus.html
     id="eco5007aw3q12"
     title="12"
     var_label="\frac{\mathrm{d}y}{\mathrm{d}x}="
@@ -250,7 +250,7 @@ $$y = e^u \quad \Rightarrow \quad \frac{\mathrm{d}y}{\mathrm{d}u} = e^u$$
 $$\frac{\mathrm{d}y}{\mathrm{d}x} = e^{x^2-4x+1} \cdot (2x-4) = e^{x^2-4x+1} \cdot 2(x-2) = 2(x-2)e^{x^2-4x+1}$$"
 %}
 
-{% include question_rearrange.html
+{% include question_calculus.html
     id="eco5007aw3q13"
     title="13"
     var_label="\frac{\mathrm{d}y}{\mathrm{d}x}="
@@ -265,7 +265,7 @@ $$y = e^u \quad \Rightarrow \quad \frac{\mathrm{d}y}{\mathrm{d}u} = e^u$$
 $$\frac{\mathrm{d}y}{\mathrm{d}x} = e^{x^5-x^2+3} \cdot (5x^4-2x) = e^{x^5-x^2+3} \cdot x(5x^3-2) = x(5x^3-2)e^{x^5-x^2+3}$$"
 %}
 
-{% include question_rearrange.html
+{% include question_calculus.html
     id="eco5007aw3q14"
     title="14"
     var_label="\frac{\mathrm{d}y}{\mathrm{d}x}="
@@ -284,7 +284,7 @@ $$\frac{\mathrm{d}y}{\mathrm{d}x} = e^{2x^3-x+4} \cdot (6x^2-1) = (6x^2-1)e^{2x^
 
 Find the derivatives:
 
-{% include question_rearrange.html
+{% include question_calculus.html
     id="eco5007aw3q15"
     title="15"
     var_label="\frac{\mathrm{d}y}{\mathrm{d}x}="
@@ -299,7 +299,7 @@ $$y = u^3 \quad \Rightarrow \quad \frac{\mathrm{d}y}{\mathrm{d}u} = 3u^2$$
 $$\frac{\mathrm{d}y}{\mathrm{d}x} = 3(5x^2+4)^2 \cdot 10x = 30x(5x^2+4)^2$$"
 %}
 
-{% include question_rearrange.html
+{% include question_calculus.html
     id="eco5007aw3q16"
     title="16"
     var_label="\frac{\mathrm{d}y}{\mathrm{d}x}="
@@ -314,7 +314,7 @@ $$y = e^u \quad \Rightarrow \quad \frac{\mathrm{d}y}{\mathrm{d}u} = e^u$$
 $$\frac{\mathrm{d}y}{\mathrm{d}x} = e^{x^2+4x+2} \cdot (2x+4) = e^{x^2+4x+2} \cdot 2(x+2) = 2(x+2)e^{x^2+4x+2}$$"
 %}
 
-{% include question_rearrange.html
+{% include question_calculus.html
     id="eco5007aw3q17"
     title="17"
     var_label="\frac{\mathrm{d}y}{\mathrm{d}x}="
@@ -329,7 +329,7 @@ $$y = u^6 \quad \Rightarrow \quad \frac{\mathrm{d}y}{\mathrm{d}u} = 6u^5$$
 $$\frac{\mathrm{d}y}{\mathrm{d}x} = 6(2x^3-x^2+x)^5 \cdot (6x^2-2x+1)$$"
 %}
 
-{% include question_rearrange.html
+{% include question_calculus.html
     id="eco5007aw3q18"
     title="18"
     var_label="\frac{\mathrm{d}y}{\mathrm{d}x}="
@@ -344,7 +344,7 @@ $$y = e^u \quad \Rightarrow \quad \frac{\mathrm{d}y}{\mathrm{d}u} = e^u$$
 $$\frac{\mathrm{d}y}{\mathrm{d}x} = e^{4x^3-x^2+x} \cdot (12x^2-2x+1) = (12x^2-2x+1)e^{4x^3-x^2+x}$$"
 %}
 
-{% include question_rearrange.html
+{% include question_calculus.html
     id="eco5007aw3q19"
     title="19"
     var_label="\frac{\mathrm{d}y}{\mathrm{d}x}="
@@ -359,7 +359,7 @@ $$y = u^5 \quad \Rightarrow \quad \frac{\mathrm{d}y}{\mathrm{d}u} = 5u^4$$
 $$\frac{\mathrm{d}y}{\mathrm{d}x} = 5(3x^2+1)^4 \cdot 6x = 30x(3x^2+1)^4$$"
 %}
 
-{% include question_rearrange.html
+{% include question_calculus.html
     id="eco5007aw3q20"
     title="20"
     var_label="\frac{\mathrm{d}y}{\mathrm{d}x}="

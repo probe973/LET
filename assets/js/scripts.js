@@ -1450,3 +1450,98 @@ function checkStandardForm(id, targetValue) {
         feedback.className = "feedback-region feedback-incorrect";
     }
 }
+
+function checkCalculus(id, targetValue) {
+    const mfield = document.getElementById(`input-${id}`);
+    const feedback = document.getElementById(`feedback-${id}`);
+    
+    if (!mfield || !feedback) return;
+
+    const studentRaw = mfield.value.trim();
+    
+    if (!studentRaw) {
+        feedback.textContent = "Please enter an answer.";
+        feedback.className = "feedback-region feedback-incorrect";
+        return;
+    }
+
+    // Isolate the math expression (removes prefixes like "\frac{dy}{dx} =" or "x =")
+    function getExpression(latex) {
+        const clean = latex.replace(/\$/g, '').trim();
+        if (clean.includes('=')) {
+            return clean.split('=').pop().trim();
+        }
+        return clean;
+    }
+
+    const userExprStr = getExpression(studentRaw);
+    const targetExprStr = getExpression(targetValue);
+
+    let isCorrect = false;
+
+    try {
+        const userExpr = ce.parse(userExprStr);
+        const targetExpr = ce.parse(targetExprStr);
+
+        // Fallback literal string match first (ignoring spaces)
+        const cleanUser = userExprStr.replace(/\s/g, '');
+        const cleanTarget = targetExprStr.replace(/\s/g, '');
+        if (cleanUser === cleanTarget) {
+            isCorrect = true;
+        } else {
+            // Robust Numerical Spot-Checking across 5 random test points
+            const variables = targetExpr.freeVariables;
+            const varsToTest = variables.length > 0 ? variables : ['x'];
+            
+            let matches = true;
+            let validSamples = 0;
+            
+            // Test points designed to avoid integer poles/asymptotes (like x=4)
+            const testOffsets = [2.15, 3.42, 4.89, 5.12, 6.78];
+
+            for (let i = 0; i < testOffsets.length; i++) {
+                const subs = {};
+                varsToTest.forEach(v => {
+                    subs[v] = testOffsets[i];
+                });
+
+                // Substitute and evaluate numerically
+                const userSubbed = userExpr.subs(subs).evaluate();
+                const targetSubbed = targetExpr.subs(subs).evaluate();
+
+                const valUser = userSubbed.valueOf();
+                const valTarget = targetSubbed.valueOf();
+
+                // Skip points that result in NaN, Infinity, or complex/unresolved values
+                if (typeof valUser !== 'number' || typeof valTarget !== 'number' ||
+                    !isFinite(valUser) || !isFinite(valTarget)) {
+                    continue;
+                }
+
+                validSamples++;
+
+                // Check if numbers match closely (tolerance 1e-4)
+                if (Math.abs(valUser - valTarget) > 1e-4) {
+                    matches = false;
+                    break;
+                }
+            }
+
+            // If we successfully evaluated at least one safe point and all matched
+            if (validSamples > 0 && matches) {
+                isCorrect = true;
+            }
+        }
+    } catch (err) {
+        console.warn("Compute Engine evaluation error:", err);
+    }
+
+    // Set feedback text and CSS classes
+    if (isCorrect) {
+        feedback.textContent = "Correct!";
+        feedback.className = "feedback-region feedback-correct";
+    } else {
+        feedback.textContent = "Incorrect. Try again!";
+        feedback.className = "feedback-region feedback-incorrect";
+    }
+}
