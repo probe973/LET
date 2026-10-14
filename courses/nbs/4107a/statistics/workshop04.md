@@ -65,7 +65,7 @@ title: Descriptive Statistics
     </tr>
     <tr>
       <td>15</td>
-      <td>-3</td>
+      <td>-4</td>
       <td><input type="number" step="any" aria-label="the square of the difference between the value and the mean"></td>
     </tr>
     <tr>
@@ -123,7 +123,7 @@ A questionnaire that is given to customers who visit the “Pecs Bar & Gym”, t
     question_text="Do you use a car to come to the gym? (Yes / No)"
     options="n::Nominal||o::Ordinal||i::Interval||r::Ratio"
     correct_answer="n"
-    solution_text="The answers are distinct categories with no inherent order."
+    solution_text="The answers are distinct categories with no inherent order, so nominal."
 %}
 
 {% include question_multiple_choice.html
@@ -132,7 +132,7 @@ A questionnaire that is given to customers who visit the “Pecs Bar & Gym”, t
     question_text="How would you rate the cleanliness of our facilities? (Excellent, Good, Average, Poor)"
     options="n::Nominal||o::Ordinal||i::Interval||r::Ratio"
     correct_answer="o"
-    solution_text="The answers have a meaningful order, but the intervals between them are not equal."
+    solution_text="The answers have a meaningful order, but the intervals between them are not equal, so ordinal."
 %}
 
 {% include question_multiple_choice.html
@@ -141,7 +141,7 @@ A questionnaire that is given to customers who visit the “Pecs Bar & Gym”, t
     question_text="What distance, in km, do you live from the gym? (Please provide a number)"
     options="n::Nominal||o::Ordinal||i::Interval||r::Ratio"
     correct_answer="r"
-    solution_text="The data is numerical, has equal intervals, and a true zero point."
+    solution_text="The data is numerical, has equal intervals, and a true zero point, so ratio."
 %}
 
 {% include question_multiple_choice.html
@@ -150,7 +150,7 @@ A questionnaire that is given to customers who visit the “Pecs Bar & Gym”, t
     question_text="How many times did you visit the gym last month?"
     options="n::Nominal||o::Ordinal||i::Interval||r::Ratio"
     correct_answer="r"
-    solution_text="The data is a numerical count with equal intervals and a true zero."
+    solution_text="The data is a numerical count with equal intervals and a true zero, so ratio."
 %}
 
 {% include question_multiple_choice.html
@@ -159,7 +159,7 @@ A questionnaire that is given to customers who visit the “Pecs Bar & Gym”, t
     question_text="Which of these services did you last use? <br> Free Weights <br> Cardio Machines <br> Fitness Class <br> Bar"
     options="n::Nominal||o::Ordinal||i::Interval||r::Ratio"
     correct_answer="n"
-    solution_text="The answers are distinct categories with no inherent order."
+    solution_text="The answers are distinct categories with no inherent order, so nominal."
 %}
 
 
@@ -203,18 +203,21 @@ A sample of 16 customers are asked about the session they attended on their last
    table_content=nbsw04q2table
    answers="3 || 1 || 4 || 4 || 1 || 5 || 2 || 2 || 4 || 1 || 2 || 3 || 10 || 6"
    tolerance="0.01" 
-   solution_text="Count from the table above each of the times the row by frequency occurs.  The totals are the sums of the rows and the columns."
+   solution_text="Count from the table above each of the times the row by frequency occurs.  The totals are the sums of the rows and the columns.
+
+   || 3 || 1 || 4 || 4 || 1 || 5 || 2 || 2 || 4 || 1 || 2 || 3 || 10 || 6 ||
+   "
 %}
 
 {% include question_numerical.html
     id="nbsrjw04q2b"
     title="2b"
     question_text="What percentage of the 16 customers used a car?"
-    correct_answer="16.5"
+    correct_answer="62.5"
     tolerance="0.05"
     solution_text="From the table, 10 out of 16 customers used a car.
 
-Calculation: $$ \frac{10}{16} \times 100$$
+Calculation: $$ \frac{10}{16} \times 100 = 62.5$$
 "
 %}
 
@@ -226,7 +229,7 @@ Calculation: $$ \frac{10}{16} \times 100$$
     tolerance="0.5"
     solution_text="From the table, 4 customers used cardio machines and a car, out of a total of 10 car users.
 
-Calculation: $$ \frac{4}{10} \times 100$$
+Calculation: $$ \frac{4}{10} \times 100 = 40$$
 
 "
 %}
@@ -309,9 +312,14 @@ $n$ is the **sample size**
    title="3d"
    question_text="The table below can be used in calculating the standard deviation. Complete the missing values."
    table_content=nbsw04q3table
-   answers="-4 || 16 || 9 || -1 || 1 || 1 || 2 || 4 || 3 || 9 || 9 || 81 || 170"
+   answers="16 || -3 || 9 || -1 || 1 || 1 || 2 || 4 || 3 || 9 || 9 || 81 || 170"
    tolerance="0.01" 
-   solution_text="For the $x-\bar{x}$ column, subtract the mean from each of the values.  For the final column, square the values in the middle column."
+   solution_text="For the $x-\bar{x}$ column, subtract the mean from each of the values.  For the final column, square the values in the middle column.
+   
+   Missing cells:
+
+   || 16 || -3 || 9 || -1 || 1 || 1 || 2 || 4 || 3 || 9 || 9 || 81 || 170 ||
+   "
 %}
 
 {% include question_numerical.html
@@ -386,7 +394,7 @@ Stating how you can use the information about the mean and standard deviation ab
 
    solution_text="Each value has been multiplied by 1000, then 100 has been added.
 
-**New Mean**: $5.5 \times 1000 + 1000= 5600$
+**New Mean**: $5.5 \times 1000 + 100= 5600$
 
 **New Standard Deviation**: Only affected by the multiplication $1.96 \times 1000 = 1960$"
 %}
