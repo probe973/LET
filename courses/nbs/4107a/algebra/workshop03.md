@@ -26,7 +26,7 @@ $$ y = 2x + 5 $$
 {% include question_solve.html
     id="w03slq1b"
     title="1b"
-    question_text="Write down the $y$-cordinate of the point where the line crosses the $y$-axis, the $y$-intercept.  This the point where $x=0$"
+    question_text="Write down the $y$-coordinate of the point where the line crosses the $y$-axis, the $y$-intercept.  This the point where $x=0$"
     correct_answer="5"
     solution_text="Set $x=0$: $y = 2(0) + 5 = 5$"
 %}
@@ -34,7 +34,7 @@ $$ y = 2x + 5 $$
 {% include question_solve.html
     id="w03slq1c"
     title="1c"
-    question_text="Write down the point where the line crosses the $x$-axis (the x-intercept), by substituting $y=0$ and solving for $x$"
+    question_text="Write down the $x$-coordinate of the point where the line crosses the $x$-axis (the x-intercept), by substituting $y=0$ and solving for $x$"
     correct_answer="-2.5"
     solution_text="Set $y=0$: $0 = 2x + 5 \\implies -5 = 2x \\implies x = -2.5$."
 %}
