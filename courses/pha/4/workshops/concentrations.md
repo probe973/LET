@@ -157,7 +157,7 @@ $$ \% \text{w/v} = \frac{\text{mass g}}{\text{volume ml}} \times 100 $$
     id="pha4w03q3c"
     title="3c"
     question_text="40 %w/v into mg/ml"
-    correct_answer="15"
+    correct_answer="400"
     tolerance="0"
     solution_text="$$ \frac{40 \text{ g}}{100 \text{ ml}} = \frac{40000 \text{ mg}}{100 \text{ ml}} = 400 \text{mg/ml}$$"
 %}
@@ -166,7 +166,7 @@ $$ \% \text{w/v} = \frac{\text{mass g}}{\text{volume ml}} \times 100 $$
     id="pha4w03q3d"
     title="3d"
     question_text="2 %w/v into mg/ml"
-    correct_answer="15"
+    correct_answer="20"
     tolerance="0"
     solution_text="$$ \frac{2 \text{ g}}{100 \text{ ml}} = \frac{2000 \text{ mg}}{100 \text{ ml}} = 20 \text{mg/ml}$$"
 %}
@@ -298,7 +298,7 @@ $$ \frac{280 \text{ mg}}{0.4 \text{ g}} \times 100 \text{ ml} = \frac{280 \text{
     id="pha4w03q10"
     title="10"
     question_text="A particular drug comes in a strength of 10 % v/v.  The patient needs an active dose of 5 ml per day for 5 days, followed by 10 days of 2.5 ml per day.  What is the total ml needed to complete the treatment? "
-    correct_answer="70"
+    correct_answer="500"
     tolerance="0"
     solution_text="Need 5 ml daily for 5 days then 2.5 ml daily for 10 days:
 
