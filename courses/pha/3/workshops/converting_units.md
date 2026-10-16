@@ -128,5 +128,5 @@ $$
 
 $$70 \text{ in} = 70 \text{ in} \times \frac{1 \text{ ft}}{12 \text{ in}} = 5 \text{ ft with remainder 10}$$
 
-$$175 \text{ cm} = 5 \text{ ft and } 10 \text{ in}"
+$$175 \text{ cm} = 5 \text{ ft and } 10 \text{ in}$$"
 %}
