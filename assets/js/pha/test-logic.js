@@ -59,6 +59,10 @@ document.addEventListener('DOMContentLoaded', () => {
             </div>
         `;
         container.appendChild(div);
+        const inputField = div.querySelector('.user-test-input');
+        inputField.addEventListener('wheel', function(e) {
+        e.preventDefault();
+        });
     }
 
     function startTimer() {
