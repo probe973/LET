@@ -24,6 +24,12 @@
         </div>
     </div>
 
+    <div class="test-doc-actions" style="margin-bottom: 20px; display: flex; gap: 10px;">
+    <button type="button" id="btn-doc-questions" class="btn">Questions Only PDF</button>
+    <button type="button" id="btn-doc-solutions" class="btn">View All Solutions PDF</button>
+    <button type="button" id="btn-doc-user-results" class="btn" style="display:none;">View My Answers & Solutions PDF</button>
+    </div>
+    
     <!-- The Container where JavaScript will build the questions -->
     <div id="test-questions-container">
         <!-- Questions will be injected here as fieldsets for accessibility -->
@@ -57,4 +63,6 @@
 </script>
 
 <!-- 3. Load the generic test execution logic (which we will create in the next step) -->
+
 <script src="{{ '/assets/js/pha/js-test-logic.js' | relative_url }}"></script>
+<script src="{{ '/assets/js/pha/js-print-logic.js' | relative_url }}"></script>

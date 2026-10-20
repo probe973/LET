@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ page.title }} - ECO - 5007A</title>
+    <!-- Corrected link using relative_url -->
+    <link rel="stylesheet" href="{{ "/assets/css/style.css" | relative_url }}">
+    <!--  <link rel="stylesheet" href="{{ "/assets/css/graphstyle.css" | relative_url }}"> -->
+    <link rel="icon" type="image/png" href="{{ "/assets/images/dash.ico" | relative_url }}">
+
+
+</head>
+<body>
+    <header>
+        <h1>{{ "Learning Enhancement Team" }}</h1>
+        <p>{{ "Attendance Dashboard Guide" }}</p>
+    </header>
+
+    <nav>
+        <ul>
+            <!-- CORRECTED: Navigation links now use relative_url to point to the right place -->
+            <li><a href="{{ "/dashboard/" | relative_url }}">Guide Home</a></li>
+            <li><a href="{{ "/dashboard/getting-started" | relative_url }}">Getting Started</a></li>
+            <li><a href="{{ "/dashboard/home-screen" | relative_url }}">Home Screen</a></li>
+            <li><a href="{{ "/dashboard/drop-ins" | relative_url }}">Drop-ins</a></li>
+            <li><a href="{{ "/dashboard/retreats" | relative_url }}">Retreats</a></li>
+            <li><a href="{{ "/dashboard/workshops" | relative_url }}">Workshops</a></li>
+            <li><a href="{{ "/dashboard/tools" | relative_url }}">Tools</a></li>
+            <li><a href="{{ "/dashboard/analysis" | relative_url }}">Analysis</a></li>
+            
+        </ul>
+    </nav>
+    
+    <main>
+        {{ content }}
+    </main>
+
+    <footer>
+        
+        <p>Attendance Dashboard Microsoft PowerApp</p>
+  
+    </footer>
+
+
+    
+</body>
+</html>

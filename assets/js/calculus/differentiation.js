@@ -623,3 +623,149 @@ window.diffGenerators.chain_exponential = function(q_id) {
         solution: at
     };
 };
+
+window.diffGenerators.lagrangian1 = function(q_id) {
+    let alp, px, py, m, x, y;
+    while (true) {
+        alp = getRandomInt(1,9)/10;
+        px = getRandomInt(3,12);
+        py = getRandomInt(3,12);
+        m = getRandomInt(3,10)*[10,12][getRandomInt(0,1)];
+        x = alp*m/px;
+        y = (1-alp)*m/py;
+        if (x === roundToDecimalPlaces(x,0) && y === roundToDecimalPlaces(y,0) && x >= 1 && y >= 1 && px != py) break;
+    }
+    
+    qt = `Maximise $$U(x,y) = x^{${alp}}y^{${1-alp}}$$ given a budget of $${m}$, with $x$ costing $${px}$ and $y$ costing $${py}$. <br>`;
+    
+    let ha = findHCF(10*alp, 10*(1-alp));
+    let hb = findHCF(px, py);
+    let fa = `\\frac{${(10*alp)/ha}}{${10*(1-alp)/ha}}`;
+    if (alp/(1-alp) === roundToDecimalPlaces(alp/(1-alp),0)) {
+        fa = alp/(1-alp);
+    };
+    if (fa === 1) {
+        fa = ``;
+    };
+    
+    let fb = `\\frac{${px/hb}}{${py/hb}}`;
+    if (px/py === roundToDecimalPlaces(px/py,0)) {
+        fb = px/py;
+    };
+    
+    let hc = findHCF(10*(1-alp)*px,10*alp*py);
+    let fc = `\\frac{${10*(1-alp)*px/hc}}{${10*alp*py/hc}}`;
+    if (10*alp*py/hc === 1) {
+        fc = roundToDecimalPlaces((1-alp)*px/(alp*py),0);
+    };
+    if (fc === 1) {
+        fc = ``;
+    };
+    
+    at = `Maximuse $$U(x,y) = x^{${alp}}y^{${1-alp}}$$ subject to $$${px}x + ${py}y = ${m}$$` +
+        `Lagrangian: $$ \\mathcal{L} = x^{${alp}}y^{${1-alp}} + \\lambda(${m} - ${px}x - ${py}y) $$` +
+        `First Order Conditions: ` +
+        `$$\\begin{align*}`+
+        ` \\mathcal{L}^{\\prime}_x &= ${alp}x^{${alp-1}}y^{${1-alp}} - ${px} \\lambda = 0 \\\\[8 pt]`+
+        ` \\mathcal{L}^{\\prime}_y &= ${1-alp}x^{${alp}}y^{${-alp}} - ${py} \\lambda = 0 \\\\[8 pt]`+
+        ` \\mathcal{L}^{\\prime}_{\\lambda} &= ${m} - ${px}x - ${py}y = 0`+
+        `\\end{align*}$$`+
+        `Rearranging the first two equations:`+
+        `$$\\begin{align}`+
+        `${alp}x^{${alp-1}}y^{${1-alp}} &= ${px} \\lambda \\\\[8 pt]`+
+        `${1-alp}x^{${alp}}y^{${-alp}} &= ${py} \\lambda`+
+        `\\end{align}$$`+
+        `Dividing these two equations, to cancel the $\\lambda$, and rearranging for $y$:`+
+        `$$\\frac{${alp}}{${1-alp}}x^{-1}y^{1} = \\frac{${px}}{${py}}$$`+
+        `$$ \\implies ` + fa + ` \\frac{y}{x} = ` + fb + `$$`+
+        `$$ \\implies y = ` + fc + `x$$`+
+        `Substitute into the constraint function and solving for $x$:`+
+        `$$${px}x + ${py} \\cdot ` + fc + `x = ${m}$$`+
+        `$$x = ${x}$$`+
+        `Substitute this back into $y = ` + fc + `x$`+
+        `$$y = ${y}$$`;
+        
+    
+    let cv1 = `${x}`;
+    let cv2 = `${y}`;
+    
+    return {
+        id: q_id,
+        question: qt,
+        var1_label: "x",
+        var2_label: "y",
+        check_val1: cv1,
+        check_val2: cv2,
+        answer: "$x = " +x+ ", y = " +y +"$",
+        solution: at
+    };
+};
+
+   
+window.diffGenerators.lagrangian2 = function(q_id) {
+   
+    
+    const choice = getRandomInt(0,4);
+    const alp = [0.1, 0.2, 0.4, 0.5, 0.8][choice];
+    const beta = roundToDecimalPlaces(1 - alp,1);
+    const f1 = [9, 4, 1.5, 1, 0.25][choice];
+    let f1t = `${f1}`;
+    if (f1 === 1) {
+        f1t = ``;
+    };
+    const u = getRandomInt(5,25)*50;
+    
+    let px,py;
+    while (true) {
+        px = getRandomInt(2,25);
+        py = getRandomInt(2,25);
+        if (px/py === roundToDecimalPlaces(px/py,2) && px != py) break;
+    };
+    
+    const x = roundToDecimalPlaces(u/Math.pow(f1*px/py,beta),1);
+    const y = roundToDecimalPlaces(f1*px/py*(u/Math.pow(f1*px/py,beta)),1);
+    
+    let qt = `Given the utility function $$U(x,y) = x^{${alp}}y^{${beta}}$$ minimise the expenditure function $$E = p_xx + p_yy$$ given: $$\\text{target } \\bar{U} = ${u}$$ and prices of $x$ and $y$: $$p_x = ${px} \\quad p_y=${py}$$`+
+        `Give your answers correct to 1 decimal place`;
+    
+    let at = `Minimise $$E = ${px}x + ${py}y$$ subject to $$x^{${alp}}y^{${beta}} = ${u}$$`+
+            `Lagrangian: $$\\mathcal{L} = ${px}x + ${py}y + \\lambda(${u} - x^{${alp}}y^{${beta}})$$`+
+            `First Order Conditions: ` +
+            `$$\\begin{align*}`+
+            ` \\mathcal{L}^{\\prime}_x &= ${px} - ${alp}\\lambda x^{${roundToDecimalPlaces(alp-1,1)}}y^{${beta}} = 0 \\\\[8 pt]`+
+            ` \\mathcal{L}^{\\prime}_y &= ${py} - ${beta}\\lambda x^{${alp}}y^{${roundToDecimalPlaces(beta-1,1)}} = 0 \\\\[8 pt]`+
+            ` \\mathcal{L}^{\\prime}_{\\lambda} &= ${u} - x^{${alp}}y^{${beta}} = 0`+
+            `\\end{align*}$$`+
+            `Rearranging the first two equations:`+
+            `$$\\begin{align}`+
+            `${px} &= ${alp}\\lambda x^{${roundToDecimalPlaces(alp-1,1)}}y^{${beta}} \\\\[8 pt]`+
+            `${py} &= ${beta}\\lambda x^{${alp}}y^{${roundToDecimalPlaces(beta-1,1)}}`+
+            `\\end{align}$$`+
+            `Dividing these two equations, to cancel the $\\lambda$, and rearranging for $y$:`+
+            `$$\\frac{${px}}{${py}} = \\frac{${alp}}{${beta}}x^{-1}y^1$$`+
+            `$$\\frac{${px}}{${py}} = \\frac{${alp}}{${beta}}\\frac{y}{x}$$`+
+            `$$ y = ${f1*px/py}x$$`+
+            `Substitute into the constraint function and solving for $x$:`+
+            `$$x^{${alp}}(${f1*px/py}x)^{${beta}} = ${u}$$` +
+            `$$x^{${alp}}x^{${beta}}(${f1*px/py})^{${beta}} = ${u}$$`+
+            `$$x = \\frac{${u}}{(${f1*px/py})^{${beta}}} = ${roundToDecimalPlaces(u/Math.pow(f1*px/py,beta),3)} = ${roundToDecimalPlaces(u/Math.pow(f1*px/py,beta),1)}$$`+
+            `Substitute this back into $y = ${f1*px/py}x$`+
+            `$$y = ${f1*px/py} \\times ${roundToDecimalPlaces(u/Math.pow(f1*px/py,beta),3)} = ${roundToDecimalPlaces(f1*px/py*(u/Math.pow(f1*px/py,beta)),3)} = ${roundToDecimalPlaces(f1*px/py*(u/Math.pow(f1*px/py,beta)),1)}$$`;
+            
+    let cv1 = `${roundToDecimalPlaces(u/Math.pow(f1*px/py,beta),1)}`;
+    let cv2 = `${roundToDecimalPlaces(f1*px/py*(u/Math.pow(f1*px/py,beta)),1)}`;
+
+    
+    
+    
+    return {
+        id: q_id,
+        question: qt,
+        var1_label: "x",
+        var2_label: "y",
+        check_val1: cv1,
+        check_val2: cv2,
+        answer: "$x = " +x+ ", y = " +y +"$",
+        solution: at
+    };
+};
