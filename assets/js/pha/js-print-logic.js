@@ -9,7 +9,7 @@ document.addEventListener('DOMContentLoaded', () => {
             <!DOCTYPE html>
             <html>
             <head>
-                <title>${title}</title>
+                <title>${title} - LET Mathematics and Statistics</title>
                 <style>
                     body { 
                         font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; 
