@@ -9,7 +9,7 @@ document.addEventListener('DOMContentLoaded', () => {
             <!DOCTYPE html>
             <html>
             <head>
-                <title>${title} (LET Mathematics and Statistics)</title>
+                <title>${title}</title>
                 <style>
                     body { 
                         font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; 
@@ -127,7 +127,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
                 containerHtml += clone.outerHTML;
             });
-            openPrintableWindow("Practice Test - Questions Only", containerHtml);
+            openPrintableWindow("Practice Test - Questions Only - LET Mathematics and Statistics", containerHtml);
         });
     }
 
@@ -153,7 +153,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
                 containerHtml += clone.outerHTML;
             });
-            openPrintableWindow("Practice Test - All Solutions", containerHtml);
+            openPrintableWindow("Practice Test - All Solutions - LET Mathematics and Statistics", containerHtml);
         });
     }
 
@@ -192,7 +192,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
                 containerHtml += clone.outerHTML;
             });
-            openPrintableWindow("Your Test Results & Solutions", containerHtml);
+            openPrintableWindow("Your Test Results & Solutions - LET Mathematics and Statistics", containerHtml);
         });
     }
 });
