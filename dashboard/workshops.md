@@ -5,7 +5,7 @@ title: Workshops
 
 # Workshops
 
-The Workshops section lets you add workshop data or review and edit previous workshop records.
+The Workshops section lets you add workshop data, review and edit previous workshop records, and track attendance for modules.
 
 ## Add a workshop
 
@@ -47,3 +47,14 @@ The **Delete Record** button permanently removes the workshop from the data and 
 Select the **X** in the top-right corner to close the record and return to the list.
 
 ![Screenshot of a populated workshop form showing workshop area, date, course, course type, level, module code, topic, workshop title, location, attendance and session length.](assets/images/12-original-ui.png)
+
+## Module Viewer
+
+The **module viewer** allows you to track attendance by date for individual modules.
+
+1. Select **Module Viewer**.
+2. From the list of modules (e.g. ABC-4321X) select the module of interest.
+
+You will now see a table showing information about the workshops within this module. If there are more than one workshops within this module, you will also see a date by attendance line graph.
+
+![Screenshot of a line chart. The horizontal axis has dates 6/10, 13/10, and 20/10. The vertical axis runs from 0 to 100. The line chart runs from just above 100 to just above 50.](assets/images/12b-ui.png)
