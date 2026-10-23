@@ -70,8 +70,8 @@ Convert the following volumes into **pints**. Only enter the numerical value.
 %}
 
 {% include question_numerical.html
-    id="pha4w04q2a"
-    title="2a"
+    id="pha4w04q2b"
+    title="2b"
     question_text="3.5 l"
     correct_answer="7"
     tolerance="0"
@@ -82,7 +82,7 @@ Convert the following volumes into **pints**. Only enter the numerical value.
     id="pha4w04q2c"
     title="2c"
     question_text="4 gallons"
-    correct_answer="4"
+    correct_answer="32"
     tolerance="0"
     solution_text="$$ 4 \text{ gallons} \times \frac{8 \text{ pints}}{1 \text{ gallon}} = 32 \text{ pints}$$"
 %}
@@ -138,7 +138,7 @@ Convert the following masses into **lbs (pounds)**. Only enter the numerical val
     id="pha4w04q3c"
     title="3c"
     question_text="3500 g"
-    correct_answer="1"
+    correct_answer="7"
     tolerance="0"
     solution_text="$$ 3500 \text{ g} = 3.5 \text{ kg} = 3.5 \text{ kg} \times \frac{2 \text{ lbs}}{1 \text{ kg}} = 7 \text{ lbs}$$"
 %}
@@ -207,7 +207,7 @@ Convert the following into **stone**. Only enter the numerical value.
 
 {% include question_numerical.html
     id="pha4w04q4b"
-    title="4a=b"
+    title="4ab"
     question_text="84 lbs"
     correct_answer="6"
     tolerance="0"
