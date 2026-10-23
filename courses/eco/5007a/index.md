@@ -25,7 +25,7 @@ This is the resource repository for ECO-5007A mathematics skills from the Learni
         <div class="card-content">
             <div class="card-text">
                 <h3>Differentiation</h3>
-                <p>Workshops 2, 3, and 4, covering differentiation rules, chain rule, product rule, and optimisation. There are additional practice questions too</p>
+                <p>Workshops 2, 3, 4 and 5, covering differentiation rules, chain rule, product rule, and optimisation. There are additional practice questions too</p>
             </div>
         </div>
     </a>
@@ -34,7 +34,7 @@ This is the resource repository for ECO-5007A mathematics skills from the Learni
         <div class="card-content">
             <div class="card-text">
                 <h3>Partial Differentiation</h3>
-                <p>Workshops 5 and 6 looking at partial derivatives and constrained optimisation</p>
+                <p>Workshops 6 and 7 looking at partial derivatives and constrained optimisation</p>
             </div>
         </div>
     </a>
