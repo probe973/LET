@@ -415,5 +415,5 @@ Stating how you can use the information about the mean and standard deviation ab
 
 Mean = $5 \times 10000 = 50000$
 
-S.D. = $2.619 \times 10000 = 26186"
+S.D. = $2.619 \times 10000 = 26186$"
 %}

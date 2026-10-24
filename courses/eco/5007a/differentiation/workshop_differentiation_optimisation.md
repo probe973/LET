@@ -182,7 +182,7 @@ $$ y = 10x^3 + 6x^{\frac{1}{3}} - 3x^{-2}$$
 
 Using the power rule for differentiation:
 
-$$\frac{\mathrm{d}y}{\mathrm{d}x} = 40x^3+2x^{-\frac{2}{3}} + 6x^{-3} = 40x^3 + 2x^{-\frac{2}{3}} + \frac{6}{x^3}}$$"
+$$\frac{\mathrm{d}y}{\mathrm{d}x} = 40x^3+2x^{-\frac{2}{3}} + 6x^{-3} = 40x^3 + 2x^{-\frac{2}{3}} + \frac{6}{x^3}$$"
 %}
 
 {% include question_rearrange.html
