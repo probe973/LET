@@ -110,6 +110,32 @@ nav ul li a.active {
     cursor: default;
 }
 
+navft {
+    background-color: #000000;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    padding: 0;
+}
+
+navft ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+navft ul li a {
+    display: block;
+    color: #ffffff;
+    text-align: center;
+    padding: 14px 24px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    font-size: 1.05em;
+    font-weight: 700; /* Bold makes text easier to read */
+}
+
 /* --- Main Content and Layout Styles --- */
 main {
     max-width: 960px;
