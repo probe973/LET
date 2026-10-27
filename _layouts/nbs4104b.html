@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- These lines allow your site to draw interactive math grids -->
+<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/jsxgraph/distrib/jsxgraph.css" />
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/jsxgraph/distrib/jsxgraphcore.js"></script>
+    
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ page.title }} - LET Mathematics and Statistics</title>
+    <!-- Corrected link using relative_url -->
+    <link rel="stylesheet" href="{{ "/assets/css/style.css" | relative_url }}">
+    <link rel="stylesheet" href="{{ "/assets/css/algstyle.css" | relative_url }}">
+    <link rel="icon" type="image/png" href="{{ "/assets/images/favicon.ico" | relative_url }}">
+
+    <!-- MathJax Script for LaTeX equations -->
+    <script>
+        MathJax = {
+            tex: {
+                inlineMath: [['$', '$'], ['\\(', '\\)']]
+            }
+        };
+    </script>
+    <script type="text/javascript" id="MathJax-script" async
+        src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js">
+    </script>
+</head>
+<body>
+    <header>
+        <h1>{{ "Learning Enhancement Team" }}</h1>
+        <p>{{ "Mathematics and Statistics - NBS-4104B" }}</p>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="{{ "/courses/nbs/4104b/" | relative_url }}">Home</a></li>
+            <li><a href="{{ "/courses/nbs/4104b/numeracy/" | relative_url }}">Numeracy</a></li>
+            <li><a href="{{ "/courses/nbs/4104b/algebra/" | relative_url }}">Algebra</a></li>
+            <li><a href="{{ "/courses/nbs/4104b/probability/" | relative_url }}">Probability</a></li>
+            <li><a href="{{ "/courses/nbs/4104b/descriptive/" | relative_url }}">Descriptives</a></li>
+            <li><a href="{{ "/courses/nbs/4104b/correlation/" | relative_url }}">Correlation</a></li>
+            <li><a href="{{ "/courses/nbs/4104b/confidence/" | relative_url }}">Confidence Intervals</a></li>
+        </ul>
+    </nav>
+    
+    <main>
+        {{ content }}
+    </main>
+
+    <footer>
+        
+        <p>Built with <a href="https://jekyllrb.com/" target="_blank" rel="noopener noreferrer">Jekyll</a> and hosted on <a href="https://pages.github.com/" target="_blank" rel="noopener noreferrer">GitHub Pages</a>.</p>
+          <p><a href="https://my.uea.ac.uk/divisions/library-and-learning-enhancement/learning-enhancement" target="_blank">LET information</a></p>
+            <p><a href="https://my.uea.ac.uk/divisions/library-and-learning-enhancement/learning-enhancement/resources/maths-and-statistics" target="_blank">LET Mathematics</a></p>
+    </footer>
+
+    
+    <script src="{{ "/assets/js/scripts.js" | relative_url }}"></script>
+</body>
+</html>

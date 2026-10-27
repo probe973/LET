@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ page.title }} - LET Statistics</title>
+    <!-- Corrected link using relative_url -->
+    <link rel="stylesheet" href="{{ "/assets/css/style.css" | relative_url }}">
+    <link rel="icon" type="image/png" href="{{ "/assets/images/favicon.ico" | relative_url }}">
+
+    <!-- MathJax Script for LaTeX equations -->
+    <script>
+        MathJax = {
+            tex: {
+                inlineMath: [['$', '$'], ['\\(', '\\)']]
+            }
+        };
+    </script>
+    <script type="text/javascript" id="MathJax-script" async
+        src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js">
+    </script>
+</head>
+<body>
+    <header>
+        <h1>{{ "Learning Enhancement Team" }}</h1>
+        <p>{{ "Mathematics and Statistics - ECO-4001B" }}</p>
+    </header>
+
+
+    <nav>
+        <ul>
+            <!-- CORRECTED: Navigation links now use relative_url to point to the right place -->
+            <li><a href="{{ "/courses/eco/4001b/" | relative_url }}">Home</a></li>
+            <li><a href="{{ "/courses/eco/4001b/descriptive/" | relative_url }}">Descriptives</a></li>
+            <li><a href="{{ "/courses/eco/4001b/distributions/" | relative_url }}">Distributions</a></li>
+            <li><a href="{{ "/courses/eco/4001b/probability/" | relative_url }}">Probability</a></li>
+            <li><a href="{{ "/courses/eco/4001b/drv/" | relative_url }}">DRVs</a></li>
+            <li><a href="{{ "/courses/eco/4001b/binomial/" | relative_url }}">Binomial</a></li>
+            <li><a href="{{ "/courses/eco/4001b/normal/" | relative_url }}">Normal</a></li>
+            <li><a href="{{ "/courses/eco/4001b/confidence/" | relative_url }}">CI</a></li>
+            <li><a href="{{ "/courses/eco/4001b/hypothesis/" | relative_url }}">Hypotheses</a></li>
+            <li><a href="{{ "/courses/eco/4001b/t/" | relative_url }}">t-Tests</a></li>
+            <li><a href="{{ "/courses/eco/4001b/review/" | relative_url }}">Review</a></li>
+        </ul>
+    </nav>
+    
+    <main>
+        {{ content }}
+    </main>
+
+    <footer>
+        
+        <p>Built with <a href="https://jekyllrb.com/" target="_blank" rel="noopener noreferrer">Jekyll</a> and hosted on <a href="https://pages.github.com/" target="_blank" rel="noopener noreferrer">GitHub Pages</a>.</p>
+  
+    </footer>
+
+    <!-- Corrected script link using relative_url -->
+    <script src="{{ "/assets/js/scripts.js" | relative_url }}"></script>
+</body>
+</html>

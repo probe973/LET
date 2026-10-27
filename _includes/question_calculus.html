@@ -6,10 +6,10 @@
 
     <div class="algebra-answer-container">
         <div style="display: flex; align-items: center; gap: 10px;">
-        <span style="font-weight: bold; min-width: 40px;">${{ include.var_label | default: "" }} $</span>
-        <math-field id="input-{{ include.id }}" 
-                    aria-label="Algebraic answer input"
-                    class="algebra-input-field"></math-field>
+            <span style="font-weight: bold; min-width: 40px;">${{ include.var_label | default: "" }} $</span>
+            <math-field id="input-{{ include.id }}" 
+                        aria-label="Algebraic answer input"
+                        class="algebra-input-field"></math-field>
         </div>
         
         <div class="button-group">
@@ -24,15 +24,19 @@
         </div>
     </div>
 
+    <!-- Feedback is now properly tucked inside the question container -->
     <div id="feedback-{{ include.id }}" aria-live="polite" style="margin-top: 10px; font-weight: bold;"></div>
-    
-    {% if include.solution_text %}
-        <div id="solution-{{ include.id }}" class="solution-content solution-box-style" role="region" style="display:none;">
-            <h4>Solution:</h4>
-            {{ include.solution_text | markdownify }}
-            <div class="answer-highlight-box">
-                <strong>Correct Answer:</strong> ${{ include.correct_answer | replace: "\\", "\"}}$
-            </div>
-        </div>
-    {% endif %}
 </section>
+
+<!-- Solution now lives in its own independent wrapper below -->
+{% if include.solution_text %}
+<section class="solution-container">
+    <div id="solution-{{ include.id }}" class="solution-content solution-box-style" role="region" style="display:none;">
+        <h4>Solution:</h4>
+        {{ include.solution_text | markdownify }}
+        <div class="answer-highlight-box">
+            <strong>Correct Answer:</strong> ${{ include.correct_answer | replace: "\\", "\"}}$
+        </div>
+    </div>
+</section>
+{% endif %}
