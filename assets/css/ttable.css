@@ -1,0 +1,77 @@
+/* --- T-Distribution Table Specific Styles --- */
+/* These styles ensure the t-table integrates with your site's design */
+.t-table {
+    /* Most general table styles are inherited from your existing 'table' rules. */
+    /* If you need specific font-size or spacing for THIS table only, define them here. */
+    margin: 0; /* Remove default margin as .table-responsive will handle overall spacing */
+    box-shadow: none; /* Remove table's individual shadow, let .table-responsive handle it */
+}
+
+/* Ensure consistent text alignment for critical values, df, and alpha */
+.t-table th, 
+.t-table td {
+    text-align: center; /* Override the default 'text-align: left;' from your general 'th, td' */
+    vertical-align: middle;
+    /* Inherits border: 1px solid #ddd; and padding: 10px 12px; from your general styles */
+}
+
+.t-table thead th {
+    background-color: #e3f2fd; /* Light blue, matching your .explanation boxes */
+    color: #2c3e50; /* Dark text, matching your headings */
+    position: sticky; /* Enables sticky header */
+    top: 0;
+    z-index: 10; /* Ensures it stays above scrolling content */
+    /* Inherits font-weight: bold; from your general 'th' */
+}
+
+/* Column for Degrees of Freedom (row headers) */
+.t-table td:first-child,
+.t-table th:first-child {
+    font-weight: bold;
+    background-color: #f0f8ff; /* A very light, almost white blue, softer than pure white */
+    position: sticky; /* Enables sticky column */
+    left: 0;
+    z-index: 9; /* Ensures it stays above scrolling rows */
+    color: #2c3e50; /* Dark text */
+}
+
+/* Ensure the top-left corner (df header) is above all other sticky elements */
+.t-table thead th:first-child {
+    z-index: 11;
+    background-color: #d4f5ff; /* Matches your main header background blue */
+}
+
+/* Highlighting styles (matching site's blue palette) */
+.highlight-row {
+    background-color: #e3f2fd !important; /* Light blue, consistent with your .explanation boxes */
+}
+
+.highlight-col {
+    background-color: #e3f2fd !important; /* Light blue */
+}
+
+/* Ensure the cell where row and column intersect is highlighted distinctly */
+.highlight-row.highlight-col {
+    background-color: #bbdefb !important; /* A slightly darker/more saturated blue from your palette */
+}
+
+/* Focus styles for keyboard navigation - consistent with general site focus */
+.t-table td:focus, 
+.t-table th:focus {
+    outline: 3px solid #f39c12; /* **Matching your site's defined focus color** */
+    outline-offset: -1px; /* Adjust as needed to prevent outline from being clipped by borders */
+    background-color: #e7f5ff; /* A lighter blue on focus for clear visual feedback */
+    box-shadow: 0 0 0 1px #e3f2fd; /* Subtle inner shadow/border for clarity */
+}
+
+/* Container for responsive tables to encapsulate scroll and styling */
+.table-responsive {
+    overflow-x: auto; /* Enables horizontal scrolling for wider tables */
+    -webkit-overflow-scrolling: touch; /* Improves scrolling performance on iOS devices */
+    margin-top: 25px; /* Spacing from content above, similar to your 'main' padding */
+    margin-bottom: 25px; /* Spacing from content below */
+    background-color: #ffffff; /* White background for the table area */
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08); /* **Matches your 'main' box-shadow** */
+    border-radius: 8px; /* **Matches your 'main' border-radius** */
+    border: 1px solid #e0e0e0; /* A subtle border around the entire responsive table block */
+}

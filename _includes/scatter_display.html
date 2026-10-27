@@ -1,0 +1,77 @@
+{% assign x_name = include.varX | default: "X" %}
+{% assign y_name = include.varY | default: "Y" %}
+
+<div class="scatter-display" style="margin: 20px 0; font-family: sans-serif;">
+  
+  <h4 style="margin-bottom: 5px;">{{ include.title }}</h4>
+
+  <div style="display: flex; flex-wrap: wrap; gap: 20px; align-items: start;">
+    
+    <!-- THE VISUAL DIAGRAM -->
+    <!-- The aria-label here acts as your "Alt Text" -->
+    <div id="diag-{{ include.id }}" class="jxgbox" 
+         style="width:400px; height:400px; border: 1px solid #000;" 
+         role="img" 
+         aria-label="Scatter diagram showing {{ include.title }}. {{ include.alt }}">
+    </div>
+
+    <!-- THE ACCESSIBLE DATA TABLE (Optional) -->
+    {% if include.showTable == "true" %}
+    <div style="flex: 1; min-width: 200px;">
+      <table style="width: 100%; border-collapse: collapse; border: 2px solid #000;" border="1">
+        <caption style="text-align: left; font-weight: bold; margin-bottom: 5px;">Data Table</caption>
+        <thead>
+          <tr style="background: #e0e0e0; color: #000;">
+            <th style="padding: 5px; border: 1px solid #000;">{{ x_name }}</th>
+            <th style="border: 1px solid #000;">{{ y_name }}</th>
+          </tr>
+        </thead>
+        <tbody id="table-{{ include.id }}" style="text-align: center;"></tbody>
+      </table>
+    </div>
+    {% endif %}
+
+  </div>
+</div>
+
+<script>
+(function() {
+  const id = "{{ include.id }}";
+  const points = "{{ include.points }}".split('|').map(p => p.split(',').map(n => parseFloat(n.trim())));
+  
+  // Find ranges for auto-scaling
+  const maxX = Math.max(...points.map(p => p[0]));
+  const maxY = Math.max(...points.map(p => p[1]));
+  const gX = Math.ceil(maxX * 1.2) || 10;
+  const gY = Math.ceil(maxY * 1.2) || 10;
+
+  const board = JXG.JSXGraph.initBoard('diag-'+id, {
+    boundingbox: [-gX*0.2, gY*1.2, gX*1.2, -gY*0.2], 
+    axis: true, showCopyright: false, showNavigation: false,
+    pan: {enabled: false}, zoom: {enabled: false} // Static feel
+  });
+
+  // Label the Axes
+  board.create('text', [gX*0.9, -gY*0.05, '{{ x_name }}'], {style: {fontWeight: 'bold'}});
+  board.create('text', [-gX*0.15, gY*1.05, '{{ y_name }}'], {style: {fontWeight: 'bold'}});
+
+  // Plot the points (Fixed/Non-draggable)
+  points.forEach(p => {
+    board.create('point', [p[0], p[1]], {
+      fixed: true,        // Prevents dragging
+      name: '',           // Removes labels from points to keep it clean
+      size: 3, 
+      strokeColor: '#0056b3', 
+      fillColor: '#0056b3'
+    });
+  });
+
+  // Fill table if it exists
+  const tBody = document.getElementById('table-'+id);
+  if (tBody) {
+    points.forEach(p => {
+      tBody.innerHTML += `<tr><td style="border:1px solid #000; padding:4px;">${p[0]}</td><td style="border:1px solid #000;">${p[1]}</td></tr>`;
+    });
+  }
+})();
+</script>

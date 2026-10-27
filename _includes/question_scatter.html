@@ -1,0 +1,155 @@
+{% comment %} 
+  Set button_style to "btn" or "button" to match your website theme.
+{% endcomment %}
+{% assign button_style = "btn" %}
+{% assign x_name = include.varX | default: "X" %}
+{% assign y_name = include.varY | default: "Y" %}
+
+<div class="quiz-block" style="border: 2px solid #000; padding: 25px; margin: 30px 0; border-radius: 8px; background: #fff; color: #000; font-family: sans-serif;">
+  
+  <h3 style="margin-top: 0;">{{ include.title }}</h3>
+  <p><strong>Instruction:</strong> {{ include.instruction }}</p>
+
+  <!-- TABLE 1: THE DATA YOU NEED TO PLOT -->
+  <table style="width: 260px; border-collapse: collapse; margin-bottom: 25px; border: 2px solid #000;" border="1">
+    <thead>
+      <tr style="background: #e0e0e0; color: #000;">
+        <th style="padding: 10px; border: 1px solid #000;">Point To Plot</th>
+        <th style="border: 1px solid #000;">{{ x_name }}</th>
+        <th style="border: 1px solid #000;">{{ y_name }}</th>
+      </tr>
+    </thead>
+    <tbody id="task-{{ include.id }}" style="text-align: center;"></tbody>
+  </table>
+
+  <div style="display: flex; flex-wrap: wrap; gap: 40px; align-items: flex-start;">
+    
+    <!-- THE VISUAL GRID -->
+    <div style="flex: 1; min-width: 320px;">
+      <div id="grid-{{ include.id }}" class="jxgbox" style="width:350px; height:350px; border: 2px solid #000;" role="img" aria-label="Coordinate grid"></div>
+      <p style="color: #000; font-size: 0.9em;"><em>Mouse Users: Click empty space to add a point. Drag dots to move them.</em></p>
+    </div>
+
+    <!-- THE ACCESSIBILITY SECTION -->
+    <div style="flex: 1; min-width: 300px;">
+      
+      <!-- KEYBOARD ENTRY FORM -->
+      <div style="padding: 15px; background: #f9f9f9; border: 2px solid #0056b3; border-radius: 8px; margin-bottom: 20px;">
+        <h4 style="margin-top: 0; color: #000;">For Keyboard Users:</h4>
+        <p style="font-size: 0.9em; margin-bottom: 10px; color: #000;">Type the numbers and click "Add Point".</p>
+        
+        <label for="inputX-{{ include.id }}"><strong>{{ x_name }}:</strong></label>
+        <input type="number" id="inputX-{{ include.id }}" style="width: 60px; padding: 5px; border: 1px solid #000;">
+        
+        <label for="inputY-{{ include.id }}" style="margin-left: 10px;"><strong>{{ y_name }}:</strong></label>
+        <input type="number" id="inputY-{{ include.id }}" style="width: 60px; padding: 5px; border: 1px solid #000;">
+        
+        <button id="addBtn-{{ include.id }}" class="{{ button_style }}" style="margin-left: 10px; padding: 5px 10px; border: 1px solid #000; cursor: pointer;">Add Point</button>
+      </div>
+
+      <!-- YOUR PROGRESS TABLE (Crucial for Blind/Screen-Reader Users) -->
+      <h4 style="margin-top: 0; color: #000;">Your Progress Table:</h4>
+      <table style="width: 100%; border-collapse: collapse; background: white; border: 2px solid #000;" border="1">
+        <thead>
+          <tr style="background: #e0e0e0; color: #000;">
+            <th style="padding: 5px; border: 1px solid #000;">Label</th>
+            <th style="border: 1px solid #000;">{{ x_name }}</th>
+            <th style="border: 1px solid #000;">{{ y_name }}</th>
+            <th style="border: 1px solid #000;">Action</th>
+          </tr>
+        </thead>
+        <tbody id="user-{{ include.id }}" style="text-align: center;"></tbody>
+      </table>
+
+      <!-- SUBMIT BUTTON -->
+      <button id="check-{{ include.id }}" class="{{ button_style }}" style="width: 100%; margin-top: 30px; padding: 12px; font-weight: bold; border: 1px solid #000; cursor: pointer;">Check My Answers</button>
+      <p id="msg-{{ include.id }}" aria-live="polite" style="margin-top: 15px; font-weight: bold; font-size: 1.1em;"></p>
+    </div>
+
+  </div>
+</div>
+
+<script>
+(function() {
+  const id = "{{ include.id }}";
+  const pointsData = "{{ include.points }}".split('|').map(p => p.split(',').map(n => parseFloat(n.trim())));
+  
+  // Calculate Grid Range
+  const maxX = Math.max(...pointsData.map(p => p[0]));
+  const maxY = Math.max(...pointsData.map(p => p[1]));
+  const gridMaxX = Math.ceil(maxX * 1.25) || 10;
+  const gridMaxY = Math.ceil(maxY * 1.25) || 10;
+
+  // Setup Grid (Navigation Bar hidden for cleanliness)
+  const board = JXG.JSXGraph.initBoard('grid-'+id, {
+    boundingbox: [-gridMaxX*0.2, gridMaxY*1.2, gridMaxX*1.2, -gridMaxY*0.2], 
+    axis: true, showCopyright: false, showNavigation: false,
+    defaultAxes: {
+      x: { name: '{{ x_name }}', withLabel: true, label: { position: 'rt', offset: [-10, 15] } },
+      y: { name: '{{ y_name }}', withLabel: true, label: { position: 'rt', offset: [-25, -10] } }
+    }
+  });
+
+  // Fill the Target Table
+  const taskBody = document.getElementById('task-'+id);
+  pointsData.forEach((p, i) => {
+    taskBody.innerHTML += `<tr><td style="padding:10px; border:1px solid #000;">Point ${i+1}</td><td style="border:1px solid #000;">${p[0]}</td><td style="border:1px solid #000;">${p[1]}</td></tr>`;
+  });
+
+  let userPoints = [];
+  const userTable = document.getElementById('user-'+id);
+
+  function updateDisplay() {
+    userTable.innerHTML = "";
+    userPoints.forEach((p, i) => {
+      p.setAttribute({name: (i+1).toString()});
+      userTable.innerHTML += `<tr><td style="padding:5px; border:1px solid #000;">${i+1}</td><td style="border:1px solid #000;">${p.X()}</td><td style="border:1px solid #000;">${p.Y()}</td><td style="border:1px solid #000;"><button onclick="window.removePt${id}(${i})">Remove</button></td></tr>`;
+    });
+  }
+
+  function addPoint(x, y) {
+    if (userPoints.length >= pointsData.length) return;
+    const p = board.create('point', [x, y], {name: (userPoints.length + 1).toString(), snapToGrid: true, snapSizeX: 1, snapSizeY: 1});
+    p.on('drag', updateDisplay);
+    userPoints.push(p);
+    updateDisplay();
+  }
+
+  // Mouse Interaction
+  board.on('down', function(e) {
+    const coords = board.getUsrCoordsOfMouse(e);
+    const hasPoint = board.getAllObjectsUnderMouse(e).find(obj => obj.elType === 'point');
+    if (!hasPoint) addPoint(Math.round(coords[0]), Math.round(coords[1]));
+  });
+
+  // Keyboard Interaction
+  document.getElementById('addBtn-'+id).onclick = () => {
+    const x = parseFloat(document.getElementById('inputX-'+id).value);
+    const y = parseFloat(document.getElementById('inputY-'+id).value);
+    if (!isNaN(x) && !isNaN(y)) addPoint(x, y);
+  };
+
+  window["removePt" + id] = (index) => {
+    board.removeObject(userPoints[index]);
+    userPoints.splice(index, 1);
+    updateDisplay();
+  };
+
+  // Check Answer logic
+  document.getElementById('check-'+id).onclick = () => {
+    const msg = document.getElementById('msg-'+id);
+    if (userPoints.length < pointsData.length) {
+      msg.innerText = "Please plot all points before checking.";
+      return;
+    }
+    let score = 0;
+    let pool = [...pointsData];
+    userPoints.forEach(up => {
+      const match = pool.findIndex(tp => tp[0] === up.X() && tp[1] === up.Y());
+      if (match > -1) { score++; pool.splice(match, 1); }
+    });
+    msg.innerText = (score === pointsData.length) ? "✅ Correct!" : "❌ You have " + score + " out of " + pointsData.length + " correct.";
+    msg.style.color = (score === pointsData.length) ? "green" : "red";
+  };
+})();
+</script>

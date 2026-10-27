@@ -67,7 +67,7 @@ They will provide you with the chance to practice questions on areas of mathemat
         </div>
     </a>
 
-    <a href="{{ "/courses/nbs/4104b/pdf/" | relative_url }}" class="card">
+    <a href="{{ "/courses/nbs/4104b/docs" | relative_url }}" class="card">
         <div class="card-content">
             <div class="card-text">
                 <h3>PDFs of workshops</h3>
