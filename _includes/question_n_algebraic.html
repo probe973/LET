@@ -1,0 +1,51 @@
+<fieldset class="question-container" id="question-{{ include.id }}">
+    <legend class="visually-hidden">Question {{ include.title }}</legend>
+    <h3>Question {{ include.title }}</h3>
+    
+    <div class="question-content">
+        {{ include.question_text | markdownify }}
+    </div>
+
+    <div class="algebra-answer-container" 
+         id="container-{{ include.id }}"
+         style="display: flex; flex-direction: column; gap: 12px;">
+        
+        {% assign n_count = include.n | default: 2 | times: 1 %}
+        {% assign labels = include.labels | split: "," %}
+
+        {% for i in (1..10) %}
+            {% if i > n_count %}{% break %}{% endif %}
+            {% assign idx = i | minus: 1 %}
+            {% assign current_label = labels[idx] | strip %}
+            
+            <div style="display: flex; align-items: center; gap: 12px; width: 100%;">
+                <span style="font-weight: bold; min-width: 80px; text-align: right;">{{ current_label }}</span>
+                <!-- Wrapper div receives the input-correct / input-incorrect classes to bypass Shadow DOM -->
+                <div id="wrapper-{{ include.id }}-{{ i }}" style="flex-grow: 1; display: flex;">
+                    <math-field id="input-{{ include.id }}-{{ i }}" style="width: 100%;"></math-field>
+                </div>
+            </div>
+        {% endfor %}
+
+        <div class="action-buttons">
+            <button type="button" 
+                    class="btn" 
+                    onclick="checkNAlgebraic('{{ include.id }}', '{{ include.answers | escape }}', '{{ include.tolerance | default: 0 }}')">Check Answer</button>
+            
+            {% if include.solution_text %}
+                <button type="button" 
+                        class="btn btn-primary solution-toggle-button" 
+                        onclick="toggleSolution('solution-{{ include.id }}', this)">Show Solution</button>
+            {% endif %}
+        </div>
+    </div>
+
+    <div id="feedback-{{ include.id }}"></div>
+
+    {% if include.solution_text %}
+        <div id="solution-{{ include.id }}" class="solution-content" style="display:none; margin-top: 15px;">
+            <h4>Solution:</h4>
+            {{ include.solution_text | markdownify }}
+        </div>
+    {% endif %}
+</fieldset>

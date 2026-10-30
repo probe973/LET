@@ -17,7 +17,7 @@ Many of the workshops will make use of the following dataset, which can be downl
                 <tr><th>Variable</th><th>Explanation</th><th>Type</th></tr>
             </thead>
             <tbody>
-                <tr><td>participant_id</td><td>Unique identifier for each student</td><td>Nominal</td></tr>
+                <tr><td>participant_id</td><td>Unique identifier for each student</td><td>ID</td></tr>
                 <tr><td>study_hours_per_week</td><td>Average number of hours the student studies per week</td><td>Scale</td></tr>
                 <tr><td>note_taking_frequency</td><td>Frequency with which the student takes notes during study sessions</td><td>Ordinal</td></tr>
                 <tr><td>preferred_study_method</td><td>Student's preferred study method (e.g., Summarising, Practice Tests, Flashcards)</td><td>Nominal</td></tr>

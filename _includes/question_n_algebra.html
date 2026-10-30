@@ -1,0 +1,79 @@
+{% assign n_count = include.n | default: 2 | plus: 0 %}
+
+<fieldset class="question-container" id="question-{{ include.id }}" aria-labelledby="q-title-{{ include.id }}">
+    <legend class="visually-hidden">Question {{ include.title }}</legend>
+    <h3 id="q-title-{{ include.id }}">Question {{ include.title }}</h3>
+    
+    <div class="question-content" id="q-text-{{ include.id }}">
+        {{ include.question_text | markdownify }}
+    </div>
+
+    <div class="algebra-answer-container" style="display: flex; flex-direction: column; gap: 15px;">
+        <table style="width: 100%; border-collapse: collapse; max-width: 400px;">
+            <tbody>
+                {% for i in (1..n_count) %}
+                    {% assign label_key = 'var' | append: i | append: '_label' %}
+                    {% assign current_label = include[label_key] | default: 'x' %}
+                    <tr>
+                        <td style="font-weight: bold; padding: 8px 10px 8px 0; width: 60px; vertical-align: middle;">
+                            ${{ current_label }}=$
+                        </td>
+                        <td style="padding: 8px 0; vertical-align: middle;">
+                            <math-field id="input-{{ include.id }}-{{ i }}" 
+                                        class="algebra-input-field" 
+                                        aria-label="Value for {{ current_label }}" 
+                                        style="margin-bottom:0; width: 100%; max-width: 200px;"></math-field>
+                        </td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+
+        <!-- Safely build a clean, single-line JSON array of answers -->
+        {% assign ans_list = "" %}
+        {% for i in (1..n_count) %}
+            {% assign ans_key = 'ans_var' | append: i %}
+            {% assign escaped_ans = include[ans_key] | escape %}
+            {% if forloop.first %}
+                {% assign ans_list = escaped_ans | jsonify %}
+            {% else %}
+                {% assign ans_list = ans_list | append: ',' | append: (escaped_ans | jsonify) %}
+            {% endif %}
+        {% endfor %}
+        {% assign target_json = '[' | append: ans_list | append: ']' %}
+
+        <div class="button-group">
+            <button type="button" 
+                    class="btn" 
+                    id="check-btn-{{ include.id }}"
+                    data-targets='{{ target_json }}'
+                    onclick="checkNAlgebraic('{{ include.id }}', {{ n_count }})">Check Answer</button>
+            
+            {% if include.solution_text %}
+                <button type="button" 
+                        class="btn btn-primary solution-toggle-button" 
+                        aria-controls="solution-{{ include.id }}" 
+                        aria-expanded="false" 
+                        onclick="toggleSolution('solution-{{ include.id }}', this)">Show Solution</button>
+            {% endif %}
+        </div>
+    </div>
+
+    <div id="feedback-{{ include.id }}" aria-live="polite" class="feedback-region" style="margin-top: 10px; font-weight: bold;"></div>
+
+    {% if include.solution_text %}
+        <div id="solution-{{ include.id }}" class="solution-content solution-box-style" role="region" style="display:none;">
+            <h4>Solution:</h4>
+            {{ include.solution_text | markdownify }}
+
+            <div class="answer-highlight-box">
+                <strong>Correct Answer:</strong> 
+                {% for i in (1..n_count) %}
+                    {% assign label_key = 'var' | append: i | append: '_label' %}
+                    {% assign ans_key = 'ans_var' | append: i %}
+                    ${{ include[label_key] | default: "x" }} = {{ include[ans_key] }}${% unless forloop.last %}, {% endunless %}
+                {% endfor %}
+            </div>
+        </div>
+    {% endif %}
+</fieldset>

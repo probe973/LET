@@ -193,3 +193,14 @@ fieldset.question-container {
     white-space: nowrap !important;
     border: 0 !important;
 }
+
+
+math-field.input-correct {
+    border: 2px solid #28a745 !important;
+    background-color: #d4edda !important;
+}
+
+math-field.input-incorrect {
+    border: 2px solid #dc3545 !important;
+    background-color: #f8d7da !important;
+}

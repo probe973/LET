@@ -5,7 +5,7 @@ title: LET Attendance Dashboard Guide
 
 # LET Attendance Dashboard Guide
 
-Welcome to the user guide for the **LET Attendance Dashboard**, version 4.0.0.
+Welcome to the user guide for the **LET Attendance Dashboard**, version 4.0.
 
 This guide explains how to open the app, enter and review attendance information, maintain course and topic lists, and explore attendance analysis.
 
