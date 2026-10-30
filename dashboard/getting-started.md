@@ -12,7 +12,7 @@ title: Getting started
 3. Find **LET Attendance (D)**. If it is not visible, select the plus sign (`+`) and check the available tabs.
 4. Right-click **LET Attendance (D)** and choose **Open tab in new window**.
 
-**Note**: you can also left click on the LET Attendance (D) which opens the app inside of the channel – this stops you using other parts of teams and does have some memory leak issues 
+**Note**: If you see an **update banner** appear with a button to **Refresh**, then please do so.
 
 ![Screenshot of the LET Attendance (D) tab in Microsoft Teams, with the menu options Open tab in new window, Open in browser and Copy link to tab.](assets/images/01-original-ui.png)
 
@@ -25,3 +25,4 @@ title: Getting started
 - **Analysis:** explore attendance data already entered into the app.
 
 Choose a topic from the navigation to follow the relevant task instructions.
+

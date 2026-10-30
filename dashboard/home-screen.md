@@ -20,6 +20,8 @@ The banner displays, from left to right:
 
 ![Screenshot of the LET Attendance Dashboard information banner showing version, academic year, semester, semester week, event count and attendance total.](assets/images/02-original-ui.png)
 
+**Note** If the version number box shows **Please Update**, then please use the **Refresh** button that is in a banner overlaying the app's screen.
+
 ## Side navigation
 
 Use the navigation sidebar to move between screens.
