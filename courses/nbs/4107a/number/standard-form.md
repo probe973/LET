@@ -1,6 +1,7 @@
 ---
 layout: nbs4107a
 title: Standard Form
+interactive: 0
 ---
 
 # Standard Form

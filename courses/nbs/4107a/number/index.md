@@ -1,6 +1,7 @@
 ---
 layout: nbs4107a
 title: Numeracy
+interactive: 0
 ---
 
 # Numerical Skills

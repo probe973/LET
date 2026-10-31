@@ -1,6 +1,7 @@
 ---
 layout: nbs4107a
 title: Percentages
+interactive: 0
 ---
 
 <div class="explanation" markdown="1">

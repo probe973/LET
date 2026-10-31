@@ -1,6 +1,7 @@
 ---
 layout: nbs4107a
 title: Reverse Percentages
+interactive: 0
 ---
 
 <div class="explanation" markdown="1">

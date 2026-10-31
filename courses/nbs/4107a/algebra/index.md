@@ -1,6 +1,7 @@
 ---
 layout: nbs4107a
 title: Algebra
+interactive: 0
 ---
 
 # Algebra Skills

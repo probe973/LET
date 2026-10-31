@@ -1,6 +1,7 @@
 ---
 layout: nbs4107a
 title: Probability
+interactive: 0
 ---
 
 # Probability Skills

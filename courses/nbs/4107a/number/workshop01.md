@@ -1,6 +1,7 @@
 ---
 layout: nbs4107a
 title: Workshop 1
+interactive: 1
 ---
 
 # Workshop: Numeracy Skills

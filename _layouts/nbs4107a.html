@@ -60,10 +60,25 @@
 
     <!-- Corrected script link using relative_url -->
 
-    <script src="https://unpkg.com/mathlive@0.100.0/dist/mathlive.min.js"></script>
-    <script src="https://unpkg.com/@cortex-js/compute-engine@0.19.0/dist/compute-engine.min.js"></script>
+    <!-- Corrected script link using relative_url 
+    <script defer src="https://unpkg.com/mathlive@0.100.0/dist/mathlive.min.js"></script>
+    <script defer src="https://unpkg.com/@cortex-js/compute-engine@0.19.0/dist/compute-engine.min.js"></script>
+    <script defer src="{{ "/assets/js/scripts.js" | relative_url }}"></script> -->
 
-    <script src="{{ "/assets/js/scripts.js" | relative_url }}"></script>
+{%- assign tier = page.interactive | default: 2 -%}
+
+{%- if tier == 2 or tier == "2" -%}
+    <!-- Level 2 (Default): Load all three scripts -->
+    <script src="https://unpkg.com/mathlive@0.100.0/dist/mathlive.min.js" defer></script>
+    <script src="https://unpkg.com/@cortex-js/compute-engine@0.19.0/dist/compute-engine.min.js" defer></script>
+    <script src="{{ "/assets/js/scripts.js" | relative_url }}" defer></script>
+
+{%- elsif tier == 1 or tier == "1" -%}
+    <!-- Level 1: Load only scripts.js -->
+    <script src="{{ "/assets/js/scripts.js" | relative_url }}" defer></script>
+
+{%- endif -%}
+<!-- Level 0: Loads nothing if page.interactive: 0 is explicitly set -->
     
 </body>
 </html>

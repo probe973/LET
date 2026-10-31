@@ -1,6 +1,7 @@
 ---
 layout: nbs4107a
 title: Ratio
+interactive: 0
 ---
 
 # Ratio
