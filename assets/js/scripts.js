@@ -6,6 +6,18 @@
  */
 
 const ce = new ComputeEngine.ComputeEngine();
+//const ce = MathfieldElement.computeEngine;
+
+// Automatically commit MathLive fields when they lose focus
+document.addEventListener('DOMContentLoaded', () => {
+    document.querySelectorAll('math-field').forEach(field => {
+        field.addEventListener('blur', () => {
+            if (typeof field.execute === 'function') {
+                field.execute('commit');
+            }
+        });
+    });
+});
 
 function toggleSolution(solutionId, btnElement) {
     var solutionDiv = document.getElementById(solutionId);
@@ -1548,160 +1560,4 @@ function checkCalculus(id, targetValue) {
 
 //N entries
 
-function checkNAlgebraic(id, answersString, toleranceStr) {
-    const container = document.getElementById(`container-${id}`);
-    const feedbackElement = document.getElementById(`feedback-${id}`);
-    if (!container) return;
 
-    const inputs = container.querySelectorAll('math-field');
-    const answers = answersString.split('||').map(s => s.trim());
-    const tolerance = parseFloat(toleranceStr || 0);
-
-    if (feedbackElement) {
-        feedbackElement.classList.remove('feedback-correct', 'feedback-incorrect');
-        feedbackElement.textContent = '';
-    }
-    
-    let allCorrect = true;
-
-    // Isolate the math expression (removes "x =" or "L =" etc.)
-    function getExpression(latex) {
-        if (!latex) return '';
-        const clean = latex.replace(/\$/g, '').trim();
-        if (clean.includes('=')) {
-            return clean.split('=').pop().trim();
-        }
-        return clean;
-    }
-
-    function evaluateSingleMatch(userRaw, targetRaw) {
-        if (!userRaw) return false;
-
-        const userNum = parseFloat(userRaw);
-        const targetNum = parseFloat(targetRaw);
-        if (!isNaN(userNum) && !isNaN(targetNum)) {
-            return Math.abs(userNum - targetNum) <= tolerance;
-        }
-
-        const userExprStr = getExpression(userRaw);
-        const targetExprStr = getExpression(targetRaw);
-
-        // Fallback literal string match check first
-        const cleanUser = userExprStr.replace(/\s/g, '');
-        const cleanTarget = targetExprStr.replace(/\s/g, '');
-        if (cleanUser === cleanTarget) {
-            return true;
-        }
-
-        const activeEngine = typeof window !== 'undefined' ? window.ce : (typeof ce !== 'undefined' ? ce : null);
-        if (!activeEngine) {
-            return cleanUser === cleanTarget;
-        }
-
-        try {
-            // Enable implicit multiplication so adjacent variables like 'xy' parse as x * y
-            const parseOpts = { implicitMultiplication: true };
-            const userExpr = activeEngine.parse(userExprStr, parseOpts);
-            const targetExpr = activeEngine.parse(targetExprStr, parseOpts);
-
-            if (!userExpr || !userExpr.isValid || !targetExpr || !targetExpr.isValid) {
-                return cleanUser === cleanTarget;
-            }
-
-            // Method A: Direct structural equality check
-            if (userExpr.isEqual(targetExpr)) {
-                return true;
-            }
-
-            // Method B: Numerical spot-checking across safe test points (including decimals & positive bases for fractional powers)
-            const rawVars = targetExpr.freeVariables || [];
-            const variables = rawVars.map(v => (typeof v === 'string' ? v : (v.symbol || v.toString()))).filter(v => v.length > 0);
-            const varsToTest = variables.length > 0 ? variables : ['x'];
-
-            if (variables.length > 0) {
-                let matches = true;
-                let validSamples = 0;
-
-                // Test points containing decimals and safe positive/negative values
-                const testPoints = [
-                    [1.5, 2.3, 0.5, 3.1],
-                    [2.1, 1.2, 1.8, 0.2],
-                    [3.4, 0.7, 2.5, 1.9],
-                    [0.8, 1.6, 2.2, 1.1]
-                ];
-
-                for (let i = 0; i < testPoints.length; i++) {
-                    const subs = {};
-                    varsToTest.forEach((v, vIndex) => {
-                        const pointRow = testPoints[i];
-                        subs[v] = pointRow[vIndex % pointRow.length];
-                    });
-
-                    const evaluatedUser = userExpr.subs(subs).N().valueOf();
-                    const evaluatedTarget = targetExpr.subs(subs).N().valueOf();
-
-                    const uNum = Number(evaluatedUser);
-                    const tNum = Number(evaluatedTarget);
-
-                    if (isNaN(uNum) || isNaN(tNum) || !isFinite(uNum) || !isFinite(tNum)) {
-                        continue;
-                    }
-
-                    validSamples++;
-                    const currentTolerance = Math.max(tolerance, 1e-5);
-                    if (Math.abs(uNum - tNum) > currentTolerance) {
-                        matches = false;
-                        break;
-                    }
-                }
-
-                if (validSamples > 0 && matches) {
-                    return true;
-                }
-            }
-
-            // Method C: Simplified difference check
-            const diff = activeEngine.box(["Subtract", userExpr, targetExpr]).simplify();
-            const diffVal = diff.numericValue !== undefined ? diff.numericValue : diff.valueOf();
-            if (typeof diffVal === 'number' && Math.abs(diffVal) < 1e-5) {
-                return true;
-            }
-
-        } catch (err) {
-            console.warn("Compute Engine evaluation note:", err);
-        }
-
-        return cleanUser === cleanTarget;
-    }
-
-    inputs.forEach((input, index) => {
-        if (index >= answers.length) return;
-
-        const userVal = typeof input.getValue === 'function' 
-            ? input.getValue('latex').trim() 
-            : (input.value ? input.value.trim() : "");
-            
-        const correctVal = answers[index];
-
-        input.classList.remove('input-correct', 'input-incorrect');
-
-        if (userVal && evaluateSingleMatch(userVal, correctVal)) {
-            input.classList.add('input-correct');
-        } else {
-            input.classList.add('input-incorrect');
-            allCorrect = false;
-        }
-    });
-
-    if (feedbackElement) {
-        if (allCorrect) {
-            feedbackElement.textContent = 'Great job! All answers are correct.';
-            feedbackElement.classList.add('feedback-correct');
-        } else {
-            feedbackElement.textContent = 'Some answers are incorrect. Check the red fields.';
-            feedbackElement.classList.add('feedback-incorrect');
-        }
-    }
-
-    return allCorrect;
-}

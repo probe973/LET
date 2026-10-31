@@ -1,4 +1,4 @@
-const ceSim = new ComputeEngine.ComputeEngine();
+//const ceSim = new ComputeEngine.ComputeEngine();
 
 // Euclid's Algorithm to check for unreduced fractions
 function getGCD(a, b) {
@@ -104,8 +104,8 @@ document.addEventListener('click', (event) => {
         const cleanVal1 = val1.split('=').pop().trim();
         const cleanVal2 = val2.split('=').pop().trim();
 
-        const is1Correct = ceSim.parse(cleanVal1).isEqual(ceSim.parse(q.check_val1));
-        const is2Correct = ceSim.parse(cleanVal2).isEqual(ceSim.parse(q.check_val2));
+        const is1Correct = ce.parse(cleanVal1).isEqual(ce.parse(q.check_val1));
+        const is2Correct = ce.parse(cleanVal2).isEqual(ce.parse(q.check_val2));
 
         let msg = "";
         let color = "red";

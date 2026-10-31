@@ -8,7 +8,7 @@ function getGCD(a, b) {
     return a;
 }
 
-const ce = new ComputeEngine.ComputeEngine();
+//const ce = new ComputeEngine.ComputeEngine();
 
 document.addEventListener('DOMContentLoaded', () => {
     const container = document.getElementById('revision-questions-container');

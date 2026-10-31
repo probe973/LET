@@ -584,6 +584,6 @@ $$P(246 < V < 254) = P(V<254) - P(V<246) = 0.7881 - 0.2119 = 0.5762$$"
     solution_text="Using a probability of 0.98, as it will be under this value 98% of the time gives a standardised score $z = 2.054$, which gives $v = 260.3$."
 %}
 
-
+<!--
 <script src="https://unpkg.com/mathlive"></script>
-<script src="https://unpkg.com/@cortex-js/compute-engine"></script>
+<script src="https://unpkg.com/@cortex-js/compute-engine"></script> -->

@@ -72,7 +72,14 @@ $$ \frac{\partial^2 z}{\partial x \partial y} = \frac{\partial^2 z}{\partial y \
 %}
 
 
-
+{% include question_calculus.html
+    id="exp01"
+    title="1"
+    question_text="
+$$z=2xy^{0.5}$$" 
+    correct_answer="y^{1/2}"
+    solution_text="Multiply each term inside the bracket by 5: $5 \times 4x = 20x$ and $5 \times 3 = 15$. <br> $20x + 15$."
+%}
 
 <script src="https://unpkg.com/mathlive"></script>
 <script src="https://unpkg.com/@cortex-js/compute-engine"></script>

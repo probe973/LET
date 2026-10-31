@@ -462,7 +462,8 @@ This page contains practice questions covering a range of algebra skills.
     solution_text="Multiply both terms by $\frac{5}{x}$: $\frac{5x^2}{4x} + \frac{5x}{5x} = \frac{5x}{4} + 1$.<br><strong>Answer:</strong> $\frac{5x}{4} + 1$"
 %}
 
+<!--
 <script src="https://unpkg.com/mathlive"></script>
-<script src="https://unpkg.com/@cortex-js/compute-engine"></script>
+<script src="https://unpkg.com/@cortex-js/compute-engine"></script> -->
 
 

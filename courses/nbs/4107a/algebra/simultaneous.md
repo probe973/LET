@@ -16,8 +16,8 @@ title: Simultaneous Equations Practice
     </footer>
 </section>
 
-<script src="https://unpkg.com/mathlive"></script>
-<script src="https://unpkg.com/@cortex-js/compute-engine"></script>
+<!-- <script src="https://unpkg.com/mathlive"></script>
+<script src="https://unpkg.com/@cortex-js/compute-engine"></script> -->
 <script src="{{ '/assets/js/simultaneous-core.js' | relative_url }}"></script>
 <script src="{{ '/assets/js/nbs4107a/simultaneous-linear.js' | relative_url }}"></script>
 

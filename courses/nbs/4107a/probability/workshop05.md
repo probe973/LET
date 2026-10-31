@@ -471,6 +471,6 @@ Is it the 5 blue:
 $$P(\text{Win}) = \frac{1}{20} \times \frac{1}{1} + \frac{19}{20} \times \frac{1}{19} = \frac{1}{10}$$"
 %}
 
-
+<!--
 <script src="https://unpkg.com/mathlive"></script>
-<script src="https://unpkg.com/@cortex-js/compute-engine"></script>
+<script src="https://unpkg.com/@cortex-js/compute-engine"></script> -->

@@ -25,9 +25,9 @@ title: Collecting Like Terms
     </footer>
 </section>
 
-<!-- Required Libraries -->
+<!-- Required Libraries 
 <script src="https://unpkg.com/mathlive"></script>
-<script src="https://unpkg.com/@cortex-js/compute-engine"></script>
+<script src="https://unpkg.com/@cortex-js/compute-engine"></script> -->
 
 <!-- 1. Load Generators -->
 <script src="{{ '/assets/js/nbs4107a/algebra-simplifying.js' | relative_url }}"></script>

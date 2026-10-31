@@ -18,9 +18,9 @@ title: Normal Standardise
 </section>
 
 
-<!-- Required Libraries -->
+<!-- Required Libraries 
 <script src="https://unpkg.com/mathlive"></script>
-<script src="https://unpkg.com/@cortex-js/compute-engine"></script>
+<script src="https://unpkg.com/@cortex-js/compute-engine"></script> -->
 
 <!-- Load the Solving generators and the Core Logic -->
 <script src="{{ '/assets/js/nbs4107a/normal.js' | relative_url }}"></script>

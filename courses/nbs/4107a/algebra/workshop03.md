@@ -375,8 +375,7 @@ Consider the three graphs below which represent the total cost of a gym based on
     solution_text="Want to find where $20n = 12n+20$ <br> Subtract $12n$ from both sides: $8n=20$ <br> Divide both sides by 8: $n=2.5$ <br> $c=20(2.5)=50$ <br> <br> For 3 or more entries the membership scheme is cheaper"
 %}
 
-<script src="https://unpkg.com/mathlive"></script>
-<script src="https://unpkg.com/@cortex-js/compute-engine"></script>
+
 <link rel="stylesheet" href="{{ '/assets/css/threepic.css' | relative_url }}">
 <style>
 figure {
