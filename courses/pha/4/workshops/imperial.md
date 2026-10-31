@@ -3,8 +3,9 @@ layout: phaws
 title: Workshop Imperial Measures, Body Calculations
 ---
 
+<!--
 <script src="https://unpkg.com/mathlive"></script>
-<script src="https://unpkg.com/@cortex-js/compute-engine"></script>
+<script src="https://unpkg.com/@cortex-js/compute-engine"></script> -->
 
 # Workshop: Imperial Measures and Body Calculations
 

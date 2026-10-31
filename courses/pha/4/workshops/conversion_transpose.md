@@ -291,6 +291,6 @@ $$h=\frac{El}{c}$$"
 %}
 
 
-
+<!--
 <script src="https://unpkg.com/mathlive"></script>
-<script src="https://unpkg.com/@cortex-js/compute-engine"></script>
+<script src="https://unpkg.com/@cortex-js/compute-engine"></script> -->

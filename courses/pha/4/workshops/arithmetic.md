@@ -454,11 +454,11 @@ To celebrate a pharmacist’s birthday, their colleagues get them a cake. It is 
 of the cake. They moan a bit and then decide to start eating what is left. The pharmacist with the birthday takes $\frac{1}{3}$ of the remaining cake. The other 5 guests then 
 share the remainder equally between them.
 
-{% include question_simplify_factor.html
+{% include question_solve.html
     id="pha4w01q20a"
     title="20a"
     question_text="What fraction of the total cake does the birthday pharmacist get?"
-    correct_answer="1/4"
+    correct_answer="0.25"
     solution_text="Remaining:
 
 $$1 - \frac{1}{4} = \frac{3}{4}$$
@@ -468,11 +468,11 @@ Pharmacist takes $\frac{1}{3}$ of this:
 $$ \frac{1}{3} \times \frac{3}{4} = \frac{1}{4}$$"
 %}
 
-{% include question_simplify_factor.html
+{% include question_solve.html
     id="pha4w01q20b"
     title="20b"
     question_text="What fraction of the total cake do the other guests each get each?"
-    correct_answer="1/10"
+    correct_answer="0.1"
     solution_text="Eaten so far is $\frac{1}{4}$ and $\frac{1}{4}$:
 
 $$\frac{1}{4} + \frac{1}{4} = \frac{2}{4} = \frac{1}{2}$$
@@ -580,6 +580,6 @@ You have the following formula to create 300 ml of a particular medication X:
    solution_text="Water is to 1000 ml, which is $\frac{1000}{300} = \frac{10}{3}$ of the original amounts. Multiply each of the original amounts by $\frac{10}{3}$"
 %}
 
-
+<!--
 <script src="https://unpkg.com/mathlive"></script>
-<script src="https://unpkg.com/@cortex-js/compute-engine"></script>
+<script src="https://unpkg.com/@cortex-js/compute-engine"></script> -->
