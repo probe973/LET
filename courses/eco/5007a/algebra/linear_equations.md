@@ -1,6 +1,7 @@
 ---
 layout: eco5007a
 title: Solving Linear Equations
+interactive: 2
 ---
 
 # Solving Linear Equations

@@ -1,6 +1,7 @@
 ---
 layout: eco5007a
 title: Partial Differentiation
+interactive: 0
 ---
 
 # Partial Differentiation Skills

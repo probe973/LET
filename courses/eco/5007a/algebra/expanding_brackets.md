@@ -1,6 +1,7 @@
 ---
 layout: eco5007a
 title: Expanding Brackets
+interactive: 2
 ---
 
 

@@ -1,6 +1,7 @@
 ---
 layout: eco5007a
 title: Differentiation
+interactive: 0
 ---
 
 # Differentiation Skills

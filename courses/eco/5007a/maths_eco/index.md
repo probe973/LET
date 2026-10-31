@@ -1,6 +1,7 @@
 ---
 layout: eco5007a
 title: Mathematical Economics
+interactive: 0
 ---
 
 # Mathematical Economics Practice

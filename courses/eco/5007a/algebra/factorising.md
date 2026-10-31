@@ -1,6 +1,7 @@
 ---
 layout: eco5007a
 title: Factorising
+interactive: 2
 ---
 
 # Factorising - Single Bracket

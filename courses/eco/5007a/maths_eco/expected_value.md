@@ -1,6 +1,7 @@
 ---
 layout: eco5007a
 title: Expected Value
+interactive: 1
 ---
 
 # Expected Value and Utility Maximisation Questions

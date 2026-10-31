@@ -1,6 +1,7 @@
 ---
 layout: eco5007a
 title: Algebra
+interactive: 0
 ---
 
 # Algebra Skills

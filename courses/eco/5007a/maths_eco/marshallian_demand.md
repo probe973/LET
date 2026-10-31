@@ -1,6 +1,7 @@
 ---
 layout: eco5007a
 title: Marshallian Demand
+interactive: 1
 ---
 
 # Marshallian Demand Questions

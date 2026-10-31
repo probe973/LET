@@ -1,6 +1,7 @@
 ---
 layout: eco5007a
 title: Hicksian Demand
+interactive: 1
 ---
 
 # Hicksian Demand Questions
