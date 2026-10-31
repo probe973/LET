@@ -1,6 +1,7 @@
 ---
 layout: pha
 title: Moles and Molarity
+interactive: 0
 ---
 
 <div class="explanation" markdown="1">

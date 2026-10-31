@@ -1,6 +1,7 @@
 ---
 layout: pha
 title: Year 1 Documents
+interactive: 0
 ---
 
 # PDF/Word Files for Printing

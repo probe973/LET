@@ -1,6 +1,7 @@
 ---
 layout: pha
 title: Concentrations
+interactive: 0
 ---
 
 <div class="explanation" markdown="1">

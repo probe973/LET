@@ -1,6 +1,7 @@
 ---
 layout: pha
 title: Home
+interactive: 0
 ---
 
 # Pharmacy Calculations

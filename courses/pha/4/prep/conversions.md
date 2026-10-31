@@ -1,6 +1,7 @@
 ---
 layout: pha
 title: Metric Conversions
+interactive: 0
 ---
 
 <section class="explanation" aria-label="Intro to Conversions">

@@ -1,6 +1,7 @@
 ---
 layout: phaws
 title: Workshop Concentrations
+interactive: 1
 ---
 
 

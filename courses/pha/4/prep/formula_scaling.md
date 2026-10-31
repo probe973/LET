@@ -1,6 +1,7 @@
 ---
 layout: pha
 title: Formula Scaling
+interactive: 0
 ---
 
 <div class="explanation" markdown="1">

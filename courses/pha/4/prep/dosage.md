@@ -1,6 +1,7 @@
 ---
 layout: pha
 title: Dosage
+interactive: 0
 ---
 
 <div class="explanation" markdown="1">
