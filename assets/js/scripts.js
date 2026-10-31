@@ -9,15 +9,25 @@ const ce = new ComputeEngine.ComputeEngine();
 //const ce = MathfieldElement.computeEngine;
 
 // Automatically commit MathLive fields when they lose focus
-document.addEventListener('DOMContentLoaded', () => {
-    document.querySelectorAll('math-field').forEach(field => {
-        field.addEventListener('blur', () => {
-            if (typeof field.execute === 'function') {
-                field.execute('commit');
-            }
-        });
-    });
-});
+//document.addEventListener('DOMContentLoaded', () => {
+//    document.querySelectorAll('math-field').forEach(field => {
+//        field.addEventListener('blur', () => {
+//            if (typeof field.execute === 'function') {
+//                field.execute('commit');
+//            }
+//        });
+//    });
+//});
+
+// Clean event delegation for MathLive fields (runs smoothly without lag)
+document.addEventListener('blur', (event) => {
+    if (event.target && event.target.tagName === 'MATH-FIELD') {
+        if (typeof event.target.execute === 'function') {
+            event.target.execute('commit');
+        }
+    }
+}, true); // 'true' captures the event cleanly on entry
+
 
 function toggleSolution(solutionId, btnElement) {
     var solutionDiv = document.getElementById(solutionId);
@@ -1518,8 +1528,8 @@ function checkCalculus(id, targetValue) {
                 });
 
                 // Substitute and evaluate numerically
-                const userSubbed = userExpr.subs(subs).evaluate();
-                const targetSubbed = targetExpr.subs(subs).evaluate();
+                const userSubbed = userExpr.subs(subs).N();
+                const targetSubbed = targetExpr.subs(subs).N();
 
                 const valUser = userSubbed.valueOf();
                 const valTarget = targetSubbed.valueOf();

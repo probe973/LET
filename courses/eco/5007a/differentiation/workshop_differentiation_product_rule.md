@@ -3,8 +3,9 @@ layout: eco5007a
 title: Workshop Differentiation Product and Quotient Rules
 ---
 
+<!--
 <script src="https://unpkg.com/mathlive"></script>
-<script src="https://unpkg.com/@cortex-js/compute-engine"></script>
+<script src="https://unpkg.com/@cortex-js/compute-engine"></script> -->
 
 # Workshop: Product and Quotient Rules for Differentiation
 
@@ -40,7 +41,7 @@ Differentiate the following functions:
 
 The $\ln$ function can found in the virtual keyboard by going to the $\infty \neq \in $ tab, or the shift part of the $123$ tab. On a physical keyboard you can simply type $\ln$.
 
-{% include x_question_calculus.html
+{% include question_calculus.html
     id="eco5007aw4q1"
     title="1"
     var_label="\frac{\mathrm{d}y}{\mathrm{d}x}="

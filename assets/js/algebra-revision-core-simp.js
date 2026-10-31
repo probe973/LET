@@ -25,7 +25,7 @@ function normalizeInput(str) {
     return str.replace(/-?\d+\.\d+/g, (match) => decimalToFractionStr(match));
 }
 
-const ce = new ComputeEngine.ComputeEngine();
+//const ce = new ComputeEngine.ComputeEngine();
 
 document.addEventListener('DOMContentLoaded', () => {
     const container = document.getElementById('revision-questions-container');

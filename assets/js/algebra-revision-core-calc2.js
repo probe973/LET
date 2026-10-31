@@ -24,12 +24,12 @@ function normalizeInput(str) {
     return str.replace(/-?\d+\.\d+/g, (match) => decimalToFractionStr(match));
 }
 
-let ce;
-try {
-    ce = new ComputeEngine.ComputeEngine();
-} catch (e) {
-    console.error("ComputeEngine failed to initialize:", e);
-}
+//let ce;
+//try {
+//    ce = new ComputeEngine.ComputeEngine();
+//} catch (e) {
+//    console.error("ComputeEngine failed to initialize:", e);
+//}
 
 function cleanText(text) {
     if (!text) return "";

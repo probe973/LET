@@ -3,8 +3,9 @@ layout: eco5007a
 title: Workshop Differentiation Rules
 ---
 
+<!--
 <script src="https://unpkg.com/mathlive"></script>
-<script src="https://unpkg.com/@cortex-js/compute-engine"></script>
+<script src="https://unpkg.com/@cortex-js/compute-engine"></script> -->
 
 # Workshop: Differentiation Rules
 
