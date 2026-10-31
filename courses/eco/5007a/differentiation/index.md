@@ -2,7 +2,7 @@
 layout: eco5007a
 title: Differentiation
 interactive: 0
-mj: 0
+mj: 1
 ---
 
 # Differentiation Skills
