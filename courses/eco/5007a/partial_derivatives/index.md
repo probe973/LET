@@ -13,7 +13,23 @@ Select a topic to view workshops or practice questions
 
 <div class="card-menu">
     
-Coming Soon
+    <a href="{{ "/courses/eco/5007a/partial_derivatives/workshop_partial" | relative_url }}" class="card">
+        <div class="card-content">
+            <div class="card-text">
+                <h3>Workshop 6: Partial Differentiation</h3>
+                <p>A workshop looking at differentiating partially functions of more than one variable</p>
+            </div>
+        </div>
+    </a>
+
+    <a href="{{ "/courses/eco/5007a/differentiation/workshop_constrained_optimisation" | relative_url }}" class="card">
+        <div class="card-content">
+            <div class="card-text">
+                <h3>Workshop 7: Constrained Optimisation</h3>
+                <p>A workshop looking at optimising functions given a constraint</p>
+            </div>
+        </div>
+    </a>
 
 </div>
 

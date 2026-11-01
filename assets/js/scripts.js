@@ -1570,4 +1570,113 @@ function checkCalculus(id, targetValue) {
 
 //N entries
 
+function checkNAlgebraic(id, answersString, toleranceStr) {
+    const container = document.getElementById(`container-${id}`);
+    const feedbackElement = document.getElementById(`feedback-${id}`);
+    if (!container) return;
 
+    const inputs = container.querySelectorAll('math-field');
+    
+    // Split answers by '||'
+    const answers = answersString.split('||').map(s => s.trim());
+    const tolerance = parseFloat(toleranceStr || 0);
+
+    feedbackElement.classList.remove('feedback-correct', 'feedback-incorrect');
+    feedbackElement.textContent = '';
+    
+    let allCorrect = true;
+
+    function getExpression(latex) {
+        const clean = latex.replace(/\$/g, '').trim();
+        if (clean.includes('=')) {
+            return clean.split('=').pop().trim();
+        }
+        return clean;
+    }
+
+    function evaluateSingleMatch(userRaw, targetRaw) {
+        if (!userRaw) return false;
+
+        const userNum = parseFloat(userRaw);
+        const targetNum = parseFloat(targetRaw);
+
+        if (!isNaN(userNum) && !isNaN(targetNum)) {
+            return Math.abs(userNum - targetNum) <= tolerance;
+        }
+
+        const userExprStr = getExpression(userRaw);
+        const targetExprStr = getExpression(targetRaw);
+
+        if (userExprStr.replace(/\s/g, '') === targetExprStr.replace(/\s/g, '')) {
+            return true;
+        }
+
+        if (typeof ce === 'undefined') return false;
+
+        try {
+            const userExpr = ce.parse(userExprStr);
+            const targetExpr = ce.parse(targetExprStr);
+
+            if (!userExpr.isValid || !targetExpr.isValid) return false;
+
+            const variables = targetExpr.freeVariables;
+            const varsToTest = variables.length > 0 ? variables : ['x'];
+            const testOffsets = [2.15, 3.42, 4.89, 5.12, 6.78];
+            
+            let matches = true;
+            let validSamples = 0;
+
+            for (let i = 0; i < testOffsets.length; i++) {
+                const subs = {};
+                varsToTest.forEach(v => { subs[v] = testOffsets[i]; });
+
+                const userSubbed = userExpr.subs(subs).evaluate();
+                const targetSubbed = targetExpr.subs(subs).evaluate();
+
+                const valUser = userSubbed.valueOf();
+                const valTarget = targetSubbed.valueOf();
+
+                if (typeof valUser !== 'number' || typeof valTarget !== 'number' ||
+                    !isFinite(valUser) || !isFinite(valTarget)) {
+                    continue;
+                }
+
+                validSamples++;
+                if (Math.abs(valUser - valTarget) > 1e-4) {
+                    matches = false;
+                    break;
+                }
+            }
+
+            return validSamples > 0 && matches;
+        } catch (err) {
+            return false;
+        }
+    }
+
+    // Exact table fill loop structure
+    inputs.forEach((input, index) => {
+        if (index >= answers.length) return;
+
+        const userVal = input.value ? input.value.trim() : "";
+        const correctVal = answers[index];
+
+        // Remove previous styling
+        input.classList.remove('input-correct', 'input-incorrect');
+
+        if (userVal && evaluateSingleMatch(userVal, correctVal)) {
+            input.classList.add('input-correct');
+        } else {
+            input.classList.add('input-incorrect');
+            allCorrect = false;
+        }
+    });
+
+    if (allCorrect) {
+        feedbackElement.textContent = 'Great job! All answers are correct.';
+        feedbackElement.classList.add('feedback-correct');
+    } else {
+        feedbackElement.textContent = 'Some answers are incorrect. Check the red fields.';
+        feedbackElement.classList.add('feedback-incorrect');
+    }
+}
