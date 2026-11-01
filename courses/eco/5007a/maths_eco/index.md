@@ -58,5 +58,14 @@ Some additional questions to practice using algebra and calculus skills in econo
         </div>
     </a>
 
+    <a href="{{ "/courses/eco/5007a/maths_eco/monopoly_profit" | relative_url }}" class="card">
+        <div class="card-content">
+            <div class="card-text">
+                <h3>Monopoly Profit and Maximum Profit</h3>
+                <p>Finding profits of monopolies and using calculus techniques to find maximum profits</p>
+            </div>
+        </div>
+    </a>
+
 </div>
 
