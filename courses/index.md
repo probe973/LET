@@ -1,6 +1,8 @@
 ---
 layout: default
 title: Workshops
+interactive: 0
+mj: 0
 ---
 
 # Embedded Workshops and Materials

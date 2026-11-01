@@ -4,14 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{{ page.title }} - LET</title>
-    <!-- Corrected link using relative_url -->
-    <link rel="stylesheet" href="{{ "/assets/css/style.css" | relative_url }}">
-    <link rel="icon" type="image/png" href="{{ "/assets/images/favicon.ico" | relative_url }}">
 
+    {% include default_scripts.html %}
 
-    <script type="text/javascript" id="MathJax-script" async
-        src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js">
-    </script>
 </head>
 <body>
     <header>

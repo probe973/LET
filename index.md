@@ -1,6 +1,8 @@
 ---
 layout: default
 title: Home
+interactive: 0
+mj: 0
 ---
 
 # The Learning Enhancement Team Mathematics and Statistics
