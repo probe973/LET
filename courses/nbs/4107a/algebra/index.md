@@ -2,6 +2,7 @@
 layout: nbs4107a
 title: Algebra
 interactive: 0
+mj: 0
 ---
 
 # Algebra Skills

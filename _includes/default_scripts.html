@@ -1,7 +1,17 @@
-    <!-- MathJax Script for LaTeX equations -->
+<!-- Main styling> -->
+{%- assign defaultcss = page.style | default: 1 -%} 
+
+{%- if defaultcss == 1 or defaultcss == "1" -%}
+    <link rel="stylesheet" href="{{ "/assets/css/style.css" | relative_url }}">
+    <link rel="icon" type="image/png" href="{{ "/assets/images/favicon.ico" | relative_url }}">
+{%- endif -%}
+
+
 {%- assign latx = page.mj | default: 1 -%}
 
 {%- if latx == 1 or latx == "1" -%}
+<!-- MathJax Script for LaTeX equations -->
+
     <script>
         MathJax = {
             tex: {

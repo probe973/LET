@@ -2,6 +2,7 @@
 layout: nbs4107a
 title: Statistics
 interactive: 0
+mj: 0
 ---
 
 # Statistics Skills
