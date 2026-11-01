@@ -2,6 +2,7 @@
 layout: pha
 title: Home
 interactive: 0
+mj: 0
 ---
 
 # Pharmacy Calculations

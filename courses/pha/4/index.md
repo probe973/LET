@@ -2,6 +2,7 @@
 layout: pha
 title: Year 1 Home
 interactive: 0
+mj: 0
 ---
 
 # Pharmacy Calculations for First Year
