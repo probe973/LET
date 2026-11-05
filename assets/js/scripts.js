@@ -1576,17 +1576,18 @@ function checkNAlgebraic(id, answersString, toleranceStr) {
     if (!container) return;
 
     const inputs = container.querySelectorAll('math-field');
-    
-    // Split answers by '||'
     const answers = answersString.split('||').map(s => s.trim());
     const tolerance = parseFloat(toleranceStr || 0);
 
-    feedbackElement.classList.remove('feedback-correct', 'feedback-incorrect');
-    feedbackElement.textContent = '';
+    if (feedbackElement) {
+        feedbackElement.classList.remove('feedback-correct', 'feedback-incorrect');
+        feedbackElement.textContent = '';
+    }
     
     let allCorrect = true;
 
     function getExpression(latex) {
+        if (!latex) return '';
         const clean = latex.replace(/\$/g, '').trim();
         if (clean.includes('=')) {
             return clean.split('=').pop().trim();
@@ -1594,19 +1595,22 @@ function checkNAlgebraic(id, answersString, toleranceStr) {
         return clean;
     }
 
+    function isPureNumber(str) {
+        return /^-?\d*\.?\d+([eE][-+]?\d+)?$/.test(str.trim());
+    }
+
     function evaluateSingleMatch(userRaw, targetRaw) {
         if (!userRaw) return false;
-
-        const userNum = parseFloat(userRaw);
-        const targetNum = parseFloat(targetRaw);
-
-        if (!isNaN(userNum) && !isNaN(targetNum)) {
-            return Math.abs(userNum - targetNum) <= tolerance;
-        }
 
         const userExprStr = getExpression(userRaw);
         const targetExprStr = getExpression(targetRaw);
 
+        // 1. Pure number comparison check
+        if (isPureNumber(userExprStr) && isPureNumber(targetExprStr)) {
+            return Math.abs(parseFloat(userExprStr) - parseFloat(targetExprStr)) <= tolerance;
+        }
+
+        // 2. Exact whitespace-stripped string match
         if (userExprStr.replace(/\s/g, '') === targetExprStr.replace(/\s/g, '')) {
             return true;
         }
@@ -1614,35 +1618,67 @@ function checkNAlgebraic(id, answersString, toleranceStr) {
         if (typeof ce === 'undefined') return false;
 
         try {
-            const userExpr = ce.parse(userExprStr);
-            const targetExpr = ce.parse(targetExprStr);
+            const userExpr = ce.parse(userExprStr, { implicitMultiplication: true });
+            const targetExpr = ce.parse(targetExprStr, { implicitMultiplication: true });
 
             if (!userExpr.isValid || !targetExpr.isValid) return false;
 
-            const variables = targetExpr.freeVariables;
-            const varsToTest = variables.length > 0 ? variables : ['x'];
-            const testOffsets = [2.15, 3.42, 4.89, 5.12, 6.78];
-            
+            // 3. Structural equality check
+            if (userExpr.isEqual(targetExpr)) {
+                return true;
+            }
+
+            // 4. Reliable variable extraction for CE 0.19.0
+            let rawVars = [];
+            try {
+                if (typeof targetExpr.freeVariables === 'function') {
+                    rawVars = targetExpr.freeVariables();
+                } else if (targetExpr.freeVariables) {
+                    rawVars = targetExpr.freeVariables;
+                }
+            } catch (e) {
+                rawVars = [];
+            }
+
+            const ignoredConstants = ['e', 'pi', 'i', 'infinity'];
+            const targetVars = Array.from(rawVars)
+                .map(v => (typeof v === 'string' ? v : (v.symbol || v.toString())))
+                .filter(v => v && v.length > 0 && !ignoredConstants.includes(v.toLowerCase()));
+
+            const varsToTest = targetVars.length > 0 ? targetVars : ['x'];
+
+            // 5. Numerical spot-checking across distinct test offsets
+            const testOffsetsSets = [
+                [2.15, 1.42, 3.87],
+                [3.42, 2.89, 1.12],
+                [4.89, 3.12, 2.45],
+                [5.12, 4.78, 0.64]
+            ];
+
             let matches = true;
             let validSamples = 0;
 
-            for (let i = 0; i < testOffsets.length; i++) {
+            for (let i = 0; i < testOffsetsSets.length; i++) {
                 const subs = {};
-                varsToTest.forEach(v => { subs[v] = testOffsets[i]; });
+                varsToTest.forEach((v, vIndex) => {
+                    const row = testOffsetsSets[i];
+                    subs[v] = row[vIndex % row.length];
+                });
 
-                const userSubbed = userExpr.subs(subs).evaluate();
-                const targetSubbed = targetExpr.subs(subs).evaluate();
+                // Fully evaluate and convert to numeric approximation, then extract via valueOf()
+                const userSubbed = userExpr.subs(subs).evaluate().N();
+                const targetSubbed = targetExpr.subs(subs).evaluate().N();
 
-                const valUser = userSubbed.valueOf();
-                const valTarget = targetSubbed.valueOf();
+                const uNum = Number(userSubbed.valueOf());
+                const tNum = Number(targetSubbed.valueOf());
 
-                if (typeof valUser !== 'number' || typeof valTarget !== 'number' ||
-                    !isFinite(valUser) || !isFinite(valTarget)) {
+                if (isNaN(uNum) || isNaN(tNum) || !isFinite(uNum) || !isFinite(tNum)) {
                     continue;
                 }
 
                 validSamples++;
-                if (Math.abs(valUser - valTarget) > 1e-4) {
+                const currentTolerance = Math.max(tolerance, 1e-4);
+                if (Math.abs(uNum - tNum) > currentTolerance) {
                     matches = false;
                     break;
                 }
@@ -1650,18 +1686,20 @@ function checkNAlgebraic(id, answersString, toleranceStr) {
 
             return validSamples > 0 && matches;
         } catch (err) {
+            console.warn("Evaluation error:", err);
             return false;
         }
     }
 
-    // Exact table fill loop structure
     inputs.forEach((input, index) => {
         if (index >= answers.length) return;
 
-        const userVal = input.value ? input.value.trim() : "";
+        const userVal = typeof input.getValue === 'function' 
+            ? input.getValue('latex').trim() 
+            : (input.value ? input.value.trim() : "");
+            
         const correctVal = answers[index];
 
-        // Remove previous styling
         input.classList.remove('input-correct', 'input-incorrect');
 
         if (userVal && evaluateSingleMatch(userVal, correctVal)) {
@@ -1672,11 +1710,15 @@ function checkNAlgebraic(id, answersString, toleranceStr) {
         }
     });
 
-    if (allCorrect) {
-        feedbackElement.textContent = 'Great job! All answers are correct.';
-        feedbackElement.classList.add('feedback-correct');
-    } else {
-        feedbackElement.textContent = 'Some answers are incorrect. Check the red fields.';
-        feedbackElement.classList.add('feedback-incorrect');
+    if (feedbackElement) {
+        if (allCorrect) {
+            feedbackElement.textContent = 'Great job! All answers are correct.';
+            feedbackElement.classList.add('feedback-correct');
+        } else {
+            feedbackElement.textContent = 'Some answers are incorrect. Check the red fields.';
+            feedbackElement.classList.add('feedback-incorrect');
+        }
     }
+
+    return allCorrect;
 }
