@@ -12,12 +12,17 @@ It allows analysis of:
 - Drop-ins, Retreats or Workshops.
 - The current academic year or the previous academic year.
 - School or level.
+- Attendance or the number of events.
 
 ## Choose analysis filters
 
 Select the event type, academic year and whether to start with School First Analysis or Level First Analysis.
 
 ![Screenshot of Analysis filters for event type, academic year and School First Analysis or Level First Analysis.](assets/images/15-original-ui.png)
+
+The **Total Attendance** gives the total number of students that have attended.
+
+The **Number of Events** gives the total number of events that have been run.
 
 ## Explore the results
 
@@ -34,4 +39,6 @@ Clicking on any of the schools/levels in the table will dive even further into t
 - Topic.
 
 Select a table heading to sort in ascending order; select it again to sort in descending order.
+
+**Note**: If you have selected either **drop-ins** or **retreats**, there is no further information available when **number of events** is selected. This is because the information is not meaningful. You can explore these events further when looking at **attendance**.
 

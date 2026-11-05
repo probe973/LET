@@ -48,6 +48,11 @@ Select the **X** in the top-right corner to close the record and return to the l
 
 ![Screenshot of a populated workshop form showing workshop area, date, course, course type, level, module code, topic, workshop title, location, attendance and session length.](assets/images/12-original-ui.png)
 
+### Copy workshop list table
+
+On the list of workshops that have been delivered you will see that there is a **Copy Table** button in the left-hand menu bar. Clicking this button will copy this table's data into your clipboard. Head to your favourite spreadsheet, e.g. Excel, and do a **paste**. The workshop table is now available for you in your spreadsheet.
+
+
 ## Module Viewer
 
 The **module viewer** allows you to track attendance by date for individual modules.
