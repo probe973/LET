@@ -1,6 +1,7 @@
 ---
 layout: apps
 title: One-Sided T-Distribution Critical Values
+interactive: 0
 ---
 <script src="{{ "/assets/js/ttable.js" | relative_url }}"></script>
 

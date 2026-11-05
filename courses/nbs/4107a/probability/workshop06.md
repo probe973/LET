@@ -298,6 +298,10 @@ The following calculator may be useful:
 
 {% include apps/normal_dist.html %}
 
+You can also use tables to find cumulative probabilities for standard normal $z$ values. A normal distribution table can be found at the link below
+
+<a href="/LET/assets/apps/norm" target="_blank">Standard Normal Distribution Cumulative Probabilities Table</a> 
+
 
 ### Question 3
 
