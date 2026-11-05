@@ -117,7 +117,7 @@ Note, you can access the file repository of document and pdf for the workshops a
         <div class="card-content">
             <div class="card-text">
                 <h3>Dilutions</h3>
-                <p>Using dilution factors and the $C_1V_1=C_2V_2$ formula</p>
+                <p>Using dilution factors and the C1V1=C2V2 formula</p>
             </div>
         </div>
     </a>
