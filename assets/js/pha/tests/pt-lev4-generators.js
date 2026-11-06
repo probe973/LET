@@ -751,7 +751,7 @@ window.CurrentTestGenerators.push(generateQ13_bsa);
 
 function generateQ16_crcl(q_id, roundToDecimalPlaces) {
     
-    sex = ["female","male"][Math.floor(Math.random() * 2)];
+    sex = ["male","male"][Math.floor(Math.random() * 2)];
     
     let mad = 0;
     
@@ -760,24 +760,37 @@ function generateQ16_crcl(q_id, roundToDecimalPlaces) {
     }
     
     const age = getRandomInt(65, 90);
-    const abw = getRandomInt(60, 75);
-    const ibw = abw + getRandomInt(1, 10);
+    const a = getRandomInt(60, 75);
+    const b = a + getRandomInt(1, 10);
     const secr = getRandomInt(8, 14)*10 + mad;
     
-    const crcl = roundToDecimalPlaces((140-age)*abw/secr,2);
-    const answer = roundToDecimalPlaces((140-age)*abw/secr,1);
-    
+    const swit = getRandomInt(0,1);
+    let abw, ibw;
     let question_text, solution_text;
+    if (swit === 0) {
+        abw = a;
+        ibw = b;
+        solution_text = `Underweight, so use ABW. <br />`;
+    } else {
+        abw = b;
+        ibw = a;
+        solution_text = `IBW is lower, so use IBW. <br />`;
+    }
+    
+    const crcl = roundToDecimalPlaces((140-age)*a/secr,2);
+    const answer = roundToDecimalPlaces((140-age)*a/secr,1);
+    
     
     question_text = `If a ${age} year old ${sex} has an ideal body weight of ${ibw} kg and an actual body weight of ${abw} kg, with a serum creatinine of ${secr} micromol/litre, what is their CrCl? ` + 
                     `Please give your answer to 1 decimal place <br />` +
                     `Assume: <br />` +
                     `\\( \\text{CrCl (ml/min)} = \\frac{(140 - \\text{age}) \\times \\text{Weight (kg)}}{\\text{Serum Creatine (micromol/L)}} \\)`;
+                    
     
-    solution_text = `Underweight, so use ABW. <br />` +
+    solution_text = solution_text +
                     `\\( (140 - \\text{age}) = 140 - ${age} = ${140 - age} \\) <br />` +
-                    `\\( ${140 - age} \\times ${abw} = ${(140 - age)*abw} \\) <br />` +
-                    `\\( \\frac{${(140 - age)*abw}}{${secr}} = ${crcl} \\) <br />` +
+                    `\\( ${140 - age} \\times ${a} = ${(140 - age)*a} \\) <br />` +
+                    `\\( \\frac{${(140 - age)*a}}{${secr}} = ${crcl} \\) <br />` +
                     `Round: ${answer}`;
     
     return {
