@@ -1,6 +1,8 @@
 ---
 layout: eco4001b
 title: t tests
+interactive: 1
+mj: 1
 ---
 
 # Hypothesis Testing and t-Tests

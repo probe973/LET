@@ -1,6 +1,8 @@
 ---
 layout: eco4001b
 title: DRV Distribution
+interactive: 1
+mj: 1
 ---
 
 <div class="instructions" markdown="1">

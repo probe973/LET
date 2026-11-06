@@ -3,22 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{{ page.title }} - LET Statistics</title>
-    <!-- Corrected link using relative_url -->
-    <link rel="stylesheet" href="{{ "/assets/css/style.css" | relative_url }}">
-    <link rel="icon" type="image/png" href="{{ "/assets/images/favicon.ico" | relative_url }}">
+    <title>{{ page.title }} - ECO-4001B</title>
 
-    <!-- MathJax Script for LaTeX equations -->
-    <script>
-        MathJax = {
-            tex: {
-                inlineMath: [['$', '$'], ['\\(', '\\)']]
-            }
-        };
-    </script>
-    <script type="text/javascript" id="MathJax-script" async
-        src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js">
-    </script>
+    {% include default_scripts.html %}
+
 </head>
 <body>
     <header>
@@ -61,7 +49,5 @@
   
     </footer>
 
-    <!-- Corrected script link using relative_url -->
-    <script src="{{ "/assets/js/scripts.js" | relative_url }}"></script>
 </body>
 </html>

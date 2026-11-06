@@ -1,6 +1,8 @@
 ---
 layout: eco4001b
 title: Frequency table
+interactive: 0
+mj: 0
 ---
 
 <div class="explanation" markdown="1">

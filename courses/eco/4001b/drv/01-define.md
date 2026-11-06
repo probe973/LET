@@ -1,6 +1,8 @@
 ---
 layout: eco4001b
 title: Defintion of a discrete random variable
+interactive: 1
+mj: 0
 ---
 
 <div class="instructions" markdown="1">

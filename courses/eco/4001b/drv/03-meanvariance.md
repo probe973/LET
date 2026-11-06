@@ -1,6 +1,8 @@
 ---
 layout: eco4001b
 title: DRV Mean and Variance
+interactive: 1
+mj: 1
 ---
 
 # Mean and Variance of a Discrete Random Variable

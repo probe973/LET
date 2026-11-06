@@ -1,6 +1,8 @@
 ---
 layout: eco4001b
 title: Using the Normal Distribution
+interactive: 1
+mj: 1
 ---
 
 <div class="explanation" markdown="1">
@@ -33,7 +35,7 @@ $$z = \frac{x - \mu}{\sigma}$$
 1. First, find the $z$-score for $x = 190$:
    $$z = \frac{190 - 175}{10} = \frac{15}{10} = 1.5$$
 2. This tells us that 190 cm is exactly 1.5 standard deviations above the mean. We now want to find $P(Z < 1.5)$.
-3. Looking up $z = 1.5$ in a <a href="https://math.arizona.edu/~rsims/ma464/standardnormaltable.pdf" target="_blank">standard normal table</a> gives us **0.9332**.
+3. Looking up $z = 1.5$ in a <a href="/LET/assets/apps/norm" target="_blank">Standard Normal Distribution Cumulative Probabilities Table</a> 
 
 So, $P(X < 190) = 0.9332$.
 

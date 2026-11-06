@@ -1,6 +1,7 @@
 ---
 layout: eco4001b
 title: Factorials
+interactive: 1
 ---
 
 <div class="explanation" markdown="1">

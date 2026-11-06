@@ -1,6 +1,8 @@
 ---
 layout: eco4001b
 title: Tree Diagrams
+interactive: 1
+mj: 1
 ---
 
 # Tree Diagrams

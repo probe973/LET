@@ -1,6 +1,8 @@
 ---
 layout: eco4001b
 title: Review
+interactive: 1
+mj: 1
 ---
 
 # ECO-4001B Review Questions

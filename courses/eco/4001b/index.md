@@ -1,6 +1,8 @@
 ---
 layout: eco4001b
-title: ECO-4001B
+title: Home
+interactive: 0
+mj: 0
 ---
 
 <div class="instructions" markdown="1">

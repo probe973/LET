@@ -1,6 +1,8 @@
 ---
 layout: eco4001b
 title: Single Event Probability
+interactive: 1
+mj: 1
 ---
 
 # Single Event Probability

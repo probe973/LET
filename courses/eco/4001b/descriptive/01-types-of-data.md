@@ -1,6 +1,8 @@
 ---
 layout: eco4001b
 title: Levels of Data
+interactive: 1
+mj: 0
 ---
 
 <div class="explanation" markdown="1">

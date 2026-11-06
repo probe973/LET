@@ -1,6 +1,8 @@
 ---
 layout: eco4001b
 title: ECO Documents
+interactive: 0
+mj: 0
 ---
 
 # PDF Files for Printing

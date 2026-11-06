@@ -1,6 +1,8 @@
 ---
 layout: eco4001b
 title: Venn diagrams
+interactive: 1
+mj: 1
 ---
 
 <div class="explanation" markdown="1">

@@ -1,6 +1,8 @@
 ---
 layout: eco4001b
 title: Descriptive Statistics
+interactive: 0
+mj: 0
 ---
 
 <div class="explanation" markdown="1">
