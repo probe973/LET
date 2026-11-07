@@ -22,7 +22,7 @@ Select a topic to view workshops or practice questions
         </div>
     </a>
 
-    <a href="{{ "/courses/eco/5007a/differentiation/workshop_constrained_optimisation" | relative_url }}" class="card">
+    <a href="{{ "/courses/eco/5007a/partial_derivatives/workshop_constrained_optimisation" | relative_url }}" class="card">
         <div class="card-content">
             <div class="card-text">
                 <h3>Workshop 7: Constrained Optimisation</h3>
@@ -33,7 +33,7 @@ Select a topic to view workshops or practice questions
 
 </div>
 
-## Differentiation Skills Practice
+## Partial Differentiation Skills Practice
 
 <div class="card-menu">
     
