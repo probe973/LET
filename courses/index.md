@@ -21,7 +21,7 @@ mj: 0
     <a href="{{ "/courses/hsc" | relative_url }}" class="card">
         <div class="card-content">
             <div class="card-text">
-                <h3><s>Health Sciences</s></h3>
+                <h3>Health Sciences</h3>
                 <p></p>
             </div>
         </div>

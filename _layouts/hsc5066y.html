@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ page.title }} - LET & Software Course</title>
+
+
+    {% include default_scripts.html %}
+</head>
+<body>
+    <header>
+        <h1>{{ "Evidence Based Practice" }}</h1>
+        <p>{{ "An interactive course for exploring datasets with software." }}</p>
+    </header>
+
+    <nav>
+        <ul>
+            <!-- CORRECTED: Navigation links now use relative_url to point to the right place -->
+            <li><a href="{{ "/courses/hsc/5066y/" | relative_url }}">Home</a></li>
+            <li><a href="{{ "/courses/hsc/5066y/jamovi/" | relative_url }}">jamovi Guides</a></li>
+            <li><a href="{{ "/courses/hsc/5066y/spss/" | relative_url }}">SPSS Guides</a></li>
+            <li><a href="{{ "/courses/hsc/5066y/let/" | relative_url }}">LET Workshops</a></li>
+        </ul>
+    </nav>
+    
+    <main>
+        {{ content }}
+    </main>
+
+    <footer>
+    <navft>
+        <ul>      
+            <li><a href="{{ "/courses/hsc/5066y/" | relative_url }}">Course Home</a></li>
+            <li><a href="{{ "/" | relative_url }}">LET Workshops and Guides Home</a></li>
+            <li><a href="https://my.uea.ac.uk/divisions/library-and-learning-enhancement/learning-enhancement" target="_blank">LET information</a></li>
+            <li><a href="https://my.uea.ac.uk/divisions/library-and-learning-enhancement/learning-enhancement/resources/maths-and-statistics" target="_blank">LET Mathematics</a></li>
+        </ul>
+    </navft>
+
+    <p>Built with <a href="https://jekyllrb.com/" target="_blank" rel="noopener noreferrer">Jekyll</a> and hosted on <a href="https://pages.github.com/" target="_blank" rel="noopener noreferrer">GitHub Pages</a>.</p>
+        <p>This site includes screenshots of the <a href="https://www.jamovi.org" target="_blank" rel="noopener noreferrer">jamovi</a> software, used for educational purposes.</p>
+    </footer>
+
+
+</body>
+</html>
