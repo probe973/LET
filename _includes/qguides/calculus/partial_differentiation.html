@@ -1,0 +1,60 @@
+
+## What is Partial Differentiation?
+When a function depends on more than one variable (for example, $f(x,y)$ or $f(x,y,z)$), **partial differentiation** allows us to find how the function changes with respect to *one* variable at a time, holding all other variables completely still. 
+
+The core rule is simple: **Treat all other variables as constants** while you differentiate with respect to your target variable using standard single-variable rules.
+
+We use the symbol $\partial$ (read "del" or "partial") instead of $d$. For a function $f(x,y)$, the partial derivative with respect to $x$ is written as:
+$$\frac{\partial f}{\partial x} \quad \text{or} \quad f_x$$
+
+---
+
+## Example 1: Addition Form
+Consider a function of two variables combined through addition:
+
+$$f(x,y) = 4x^3 + 7y^2$$
+
+* **To find $\frac{\partial f}{\partial x}$:** Treat $y$ as a constant. The term $7y^2$ acts like a number, so its derivative is $0$.
+
+  $$\frac{\partial f}{\partial x} = \frac{d}{dx}(4x^3) + 0 = 12x^2$$
+
+* **To find $\frac{\partial f}{\partial y}$:** Treat $x$ as a constant. The term $4x^3$ acts like a number, so its derivative is $0$.
+
+  $$\frac{\partial f}{\partial y} = 0 + \frac{d}{dy}(7y^2) = 14y$$
+
+---
+
+## Example 2: Multiplication Form
+Consider a function where variables are multiplied together:
+
+$$z = 6x^2y^3$$
+
+* **To find $\frac{\partial z}{\partial x}$:** Treat $y^3$ (along with the coefficient $6$) as a constant multiplier. 
+
+  $$\frac{\partial z}{\partial x} = 6y^3 \cdot \frac{d}{dx}(x^2) = 6y^3(2x) = 12xy^3$$
+
+* **To find $\frac{\partial z}{\partial y}$:** Treat $x^2$ (along with the coefficient $6$) as a constant multiplier.
+
+  $$\frac{\partial z}{\partial y} = 6x^2 \cdot \frac{d}{dy}(y^3) = 6x^2(3y^2) = 18x^2y^2$$
+
+---
+
+## Example 3: Exponentials and Natural Logarithms (Three Variables)
+Consider a function with three variables ($x, y, z$) involving exponential and logarithmic terms:
+
+$$f(x,y,z) = x^2 e^y + y \ln(z)$$
+
+* **With respect to $x$ ($\frac{\partial f}{\partial x}$):** 
+  Here, $e^y$ is a constant multiplier for $x^2$. The second term ($y \ln(z)$) contains no $x$ variables, so it behaves as a constant and disappears (differentiates to $0$).
+
+  $$\frac{\partial f}{\partial x} = 2x \cdot e^y + 0 = 2x e^y$$
+
+* **With respect to $y$ ($\frac{\partial f}{\partial y}$):** 
+  In the first term, $x^2$ is a constant multiplier for $e^y$ (remember that $\frac{d}{dy}(e^y) = e^y$). In the second term, $y$ is multiplied by $\ln(z)$, where $\ln(z)$ acts as a constant coefficient for $y$.
+
+  $$\frac{\partial f}{\partial y} = x^2 e^y + 1 \cdot \ln(z) = x^2 e^y + \ln(z)$$
+
+* **With respect to $z$ ($\frac{\partial f}{\partial z}$):** 
+  The first term ($x^2 e^y$) contains no $z$, so it differentiates to $0$. For the second term, $y$ is treated as a constant coefficient, and $\frac{d}{dz}(\ln(z)) = \frac{1}{z}$.
+
+  $$\frac{\partial f}{\partial z} = 0 + y \cdot \frac{1}{z} = \frac{y}{z}$$

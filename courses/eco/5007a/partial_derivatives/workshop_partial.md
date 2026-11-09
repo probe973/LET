@@ -5,6 +5,12 @@ title: Partial Derivatives
 
 # Partial Differentiation
 
+<div class="explanation" markdown="1">
+
+{% include qguides/calculus/partial_differentiation.html %}
+
+</div>
+
 ### Question 1
 
 For each of the following, find:
