@@ -692,8 +692,8 @@ window.diffGenerators.lagrangian1 = function(q_id) {
     return {
         id: q_id,
         question: qt,
-        var1_label: "x",
-        var2_label: "y",
+        var1_label: "x^*",
+        var2_label: "y^*",
         check_val1: cv1,
         check_val2: cv2,
         answer: "$x = " +x+ ", y = " +y +"$",
@@ -761,11 +761,266 @@ window.diffGenerators.lagrangian2 = function(q_id) {
     return {
         id: q_id,
         question: qt,
-        var1_label: "x",
-        var2_label: "y",
+        var1_label: "x^*",
+        var2_label: "y^*",
         check_val1: cv1,
         check_val2: cv2,
         answer: "$x = " +x+ ", y = " +y +"$",
+        solution: at
+    };
+};
+
+window.diffGenerators.partial1 = function(q_id) {
+    
+    const av = ["p","q","x"][getRandomInt(0,2)];
+    const bv = ["s","t","y"][getRandomInt(0,2)];
+    const an = getRandomInt(1,10);
+    const bn = getRandomInt(1,10);
+    const ac = getRandomInt(1,12);
+    const bc = getRandomInt(1,12);
+    
+    let ant, bnt, act, bct;
+    
+    ant = an;
+    bnt = bn;
+    act = ac;
+    bct = bc;
+    
+    if (an === 1) {
+        ant = ``;
+    }
+    if (bn === 1) {
+        bnt = ``;
+    }
+    if (ac === 1) {
+        act = ``;
+    }
+    if (bc === 1) {
+        bct = ``;
+    }
+    
+    
+    let qt = `Given the function $$f(${av},${bv}) = ${act}${av}^{${ant}} + ${bct}${bv}^{${bnt}}$$ Find $$\\frac{\\partial f}{\\partial ${av}} \\text{ and }  \\frac{\\partial f}{\\partial ${bv}} $$`;
+    
+    let ansan = an - 1;
+    let ansbn = bn - 1;
+    let ansac = ac*an;
+    let ansbc = bc*bn;
+    let ansav = av;
+    let ansbv = bv;
+    
+    
+    if (ansan === 1) {
+        ansan = ``;
+    }
+    if (ansbn === 1) {
+        ansbn = ``;
+    }
+    if (ansac === 1) {
+        anaac = ``;
+    }
+    if (ansbc === 1) {
+        anabc = ``;
+    }
+    if (ansan === 0) {
+        ansan = ``;
+        ansav = ``;
+    }
+    if (ansbn === 0) {
+        ansbn = ``;
+        ansbv = ``;
+    }
+    
+    let at = `$\\frac{\\partial f}{\\partial ${av}}$ hold the term in $${bv}$ constant, so the second part of the expression differentiates to 0:`+
+            `$$\\frac{\\partial f}{\\partial ${av}} = \\frac{\\mathrm{d}}{\\mathrm{d}${av}}(${act}${av}^{${ant}}) + 0$$`+
+            `$$\\frac{\\partial f}{\\partial ${av}} = ${ansac}${ansav}^{${ansan}}$$ <br>`+
+            `$\\frac{\\partial f}{\\partial ${bv}}$ hold the term in $${av}$ constant, so the first part of the expression differentiates to 0:`+
+            `$$\\frac{\\partial f}{\\partial ${bv}} = 0 + \\frac{\\mathrm{d}}{\\mathrm{d}${bv}}(${bct}${bv}^{${bnt}})$$`+
+            `$$\\frac{\\partial f}{\\partial ${av}} = ${ansbc}${ansbv}^{${ansbn}}$$`;
+    
+    let cv1 = `${ac*an}${av}^{${an-1}}`;
+    let cv2 = `${bc*bn}${bv}^{${bn-1}}`;
+    
+    return {
+        id: q_id,
+        question: qt,
+        var1_label: `\\frac{\\partial f}{\\partial ${av}}`,
+        var2_label: `\\frac{\\partial f}{\\partial ${bv}}`,
+        check_val1: cv1,
+        check_val2: cv2,
+        answer: `$\\frac{\\partial f}{\\partial ${av}} = ${ansac}${ansav}^{${ansan}} \\text{ & }  \\frac{\\partial f}{\\partial ${bv}} = ${ansbc}${ansbv}^{${ansbn}}$`,
+        solution: at
+    };
+};
+
+window.diffGenerators.partial2 = function(q_id) {
+    
+    const av = ["p","q","x"][getRandomInt(0,2)];
+    const bv = ["s","t","y"][getRandomInt(0,2)];
+    const m = getRandomInt(1,5);
+    const n = getRandomInt(1,5);
+    const c = getRandomInt(1,12);
+    
+    // Helper function to format terms cleanly with correct braces and no empty exponents
+    function formatTerm(coeff, v1, p1, v2, p2) {
+        let parts = [];
+        if (coeff !== 1 || (p1 === 0 && p2 === 0)) {
+            parts.push(coeff);
+        }
+        if (p1 > 0) {
+            if (p1 === 1) {
+                parts.push(`${v1}`);
+            } else {
+                parts.push(`${v1}^{${p1}}`);
+            }
+        }
+        if (p2 > 0) {
+            if (p2 === 1) {
+                parts.push(`${v2}`);
+            } else {
+                parts.push(`${v2}^{${p2}}`);
+            }
+        }
+        return parts.join("");
+    }
+    
+    let origTerm = formatTerm(c, av, m, bv, n);
+    let qt = `Given the function $$f(${av},${bv}) = ${origTerm}$$ Find $$\\frac{\\partial f}{\\partial ${av}} \\text{ and } \\frac{\\partial f}{\\partial ${bv}} $$`;
+    
+    // Calculate derivatives
+    let coeffA = c * m;
+    let powA_a = m - 1;
+    let powA_b = n;
+    
+    let coeffB = c * n;
+    let powB_a = m;
+    let powB_b = n - 1;
+    
+    let ansA_str = formatTerm(coeffA, av, powA_a, bv, powA_b);
+    let ansB_str = formatTerm(coeffB, av, powB_a, bv, powB_b);
+    
+    // Format intermediate step strings safely
+    let bvPowerStr = n === 1 ? `${bv}` : `${bv}^{${n}}`;
+    let avPowerStr = m === 1 ? `${av}` : `${av}^{${m}}`;
+    let derivAvPowerStr = (m - 1) === 1 ? `${av}` : `${av}^{${m - 1}}`;
+    let derivBvPowerStr = (n - 1) === 1 ? `${bv}` : `${bv}^{${n - 1}}`;
+    
+    let at = `$\\frac{\\partial f}{\\partial ${av}}$: treat $${bvPowerStr}$ as a constant multiplier, so differentiate with respect to $${av}$:`+
+            `$$\\frac{\\partial f}{\\partial ${av}} = (${c === 1 ? '' : c}${bvPowerStr}) \\cdot \\frac{\\mathrm{d}}{\\mathrm{d}${av}}(${av}^{${m}}) = ${ansA_str}$$ <br>`+
+            `$\\frac{\\partial f}{\\partial ${bv}}$: treat $${avPowerStr}$ as a constant multiplier, so differentiate with respect to $${bv}$:`+
+            `$$\\frac{\\partial f}{\\partial ${bv}} = (${c === 1 ? '' : c}${avPowerStr}) \\cdot \\frac{\\mathrm{d}}{\\mathrm{d}${bv}}(${bv}^{${n}}) = ${ansB_str}$$`;
+    
+    return {
+        id: q_id,
+        question: qt,
+        var1_label: `\\frac{\\partial f}{\\partial ${av}}`,
+        var2_label: `\\frac{\\partial f}{\\partial ${bv}}`,
+        check_val1: ansA_str,
+        check_val2: ansB_str,
+        answer: `$\\frac{\\partial f}{\\partial ${av}} = ${ansA_str} \\text{ & } \\frac{\\partial f}{\\partial ${bv}} = ${ansB_str}$`,
+        solution: at
+    };
+};
+
+window.diffGenerators.partial3 = function(q_id) {
+    const av = ["p","q","x"][getRandomInt(0,2)];
+    const bv = ["s","t","y"][getRandomInt(0,2)];
+    const qType = getRandomInt(0, 2);
+    
+    let qt, cv1, cv2, at, answerStr;
+    
+    if (qType === 0) {
+        // Type 0: f(av, bv) = c * av^m * e^(n*bv)
+        const c = getRandomInt(1, 10);
+        const m = getRandomInt(1, 4);
+        const n = getRandomInt(1, 4);
+        
+        let cStr = c === 1 ? `` : `${c}`;
+        let avPart = m === 1 ? `${av}` : `${av}^{${m}}`;
+        let bvExp = n === 1 ? `${bv}` : `${n}${bv}`;
+        let funcStr = `${cStr}${avPart}e^{${bvExp}}`;
+        
+        qt = `Given the function $$f(${av},${bv}) = ${funcStr}$$ Find $$\\frac{\\partial f}{\\partial ${av}} \\text{ and } \\frac{\\partial f}{\\partial ${bv}} $$`;
+        
+        // Derivatives
+        let c1 = c * m;
+        let c1Str = c1 === 1 ? `` : `${c1}`;
+        let av1Pow = m - 1;
+        let av1Str = av1Pow === 0 ? `` : (av1Pow === 1 ? `${av}` : `${av}^{${av1Pow}}`);
+        cv1 = `${c1Str}${av1Str}e^{${bvExp}}`;
+        if (cv1 === ``) cv1 = `1`;
+        
+        let c2 = c * n;
+        let c2Str = c2 === 1 ? `` : `${c2}`;
+        cv2 = `${c2Str}${avPart}e^{${bvExp}}`;
+        
+        at = `$\\frac{\\partial f}{\\partial ${av}}$: treat $e^{${bvExp}}$ as a constant multiplier and differentiate $${av}^{${m}}$:` +
+             `$$\\frac{\\partial f}{\\partial ${av}} = ${c === 1 ? '' : c}e^{${bvExp}} \\cdot \\frac{\\mathrm{d}}{\\mathrm{d}${av}}(${av}^{${m}}) = ${cv1}$$ <br>` +
+             `$\\frac{\\partial f}{\\partial ${bv}}$: treat ${cStr}${avPart} as a constant multiplier and differentiate $e^{${bvExp}}$ using the chain rule:` +
+             `$$\\frac{\\partial f}{\\partial ${bv}} = ${c === 1 ? '' : c}${avPart} \\cdot \\frac{\\mathrm{d}}{\\mathrm{d}${bv}}(e^{${bvExp}}) = ${cv2}$$`;
+             
+        answerStr = `$\\frac{\\partial f}{\\partial ${av}} = ${cv1} \\text{ & } \\frac{\\partial f}{\\partial ${bv}} = ${cv2}$`;
+        
+    } else if (qType === 1) {
+        // Type 1: f(av, bv) = c * e^(m*av) * \\ln(bv)
+        const c = getRandomInt(1, 10);
+        const m = getRandomInt(1, 4);
+        
+        let cStr = c === 1 ? `` : `${c}`;
+        let avExp = m === 1 ? `${av}` : `${m}${av}`;
+        let funcStr = `${cStr}e^{${avExp}}\\ln(${bv})`;
+        
+        qt = `Given the function $$f(${av},${bv}) = ${funcStr}$$ Find $$\\frac{\\partial f}{\\partial ${av}} \\text{ and } \\frac{\\partial f}{\\partial ${bv}} $$`;
+        
+        let c1 = c * m;
+        let c1Str = c1 === 1 ? `` : `${c1}`;
+        cv1 = `${c1Str}e^{${avExp}}\\ln(${bv})`;
+        
+        let numStr = c === 1 ? `e^{${avExp}}` : `${c}e^{${avExp}}`;
+        cv2 = `\\frac{${numStr}}{${bv}}`;
+        
+        at = `$\\frac{\\partial f}{\\partial ${av}}$: treat $\\ln(${bv})$ as a constant multiplier and differentiate $e^{${avExp}}$:` +
+             `$$\\frac{\\partial f}{\\partial ${av}} = ${c === 1 ? '' : c}\\ln(${bv}) \\cdot \\frac{\\mathrm{d}}{\\mathrm{d}${av}}(e^{${avExp}}) = ${cv1}$$ <br>` +
+             `$\\frac{\\partial f}{\\partial ${bv}}$: treat $${cStr}e^{${avExp}}$ as a constant multiplier and differentiate $\\ln(${bv})$:` +
+             `$$\\frac{\\partial f}{\\partial ${bv}} = ${c === 1 ? '' : c}e^{${avExp}} \\cdot \\frac{\\mathrm{d}}{\\mathrm{d}${bv}}(\\ln(${bv})) = ${cv2}$$`;
+             
+        answerStr = `$\\frac{\\partial f}{\\partial ${av}} = ${cv1} \\text{ & } \\frac{\\partial f}{\\partial ${bv}} = ${cv2}$`;
+        
+    } else {
+        // Type 2: f(av, bv) = c * e^(m*av) + d * \\ln(bv)
+        const c = getRandomInt(1, 10);
+        const d = getRandomInt(1, 10);
+        const m = getRandomInt(1, 4);
+        
+        let cStr = c === 1 ? `` : `${c}`;
+        let dStr = d === 1 ? `` : `${d}`;
+        let avExp = m === 1 ? `${av}` : `${m}${av}`;
+        let funcStr = `${cStr}e^{${avExp}} + ${dStr}\\ln(${bv})`;
+        
+        qt = `Given the function $$f(${av},${bv}) = ${funcStr}$$ Find $$\\frac{\\partial f}{\\partial ${av}} \\text{ and } \\frac{\\partial f}{\\partial ${bv}} $$`;
+        
+        let c1 = c * m;
+        let c1Str = c1 === 1 ? `` : `${c1}`;
+        cv1 = `${c1Str}e^{${avExp}}`;
+        
+        cv2 = `\\frac{${d}}{${bv}}`;
+        
+        at = `$\\frac{\\partial f}{\\partial ${av}}$: treat the logarithmic term as a constant (differentiates to 0) and differentiate $${cStr}e^{${avExp}}$:` +
+             `$$\\frac{\\partial f}{\\partial ${av}} = ${c === 1 ? '' : c} \\cdot \\frac{\\mathrm{d}}{\\mathrm{d}${av}}(e^{${avExp}}) + 0 = ${cv1}$$ <br>` +
+             `$\\frac{\\partial f}{\\partial ${bv}}$: treat the exponential term as a constant (differentiates to 0) and differentiate $${dStr}\\ln(${bv})$:` +
+             `$$\\frac{\\partial f}{\\partial ${bv}} = 0 + ${d === 1 ? '' : d} \\cdot \\frac{\\mathrm{d}}{\\mathrm{d}${bv}}(\\ln(${bv})) = ${cv2}$$`;
+             
+        answerStr = `$\\frac{\\partial f}{\\partial ${av}} = ${cv1} \\text{ & } \\frac{\\partial f}{\\partial ${bv}} = ${cv2}$`;
+    }
+    
+    return {
+        id: q_id,
+        question: qt,
+        var1_label: `\\frac{\\partial f}{\\partial ${av}}`,
+        var2_label: `\\frac{\\partial f}{\\partial ${bv}}`,
+        check_val1: cv1,
+        check_val2: cv2,
+        answer: answerStr,
         solution: at
     };
 };

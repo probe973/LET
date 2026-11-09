@@ -42,13 +42,13 @@ window.initSimultaneousTest = function(configArray) {
                     <!-- Variable Box 1 -->
                     <div style="display: flex; align-items: center; gap: 10px;">
                         <span style="font-weight: bold; min-width: 40px;">$${q.var1_label} =$</span>
-                        <math-field id="ans-${globalIndex}-1" class="algebra-input-field" aria-label="Value for ${q.var1_label}" style="margin-bottom:0; max-width: 150px;"></math-field>
+                        <math-field id="ans-${globalIndex}-1" class="algebra-input-field" aria-label="Value for ${q.var1_label}" style="margin-bottom:0; max-width: 300px;"></math-field>
                     </div>
                     
                     <!-- Variable Box 2 -->
                     <div style="display: flex; align-items: center; gap: 10px;">
                         <span style="font-weight: bold; min-width: 40px;">$${q.var2_label} =$</span>
-                        <math-field id="ans-${globalIndex}-2" class="algebra-input-field" aria-label="Value for ${q.var2_label}" style="margin-bottom:0; max-width: 150px;"></math-field>
+                        <math-field id="ans-${globalIndex}-2" class="algebra-input-field" aria-label="Value for ${q.var2_label}" style="margin-bottom:0; max-width: 300px;"></math-field>
                     </div>
 
                     <div class="button-group">

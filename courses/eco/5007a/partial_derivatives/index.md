@@ -33,9 +33,18 @@ Select a topic to view workshops or practice questions
 
 </div>
 
-## Partial Differentiation Skills Practice
+## Partial Differentiation Skills Practice - Randomly Generateed Questions
 
 <div class="card-menu">
+
+    <a href="{{ "/courses/eco/5007a/partial_derivatives/partial_derivatives" | relative_url }}" class="card">
+        <div class="card-content">
+            <div class="card-text">
+                <h3>Partial Differentiation</h3>
+          <p>Differentiating a multivariate function to find the partial derivatives</p>
+            </div>
+        </div>
+    </a>
     
     <a href="{{ "/courses/eco/5007a/partial_derivatives/optimisation" | relative_url }}" class="card">
         <div class="card-content">
