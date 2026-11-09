@@ -9,7 +9,7 @@ $$\frac{\partial f}{\partial x} \quad \text{or} \quad f_x$$
 
 ---
 
-## Example 1: Addition Form
+### Example 1: Addition Form
 Consider a function of two variables combined through addition:
 
 $$f(x,y) = 4x^3 + 7y^2$$
@@ -24,7 +24,7 @@ $$f(x,y) = 4x^3 + 7y^2$$
 
 ---
 
-## Example 2: Multiplication Form
+### Example 2: Multiplication Form
 Consider a function where variables are multiplied together:
 
 $$z = 6x^2y^3$$
@@ -39,7 +39,7 @@ $$z = 6x^2y^3$$
 
 ---
 
-## Example 3: Exponentials and Natural Logarithms
+### Example 3: Exponentials and Natural Logarithms
 Consider a function with three variables ($x, y, z$) involving exponential and logarithmic terms:
 
 $$f(x,y,z) = x^2 e^y + y \ln(z)$$
@@ -58,3 +58,28 @@ $$f(x,y,z) = x^2 e^y + y \ln(z)$$
   The first term ($x^2 e^y$) contains no $z$, so it differentiates to $0$. For the second term, $y$ is treated as a constant coefficient, and $\frac{d}{dz}(\ln(z)) = \frac{1}{z}$.
 
   $$\frac{\partial f}{\partial z} = 0 + y \cdot \frac{1}{z} = \frac{y}{z}$$
+
+---
+
+### Second Partial Derivatives
+
+Partially differentiated functions can be differentiated again to get second partial derivatives.
+
+Given a function $f(x,y)$:
+
+* $\frac{\partial^2 f}{\partial x^2}$ or $f_{xx}$, means take the partial derivative with respect to $x$, $\frac{\partial f}{\partial x}$, and partially differentiate it with respect to $x$ again.
+
+* $\frac{\partial^2 f}{\partial y^2}$ or $f_{yy}$, means take the partial derivative with respect to $y$, $\frac{\partial f}{\partial y}$, and partially differentiate it with respect to $y$ again.
+
+* $\frac{\partial^2 f}{\partial y \partial x}$ or $f_{xy}$, means take the partial derivative with respect to $x$, $\frac{\partial f}{\partial x}$, and partially differentiate it with respect to $y$.
+
+* $\frac{\partial^2 f}{\partial x \partial y}$ or $f_{yx}$, means take the partial derivative with respect to $y$, $\frac{\partial f}{\partial x}$, and partially differentiate it with respect to $x$.
+
+The way in which the bottom two second partial derivatives are written can be confusing. Fortunately, we can make use of **Young's Theorem** and use:
+
+$$ \frac{\partial^2 f}{\partial y \partial x} = \frac{\partial^2 f}{\partial x \partial y} $$
+
+or
+
+$$ f_{xy} = f_{yx}$$ 
+
