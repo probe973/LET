@@ -507,8 +507,8 @@ Given $X \sim N(100,16)$
 %}
 
 {% include question_numerical.html
-    id="nbsrjw06q4aii"
-    title="4a ii"
+    id="nbsrjw06q4aiii"
+    title="4a iii"
     question_text="What is the value of $t$ such that $P(X < t) = 0.35$?"
     correct_answer="98.5"
     tolerance="0.2"
