@@ -29,6 +29,7 @@ document.addEventListener('blur', (event) => {
 }, true); // 'true' captures the event cleanly on entry
 
 
+
 function toggleSolution(solutionId, btnElement) {
     var solutionDiv = document.getElementById(solutionId);
     

@@ -30,7 +30,7 @@ mj: 0
     <a href="{{ "/courses/dev" | relative_url }}" class="card">
         <div class="card-content">
             <div class="card-text">
-                <h3><s>International Development</s></h3>
+                <h3>International Development</h3>
                 <p></p>
             </div>
         </div>
