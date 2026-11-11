@@ -289,7 +289,9 @@ The value of $\frac{\partial Q}{\partial L}$ (the marginal product of labour) ha
 ### Question 4
 
 For each of the functions $f(x,y)$ below, find:
+
 (i) $f_x$ and $f_y$
+
 (ii) the values of $x$, $y$, and $f(x,y)$ where both $f_x=0$ and $f_y=0$
 
 {% include question_dropdown.html 
