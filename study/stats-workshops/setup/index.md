@@ -1,6 +1,8 @@
 ---
 layout: stats
 title: Software Setup
+interactive: 0
+mj: 0
 ---
 
 # Opening the Data File and Setting Up Variables
@@ -121,7 +123,7 @@ The dataset will appear in the Environment panel and is ready to use.
 2. Select **File → New File → R Script**.
 3. Type the command below, replacing the file path with the location of your own CSV file.
 
-omni_data <- read.csv("C:/Users/username/Downloads/omni_data.csv", header = TRUE)
+    `omni_data <- read.csv("C:/Users/username/Downloads/omni_data.csv", header = TRUE)`
 
 Explanation:
 
@@ -168,7 +170,7 @@ When a CSV file is imported, RStudio automatically decides what type of data is 
 
 2. Enter the following command, replacing `omni_data` with the name you gave your dataset during import.
 
-str(omni_data)
+        str(omni_data)
 
 3. Run the command by pressing **Ctrl + Enter** (Windows) or **Cmd + Enter** (Mac).
 
@@ -195,7 +197,7 @@ If a variable has been assigned the wrong data type, it can be converted.
 
 To convert a variable into a factor, use:
 
-omni_data$preferred_study_method <- as.factor(omni_data$preferred_study_method)
+    omni_data$preferred_study_method <- as.factor(omni_data$preferred_study_method)
 
 In this command:
 
@@ -206,7 +208,7 @@ In this command:
 
 To convert a variable into a numeric variable, use:
 
-omni_data$study_hours_per_week <- as.numeric(omni_data$study_hours_per_week)
+    omni_data$study_hours_per_week <- as.numeric(omni_data$study_hours_per_week)
 
 In this command:
 
@@ -214,7 +216,7 @@ In this command:
 
 To convert a variable into a text variable, use:
 
-omni_data$participant_id <- as.character(omni_data$participant_id)
+    omni_data$participant_id <- as.character(omni_data$participant_id)
 
 In this command:
 
