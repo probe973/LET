@@ -193,7 +193,7 @@ window.simGens.linear_type2 = function(q_id) {
             for (let i = 0; i < 4; i++) {
                 c[i] = getRandomInt(1,30);
             }
-            if (c[0] != c[2]) break;
+            if (c[0] - c[2] > 1) break;
         }
         
         for (let i = 0; i < 4; i++) {
@@ -233,7 +233,22 @@ window.simGens.linear_type2 = function(q_id) {
         
         if (cv2d/hcf2 === 1) cv2 = `${cv2n/hcf2}`;
         
-        at = `Wait`;
+        at = `Substitute the $y$ from the top equation into the bottom equation:`+
+            `$$ ${ct[0]}x + ${c[1]} = ${ct[2]}x + ${c[3]}$$`+
+            `Subtract $${ct[2]}x$ from both sides` +
+            `$$ ${c[0] - c[2]}x + ${c[1]} = ${c[3]} $$`+
+            `Subtract $${c[1]}$ from both sides`+ 
+            `$$ ${c[0] - c[2]}x = ${c[3] - c[1]} $$` +
+            `Divide both sides by $ ${c[0] - c[2]}$` +
+            `$$x = \\frac{${c[3] - c[1]}}{${c[0] - c[2]}}`;
+        
+        if (hcf1 != 1) {
+            at = at + `=` + cv1;
+        }
+        at = at + `$$`;
+        
+        at = at + `Substitute into one of the equations, second one for example:` +
+            `$$y = ${ct[2]} \\left( ${cv1} \\right) + ${c[3]} = ${cv2}$$`;
     }
         
         return {
