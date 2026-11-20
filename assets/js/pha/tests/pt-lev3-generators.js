@@ -68,7 +68,7 @@ function generateQ2_arithmetic(q_id, roundToDecimalPlaces) {
     if (signchoice === 0) {
         qt = `What is $ ((${a} + ${b}) \\times ${c}) \\div ${d} $?`;
     } else {
-        qt = `What is $ (${a} - ${b}) \\times ${c}) \\div ${d} $?`;
+        qt = `What is $ ((${a} - ${b}) \\times ${c}) \\div ${d} $?`;
     }
     
     if (signchoice === 0) {
@@ -543,3 +543,206 @@ return {
 };
 }
 window.CurrentTestGenerators.push(generateQ15_convert);
+
+
+function generateQ16_convert(q_id, roundToDecimalPlaces) {
+    
+    let s, l, x, qt, at, m, u;
+    while (true) {
+        s = getRandomInt(1, 2);
+        l = getRandomInt(2, 3);
+        if (s < l) {
+            break;
+        }
+    }
+    
+    u = ["g","L","m"][getRandomInt(0,2)];
+    let p = ['mc', 'm', ''];
+    const sn = p[s - 1];
+    const ln = p[l - 1];
+    
+    let e = getRandomInt(10,25);
+    let a = roundToDecimalPlaces(getRandomInt(100,999)/100,2);
+    let c = getRandomInt(0,1);
+    
+    
+    if (c === 0) {
+        x = e + 3*(s-l);
+        qt = `Given $${a} \\times 10^{${e}} \\text{ ${sn}${u}} = ${a} \\times 10^{x} \\text{ ${ln}${u}} $, what is the value of $x$?`;
+        at = `To convert ${sn}${u} into ${ln}${u}, multiply by $10^{${3*(s-l)}}$: $$${a} \\times 10^{${e}} \\times 10^{${3*(s-l)}}$$`+
+            `Add the powers: $$${a} \\times 10^{${x}} \\text{ ${ln}${u}}$$ $$ x = ${x} $$`;
+    } else if (c == 1) {
+        x = e + 3*(l-s);
+        qt = `Given $${a} \\times 10^{${e}} \\text{ ${ln}${u}} = ${a} \\times 10^{x} \\text{ ${sn}${u}} $, what is the value of $x$?`;
+        at = `To convert ${ln}${u} into ${sn}${u}, multiply by $10^{${3*(l-s)}}$: $$${a} \\times 10^{${e}} \\times 10^{${3*(l-s)}}$$`+
+            `Add the powers: $$${a} \\times 10^{${x}} \\text{ ${ln}${u}}$$ $$ x = ${x} $$`;
+        }
+    
+return { 
+    id: q_id, 
+    question: qt, 
+    answer: x, 
+    solution: at 
+    
+};
+}
+window.CurrentTestGenerators.push(generateQ16_convert);
+        
+
+function generateQ17_mw(q_id, roundToDecimalPlaces) {
+    
+    let ml, mw, M, x;
+    
+    while (true) {    
+        ml = getRandomInt(1,19)*50;
+        mw = roundToDecimalPlaces(getRandomInt(60,200)/2,1);
+        M = getRandomInt(2,20);
+        x = M*ml*mw/1000;
+        if (x > 1) break;
+    }
+    
+    qt = `How many grams of compound X (molecular weight = ${mw}) are required to produce ${ml} mL of a ${M} molar solution? <br> Give the answer correct to no more than 2 decimal places`;
+    
+    at = `$$ \\text{mass (g)} = \\text{MW (g/mol) } \\times \\text{Molarity (mol/L) } \\times \\text{Volume (L)}$$`+
+        `$$\\text{mass (g)} = ${mw} \\times ${M} \\times ${ml/1000} = ${x}$$`;
+
+return { 
+    id: q_id, 
+    question: qt, 
+    answer: x, 
+    solution: at 
+    
+};
+}
+window.CurrentTestGenerators.push(generateQ17_mw);
+
+
+function generateQ18_bsa(q_id, roundToDecimalPlaces) {
+    
+    let mass, height, bsa2;
+
+    while (true) {
+        mass = Math.floor(Math.random() * 41) + 50;   // 50–90
+        height = [120, 150, 180, 200][Math.floor(Math.random() * 4)];
+        bsa2 = (mass * height) / 3600;
+
+        // Python conditions:
+        // 1.1 ≤ bsa2 ≤ 5
+        // round(bsa2,2) == bsa2
+        const bsa2Rounded = Math.round(bsa2 * 100) / 100;
+
+        if (bsa2 >= 1.1 && bsa2 <= 5 && bsa2Rounded === bsa2) {
+            break;
+        }
+    }
+
+    const height_m = height / 100;
+    const height_m_str = `${height_m}`;
+    const x = roundToDecimalPlaces(Math.sqrt(bsa2), 2);
+
+    // Construct list of 7 values: six random, last = bsa2
+    const srlist2 = [
+        (Math.floor(Math.random() * 391) + 110) / 100,
+        (Math.floor(Math.random() * 391) + 110) / 100,
+        (Math.floor(Math.random() * 391) + 110) / 100,
+        (Math.floor(Math.random() * 391) + 110) / 100,
+        (Math.floor(Math.random() * 391) + 110) / 100,
+        (Math.floor(Math.random() * 391) + 110) / 100,
+        bsa2
+    ];
+
+    const sorted_vals = srlist2.slice().sort((a, b) => a - b);
+
+    const lines = sorted_vals.map(v => {
+        const root = Math.sqrt(v);
+        return `\\( \\sqrt{${v.toFixed(2)}} = ${root.toFixed(2)} \\)`;
+    });
+
+    const result_string = lines.join(" <br />\n");
+
+    const question_text =
+        `Given these values:<br />` +
+        `${result_string} <br />` +
+        `The formula: <br />` +
+        `\\( \\text{BSA}(m^2) = \\sqrt{ \\frac{ \\text{mass(kg)} \\times \\text{height(cm)} }{3600} } \\) <br />` +
+        `Find the body surface area, in metres squared, of someone who is ${height_m_str} metres tall and weights ${mass} kg. <br />`;
+
+    const solution_text =
+        `\\( \\frac{${mass} \\times ${height}}{3600} = ${bsa2} \\) <br />` +
+        `Look up in list gives ${x}`;
+
+    return {
+        id: q_id,
+        question: question_text,
+        answer: x,
+        solution: solution_text
+    };
+}
+window.CurrentTestGenerators.push(generateQ18_bsa);
+
+
+function generateQ19_dilute(q_id, roundToDecimalPlaces) {
+    
+    let m1, v1, mp, ad, pc, x, m2, v2, v3;
+    while (true) {
+        m1 = roundToDecimalPlaces(getRandomInt(1,20)/2,1);
+        v1 = getRandomInt(1,8)*25;
+        mp = getRandomInt(3,10);
+        v2 = v1*mp
+        m2 = m1*mp
+        v3 = Math.pow(2,getRandomInt(0,4))*Math.pow(5,getRandomInt(0,2))*50;
+        ad = v3-v2;
+        pc = 100*m2/(v3);
+        x = roundToDecimalPlaces(pc,1);
+        
+        if (v3 > v2 && pc < 30) break;
+    }
+    
+    let qt = `A solution contains ${m1} g of solute per ${v1} ml of solution. ${v2} ml of this solution is diluted by adding a further ${ad} ml of water. `+ 
+            `What is the resulting percentage strength of the new solution expressed as % w/v? Give the answer correct to 1 decimal place.`;
+            
+    let at = `${m1} g of solute per ${v1} ml is <br />`+
+    `${m2} g of solute per ${v2} ml (multiplying by ${mp}) <br />`+
+    `Add ${ad} ml means ${v2+ad} ml <br />`+
+    `${m2} g of solute per ${v2+ad} ml of solution <br />`+
+    `For percentage need 100 ml, so divide through by ${(v2+ad)/100} <br />`+
+    `${pc} g of solute per 100 ml <br />`+
+    `${x} %w/v (round to 1 d.p.)`;
+    
+    return {
+        id: q_id,
+        question: qt,
+        answer: x,
+        solution: at
+    };
+}
+window.CurrentTestGenerators.push(generateQ19_dilute);
+
+
+function generateQ20_active(q_id, roundToDecimalPlaces) {
+    
+    let pc, ml, x;
+    
+    while (true) {
+        pc = roundToDecimalPlaces(getRandomInt(1,10)/2,1);
+        ml = getRandomInt(8,99);
+        x = 10*pc*ml
+        
+        if (x > 1 && x < 1000 && pc != 1 && pc != 10 && ml != 10) break;
+    }
+    
+    let qt = `A liquid medication contains ${pc} % active ingredient. How many milligrams would there be in a ${ml} ml dose?`;
+    
+    let at = `${pc} % of ${ml} ml is $$ \\frac{${pc}}{100} \\times ${ml} = ${x/1000} $$` +
+            `This is ${x/1000} g, so convert to mg:`+
+            `$$ ${x/1000} \\times 1000 = ${x} $$`+
+            `${x} mg`;
+
+    return {
+        id: q_id,
+        question: qt,
+        answer: x,
+        solution: at
+    };
+}
+window.CurrentTestGenerators.push(generateQ20_active);

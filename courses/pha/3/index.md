@@ -78,7 +78,7 @@ title: Foundation Year Home
 ### Practice Assessment
 
 <div class="card-menu">
-    <a href="{{ "/courses/pha/3/mock.html" | relative_url }}" class="card">
+    <a href="{{ "/courses/pha/3/mocktest.html" | relative_url }}" class="card">
         <div class="card-content">
             <div class="card-text">
                 <h3>Practice Test</h3>
