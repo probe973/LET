@@ -78,6 +78,7 @@ $$TC = TC_A + TC_B = 10 + 20 \times 90 + 2 + 10^2 = 1912$$"
 A manufacturing firm has access to two aging factories, G and H, for manufacturing. The firm does $g$ items from G and $h$ items from H. The costs of the factory production are:
 
 $$TC_G = 80 + 10g^{1.5}$$
+
 $$TC_H = 100 + 12h^{1.25}$$
 
 If the firm produces 420 items, what is the cost of manufacturing if:
