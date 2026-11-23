@@ -352,7 +352,7 @@ function generateQ5_grequired(q_id, roundToDecimalPlaces) {
         question_text = `How many grams of active indgredient are required to make ${ml} ml of a solution with strength ${mgml} mg/ml?  Give answer to 1 d.p..`;
     }
 
-    solution_text = `\\( ${mg} \\text{ ml} \\times ${mgml} \\text{ mg/ml} = ${mg} \\text{ mg} \\) <br />` +
+    solution_text = `\\( ${ml} \\text{ ml} \\times ${mgml} \\text{ mg/ml} = ${mg} \\text{ mg} \\) <br />` +
                     `Convert to g: ${g} <br />` +
                     `Round: ${x}`;
  
