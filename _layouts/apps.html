@@ -19,6 +19,11 @@
         <p>{{ site.description | default: "LET workshops" }}</p>
     </header>
 
+    <nav>
+        <ul>
+            <li><a href="{{ history.back() }}">Back</a></li>           
+        </ul>
+    </nav>
     
     <main>
         {{ content }}
