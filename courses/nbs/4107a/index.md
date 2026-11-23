@@ -54,6 +54,34 @@ This is the resource repository for NBS-4107A mathematics skills from the Learni
 
 </div>
 
+### Resources and Calculators
+<div class="card-menu">
+
+    <a href="{{ "/assets/apps/normcalc" | relative_url }}" class="card">
+        <div class="card-content">
+            <div class="card-text">
+                <h3>Normal Distribution Calculator</h3>
+                <p>A calculator to find probabilities from normal distributions and scores from probabilities</p>
+            </div>
+        </div>
+    </a>
+    <a href="{{ "/assets/apps/norm" | relative_url }}" class="card">
+        <div class="card-content">
+            <div class="card-text">
+                <h3>Standard Normal Distribution Table</h3>
+                <p>Table of probabilities from z-scores</p>
+            </div>
+        </div>
+    </a>
+    <a href="{{ "/assets/apps/ttable" | relative_url }}" class="card">
+        <div class="card-content">
+            <div class="card-text">
+                <h3>t-Distribution table</h3>
+                <p>Table of critical values for the t-distribution, for given probability and degrees of freedom</p>
+            </div>
+        </div>
+    </a>
+</div>
 
 ### PDF's for printing
 <div class="card-menu">
