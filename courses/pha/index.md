@@ -32,8 +32,8 @@ Welcome to the interactive resource for pharmacy calculations.
     <a href="{{ "/courses/pha/5/" | relative_url }}" class="card">
         <div class="card-content">
             <div class="card-text">
-                <h3>Second Year</h3>
-                <p>Practice questions for second year pharmacy calculations.</p>
+                <h3><s>Second Year</s></h3>
+                <p><s>Practice questions for second year pharmacy calculations.</s></p>
             </div>
         </div>
     </a>
