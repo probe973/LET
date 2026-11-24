@@ -18,13 +18,18 @@
         <h1>{{ site.title | default: "Learning Enhancement Team" }}</h1>
         <p>{{ site.description | default: "LET workshops" }}</p>
     </header>
-<!--
-    <nav>
+
+    <nav id="nav-site-nbs4107a" style="display: none;">
         <ul>
-            <li><a href="javascript:history.back()">Back</a></li>           
+            <!-- CORRECTED: Navigation links now use relative_url to point to the right place -->
+            <li><a href="{{ "/courses/nbs/4107a/" | relative_url }}">NBS-4107A Home</a></li>
+            <li><a href="{{ "/courses/nbs/4107a/number/" | relative_url }}">Number</a></li>
+            <li><a href="{{ "/courses/nbs/4107a/algebra/" | relative_url }}">Algebra</a></li>
+            <li><a href="{{ "/courses/nbs/4107a/statistics/" | relative_url }}">Statistics</a></li>
+            <li><a href="{{ "/courses/nbs/4107a/probability/" | relative_url }}">Probability</a></li>
+            
         </ul>
     </nav>
-    -->
     
     <main>
         {{ content }}
@@ -37,6 +42,16 @@
     </footer>
 
     <!-- Corrected script link using relative_url -->
+
+    <script>
+    // Get the full web address of the page the user just clicked from
+    const previousPage = document.referrer;
+
+    // Check if that previous address had "/site-b/" in it
+    if (previousPage.includes('/4107a/')) {
+      document.getElementById('nbs4107a').style.display = 'block';
+    } 
+  </script>
 
 </body>
 </html>
